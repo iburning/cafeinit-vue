@@ -1,0 +1,36 @@
+{
+  "name": "cafeinit-vue",
+  "version": "1.0.0",
+  "description": "CafeInit for Vue.js",
+  "main": "index.js",
+  "scripts": {
+    "demo": "webpack-dev-server --open --config demo/webpack.config.js --content-base demo/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iburning/cafeinit-vue-2.git"
+  },
+  "keywords": [
+    "webpack",
+    "vue",
+    "cafeinit"
+  ],
+  "author": "burning <iburning@live.cn>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iburning/cafeinit-vue-2/issues"
+  },
+  "homepage": "https://github.com/iburning/cafeinit-vue-2#readme",
+  "devDependencies": {
+    "babel-core": "^6.18.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-runtime": "^6.18.0",
+    "css-loader": "^0.25.0",
+    "vue": "^2.0.3",
+    "vue-loader": "^9.7.0",
+    "vue-style-loader": "^1.0.0"
+  }
+}
