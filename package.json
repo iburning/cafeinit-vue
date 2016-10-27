@@ -4,6 +4,9 @@
   "description": "CafeInit for Vue.js",
   "main": "index.js",
   "scripts": {
+    "build": "npm run build:lib && npm run build:amd",
+    "build:lib": "webpack -p --config ./webpack.config.js",
+    "build:amd": "webpack --config ./webpack.config.amd.js",
     "demo": "webpack-dev-server --open --config demo/webpack.config.js --content-base demo/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -29,8 +32,15 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-runtime": "^6.18.0",
     "css-loader": "^0.25.0",
+    "file-loader": "^0.9.0",
+    "url-loader": "^0.5.7",
     "vue": "^2.0.3",
+    "vue-hot-reload-api": "^2.0.6",
+    "vue-html-loader": "^1.2.3",
     "vue-loader": "^9.7.0",
-    "vue-style-loader": "^1.0.0"
+    "vue-router": "^2.0.1",
+    "vue-style-loader": "^1.0.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
   }
 }
