@@ -5,14 +5,36 @@
  */
 
 import Vue from 'vue'
+import VueRouter from 'vue-router'
 import CafeinitVue from 'cafeinit-vue-bootstrap'
-import App from './App'
+import CafeinitVueCss from 'cafeinit-vue.css'
 
+console.log('CafeinitVueCss', CafeinitVueCss);
+
+
+Vue.use(VueRouter)
 Vue.use(CafeinitVue.components)
 
-/* eslint-disable no-new */
-const app = new Vue({
-  el: '#app',
-  template: '<App/>',
-  components: { App }
+import App from './App'
+import Buttons from './pages/buttons'
+
+const routes = [
+  { path: '/', component: App },
+  { path: '/buttons', component: Buttons }
+]
+
+const router = new VueRouter({
+  routes // （缩写）相当于 routes: routes
 })
+
+const app = new Vue({
+  router
+}).$mount('#app')
+
+
+// /* eslint-disable no-new */
+// const app = new Vue({
+//   el: '#app',
+//   template: '<App/>',
+//   components: { App }
+// })

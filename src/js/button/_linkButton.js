@@ -1,10 +1,12 @@
 /**
- * @fileOverview link button
+ * @fileoverview link button
  * @author: burning <www.cafeinit.com>
- * @date: 2016-09-11
+ * @version: 2016-10-27
  */
 
 export default {
+  name: 'ci-link-button',
+
   props: {
     ns: {
       type: String,
@@ -41,17 +43,15 @@ export default {
       default: ''
     },
 
-    link: {
-      type: Object,
-      default() {
-        return null
-      }
+    to: {
+      type: String,
+      default: ''
     }
   },
 
   methods: {
     click() {
-      this.$dispatch('click')
+      this.$emit('click')
     }
   }
 }

@@ -21,11 +21,11 @@ module.exports = {
     extensions: ['', '.js', '.vue'],
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
-      'vue$': 'vue/dist/vue'
+      'vue$': 'vue/dist/vue',
       // 'cafeinit-vue': path.resolve(__dirname, '../dist/js/cafeinit-vue.amd.js'),
       // 'cafeinit-vue-amazeui': path.resolve(__dirname, '../dist/js/cafeinit-vue-amazeui.amd.js'),
       'cafeinit-vue-bootstrap': path.resolve(__dirname, '../dist/js/cafeinit-vue-bootstrap.amd.js'),
-      // 'cafeinit.css': path.resolve(__dirname, '../dist/css/cafeinit.css')
+      'cafeinit-vue.css': path.resolve(__dirname, '../dist/css/cafeinit.css')
     }
   },
 
