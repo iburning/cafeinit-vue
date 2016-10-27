@@ -5,6 +5,8 @@
  */
 
 export default {
+  name: 'ci-alert-tip',
+
   props: {
     ns: {
       type: String,

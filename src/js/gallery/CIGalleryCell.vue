@@ -7,6 +7,6 @@
 
 <script>
 export default {
-  // ...
+  name: 'ci-gallery-cell'
 }
 </script>

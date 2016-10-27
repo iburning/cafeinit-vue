@@ -8,20 +8,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import CafeinitVue from 'cafeinit-vue-bootstrap'
 import CafeinitVueCss from 'cafeinit-vue.css'
-
-console.log('CafeinitVueCss', CafeinitVueCss);
-
+import routes from './routes'
 
 Vue.use(VueRouter)
 Vue.use(CafeinitVue.components)
-
-import App from './App'
-import Buttons from './pages/buttons'
-
-const routes = [
-  { path: '/', component: App },
-  { path: '/buttons', component: Buttons }
-]
 
 const router = new VueRouter({
   routes // （缩写）相当于 routes: routes

@@ -4,8 +4,9 @@
  * @version: 2016-09-11
  */
 
-
 export default {
+  name: 'ci-grid',
+
   props: {
     rowClass: {
       type: String,

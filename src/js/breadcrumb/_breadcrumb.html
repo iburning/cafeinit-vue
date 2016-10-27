@@ -1,4 +1,4 @@
-<ol class="{{ns}}breadcrumb">
+<ol v-bind:class="ns + 'breadcrumb'">
   <template v-for="(index, item) in items">
     <li v-bind:class="[(index === items.length - 1) ? (ns + 'actived') : '']">
       <a v-if="item.link" v-link="item.link">{{item.title}}</a>

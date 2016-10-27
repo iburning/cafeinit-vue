@@ -1,6 +1,5 @@
 <template src="./_breadcrumb.html"></template>
 
-
 <script>
 import config from './_breadcrumb'
 

@@ -4,9 +4,8 @@
   </ul>
 </template>
 
-
 <script>
 export default {
-  // ...
+  name: 'ci-gallery'
 }
 </script>

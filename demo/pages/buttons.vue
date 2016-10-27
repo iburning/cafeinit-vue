@@ -52,9 +52,10 @@
   </div>
 </template>
 
-
 <script>
 export default {
+  name: 'page-buttons',
+
   methods: {
     buttonClick: function (val) {
       console.log('buttonClick', val);

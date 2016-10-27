@@ -4,28 +4,28 @@
  * @version: 2016-09-28
  */
 
-// import CIAlertTip from './alertTip/BSAlertTip'
-//
+import CIAlertTip from './alertTip/BSAlertTip'
+
 import CIBlock from './block/CIBlock'
 import CIBlockBody from './block/CIBlockBody'
 import CIBlockFooter from './block/CIBlockFooter'
 import CIBlockHeader from './block/CIBlockHeader'
 
-// import CIBreadcrumb from './breadcrumb/BSBreadcrumb'
-//
-// import CIGallery from './gallery/CIGallery'
-// import CIGalleryCell from './gallery/CIGalleryCell'
-//
-// import CIGrid from './grid/BSGrid'
-// import CIGridCell from './grid/BSGridCell'
-//
+import CIBreadcrumb from './breadcrumb/BSBreadcrumb'
+
+import CIGallery from './gallery/CIGallery'
+import CIGalleryCell from './gallery/CIGalleryCell'
+
+import CIGrid from './grid/BSGrid'
+import CIGridCell from './grid/BSGridCell'
+
 import CIList from './list/CIList'
 import CIListCell from './list/CIListCell'
 // import CIListCheckbox from './list/BSListCheckbox'
 // import CIListRadio from './list/BSListRadio'
-//
-// import CILoading from './loading/CILoading'
-//
+
+import CILoading from './loading/CILoading'
+
 // import CIPagination from './pagination/BSPagination'
 //
 // import CITabBar from './tabView/CITabBar'
@@ -56,28 +56,28 @@ import CIScrollHelper from './utils/CIScrollHelper'
 
 
 const CIomponents = {
-  // 'ci-alert-tip': CIAlertTip,
+  'ci-alert-tip': CIAlertTip,
 
   'ci-block': CIBlock,
   'ci-block-body': CIBlockBody,
   'ci-block-footer': CIBlockFooter,
   'ci-block-header': CIBlockHeader,
 
-  // 'ci-breadcrumb': CIBreadcrumb,
-  //
-  // 'ci-gallery': CIGallery,
-  // 'ci-gallery-cell': CIGalleryCell,
-  //
-  // 'ci-grid': CIGrid,
-  // 'ci-grid-cell': CIGridCell,
-  //
+  'ci-breadcrumb': CIBreadcrumb,
+
+  'ci-gallery': CIGallery,
+  'ci-gallery-cell': CIGalleryCell,
+
+  'ci-grid': CIGrid,
+  'ci-grid-cell': CIGridCell,
+
   'ci-list': CIList,
   'ci-list-cell': CIListCell,
   // 'ci-list-checkbox': CIListCheckbox,
   // 'ci-list-radio': CIListRadio,
-  //
-  // 'ci-loading': CILoading,
-  //
+  
+  'ci-loading': CILoading,
+
   // 'ci-pagination': CIPagination,
   //
   // 'ci-tab-bar': CITabBar,
