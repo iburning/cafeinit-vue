@@ -1,0 +1,11 @@
+<div class="ci-list-hd" v-if="title">{{title}}</div>
+<ul class="ci-list ci-list-radio">
+  <ci-list-cell v-for="item in items">
+    <label>
+      <input type="radio"
+        v-bind:name="name"
+        v-bind:value="item.value"
+        v-model="model" /> {{item.title}}
+    </label>
+  </ci-list-cell>
+</ul>

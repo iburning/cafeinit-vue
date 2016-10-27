@@ -5,7 +5,10 @@
  */
 
 import Vue from 'vue'
+import CafeinitVue from 'cafeinit-vue-bootstrap'
 import App from './App'
+
+Vue.use(CafeinitVue.components)
 
 /* eslint-disable no-new */
 const app = new Vue({

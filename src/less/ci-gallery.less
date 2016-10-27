@@ -1,0 +1,37 @@
+/**
+ * @fileOverview ci-gallery
+ * @author: burning <www.cafeinit.com>
+ * @date: 2016-09-02
+ */
+
+.ci-gallery {
+  list-style: none;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0 0 1em 0;
+}
+
+.ci-gallery-cell {
+  list-style: none;
+  flex: 1;
+  padding: 0;
+  margin: 0;
+  min-width: 50px;
+  min-height: 50px;
+  flex-basis: 50%;
+
+  @media @medium-up {
+    & {
+      flex-basis: 100% / 3;
+    }
+  }
+
+  @media @large-up {
+    & {
+      flex-basis: 100% / 4;
+    }
+  }
+}

@@ -1,0 +1,84 @@
+/**
+ * @fileOverview common
+ * @author: burning <www.cafeinit.com>
+ * @date: 2016-08-20
+ */
+
+
+@import "./varialbes";
+@import "./mixins";
+@import "./vendor-prefixes";
+@import "./normalize";
+
+@import "./ci-block";
+@import "./ci-button";
+@import "./ci-form";
+@import "./ci-gallery";
+@import "./ci-list";
+@import "./ci-loading";
+@import "./ci-modal";
+@import "./ci-pagination";
+@import "./ci-tab-bar";
+@import "./ci-tree-nav";
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: #efefef;
+}
+
+
+a {
+  color: @color-primary;
+
+  &:hover {
+    color: darken(@color-primary, 15%);
+  }
+}
+
+
+.app-title {
+  padding: 10px;
+  margin: 0;
+  font-size: @font-size-large;
+}
+
+.ci-btn-area {
+  margin: 1.5em;
+}
+
+
+.ci-scroll {
+  overflow: auto;
+  -moz-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  width: 100%;
+  height: 200px;
+  background-color: #eee;
+}
+
+
+.ci-icon-spin {
+  -webkit-animation: icon-spin 2s infinite linear;
+  animation: icon-spin 2s infinite linear;
+}
+
+
+/* for modals */
+.modal-fade-transition {
+  -webkit-transition: background-color 300ms 0s;
+  transition: background-color 300ms 0s;
+}
+
+.modal-fade-enter, .modal-fade-leave {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.am-modal, .am-dimmer {
+  display: block;
+}

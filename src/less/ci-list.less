@@ -1,0 +1,113 @@
+/**
+ * @fileOverview ci-list
+ * @author: burning <www.cafeinit.com>
+ * @date: 2016-08-19
+ */
+
+.ci-list-hd, .ci-list-ft {
+  padding: 5px 10px;
+  font-size: @font-size-small;
+  color: @color-gray;
+}
+
+.ci-list {
+  list-style: none;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0 0 1em 0;
+  border-top: 1px solid @color-border;
+  border-bottom: 1px solid @color-border;
+  // overflow: hidden;
+}
+
+.ci-list-cell {
+  list-style: none;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 15px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+
+  background-color: @color-background;
+
+  &:before {
+    content: " ";
+    position: absolute;
+    left: 15px;
+    top: 0;
+    right: 0;
+    height: 0;
+    border-top: 1px solid @color-border;
+    // color: #d9d9d9;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+  }
+
+  &:first-child:before {
+    border-top: none;
+  }
+}
+
+.ci-list-cell-body {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+
+  .title, .sub-title {
+    display: block;
+    float: left;
+    width: 40%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: normal;
+  }
+
+  .sub-title {
+    float: right;
+    width: 50%;
+    text-align: right;
+    color: @color-gray-light;
+  }
+}
+
+.ci-list-cell-accessory {
+  margin-left: 0.5em;
+  text-align: center;
+  color: @color-gray-light;
+}
+
+
+.ci-list-cell {
+  .am-form-group {
+    margin-bottom: 0;
+
+    label {
+      margin: 0;
+    }
+  }
+}
+
+.ci-list-checkbox label, .ci-list-radio label {
+  display: block;
+  min-height: 20px;
+  padding-left: 20px;
+  margin-bottom: 0;
+  font-weight: 400;
+  cursor: pointer;
+
+  input[type=checkbox], input[type=radio] {
+    position: absolute;
+    margin-left: -20px;
+  }
+}

@@ -21,7 +21,11 @@ module.exports = {
     extensions: ['', '.js', '.vue'],
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
-      'vue': 'vue/dist/vue'
+      'vue$': 'vue/dist/vue'
+      // 'cafeinit-vue': path.resolve(__dirname, '../dist/js/cafeinit-vue.amd.js'),
+      // 'cafeinit-vue-amazeui': path.resolve(__dirname, '../dist/js/cafeinit-vue-amazeui.amd.js'),
+      'cafeinit-vue-bootstrap': path.resolve(__dirname, '../dist/js/cafeinit-vue-bootstrap.amd.js'),
+      // 'cafeinit.css': path.resolve(__dirname, '../dist/css/cafeinit.css')
     }
   },
 
@@ -66,10 +70,35 @@ module.exports = {
     ]
   },
 
+  devServer: {
+    historyApiFallback: true,
+    noInfo: true
+  },
+
   // if you are using babel-loader directly then
   // the babel config block becomes required.
   babel: {
     presets: ['es2015'],
     plugins: ['transform-runtime']
-  },
+  }
+}
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports.devtool = '#source-map'
+  // http://vue-loader.vuejs.org/en/workflow/production.html
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true
+    })
+  ])
 }

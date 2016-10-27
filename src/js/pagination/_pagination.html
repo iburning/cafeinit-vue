@@ -1,0 +1,26 @@
+<ul class="{{ns}}pagination">
+  <li v-if="isShowLast">
+    <a href="javascript:;" v-on:click="itemOnClick(1)">
+      <i class="fa fa-angle-double-left"></i>
+    </a>
+  </li>
+  <li v-if="isShowNext">
+    <a href="javascript:;" v-on:click="itemOnClick(prevPage)">
+      <i class="fa fa-angle-left"></i>
+    </a>
+  </li>
+  <li v-for="page in pages"
+    v-bind:class="[(page === currentPage) ? (ns + 'active') : '']">
+    <a href="javascript:;" v-on:click="itemOnClick(page)">{{page}}</a>
+  </li>
+  <li v-if="isShowNext">
+    <a href="javascript:;" v-on:click="itemOnClick(nextPage)">
+      <i class="fa fa-angle-right"></i>
+    </a>
+  </li>
+  <li v-if="isShowLast">
+    <a href="javascript:;" v-on:click="itemOnClick(totalPage)">
+      <i class="fa fa-angle-double-right"></i>
+    </a>
+  </li>
+</ul>

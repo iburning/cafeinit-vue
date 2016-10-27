@@ -1,0 +1,15 @@
+<a
+  v-bind:class="[
+    ns + 'btn',
+    style ? (ns + 'btn-' + style) : '',
+    size ? (ns + 'btn-' + size) : '',
+    block ? (ns + 'btn-block') : '',
+    radius ? (ns + 'btn-radius') : '',
+    round ? (ns + 'btn-round') : '',
+    (status === 'active') ? (ns + 'active') : ''
+  ]"
+  v-bind:disabled="status === 'disabled' || status === 'loading'"
+  v-link="link">
+  <span class="am-icon-circle-o-notch am-icon-spin" v-if="status === 'loading'"></span>
+  <slot>This is a button</slot>
+</a>

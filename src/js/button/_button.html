@@ -1,0 +1,18 @@
+<button type="{{type}}"
+  v-bind:class="[
+    ns + 'btn',
+    style ? (ns + 'btn-' + style) : '',
+    size ? (ns + 'btn-' + size) : '',
+    block ? (ns + 'btn-block') : '',
+    radius ? (ns + 'btn-radius') : '',
+    round ? (ns + 'btn-round') : '',
+    (status === 'active') ? (ns + 'active') : ''
+  ]"
+  v-bind:disabled="status === 'disabled' || status === 'loading'">
+  <i v-if="status === 'loading'"
+    v-bind:class="{
+      'fa fa-circle-o-notch ci-icon-spin': ns === '',
+      'am-icon-circle-o-notch am-icon-spin': ns === 'am-'
+    }"></i>
+  <slot>This is a button</slot>
+</button>

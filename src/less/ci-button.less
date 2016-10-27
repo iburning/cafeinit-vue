@@ -1,0 +1,118 @@
+/**
+ * @fileOverview ci-button
+ * @author: burning <www.cafeinit.com>
+ * @date: 2016-09-12
+ */
+
+
+.button-variant(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+
+  &:focus,
+  &.focus {
+    color: @color;
+    background-color: darken(@background, 10%);
+        border-color: darken(@border, 25%);
+  }
+  &:hover {
+    color: @color;
+    background-color: darken(@background, 10%);
+        border-color: darken(@border, 12%);
+  }
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    color: @color;
+    background-color: darken(@background, 10%);
+        border-color: darken(@border, 12%);
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: @color;
+      background-color: darken(@background, 17%);
+          border-color: darken(@border, 25%);
+    }
+  }
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: @background;
+          border-color: @border;
+    }
+  }
+
+  .badge {
+    color: @background;
+    background-color: @color;
+  }
+}
+
+
+.btn-primary {
+  .button-variant(@color-white; @color-primary; @color-primary)
+}
+
+.am-btn-primary {
+  .button-variant(@color-white; @color-primary; @color-primary)
+}
+
+
+.am-btn-primary.am-disabled,
+.am-btn-primary.am-disabled.am-active,
+.am-btn-primary.am-disabled:active,
+.am-btn-primary.am-disabled:focus,
+.am-btn-primary.am-disabled:hover,
+.am-btn-primary[disabled],
+.am-btn-primary[disabled].am-active,
+.am-btn-primary[disabled]:active,
+.am-btn-primary[disabled]:focus,
+.am-btn-primary[disabled]:hover,
+fieldset[disabled] .am-btn-primary,
+fieldset[disabled] .am-btn-primary.am-active,
+fieldset[disabled] .am-btn-primary:active,
+fieldset[disabled] .am-btn-primary:focus,
+fieldset[disabled] .am-btn-primary:hover {
+  background-color: lighten(@color-primary, 10%);
+  border-color: lighten(@color-primary, 10%);
+}
+
+
+@-webkit-keyframes icon-spin {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes icon-spin {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.am-icon-spin {
+  -webkit-animation: icon-spin 2s infinite linear;
+  animation: icon-spin 2s infinite linear
+}

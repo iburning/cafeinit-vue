@@ -1,0 +1,11 @@
+<div class="{{ns}}form-group">
+  <label class="{{ns}}control-label"
+    v-if="title"
+    v-bind:style="{width: titleWidth}">{{title}}</label>
+  <input class="{{ns}}form-control"
+    v-model="model"
+    v-bind:type="type"
+    v-bind:name="name"
+    v-bind:placeholder="placeholder"
+    v-bind:disabled="disabled" />
+</div>

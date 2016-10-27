@@ -1,0 +1,67 @@
+/**
+ * @fileOverview ci-block
+ * @author: burning <www.cafeinit.com>
+ * @date: 2016-08-20
+ */
+
+.ci-block {
+  .clearfix();
+  position: relative;
+  background-color: @color-white;
+  padding: 0;
+  margin: 0 0 1em 0;
+  border-top: 1px solid @color-border;
+  border-bottom: 1px solid @color-border;
+}
+
+.ci-block-hd, .ci-block-bd, .ci-block-ft {
+  .clearfix();
+  position: relative;
+  min-height: @base-height;
+  padding: 10px 15px;
+}
+
+
+.ci-block-hd {
+  border-bottom: 1px solid @color-border;
+
+  h1, h2, h3, h4 {
+    float: left;
+    margin: 0;
+    font-weight: normal;
+  }
+
+  // h1 {
+  //   font-size: @font-size-large;
+  // }
+  //
+  // h2 {
+  //   font-size: @font-size-big;
+  // }
+  //
+  // h3, h4 {
+  //   font-size: @font-size-normal;
+  // }
+
+  >a {
+    float: right;
+  }
+}
+
+
+.ci-block {
+  .ci-list {
+    margin: 0;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .ci-list-cell {
+    padding-left: 0;
+    padding-right: 0;
+
+    &::before {
+      left: 0;
+    }
+  }
+}

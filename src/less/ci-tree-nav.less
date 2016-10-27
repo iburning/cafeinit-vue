@@ -1,0 +1,65 @@
+/**
+ * @fileOverview ci-tree-nav
+ * @author: burning <www.cafeinit.com>
+ * @date: 2016-09-14
+ */
+
+
+.ci-tree-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1em 0;
+  border-top: 1px solid @color-border;
+  background-color: @color-background;
+}
+
+.ci-tree-nav-item {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid @color-border;
+
+  a {
+    display: block;
+    padding: 5px 10px;
+    color: @color-gray-dark;
+
+    &:hover {
+      color: @color-primary;
+      text-decoration: none;
+    }
+  }
+
+  &.ci-active {
+    background-color: @color-primary;
+
+    >a {
+      color: @color-white;
+    }
+  }
+
+  // 二级菜单
+  >.ci-tree-nav {
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid @color-border;
+
+    .ci-tree-nav-item {
+      background-color: lighten(@color-gray-lighter, 2.5%);
+
+      >a {
+        padding: 5px 20px;
+      }
+
+      &.ci-active {
+        >a {
+          color: @color-primary;
+        }
+      }
+    }
+
+    .ci-tree-nav-item:last-child {
+      border-bottom: none;
+    }
+  }
+}

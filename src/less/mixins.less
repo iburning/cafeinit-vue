@@ -1,0 +1,17 @@
+// =============================================================================
+// Box Model
+// =============================================================================
+
+// Micro clear fix
+// via: http://nicolasgallagher.com/micro-clearfix-hack/
+.clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}

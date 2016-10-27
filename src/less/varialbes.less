@@ -1,0 +1,91 @@
+/**
+ * @fileOverview varialbes
+ * @author: burning <www.cafeinit.com>
+ * @date: 2016-09-12
+ */
+
+
+@base-height: 44px;
+
+// Global variables
+// =============================================================================
+
+
+// Black - White - Gray
+// -----------------------------------------------------------------------------
+
+@color-black:           #000;
+@color-white:           #fff;
+
+@color-gray-darker:     lighten(@color-black, 13.5%); // #222
+@color-gray-dark:       lighten(@color-black, 20%);   // #333
+@color-gray:            lighten(@color-black, 33.5%); // #555
+@color-gray-light:      lighten(@color-black, 60%);   // #999
+@color-gray-lighter:    lighten(@color-black, 93.5%); // #eee
+
+
+@color-background:      @color-white;
+@color-border:          #ddd;
+@color-primary:         #52b888;
+
+
+@font-size-large:   24px;
+@font-size-bigger:  20px;
+@font-size-big:     18px;
+@font-size-normal:  16px;
+@font-size-small:   14px;
+@font-size-smaller: 12px;
+@font-size-tiny:    10px;
+
+
+// Responsive variables
+// =============================================================================
+
+// Breakpoint
+// -----------------------------------------------------------------------------
+
+@breakpoint-small:            640px;  // 0 - 640px
+@breakpoint-medium:           1024px; // 641 - 1024px
+@breakpoint-large:            1280px; // 1025 - 1280px
+@breakpoint-xl:               1440px; // 1281 - 1440px
+@breakpoint-xxl:              1920px; // 1441 -1920px
+
+@breakpoint-small-max:        @breakpoint-small;
+@breakpoint-md:               @breakpoint-small-max; // legacy var, DO NOT USE IT
+
+@breakpoint-medium-min:       (@breakpoint-small + 1);
+@breakpoint-medium-max:       @breakpoint-medium;
+
+@breakpoint-large-min:        (@breakpoint-medium + 1);
+@breakpoint-large-max:        @breakpoint-large;
+
+@breakpoint-xl-min:           (@breakpoint-large + 1);
+@breakpoint-xl-max:           @breakpoint-xl;
+
+@breakpoint-xxl-min:          (@breakpoint-xl + 1);
+@breakpoint-xxl-max:          @breakpoint-xxl;
+
+
+// Media Queries
+// NOTE '~' in the beginning - media query must be escaped
+// -----------------------------------------------------------------------------
+
+@screen:        ~"only screen";
+
+@landscape:     ~"@{screen} and (orientation: landscape)";
+@portrait:      ~"@{screen} and (orientation: portrait)";
+
+@small-up:      ~"@{screen}";
+@small-only:    ~"@{screen} and (max-width: @{breakpoint-small-max})";
+
+@medium-up:     ~"@{screen} and (min-width:@{breakpoint-medium-min})";
+@medium-only:   ~"@{screen} and (min-width:@{breakpoint-medium-min}) and (max-width:@{breakpoint-medium-max})";
+
+@large-up:      ~"@{screen} and (min-width:@{breakpoint-large-min})";
+@large-only:    ~"@{screen} and (min-width:@{breakpoint-large-min}) and (max-width:@{breakpoint-large-max})";
+
+@xl-up:         ~"@{screen} and (min-width:@{breakpoint-xl-min})";
+@xl-only:       ~"@{screen} and (min-width:@{breakpoint-xl-min}) and (max-width:@{breakpoint-xl-max})";
+
+@xxl-up:        ~"@{screen} and (min-width:@{breakpoint-xxl-min})";
+@xxl-only:      ~"@{screen} and (min-width:@{breakpoint-xxl-min}) and (max-width:@{breakpoint-xxl-max})";
