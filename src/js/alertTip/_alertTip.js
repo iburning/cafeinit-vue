@@ -1,7 +1,7 @@
 /**
- * @fileOverview alert tip
+ * @fileoverview alert tip
  * @author: burning <www.cafeinit.com>
- * @date: 2016-09-18
+ * @version: 2016-09-18
  */
 
 export default {

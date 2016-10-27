@@ -1,7 +1,7 @@
 /**
- * @fileOverview main for amazeui
+ * @fileoverview main for amazeui
  * @author: burning <www.cafeinit.com>
- * @date: 2016-09-12
+ * @version: 2016-09-12
  */
 
 import CIBlock from './block/CIBlock.vue'

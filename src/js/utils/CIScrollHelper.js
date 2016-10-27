@@ -1,8 +1,8 @@
 
 /**
- * @fileOverview CIScrollHelper
+ * @fileoverview CIScrollHelper
  * @author: burning <www.cafeinit.com>
- * @date: 2016-08-22
+ * @version: 2016-08-22
  */
 
 function CIScrollHelper(opt) {

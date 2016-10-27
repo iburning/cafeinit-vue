@@ -1,7 +1,7 @@
 /**
- * @fileOverview pagination
+ * @fileoverview pagination
  * @author: burning <www.cafeinit.com>
- * @date: 2016-09-11
+ * @version: 2016-09-11
  */
 
 export default {

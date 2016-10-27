@@ -1,7 +1,7 @@
 /**
- * @fileOverview main
+ * @fileoverview main
  * @author: burning <www.cafeinit.com>
- * @date: 2016-08-26
+ * @version: 2016-08-26
  */
 
 import CIBlock from './block/CIBlock.vue'

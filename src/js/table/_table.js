@@ -1,7 +1,7 @@
 /**
- * @fileOverview table
+ * @fileoverview table
  * @author: burning <www.cafeinit.com>
- * @date: 2016-09-12
+ * @version: 2016-09-12
  */
 
 export default {
