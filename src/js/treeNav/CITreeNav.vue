@@ -1,12 +1,12 @@
 <template>
   <ul class="ci-tree-nav">
-    <li class="ci-tree-nav-item" v-for="(index, item) in items"
+    <li class="ci-tree-nav-item" v-for="(item, index) in items"
       v-bind:class="[item.className, {'ci-active': activeIndex === index}]"
       v-on:click="clickItem(index, item)">
-      <a v-link="item.link">
-        <i v-if="item.icon" class="fa fa-{{item.icon}}"></i>
+      <router-link to="item.to">
+        <i v-if="item.icon" v-bind:class="[fa, 'fa-' + item.icon]"></i>
         {{item.text}}
-      </a>
+      </router-link>
       <ci-tree-nav class="ci-tree-nav-sub"
         v-if="item.subItems && item.subItems.length"
         v-bind:active-index="item.subItemsActiveIndex"
@@ -18,6 +18,8 @@
 
 <script>
 export default {
+  name: 'ci-tree-vue',
+
   props: {
     items: {
       type: Array,
@@ -30,10 +32,6 @@ export default {
       type: Number,
       default: -1
     }
-  },
-
-  ready() {
-    // ...
   },
 
   methods: {

@@ -28,8 +28,8 @@ import CILoading from './loading/CILoading'
 
 // import CIPagination from './pagination/BSPagination'
 //
-// import CITabBar from './tabView/CITabBar'
-// import CITreeNav from './treeNav/CITreeNav'
+import CITabBar from './tabView/CITabBar'
+import CITreeNav from './treeNav/CITreeNav'
 //
 // import CITable from './table/BSTable'
 //
@@ -75,14 +75,14 @@ const CIomponents = {
   'ci-list-cell': CIListCell,
   // 'ci-list-checkbox': CIListCheckbox,
   // 'ci-list-radio': CIListRadio,
-  
+
   'ci-loading': CILoading,
 
   // 'ci-pagination': CIPagination,
   //
-  // 'ci-tab-bar': CITabBar,
+  'ci-tab-bar': CITabBar,
   // 'ci-table': CITable,
-  // 'ci-tree-nav': CITreeNav,
+  'ci-tree-nav': CITreeNav,
   //
   // /* for form */
   'ci-button': CIButton,

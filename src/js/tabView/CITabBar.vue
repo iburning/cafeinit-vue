@@ -1,19 +1,20 @@
 <template>
   <div class="ci-tab-bar">
     <ul class="ci-tab-bar-items">
-      <li class="ci-tab-bar-item" v-for="(index, item) in items"
-        v-bind:class="[item.className, {'ci-selected': selectedIndex == index}]"
+      <li class="ci-tab-bar-item" v-for="(item, index) in items"
+        v-bind:class="[item.className, {'ci-selected': selectedIndex === index}]"
         v-on:click="clickItem(index, item)">
-        <a v-if="item.path" v-link="{path: item.path}">{{item.text}}</a>
-        <a v-else href="javascritp:;">{{item.text}}</a>
+        <router-link v-if="item.to" v-bind:to="item.to">{{item.text}}</router-link>
+        <span v-else>{{item.text}}</span>
       </li>
     </ul>
   </div>
 </template>
 
-
 <script>
 export default {
+  name: 'ci-tab-bar',
+
   props: {
     items: {
       type: Array,
@@ -22,20 +23,22 @@ export default {
       }
     },
 
-    selectedIndex: {
+    index: {
       type: Number,
       default: 0
     }
   },
 
-  ready() {
-    // ...
+  data() {
+    return {
+      selectedIndex: this.index
+    }
   },
 
   methods: {
     clickItem(index, item) {
       this.selectedIndex = index
-      this.$dispatch('click-item', index, item)
+      this.$emit('click-item', index, item)
     }
   }
 }

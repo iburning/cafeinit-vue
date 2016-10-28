@@ -1,7 +1,7 @@
 <ol v-bind:class="ns + 'breadcrumb'">
-  <template v-for="(index, item) in items">
-    <li v-bind:class="[(index === items.length - 1) ? (ns + 'actived') : '']">
-      <a v-if="item.link" v-link="item.link">{{item.title}}</a>
+  <template v-for="(item, index) in items">
+    <li v-bind:class="(index === items.length - 1) ? (ns + 'actived') : ''">
+      <router-link v-if="item.to" to="item.to">{{item.title}}</router-link>
       <span v-else>{{item.title}}</span>
     </li>
   </template>

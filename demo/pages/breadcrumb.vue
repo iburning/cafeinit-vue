@@ -7,8 +7,8 @@
     </ci-breadcrumb>
 
     <ci-breadcrumb v-bind:items="[
-        { title: 'Home', link: { path: '/home' } },
-        { title: 'Items', link: { path: '/Items' } }
+        { title: 'Home', to: '/home' },
+        { title: 'Items', to: '/Items' }
       ]">
     </ci-breadcrumb>
   </div>

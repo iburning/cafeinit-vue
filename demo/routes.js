@@ -14,6 +14,7 @@ import Buttons from './pages/buttons'
 import Gallery from './pages/gallery'
 import Grid from './pages/grid'
 import List from './pages/list'
+import TabBar from './pages/tabBar'
 
 export default [
   { path: '/', component: Index },
@@ -23,5 +24,6 @@ export default [
   { path: '/buttons', component: Buttons },
   { path: '/gallery', component: Gallery },
   { path: '/grid', component: Grid },
-  { path: '/list', component: List }
+  { path: '/list', component: List },
+  { path: '/tab-bar', component: TabBar }
 ]
