@@ -4,54 +4,12 @@
  * @version: 2016-10-27
  */
 
-export default {
-  name: 'ci-link-button',
+import config from './_button'
 
-  props: {
-    ns: {
-      type: String,
-      default: ''
-    },
-
-    style: {
-      type: String,
-      default: 'default'
-    },
-
-    size: {
-      type: String,
-      default: ''
-    },
-
-    block: {
-      type: String,
-      default: ''
-    },
-
-    radius: {
-      type: String,
-      default: ''
-    },
-
-    round: {
-      type: String,
-      default: ''
-    },
-
-    status: {
-      type: String,
-      default: ''
-    },
-
-    to: {
-      type: String,
-      default: ''
-    }
-  },
-
-  methods: {
-    click() {
-      this.$emit('click')
-    }
-  }
+config.name = 'ci-link-button'
+config.props.to = {
+  type: String,
+  default: ''
 }
+
+export default config

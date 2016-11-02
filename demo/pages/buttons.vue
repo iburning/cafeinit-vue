@@ -5,9 +5,9 @@
       <ci-block-body>
         <ci-link-button class="more" to="/home">more</ci-link-button>
         <ci-link-button class="my-class" to="/home">Href Button</ci-link-button>
-        <ci-link-button v-on:click="buttonClick">Event Button</ci-link-button>
+        <ci-link-button v-on:click="click">Event Button</ci-link-button>
 
-        <ci-button type="submit">Submit Button</ci-button>
+        <ci-button type="submit" v-on:click="submit">Submit Button</ci-button>
 
         <ci-button>Default Button</ci-button>
         <ci-button tag-name="a">An a Button</ci-button>
@@ -57,8 +57,12 @@ export default {
   name: 'page-buttons',
 
   methods: {
-    buttonClick: function (val) {
-      console.log('buttonClick', val);
+    click: function (val) {
+      console.log('click', val);
+    },
+
+    submit: function (obj) {
+      console.log('submit', obj);
     }
   }
 }

@@ -1,15 +1,14 @@
-<router-link
-  v-bind:class="[
-    ns + 'btn',
-    style ? (ns + 'btn-' + style) : '',
-    size ? (ns + 'btn-' + size) : '',
-    block ? (ns + 'btn-block') : '',
-    radius ? (ns + 'btn-radius') : '',
-    round ? (ns + 'btn-round') : '',
-    (status === 'active') ? (ns + 'active') : ''
-  ]"
+<router-link v-if="to"
+  v-bind:class="className"
   v-bind:disabled="status === 'disabled' || status === 'loading'"
   v-bind:to="to">
-  <span class="am-icon-circle-o-notch am-icon-spin" v-if="status === 'loading'"></span>
-  <slot>This is a button</slot>
+  <span v-if="status === 'loading'" v-bind:class="loadingIconClassName"></span>
+  <slot>Link button</slot>
 </router-link>
+<a v-else
+  v-bind:class="className"
+  v-bind:disabled="status === 'disabled' || status === 'loading'"
+  v-on:click="click">
+  <span v-if="status === 'loading'" v-bind:class="loadingIconClassName"></span>
+  <slot>Link button</slot>
+</a>
