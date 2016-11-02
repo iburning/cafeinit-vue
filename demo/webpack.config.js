@@ -8,7 +8,8 @@ var path = require('path')
 
 module.exports = {
   entry: {
-    'main': path.resolve(__dirname, './main.js')
+    'main': path.resolve(__dirname, './main.js'),
+    'main-for-amazeui': path.resolve(__dirname, './mainForAmazeUI.js')
   },
 
   output: {
@@ -23,7 +24,7 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue',
       // 'cafeinit-vue': path.resolve(__dirname, '../dist/js/cafeinit-vue.amd.js'),
-      // 'cafeinit-vue-amazeui': path.resolve(__dirname, '../dist/js/cafeinit-vue-amazeui.amd.js'),
+      'cafeinit-vue-amazeui': path.resolve(__dirname, '../dist/js/cafeinit-vue-amazeui.amd.js'),
       'cafeinit-vue-bootstrap': path.resolve(__dirname, '../dist/js/cafeinit-vue-bootstrap.amd.js'),
       'cafeinit-vue.css': path.resolve(__dirname, '../dist/css/cafeinit.css')
     }

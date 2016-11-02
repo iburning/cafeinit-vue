@@ -55,7 +55,7 @@ import CILinkButton from './button/BSLinkButton'
 import CIScrollHelper from './utils/CIScrollHelper'
 
 
-const CIomponents = {
+const CIComponents = {
   'ci-alert-tip': CIAlertTip,
 
   'ci-block': CIBlock,
@@ -107,8 +107,8 @@ module.exports = {
   ver: '1.0.0',
 
   components: (Vue) => {
-    for (let name in CIomponents) {
-      Vue.component(name, CIomponents[name])
+    for (let name in CIComponents) {
+      Vue.component(name, CIComponents[name])
     }
   },
 
