@@ -10,25 +10,10 @@
   </head>
 
   <body>
-    <style>
-      #app {
-        width: 75%;
-        margin: 0 auto;
-        text-align: center;
-      }
-    </style>
-
-    <h1 style="padding: 10px;font-size: 12px;">CafeInit Vue</h1>
+    <h1>CafeInit Vue</h1>
     <div id="app">
-      <p>
-        <a class="btn btn-primary btn-block" href="cafeinit.html">CafeInit</a>
-      </p>
-      <p>
-        <a class="btn btn-primary btn-block" href="bootstrap.html">Bootstrap</a>
-      </p>
-      <p>
-        <a class="btn btn-primary btn-block" href="amazeui.html">AmazeUI</a>
-      </p>
+      <router-view></router-view>
     </div>
+    <script src="/js/main.bundle.js"></script>
   </body>
 </html>

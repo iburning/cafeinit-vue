@@ -1,7 +1,7 @@
 /**
  * @fileoverview main for amazeui
  * @author: burning <www.cafeinit.com>
- * @version: 2016-09-28
+ * @version: 2016-11-07
  */
 
 import CIBlock from './block/CIBlock.vue'
@@ -44,9 +44,9 @@ import CILinkButton from './button/AMLinkButton.vue'
 
 
 // /* for modal */
-// import CIModal from './modal/CIModal.vue'
+import CIModal from './modal/AMModal.vue'
 // import CIActions from './modal/CIActions.vue'
-// import CIAlert from './modal/CIAlert.vue'
+import CIAlert from './modal/AMAlert.vue'
 // import CIConfirm from './modal/CIConfirm.vue'
 
 
@@ -93,9 +93,9 @@ const CIComponents = {
   // 'ci-select': CISelect,
   //
   // /* form modal */
-  // 'ci-modal': CIModal,
+  'ci-modal': CIModal,
   // 'ci-actions': CIActions,
-  // 'ci-alert': CIAlert,
+  'ci-alert': CIAlert,
   // 'ci-confirm': CIConfirm
 }
 

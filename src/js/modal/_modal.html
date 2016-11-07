@@ -1,0 +1,22 @@
+<div v-show="xIsShow">
+  <div tabindex="-1"
+    v-bind:class="[
+      ns + 'modal',
+      isShow ? (ns + 'modal-active') : '',
+      size ? (ns + 'modal-' + size) : ''
+    ]"
+    v-bind:style="{'margin-top': marginTop + 'px'}">
+    <div v-bind:class="ns + 'modal-dialog'">
+      <slot name="header"></slot>
+      <slot name="body"></slot>
+      <slot name="footer"></slot>
+    </div>
+  </div>
+
+  <div v-bind:class="[
+      ns + 'dimmer',
+      isShow ? (ns + 'active') : ''
+    ]"
+    v-on:click="closeViaDimmer"
+    transition="modal-fade"></div>
+</div>

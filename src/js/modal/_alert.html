@@ -1,0 +1,23 @@
+<div v-show="isActive" v-bind:is-close-via-dimmer="isCloseViaDimmer">
+  <div tabindex="-1"
+    v-bind:class="[
+      ns + 'modal',
+      isActive ? (ns + 'modal-active') : '',
+      size ? (ns + 'modal-' + size) : ''
+    ]"
+    v-on:click="closeViaDimmer">
+    <div v-bind:class="ns + 'modal-dialog'" v-on:click="onClick">
+      <div class="am-modal-hd" slot="header" v-if="title">{{title}}</div>
+      <div class="am-modal-bd" slot="body"><slot>{{content}}</slot></div>
+      <div class="am-modal-footer" slot="footer">
+        <span class="am-modal-btn" v-on:click="close">{{okText}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div v-bind:class="[
+      ns + 'dimmer',
+      isActive ? (ns + 'active') : ''
+    ]"
+    transition="modal-fade"></div>
+</div>
