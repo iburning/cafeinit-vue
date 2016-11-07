@@ -4,7 +4,7 @@
       <ci-link-button style="primary" block="block" v-on:click="isShowModal = true">Show Modal</ci-link-button>
       <ci-link-button style="primary" block="block" v-on:click="isShowAlert = true">Show Alert</ci-link-button>
       <ci-link-button style="primary" block="block" v-on:click="isShowConfirm = true">Show Confirm</ci-link-button>
-
+      <ci-link-button style="primary" block="block" v-on:click="isShowActions = true">Show Actions</ci-link-button>
     </div>
 
 
@@ -17,6 +17,16 @@
 
     <ci-confirm v-bind:is-show="isShowConfirm"
       v-on:ok="onConfirmOK" v-on:cancel="onConfirmCancel">Are you happy?</ci-confirm>
+
+    <ci-actions v-bind:is-show="isShowActions"
+      v-bind:items="[
+        { className: 'btn-shares', text: 'Shares' },
+        { className: 'btn-items', text: 'Items' },
+        { className: 'btn-friends', text: 'Friends' }
+      ]"
+      cancel-text="Cancel"
+      v-on:click-item="actionsOnClickItem"
+      v-on:cancel="actionsOnCancel"></ci-actions>
   </div>
 </template>
 
@@ -27,7 +37,8 @@ export default {
     return {
       isShowModal: false,
       isShowAlert: false,
-      isShowConfirm: false
+      isShowConfirm: false,
+      isShowActions: false
     }
   },
 
@@ -45,6 +56,16 @@ export default {
     onConfirmCancel() {
       console.log('onConfirmCancel')
       this.isShowConfirm = false
+    },
+
+    actionsOnClickItem(index, item) {
+      console.log('actionsOnClickItem', index, item)
+      this.isShowActions = false
+    },
+
+    actionsOnCancel(sender) {
+      console.log('actionsOnCancel', sender)
+      this.isShowActions = false
     }
   }
 }

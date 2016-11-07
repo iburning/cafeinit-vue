@@ -45,7 +45,7 @@ import CILinkButton from './button/AMLinkButton.vue'
 
 // /* for modal */
 import CIModal from './modal/AMModal.vue'
-// import CIActions from './modal/CIActions.vue'
+import CIActions from './modal/AMActions.vue'
 import CIAlert from './modal/AMAlert.vue'
 import CIConfirm from './modal/AMConfirm.vue'
 
@@ -94,7 +94,7 @@ const CIComponents = {
   //
   // /* form modal */
   'ci-modal': CIModal,
-  // 'ci-actions': CIActions,
+  'ci-actions': CIActions,
   'ci-alert': CIAlert,
   'ci-confirm': CIConfirm
 }
