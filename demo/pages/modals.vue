@@ -2,7 +2,9 @@
   <div id="modals">
     <div class="ci-btn-area">
       <ci-link-button style="primary" block="block" v-on:click="isShowModal = true">Show Modal</ci-link-button>
-      <ci-link-button style="primary" block="block" v-on:click="isShowAlert = true">{{isShowAlert}}</ci-link-button>
+      <ci-link-button style="primary" block="block" v-on:click="isShowAlert = true">Show Alert</ci-link-button>
+      <ci-link-button style="primary" block="block" v-on:click="isShowConfirm = true">Show Confirm</ci-link-button>
+
     </div>
 
 
@@ -11,16 +13,10 @@
       <div slot="body">Modal Content</div>
     </ci-modal>
 
-    <!-- <div class="am-modal am-modal-no-btn am-modal-active" tabindex="-1" style="display: block;">
-      <div class="am-modal-dialog">
-        <div class="am-modal-hd">Modal 标题</div>
-        <div class="am-modal-bd">
-          Modal 内容。本 Modal 无法通过遮罩层关闭
-        </div>
-      </div>
-    </div> -->
-
     <ci-alert v-bind:is-show="isShowAlert" v-on:close="onCloseAlert">Alert Content</ci-alert>
+
+    <ci-confirm v-bind:is-show="isShowConfirm"
+      v-on:ok="onConfirmOK" v-on:cancel="onConfirmCancel">Are you happy?</ci-confirm>
   </div>
 </template>
 
@@ -30,7 +26,8 @@ export default {
   data() {
     return {
       isShowModal: false,
-      isShowAlert: false
+      isShowAlert: false,
+      isShowConfirm: false
     }
   },
 
@@ -38,6 +35,16 @@ export default {
     onCloseAlert(sender) {
       console.log('alertOnClose', sender)
       this.isShowAlert = false
+    },
+
+    onConfirmOK() {
+      console.log('onConfirmOK')
+      this.isShowConfirm = false
+    },
+
+    onConfirmCancel() {
+      console.log('onConfirmCancel')
+      this.isShowConfirm = false
     }
   }
 }

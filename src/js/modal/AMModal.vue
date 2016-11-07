@@ -3,13 +3,13 @@
     <div tabindex="-1"
       v-bind:class="[
         'am-modal',
-        'am-modal-no-btn',
+        isShowButton ? '' : 'am-modal-no-btn',
         isActive ? 'am-modal-active' : '',
         size ? ('am-modal-' + size) : ''
       ]"
       v-on:click="closeViaDimmer">
       <div class="am-modal-dialog" v-on:click="onClick">
-        <div class="am-modal-bd"><slot></slot></div>
+        <slot></slot>
       </div>
     </div>
 
@@ -32,6 +32,11 @@ export default {
     isCloseViaDimmer: {     // 是否通过点击遮罩层关闭模态框，默认为true
       type: Boolean,
       default: true
+    },
+
+    isShowButton: {
+      type: Boolean,
+      default: false
     },
 
     size: {
@@ -62,6 +67,7 @@ export default {
     },
 
     close() {
+      // console.log('modal close')
       this.isActive = false
       this.$emit('close', 'button')
     },
