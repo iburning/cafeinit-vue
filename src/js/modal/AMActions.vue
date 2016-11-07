@@ -13,15 +13,15 @@
               (selectedIndex == index) ? 'am-active': ''
             ]"
             v-on:click="onClickItem(index, item)">
-            <a v-if="item.path" v-link="{path: item.path}">{{item.text}}</a>
+            <router-link v-if="item.to" v-bind:to="item.to">{{item.text}}</router-link>
             <a v-else href="javascritp:;">{{item.text}}</a>
           </li>
         </ul>
       </div>
 
       <div class="am-modal-actions-group">
-        <button class="am-btn am-btn-secondary am-btn-block"
-          v-on:click="close">{{cancelText}}</button>
+        <a class="am-btn am-btn-secondary am-btn-block" href="javasrcript:;"
+          v-on:click="close">{{cancelText}}</a>
       </div>
     </div>
 

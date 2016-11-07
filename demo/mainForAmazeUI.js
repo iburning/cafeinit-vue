@@ -14,6 +14,7 @@ Vue.use(VueRouter)
 Vue.use(CafeinitVue.components)
 
 const router = new VueRouter({
+  // mode: 'history',
   routes // （缩写）相当于 routes: routes
 })
 

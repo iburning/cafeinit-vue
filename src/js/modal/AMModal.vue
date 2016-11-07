@@ -23,6 +23,8 @@
 
 <script>
 export default {
+  name: 'ci-modal',
+
   props: {
     isShow: {
       type: Boolean,

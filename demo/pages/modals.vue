@@ -20,6 +20,7 @@
 
     <ci-actions v-bind:is-show="isShowActions"
       v-bind:items="[
+        { className: 'btn-home', text: 'Home', to: '/home' },
         { className: 'btn-shares', text: 'Shares' },
         { className: 'btn-items', text: 'Items' },
         { className: 'btn-friends', text: 'Friends' }

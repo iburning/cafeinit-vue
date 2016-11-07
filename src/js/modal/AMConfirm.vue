@@ -14,6 +14,8 @@
 
 <script>
 export default {
+  name: 'ci-confirm',
+
   props: {
     isShow: {
       type: Boolean,
