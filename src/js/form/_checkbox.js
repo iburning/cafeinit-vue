@@ -30,7 +30,13 @@ export default {
 
   data() {
     return {
-      model: []
+      model: this.value
+    }
+  },
+
+  watch: {
+    value(val) {
+      this.model = this.value
     }
   },
 

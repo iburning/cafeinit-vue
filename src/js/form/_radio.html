@@ -1,21 +1,23 @@
-<div class="{{ns}}form-group">
-  <label class="{{ns}}control-label" v-if="title"
+<div v-bind:class="ns + 'form-group'">
+  <label v-if="title"
+    v-bind:class="ns + 'control-label'"
     v-bind:style="{width: titleWidth}">{{title}}</label>
   <template v-if="inline">
-    <label class="radio-inline" v-for="item in items">
+    <label v-bind:class="ns + 'radio-inline'" v-for="item in items">
       <input type="radio"
         v-bind:name="name"
         v-bind:value="item.value"
-        v-model="model" /> {{item.title}}
+        v-model="model"
+        v-on:change="updateValue($event.target.value)" /> {{item.title}}
     </label>
   </template>
   <template v-else>
-    <div class="radio" v-for="item in items">
+    <div v-bind:class="ns + 'radio'" v-for="item in items">
       <label>
         <input type="radio"
           v-bind:name="name"
           v-bind:value="item.value"
-          v-model="model" /> {{item.title}}
+          v-model="model"v-on:change="updateValue($event.target.value)" /> {{item.title}}
       </label>
     </div>
   </template>

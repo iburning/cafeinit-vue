@@ -40,27 +40,27 @@
             ]"
             v-model="skills"></ci-checkbox>
 
-          <!-- <ci-checkbox title="技能" name="skills"
+          <ci-checkbox title="技能" name="skills"
             v-bind:items="[
               {title: 'HTML', value: 'html'},
               {title: 'CSS', value: 'css'},
               {title: 'JavaScript', value: 'javascript'}
             ]"
-            v-bind:model="skills"></ci-checkbox> -->
+            v-model="skills"></ci-checkbox>
 
-          <!-- <ci-radio inline="inline" title="性别" title-width="4em" name="gender"
+          <ci-radio title="性别" title-width="4em" name="gender" inline="inline"
             v-bind:items="[
               {title: 'Male', value: 'male'},
               {title: 'Female', value: 'female'}
             ]"
-            v-bind:model.sync="gender"></ci-radio>
+            v-model="gender"></ci-radio>
 
-          <ci-radio title="商家类型" name="type"
+          <ci-radio title="商家类型" name="type" inline="inline"
             v-bind:items="[
               {title: 'Personal', value: '1'},
               {title: 'Bussiness', value: '2'}
             ]"
-            v-bind:model.sync="type"></ci-radio> -->
+            v-model="type"></ci-radio>
         </ci-block-body>
       </ci-block>
 
@@ -93,9 +93,13 @@ export default {
     }
   },
 
+  mounted() {
+    console.log('form mounted')
+  },
+
   methods: {
     save() {
-      console.log('save', this.$data.skills)
+      console.log('save', this.$data)
     }
   }
 }

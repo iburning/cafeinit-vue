@@ -36,7 +36,7 @@ import CITreeNav from './treeNav/CITreeNav'
 import CICheckbox from './form/AMCheckbox.vue'
 import CIForm from './form/AMForm.vue'
 import CIInput from './form/AMInput.vue'
-// import CIRadio from './form/AMRadio.vue'
+import CIRadio from './form/AMRadio.vue'
 // import CISelect from './form/AMSelect.vue'
 
 import CIButton from './button/AMButton.vue'
@@ -89,7 +89,7 @@ const CIComponents = {
   'ci-checkbox': CICheckbox,
   'ci-form': CIForm,
   'ci-input': CIInput,
-  // 'ci-radio': CIRadio,
+  'ci-radio': CIRadio,
   // 'ci-select': CISelect,
   //
   // /* form modal */

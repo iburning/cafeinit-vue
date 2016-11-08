@@ -1,45 +1,47 @@
 /**
  * @fileoverview form radio
  * @author: burning <www.cafeinit.com>
- * @version: 2016-09-11
+ * @version: 2016-11-08
  */
 
 export default {
   props: {
-    ns: {
-      type: String,
-      default: ''
-    },
-
-    model: {
-      type: String,
-      default: '',
-      twoWay: true
-    },
-
-    title: {
-      type: String,
-      default: ''
-    },
-
-    titleWidth: {
-      type: String,
-      default: ''
-    },
-
-    name: {
-      type: String,
-      required: true
-    },
+    ns: String,
+    title: String,
+    titleWidth: String,
+    name: String,
+    inline: String,
 
     items: {
       type: Array,
+      default: function () {
+        return []
+      },
       required: true
     },
 
-    inline: {
+    value: {
       type: String,
       default: ''
+    }
+  },
+
+  data() {
+    return {
+      model: this.value
+    }
+  },
+
+  watch: {
+    value(val) {
+      this.model = this.value
+    }
+  },
+
+  methods: {
+    updateValue: function (value) {
+      // console.log('_radio.updateValue', typeof value, this.model)
+      this.$emit('input', this.model)
     }
   }
 }
