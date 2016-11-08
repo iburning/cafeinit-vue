@@ -77,10 +77,10 @@ export default {
 
   data() {
     return {
-      test: 'TEST',
       email: 'iburning@live.cn',
       password: '',
       category: '1',
+      // skills: 'javascript',
       skills: ['html', 'javascript'],
       gender: 'female',
       type: '1'
@@ -95,7 +95,7 @@ export default {
 
   methods: {
     save() {
-      console.log('save', this.$data.email)
+      console.log('save', this.$data.skills)
     }
   }
 }

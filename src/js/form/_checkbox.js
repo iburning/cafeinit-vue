@@ -1,37 +1,16 @@
 /**
  * @fileoverview form checkbox
  * @author: burning <www.cafeinit.com>
- * @version: 2016-09-11
+ * @version: 2016-11-08
  */
 
 export default {
   props: {
-    ns: {
-      type: String,
-      default: ''
-    },
-
-    model: {
-      type: Array,
-      default: function () {
-        return []
-      }
-    },
-
-    title: {
-      type: String,
-      default: ''
-    },
-
-    titleWidth: {
-      type: String,
-      default: ''
-    },
-
-    name: {
-      type: String,
-      required: true
-    },
+    ns: String,
+    title: String,
+    titleWidth: String,
+    name: String,
+    inline: String,
 
     items: {
       type: Array,
@@ -41,9 +20,24 @@ export default {
       required: true
     },
 
-    inline: {
-      type: String,
-      default: ''
+    value: {
+      type: Array,
+      default: function () {
+        return []
+      }
+    }
+  },
+
+  data() {
+    return {
+      model: []
+    }
+  },
+
+  methods: {
+    updateValue: function (value) {
+      // console.log('_checkbox.updateValue', typeof value, this.model)
+      this.$emit('input', this.model)
     }
   }
 }
