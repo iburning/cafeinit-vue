@@ -1,5 +1,5 @@
 <template>
-  <div class="page-index">
+  <div id="index">
     <ci-list>
       <ci-list-cell accessory="link" to="/grid">
         <strong class="title">Grid</strong>
@@ -55,7 +55,7 @@
         <span class="sub-title">表格</span>
       </ci-list-cell>
 
-      <ci-list-cell accessory="link" to="form'">
+      <ci-list-cell accessory="link" to="/form">
         <strong class="title">Form</strong>
         <span class="sub-title">表单</span>
       </ci-list-cell>
@@ -93,6 +93,6 @@
 
 <script>
 export default {
-  name: 'page-index'
+  name: 'index'
 }
 </script>

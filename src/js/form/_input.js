@@ -1,7 +1,7 @@
 /**
  * @fileoverview form input
  * @author: burning <www.cafeinit.com>
- * @version: 2016-09-11
+ * @version: 2016-11-08
  */
 
 export default {
@@ -9,12 +9,6 @@ export default {
     ns: {
       type: String,
       default: ''
-    },
-
-    model: {
-      type: String,
-      default: '',
-      twoWay: true
     },
 
     title: {
@@ -37,6 +31,11 @@ export default {
       default: ''
     },
 
+    value: {
+      type: String,
+      default: '',
+    },
+
     placeholder: {
       type: String,
       default: ''
@@ -45,6 +44,13 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    }
+  },
+
+  methods: {
+    updateValue: function (value) {
+      this.$refs.input.value = value
+      this.$emit('input', value)
     }
   }
 }

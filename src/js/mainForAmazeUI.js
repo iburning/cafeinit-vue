@@ -33,9 +33,9 @@ import CITreeNav from './treeNav/CITreeNav'
 //
 //
 // /* for form */
-// import CICheckbox from './form/AMCheckbox.vue'
-// // import CIDatetimePicker from './form/CIDatetimePicker.vue'
-// import CIInput from './form/AMInput.vue'
+import CICheckbox from './form/AMCheckbox.vue'
+import CIForm from './form/AMForm.vue'
+import CIInput from './form/AMInput.vue'
 // import CIRadio from './form/AMRadio.vue'
 // import CISelect from './form/AMSelect.vue'
 
@@ -86,9 +86,9 @@ const CIComponents = {
   'ci-button': CIButton,
   'ci-link-button': CILinkButton,
   //
-  // 'ci-checkbox': CICheckbox,
-  // // 'ci-datetime-picker': CIDatetimePicker,
-  // 'ci-input': CIInput,
+  'ci-checkbox': CICheckbox,
+  'ci-form': CIForm,
+  'ci-input': CIInput,
   // 'ci-radio': CIRadio,
   // 'ci-select': CISelect,
   //

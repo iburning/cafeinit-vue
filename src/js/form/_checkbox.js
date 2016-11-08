@@ -13,8 +13,9 @@ export default {
 
     model: {
       type: Array,
-      default: [],
-      twoWay: true
+      default: function () {
+        return []
+      }
     },
 
     title: {
@@ -34,6 +35,9 @@ export default {
 
     items: {
       type: Array,
+      default: function () {
+        return []
+      },
       required: true
     },
 

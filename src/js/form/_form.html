@@ -1,0 +1,7 @@
+<form v-bind:class="[
+    ns + 'form',
+    horizontal ? (ns + 'form-horizontal') : '',
+    inline ? (ns + 'form-inline') : ''
+  ]">
+  <slot></slot>
+</form>
