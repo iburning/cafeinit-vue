@@ -5,36 +5,41 @@
  */
 
 export default {
+  name: 'ci-list-radio',
+
   props: {
-    ns: {
-      type: String,
-      default: ''
-    },
+    ns: String,
+    title: String,
+    titleWidth: String,
+    name: String,
+    inline: String,
 
-    model: {
-      type: String,
-      default: '',
-      twoWay: true
-    },
-
-    title: {
-      type: String,
-      default: ''
-    },
-
-    titleWidth: {
-      type: String,
-      default: ''
-    },
-
-    name: {
-      type: String,
-      required: true
-    },
+    value: [String, Number],
 
     items: {
       type: Array,
-      default: []
+      default: function () {
+        return []
+      },
+      required: true
+    }
+  },
+
+  data() {
+    return {
+      model: this.value
+    }
+  },
+
+  watch: {
+    value(val) {
+      this.model = this.value
+    }
+  },
+
+  methods: {
+    onChange: function (evt) {
+      this.$emit('input', this.model)
     }
   }
 }

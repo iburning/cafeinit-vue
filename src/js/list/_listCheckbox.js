@@ -1,40 +1,49 @@
 /**
  * @fileoverview checkbox list
  * @author: burning <www.cafeinit.com>
- * @version: 2016-09-11
+ * @version: 2016-11-09
  */
 
 export default {
+  name: 'ci-list-checkbox',
+
   props: {
-    ns: {
-      type: String,
-      default: ''
-    },
+    ns: String,
+    title: String,
+    titleWidth: String,
+    name: String,
 
-    model: {
+    value: {
       type: Array,
-      default: [],
-      twoWay: true
-    },
-
-    title: {
-      type: String,
-      default: ''
-    },
-
-    titleWidth: {
-      type: String,
-      default: ''
-    },
-
-    name: {
-      type: String,
-      required: true
+      default: function () {
+        return []
+      }
     },
 
     items: {
       type: Array,
-      default: []
+      default: function () {
+        return []
+      },
+      required: true
+    }
+  },
+
+  data() {
+    return {
+      model: this.value
+    }
+  },
+
+  watch: {
+    value(val) {
+      this.model = this.value
+    }
+  },
+
+  methods: {
+    onChange: function (evt) {
+      this.$emit('input', this.model)
     }
   }
 }

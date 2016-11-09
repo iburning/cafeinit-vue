@@ -1,11 +1,16 @@
-<div class="ci-list-hd" v-if="title">{{title}}</div>
-<ul class="ci-list ci-list-radio">
-  <ci-list-cell v-for="item in items">
-    <label>
-      <input type="radio"
-        v-bind:name="name"
-        v-bind:value="item.value"
-        v-model="model" /> {{item.title}}
-    </label>
-  </ci-list-cell>
-</ul>
+<div>
+  <div class="ci-list-hd" v-if="title">{{title}}</div>
+  <ul class="ci-list ci-list-radio">
+    <ci-list-cell v-for="item in items">
+      <div v-bind:class="ns + 'radio'">
+        <label>
+          <input type="radio"
+            v-bind:name="name"
+            v-bind:value="item.value"
+            v-model="model"
+            v-on:change="onChange" /> {{item.title}}
+        </label>
+      </div>
+    </ci-list-cell>
+  </ul>
+</div>

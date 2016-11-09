@@ -19,8 +19,8 @@ import CIGridCell from './grid/AMGridCell.vue'
 
 import CIList from './list/CIList.vue'
 import CIListCell from './list/CIListCell.vue'
-// import CIListCheckbox from './list/CIListCheckbox.vue'
-// import CIListRadio from './list/CIListRadio.vue'
+import CIListCheckbox from './list/AMListCheckbox.vue'
+import CIListRadio from './list/AMListRadio.vue'
 
 import CILoading from './loading/CILoading.vue'
 
@@ -71,8 +71,8 @@ const CIComponents = {
 
   'ci-list': CIList,
   'ci-list-cell': CIListCell,
-  // 'ci-list-checkbox': CIListCheckbox,
-  // 'ci-list-radio': CIListRadio,
+  'ci-list-checkbox': CIListCheckbox,
+  'ci-list-radio': CIListRadio,
 
   'ci-loading': CILoading,
 
