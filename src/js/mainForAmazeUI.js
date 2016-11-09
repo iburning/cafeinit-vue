@@ -1,10 +1,10 @@
 /**
  * @fileoverview main for amazeui
  * @author: burning <www.cafeinit.com>
- * @version: 2016-11-07
+ * @version: 2016-11-09
  */
 
-// import CIAlertTip from './alertTip/AMAlertTip'
+import CIAlertTip from './alertTip/AMAlertTip'
 
 import CIBlock from './block/CIBlock'
 import CIBlockBody from './block/CIBlockBody'
@@ -53,7 +53,7 @@ import CIScrollHelper from './utils/CIScrollHelper'
 
 
 const CIComponents = {
-  // 'ci-alert-tip': CIAlertTip,
+  'ci-alert-tip': CIAlertTip,
 
   'ci-block': CIBlock,
   'ci-block-body': CIBlockBody,

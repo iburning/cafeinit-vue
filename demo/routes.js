@@ -19,7 +19,7 @@ import TabBar from './pages/tabBar'
 
 export default [
   { path: '/', component: Index },
-  { path: '/alertTip', component: AlertTip },
+  { path: '/alert-tip', component: AlertTip },
   { path: '/block', component: Block },
   { path: '/breadcrumb', component: Breadcrumb },
   { path: '/buttons', component: Buttons },

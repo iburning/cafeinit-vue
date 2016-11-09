@@ -1,22 +1,18 @@
 /**
  * @fileoverview alert tip
  * @author: burning <www.cafeinit.com>
- * @version: 2016-09-18
+ * @version: 2016-11-09
  */
 
 export default {
   name: 'ci-alert-tip',
 
   props: {
-    ns: {
-      type: String,
-      default: ''
-    },
+    ns: String,
 
     isShow: {
       type: Boolean,
-      default: false,
-      twoWay: true
+      default: false
     },
 
     style: {
@@ -32,13 +28,14 @@ export default {
 
   data: function () {
     return {
+      isActive: this.isShow,
       timer: null
     }
   },
 
   methods: {
     show() {
-      this.isShow = true
+      this.isActive = true
 
       if (this.timer) {
         clearTimeout(this.timer)
@@ -50,7 +47,8 @@ export default {
     },
 
     close() {
-      this.isShow = false
+      this.isActive = false
+      this.$emit('close')
     },
 
     autoClose() {

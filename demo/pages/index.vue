@@ -60,11 +60,6 @@
         <span class="sub-title">表单</span>
       </ci-list-cell>
 
-      <ci-list-cell accessory="link" to="/datetime-picker">
-        <strong class="title">Datetime Picker</strong>
-        <span class="sub-title">时间日期选择器</span>
-      </ci-list-cell>
-
       <ci-list-cell accessory="link" to="/form-list">
         <strong class="title">Form List</strong>
         <span class="sub-title">表单列表</span>
@@ -89,7 +84,6 @@
     </ci-list>
   </div>
 </template>
-
 
 <script>
 export default {

@@ -4,7 +4,7 @@
  * @version: 2016-11-09
  */
 
-// import CIAlertTip from './alertTip/CIAlertTip'
+import CIAlertTip from './alertTip/CIAlertTip'
 
 import CIBlock from './block/CIBlock.vue'
 import CIBlockBody from './block/CIBlockBody.vue'
@@ -54,7 +54,7 @@ import CIScrollHelper from './utils/CIScrollHelper'
 
 
 const CIComponents = {
-  // 'ci-alert-tip': CIAlertTip,
+  'ci-alert-tip': CIAlertTip,
 
   'ci-block': CIBlock,
   'ci-block-body': CIBlockBody,
