@@ -9,7 +9,8 @@ var path = require('path')
 module.exports = {
   entry: {
     'main': path.resolve(__dirname, './main.js'),
-    'main-for-amazeui': path.resolve(__dirname, './mainForAmazeUI.js')
+    'main-for-amazeui': path.resolve(__dirname, './mainForAmazeUI.js'),
+    'main-for-bootstrap': path.resolve(__dirname, './mainForBootstrap.js')
   },
 
   output: {

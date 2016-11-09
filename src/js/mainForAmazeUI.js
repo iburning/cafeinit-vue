@@ -4,51 +4,51 @@
  * @version: 2016-11-07
  */
 
-import CIBlock from './block/CIBlock.vue'
-import CIBlockBody from './block/CIBlockBody.vue'
-import CIBlockFooter from './block/CIBlockFooter.vue'
-import CIBlockHeader from './block/CIBlockHeader.vue'
+// import CIAlertTip from './alertTip/AMAlertTip'
 
-import CIBreadcrumb from './breadcrumb/AMBreadcrumb.vue'
+import CIBlock from './block/CIBlock'
+import CIBlockBody from './block/CIBlockBody'
+import CIBlockFooter from './block/CIBlockFooter'
+import CIBlockHeader from './block/CIBlockHeader'
 
-import CIGallery from './gallery/CIGallery.vue'
-import CIGalleryCell from './gallery/CIGalleryCell.vue'
+import CIBreadcrumb from './breadcrumb/AMBreadcrumb'
 
-import CIGrid from './grid/AMGrid.vue'
-import CIGridCell from './grid/AMGridCell.vue'
+import CIGallery from './gallery/CIGallery'
+import CIGalleryCell from './gallery/CIGalleryCell'
 
-import CIList from './list/CIList.vue'
-import CIListCell from './list/CIListCell.vue'
-import CIListCheckbox from './list/AMListCheckbox.vue'
-import CIListRadio from './list/AMListRadio.vue'
+import CIGrid from './grid/AMGrid'
+import CIGridCell from './grid/AMGridCell'
 
-import CILoading from './loading/CILoading.vue'
+import CIList from './list/CIList'
+import CIListCell from './list/CIListCell'
+import CIListCheckbox from './list/AMListCheckbox'
+import CIListRadio from './list/AMListRadio'
+
+import CILoading from './loading/CILoading'
 
 // import CIPagination from './pagination/AMPagination.vue'
 
-import CITabBar from './tabView/CITabBar.vue'
+import CITabBar from './tabView/CITabBar'
 import CITreeNav from './treeNav/CITreeNav'
 //
-// import CITable from './table/AMTable.vue'
+// import CITable from './table/AMTable'
 //
 //
-// /* for form */
-import CICheckbox from './form/AMCheckbox.vue'
-import CIForm from './form/AMForm.vue'
-import CIInput from './form/AMInput.vue'
-import CIRadio from './form/AMRadio.vue'
-import CISelect from './form/AMSelect.vue'
+/* for form */
+import CICheckbox from './form/AMCheckbox'
+import CIForm from './form/AMForm'
+import CIInput from './form/AMInput'
+import CIRadio from './form/AMRadio'
+import CISelect from './form/AMSelect'
 
-import CIButton from './button/AMButton.vue'
-import CILinkButton from './button/AMLinkButton.vue'
+import CIButton from './button/AMButton'
+import CILinkButton from './button/AMLinkButton'
 
-
-// /* for modal */
-import CIModal from './modal/AMModal.vue'
-import CIActions from './modal/AMActions.vue'
-import CIAlert from './modal/AMAlert.vue'
-import CIConfirm from './modal/AMConfirm.vue'
-
+/* for modal */
+import CIModal from './modal/AMModal'
+import CIActions from './modal/AMActions'
+import CIAlert from './modal/AMAlert'
+import CIConfirm from './modal/AMConfirm'
 
 import CIScrollHelper from './utils/CIScrollHelper'
 
@@ -82,7 +82,7 @@ const CIComponents = {
   // 'ci-table': CITable,
   'ci-tree-nav': CITreeNav,
 
-  // /* for form */
+  /* for form */
   'ci-button': CIButton,
   'ci-link-button': CILinkButton,
 
@@ -92,7 +92,7 @@ const CIComponents = {
   'ci-radio': CIRadio,
   'ci-select': CISelect,
 
-  // /* form modal */
+  /* form modal */
   'ci-modal': CIModal,
   'ci-actions': CIActions,
   'ci-alert': CIAlert,

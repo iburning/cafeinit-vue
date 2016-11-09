@@ -4,7 +4,7 @@
  * @version: 2016-09-28
  */
 
-import CIAlertTip from './alertTip/BSAlertTip'
+// import CIAlertTip from './alertTip/BSAlertTip'
 
 import CIBlock from './block/CIBlock'
 import CIBlockBody from './block/CIBlockBody'
@@ -21,8 +21,8 @@ import CIGridCell from './grid/BSGridCell'
 
 import CIList from './list/CIList'
 import CIListCell from './list/CIListCell'
-// import CIListCheckbox from './list/BSListCheckbox'
-// import CIListRadio from './list/BSListRadio'
+import CIListCheckbox from './list/BSListCheckbox'
+import CIListRadio from './list/BSListRadio'
 
 import CILoading from './loading/CILoading'
 
@@ -34,29 +34,27 @@ import CITreeNav from './treeNav/CITreeNav'
 // import CITable from './table/BSTable'
 //
 //
-// /* for form */
-// import CICheckbox from './form/BSCheckbox'
-// // import CIDatetimePicker from './form/BSDatetimePicker'
-// import CIInput from './form/BSInput'
-// import CIRadio from './form/BSRadio'
-// import CISelect from './form/BSSelect'
+/* for form */
+import CICheckbox from './form/BSCheckbox'
+import CIForm from './form/BSForm'
+import CIInput from './form/BSInput'
+import CIRadio from './form/BSRadio'
+import CISelect from './form/BSSelect'
 
 import CIButton from './button/BSButton'
 import CILinkButton from './button/BSLinkButton'
 
-//
-// /* for modal */
+/* for modal */
 // import CIModal from './modal/BSModal'
 // import CIActions from './modal/BSActions'
 // import CIAlert from './modal/BSAlert'
 // import CIConfirm from './modal/BSConfirm'
-//
-//
+
 import CIScrollHelper from './utils/CIScrollHelper'
 
 
 const CIComponents = {
-  'ci-alert-tip': CIAlertTip,
+  // 'ci-alert-tip': CIAlertTip,
 
   'ci-block': CIBlock,
   'ci-block-body': CIBlockBody,
@@ -73,28 +71,28 @@ const CIComponents = {
 
   'ci-list': CIList,
   'ci-list-cell': CIListCell,
-  // 'ci-list-checkbox': CIListCheckbox,
-  // 'ci-list-radio': CIListRadio,
+  'ci-list-checkbox': CIListCheckbox,
+  'ci-list-radio': CIListRadio,
 
   'ci-loading': CILoading,
 
   // 'ci-pagination': CIPagination,
-  //
+
   'ci-tab-bar': CITabBar,
   // 'ci-table': CITable,
   'ci-tree-nav': CITreeNav,
-  //
+
   // /* for form */
   'ci-button': CIButton,
   'ci-link-button': CILinkButton,
-  //
-  // 'ci-checkbox': CICheckbox,
-  // // 'ci-datetime-picker': CIDatetimePicker,
-  // 'ci-input': CIInput,
-  // 'ci-radio': CIRadio,
-  // 'ci-select': CISelect,
-  //
-  // /* form modal */
+
+  'ci-checkbox': CICheckbox,
+  'ci-form': CIForm,
+  'ci-input': CIInput,
+  'ci-radio': CIRadio,
+  'ci-select': CISelect,
+
+  /* form modal */
   // 'ci-modal': CIModal,
   // 'ci-actions': CIActions,
   // 'ci-alert': CIAlert,

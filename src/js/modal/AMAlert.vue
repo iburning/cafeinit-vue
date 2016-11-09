@@ -1,7 +1,6 @@
 <template>
   <ci-modal v-bind:is-show="isActive"
-    v-bind:is-show-button="true"
-    >
+    v-bind:is-show-button="true">
     <div class="am-modal-hd" v-if="title">{{title}}</div>
     <div class="am-modal-bd"><slot>Hello CafeInit</slot></div>
     <div class="am-modal-footer">

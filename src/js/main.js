@@ -27,13 +27,14 @@ import CILoading from './loading/CILoading.vue'
 import CIPagination from './pagination/CIPagination.vue'
 
 import CITabBar from './tabView/CITabBar.vue'
+import CITreeNav from './treeNav/CITreeNav'
 
-import CITable from './table/CITable.vue'
+// import CITable from './table/CITable.vue'
 
 
 /* for form */
 import CICheckbox from './form/CICheckbox.vue'
-// import CIDatetimePicker from './form/CIDatetimePicker.vue'
+import CIForm from './form/CIForm.vue'
 import CIInput from './form/CIInput.vue'
 import CIRadio from './form/CIRadio.vue'
 import CISelect from './form/CISelect.vue'
@@ -76,14 +77,15 @@ const CIomponents = {
   'ci-pagination': CIPagination,
 
   'ci-tab-bar': CITabBar,
-  'ci-table': CITable,
+  // 'ci-table': CITable,
+  'ci-tree-nav': CITreeNav,
 
   /* for form */
   'ci-button': CIButton,
   'ci-link-button': CILinkButton,
 
   'ci-checkbox': CICheckbox,
-  // 'ci-datetime-picker': CIDatetimePicker,
+  'ci-form': CIForm,
   'ci-input': CIInput,
   'ci-radio': CIRadio,
   'ci-select': CISelect,
@@ -101,8 +103,8 @@ module.exports = {
   ver: '1.0.0',
 
   components: (Vue) => {
-    for (let name in CIomponents) {
-      Vue.component(name, CIomponents[name])
+    for (let name in CIComponents) {
+       Vue.component(name, CIComponents[name])
     }
   },
 
