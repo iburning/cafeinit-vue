@@ -5,8 +5,6 @@
  */
 
 import Index from './pages/index'
-
-import App from './App'
 import AlertTip from './pages/alertTip'
 import Block from './pages/block'
 import Breadcrumb from './pages/breadcrumb'

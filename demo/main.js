@@ -6,7 +6,7 @@
 
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import CafeinitVue from 'cafeinit-vue-bootstrap'
+import CafeinitVue from 'cafeinit-vue'
 import CafeinitVueCss from 'cafeinit-vue.css'
 import routes from './routes'
 
@@ -14,6 +14,7 @@ Vue.use(VueRouter)
 Vue.use(CafeinitVue.components)
 
 const router = new VueRouter({
+  // mode: 'history',
   routes // （缩写）相当于 routes: routes
 })
 

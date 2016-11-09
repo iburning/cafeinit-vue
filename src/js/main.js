@@ -1,8 +1,10 @@
 /**
  * @fileoverview main
  * @author: burning <www.cafeinit.com>
- * @version: 2016-08-26
+ * @version: 2016-11-09
  */
+
+// import CIAlertTip from './alertTip/CIAlertTip'
 
 import CIBlock from './block/CIBlock.vue'
 import CIBlockBody from './block/CIBlockBody.vue'
@@ -24,13 +26,12 @@ import CIListRadio from './list/CIListRadio.vue'
 
 import CILoading from './loading/CILoading.vue'
 
-import CIPagination from './pagination/CIPagination.vue'
+// import CIPagination from './pagination/CIPagination.vue'
 
 import CITabBar from './tabView/CITabBar.vue'
 import CITreeNav from './treeNav/CITreeNav'
 
 // import CITable from './table/CITable.vue'
-
 
 /* for form */
 import CICheckbox from './form/CICheckbox.vue'
@@ -44,16 +45,17 @@ import CILinkButton from './button/CILinkButton.vue'
 
 
 /* for modal */
-import CIModal from './modal/CIModal.vue'
-import CIActions from './modal/CIActions.vue'
-import CIAlert from './modal/CIAlert.vue'
-import CIConfirm from './modal/CIConfirm.vue'
-
+// import CIModal from './modal/CIModal.vue'
+// import CIActions from './modal/CIActions.vue'
+// import CIAlert from './modal/CIAlert.vue'
+// import CIConfirm from './modal/CIConfirm.vue'
 
 import CIScrollHelper from './utils/CIScrollHelper'
 
 
-const CIomponents = {
+const CIComponents = {
+  // 'ci-alert-tip': CIAlertTip,
+
   'ci-block': CIBlock,
   'ci-block-body': CIBlockBody,
   'ci-block-footer': CIBlockFooter,
@@ -74,7 +76,7 @@ const CIomponents = {
 
   'ci-loading': CILoading,
 
-  'ci-pagination': CIPagination,
+  // 'ci-pagination': CIPagination,
 
   'ci-tab-bar': CITabBar,
   // 'ci-table': CITable,
@@ -91,10 +93,10 @@ const CIomponents = {
   'ci-select': CISelect,
 
   /* form modal */
-  'ci-modal': CIModal,
-  'ci-actions': CIActions,
-  'ci-alert': CIAlert,
-  'ci-confirm': CIConfirm
+  // 'ci-modal': CIModal,
+  // 'ci-actions': CIActions,
+  // 'ci-alert': CIAlert,
+  // 'ci-confirm': CIConfirm
 }
 
 // export default {
