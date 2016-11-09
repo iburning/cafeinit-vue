@@ -5,20 +5,11 @@
  */
 
 export default {
+  name: 'ci-form',
+
   props: {
-    ns: {
-      type: String,
-      default: ''
-    },
-
-    horizontal: {
-      type: String,
-      default: ''
-    },
-
-    inline: {
-      type: String,
-      default: ''
-    }
+    ns: String,
+    horizontal: String,
+    inline: String
   }
 }

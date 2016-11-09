@@ -5,6 +5,8 @@
  */
 
 export default {
+  name: 'ci-checkbox',
+
   props: {
     ns: String,
     title: String,
@@ -41,8 +43,7 @@ export default {
   },
 
   methods: {
-    updateValue: function (value) {
-      // console.log('_checkbox.updateValue', typeof value, this.model)
+    onChange: function (evt) {
       this.$emit('input', this.model)
     }
   }

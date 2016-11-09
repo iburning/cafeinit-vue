@@ -5,6 +5,8 @@
  */
 
 export default {
+  name: 'ci-input',
+
   props: {
     ns: String,
     title: String,
@@ -32,9 +34,14 @@ export default {
   },
 
   methods: {
-    updateValue: function (value) {
-      // this.$refs.input.value = value
-      this.$emit('input', value)
+    onChange: function (evt) {
+      // console.log('_input.onChange', evt.target.value)
+      this.$emit('change', evt.target.value)
+    },
+
+    onInput: function (evt) {
+      // console.log('_input.onInput', evt.target.value)
+      this.$emit('input', evt.target.value)
     }
   }
 }

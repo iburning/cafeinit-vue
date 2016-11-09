@@ -19,12 +19,12 @@
     <ci-form>
       <ci-block>
         <ci-block-body>
-          <!-- <ci-select title="商品分类" name="category" v-bind:items="[
+          <ci-select title="商品分类" name="category" v-bind:items="[
               {title: 'Category 01', value: '1'},
               {title: 'Category 02', value: '2'},
               {title: 'Category 03', value: '3'}
             ]"
-            v-bind:model.sync="category"></ci-select> -->
+            v-model="category"></ci-select>
 
           <ci-input title="电子邮箱" type="email" name="email" placeholder="请输入邮箱"
             v-model="email"></ci-input>
@@ -79,8 +79,7 @@ export default {
     return {
       email: 'iburning@live.cn',
       password: '',
-      category: '1',
-      // skills: 'javascript',
+      category: '2',
       skills: ['html', 'javascript'],
       gender: 'female',
       type: '1'

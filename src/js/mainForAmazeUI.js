@@ -37,7 +37,7 @@ import CICheckbox from './form/AMCheckbox.vue'
 import CIForm from './form/AMForm.vue'
 import CIInput from './form/AMInput.vue'
 import CIRadio from './form/AMRadio.vue'
-// import CISelect from './form/AMSelect.vue'
+import CISelect from './form/AMSelect.vue'
 
 import CIButton from './button/AMButton.vue'
 import CILinkButton from './button/AMLinkButton.vue'
@@ -77,21 +77,21 @@ const CIComponents = {
   'ci-loading': CILoading,
 
   // 'ci-pagination': CIPagination,
-  //
+
   'ci-tab-bar': CITabBar,
   // 'ci-table': CITable,
   'ci-tree-nav': CITreeNav,
-  //
+
   // /* for form */
   'ci-button': CIButton,
   'ci-link-button': CILinkButton,
-  //
+
   'ci-checkbox': CICheckbox,
   'ci-form': CIForm,
   'ci-input': CIInput,
   'ci-radio': CIRadio,
-  // 'ci-select': CISelect,
-  //
+  'ci-select': CISelect,
+
   // /* form modal */
   'ci-modal': CIModal,
   'ci-actions': CIActions,

@@ -9,5 +9,6 @@
     v-bind:value="value"
     v-bind:placeholder="placeholder"
     v-bind:disabled="disabled"
-    v-on:input="updateValue($event.target.value)" />
+    v-on:change="onChange"
+    v-on:input="onInput" />
 </div>
