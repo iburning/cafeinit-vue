@@ -21,6 +21,7 @@ import CIGridCell from './grid/AMGridCell'
 
 import CIList from './list/CIList'
 import CIListCell from './list/CIListCell'
+import CIListHeader from './list/CIListHeader'
 import CIListCheckbox from './list/AMListCheckbox'
 import CIListRadio from './list/AMListRadio'
 
@@ -70,6 +71,7 @@ const CIComponents = {
 
   'ci-list': CIList,
   'ci-list-cell': CIListCell,
+  'ci-list-header': CIListHeader,
   'ci-list-checkbox': CIListCheckbox,
   'ci-list-radio': CIListRadio,
 
