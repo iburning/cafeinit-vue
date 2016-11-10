@@ -1,20 +1,16 @@
 /**
  * @fileoverview pagination
  * @author: burning <www.cafeinit.com>
- * @version: 2016-09-11
+ * @version: 2016-11-10
  */
 
 export default {
   props: {
-    ns: {
-      type: String,
-      default: ''
-    },
+    ns: String,
 
-    currentPage: {
+    page: {
       type: Number,
-      default: 1,
-      twoWay: true
+      default: 1
     },
 
     totalPage: {
@@ -35,6 +31,20 @@ export default {
     isShowLast: {
       type: Boolean,
       default: false
+    }
+  },
+
+  data() {
+    return {
+      currentPage: this.page
+    }
+  },
+
+  watch: {
+    page(val, oldVal) {
+      if (val != oldVal) {
+        this.currentPage = val
+      }
     }
   },
 
@@ -72,9 +82,9 @@ export default {
   },
 
   methods: {
-    itemOnClick: function (page) {
+    onClickItem: function (page) {
       this.currentPage = page
-      this.$dispatch('item-click', page)
+      this.$emit('click-item', page)
     }
   }
 }

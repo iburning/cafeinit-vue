@@ -1,25 +1,25 @@
-<ul class="{{ns}}pagination">
+<ul v-bind:class="ns + 'pagination'">
   <li v-if="isShowLast">
-    <a href="javascript:;" v-on:click="itemOnClick(1)">
+    <a href="javascript:;" v-on:click="onClickItem(1)">
       <i class="fa fa-angle-double-left"></i>
     </a>
   </li>
   <li v-if="isShowNext">
-    <a href="javascript:;" v-on:click="itemOnClick(prevPage)">
+    <a href="javascript:;" v-on:click="onClickItem(prevPage)">
       <i class="fa fa-angle-left"></i>
     </a>
   </li>
   <li v-for="page in pages"
     v-bind:class="[(page === currentPage) ? (ns + 'active') : '']">
-    <a href="javascript:;" v-on:click="itemOnClick(page)">{{page}}</a>
+    <a href="javascript:;" v-on:click="onClickItem(page)">{{page}}</a>
   </li>
   <li v-if="isShowNext">
-    <a href="javascript:;" v-on:click="itemOnClick(nextPage)">
+    <a href="javascript:;" v-on:click="onClickItem(nextPage)">
       <i class="fa fa-angle-right"></i>
     </a>
   </li>
   <li v-if="isShowLast">
-    <a href="javascript:;" v-on:click="itemOnClick(totalPage)">
+    <a href="javascript:;" v-on:click="onClickItem(totalPage)">
       <i class="fa fa-angle-double-right"></i>
     </a>
   </li>

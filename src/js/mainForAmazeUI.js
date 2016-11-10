@@ -26,7 +26,7 @@ import CIListRadio from './list/AMListRadio'
 
 import CILoading from './loading/CILoading'
 
-// import CIPagination from './pagination/AMPagination.vue'
+import CIPagination from './pagination/AMPagination.vue'
 
 import CITabBar from './tabView/CITabBar'
 import CITreeNav from './treeNav/CITreeNav'
@@ -75,7 +75,7 @@ const CIComponents = {
 
   'ci-loading': CILoading,
 
-  // 'ci-pagination': CIPagination,
+  'ci-pagination': CIPagination,
 
   'ci-tab-bar': CITabBar,
   // 'ci-table': CITable,
