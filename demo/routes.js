@@ -14,6 +14,7 @@ import FormList from './pages/formList'
 import Gallery from './pages/gallery'
 import Grid from './pages/grid'
 import List from './pages/list'
+import Loading from './pages/loading'
 import Modals from './pages/modals'
 import Pagination from './pages/pagination'
 import TabBar from './pages/tabBar'
@@ -29,6 +30,7 @@ export default [
   { path: '/gallery', component: Gallery },
   { path: '/grid', component: Grid },
   { path: '/list', component: List },
+  { path: '/loading', component: Loading },
   { path: '/modals', component: Modals },
   { path: '/pagination', component: Pagination },
   { path: '/tab-bar', component: TabBar }
