@@ -1,16 +1,16 @@
 <template>
   <div id="page-images">
-    <ci-image v-bind:src="imageSrc" width="300" height="300"></ci-image>
+    <ci-image v-bind:src="imageSrc" width="300" height="300" radius='25'></ci-image>
 
-    <ci-image v-bind:src="imageSrc" width="200" height="300"></ci-image>
+    <ci-image v-bind:src="imageSrc" width="300" height="200" radius='20'></ci-image>
 
-    <ci-image v-bind:src="imageSrc" width="300" height="200"></ci-image>
+    <ci-image v-bind:src="imageSrc" width="200" height="300" radius='10'></ci-image>
 
     <ci-image v-bind:src="imageSrc" width="300" height="300" mode="aspect-fit"></ci-image>
 
-    <ci-image v-bind:src="imageSrc" width="200" height="300" mode="aspect-fit"></ci-image>
-
     <ci-image v-bind:src="imageSrc" width="300" height="200" mode="aspect-fit"></ci-image>
+
+    <ci-image v-bind:src="imageSrc" width="200" height="300" mode="aspect-fit"></ci-image>
   </div>
 </template>
 
@@ -29,5 +29,6 @@ export default {
 <style scoped>
 .ci-image {
   margin: 30px auto;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
 }
 </style>

@@ -3,13 +3,15 @@
       position: 'release',
       overflow: 'hidden',
       width: width + 'px',
-      height: height + 'px'
+      height: height + 'px',
+      'border-radius': radius + 'px'
     }">
     <img v-bind:src="src" v-bind:style="{
       'margin-left': imageLeft + 'px',
       'margin-top': imageTop + 'px',
       width: imageWidth + 'px',
-      height: imageHeight + 'px'
+      height: imageHeight + 'px',
+      'border-radius': radius + 'px'
     }" />
   </div>
 </template>
