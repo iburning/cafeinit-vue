@@ -19,6 +19,8 @@ import CIGalleryCell from './gallery/CIGalleryCell'
 import CIGrid from './grid/AMGrid'
 import CIGridCell from './grid/AMGridCell'
 
+import CIImage from './image/CIImage'
+
 import CIList from './list/CIList'
 import CIListCell from './list/CIListCell'
 import CIListHeader from './list/CIListHeader'
@@ -68,6 +70,8 @@ const CIComponents = {
 
   'ci-grid': CIGrid,
   'ci-grid-cell': CIGridCell,
+
+  'ci-image': CIImage,
 
   'ci-list': CIList,
   'ci-list-cell': CIListCell,

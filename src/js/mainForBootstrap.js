@@ -19,6 +19,8 @@ import CIGalleryCell from './gallery/CIGalleryCell'
 import CIGrid from './grid/BSGrid'
 import CIGridCell from './grid/BSGridCell'
 
+import CIImage from './image/CIImage'
+
 import CIList from './list/CIList'
 import CIListCell from './list/CIListCell'
 import CIListCheckbox from './list/BSListCheckbox'
@@ -65,6 +67,8 @@ const CIComponents = {
 
   'ci-gallery': CIGallery,
   'ci-gallery-cell': CIGalleryCell,
+
+  'ci-image': CIImage,
 
   'ci-grid': CIGrid,
   'ci-grid-cell': CIGridCell,

@@ -9,9 +9,9 @@ var webpack = require('webpack')
 
 module.exports = {
   entry: {
-    // 'cafeinit-vue': './src/js/main.js',
+    'cafeinit-vue': './src/js/main.js',
     'cafeinit-vue-amazeui': './src/js/mainForAmazeUI.js',
-    // 'cafeinit-vue-bootstrap': './src/js/mainForBootstrap.js'
+    'cafeinit-vue-bootstrap': './src/js/mainForBootstrap.js'
   },
 
   output: {

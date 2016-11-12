@@ -81,6 +81,11 @@
         <span class="sub-title">标签导航</span>
       </ci-list-cell>
 
+      <ci-list-cell accessory="link" to="/images">
+        <strong class="title">Images</strong>
+        <span class="sub-title">图片</span>
+      </ci-list-cell>
+
       <!-- <ci-list-cell accessory="link" to="/tree-nav">
         <strong class="title">TreeNav</strong>
         <span class="sub-title">树形导航</span>

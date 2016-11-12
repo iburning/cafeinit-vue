@@ -19,6 +19,8 @@ import CIGalleryCell from './gallery/CIGalleryCell.vue'
 import CIGrid from './grid/CIGrid.vue'
 import CIGridCell from './grid/CIGridCell.vue'
 
+import CIImage from './image/CIImage'
+
 import CIList from './list/CIList.vue'
 import CIListCell from './list/CIListCell.vue'
 import CIListCheckbox from './list/CIListCheckbox.vue'
@@ -68,6 +70,8 @@ const CIComponents = {
 
   'ci-grid': CIGrid,
   'ci-grid-cell': CIGridCell,
+
+  'ci-image': CIImage,
 
   'ci-list': CIList,
   'ci-list-cell': CIListCell,

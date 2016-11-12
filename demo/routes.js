@@ -13,6 +13,7 @@ import FormView from './pages/form'
 import FormList from './pages/formList'
 import Gallery from './pages/gallery'
 import Grid from './pages/grid'
+import Images from './pages/images'
 import List from './pages/list'
 import Modals from './pages/modals'
 import Pagination from './pages/pagination'
@@ -28,6 +29,7 @@ export default [
   { path: '/form-list', component: FormList },
   { path: '/gallery', component: Gallery },
   { path: '/grid', component: Grid },
+  { path: '/images', component: Images },
   { path: '/list', component: List },
   { path: '/modals', component: Modals },
   { path: '/pagination', component: Pagination },
