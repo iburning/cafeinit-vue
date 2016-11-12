@@ -91,6 +91,14 @@
         <span class="sub-title">树形导航</span>
       </ci-list-cell> -->
     </ci-list>
+
+    <ci-list-header>其他</ci-list-header>
+    <ci-list>
+      <ci-list-cell accessory="link" to="/loading">
+        <strong class="title">Loading</strong>
+        <span class="sub-title">等待</span>
+      </ci-list-cell>
+    </ci-list>
   </div>
 </template>
 
