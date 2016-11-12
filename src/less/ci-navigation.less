@@ -19,7 +19,7 @@
   justify-content: flex-start;
 
   padding: 0;
-  margin: 0 0 1em 0;
+  margin: 0;
   border-bottom: 1px solid @color-border;
   background-color: @color-background;
 }
@@ -29,11 +29,9 @@
 .ci-navigation-title {
   overflow: hidden;
   height: @base-height;
-  padding: 0 15px;
   margin: 0;
   line-height: @base-height;
   font-size: @font-size-small;
-  text-align: center;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -43,6 +41,18 @@
   flex: 1;
 }
 
+.ci-navigation-left-item {
+  padding-left: 15px;
+  text-align: left;
+}
+
+.ci-navigation-right-item {
+  padding-right: 10px;
+  text-align: right;
+}
+
 .ci-navigation-title {
   flex: 3;
+  padding: 0 10px;
+  text-align: center;
 }

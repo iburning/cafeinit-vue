@@ -103,6 +103,11 @@
         <strong class="title">Loading</strong>
         <span class="sub-title">等待</span>
       </ci-list-cell>
+
+      <ci-list-cell accessory="link" to="/page-demo">
+        <strong class="title">Page Demo</strong>
+        <span class="sub-title">页面实例</span>
+      </ci-list-cell>
     </ci-list>
   </div>
 </template>
