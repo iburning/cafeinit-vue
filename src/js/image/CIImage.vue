@@ -1,18 +1,16 @@
 <template>
-  <div class="ci-image">
-    <div class="ci-image-frame" v-bind:style="{
-        position: 'release',
-        overflow: 'hidden',
-        width: width + 'px',
-        height: height + 'px'
-      }">
-      <img v-bind:src="src" v-bind:style="{
-        'margin-left': imageLeft + 'px',
-        'margin-top': imageTop + 'px',
-        width: imageWidth + 'px',
-        height: imageHeight + 'px'
-      }" />
-    </div>
+  <div class="ci-image" v-bind:style="{
+      position: 'release',
+      overflow: 'hidden',
+      width: width + 'px',
+      height: height + 'px'
+    }">
+    <img v-bind:src="src" v-bind:style="{
+      'margin-left': imageLeft + 'px',
+      'margin-top': imageTop + 'px',
+      width: imageWidth + 'px',
+      height: imageHeight + 'px'
+    }" />
   </div>
 </template>
 

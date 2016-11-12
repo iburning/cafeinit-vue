@@ -25,3 +25,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.ci-image {
+  margin: 30px auto;
+}
+</style>

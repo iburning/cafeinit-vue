@@ -4,7 +4,7 @@
   "description": "CafeInit for Vue.js",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build:lib && npm run build:amd",
+    "build": "npm run build:lib && npm run build:amd && grunt less",
     "build:lib": "webpack -p --config ./webpack.config.js",
     "build:amd": "webpack --config ./webpack.config.amd.js",
     "demo": "webpack-dev-server --open --inline --config demo/webpack.config.js --content-base demo/",
@@ -36,6 +36,7 @@
     "grunt": "^1.0.1",
     "grunt-contrib-less": "^1.4.0",
     "grunt-contrib-watch": "^1.0.0",
+    "less-loader": "^2.2.3",
     "less-plugin-autoprefix": "^1.5.1",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
