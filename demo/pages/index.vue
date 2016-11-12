@@ -71,6 +71,11 @@
         <span class="sub-title">面包屑</span>
       </ci-list-cell>
 
+      <ci-list-cell accessory="link" to="/navigation">
+        <strong class="title">Navigation</strong>
+        <span class="sub-title">导航</span>
+      </ci-list-cell>
+
       <ci-list-cell accessory="link" to="/pagination">
         <strong class="title">Pagination</strong>
         <span class="sub-title">翻页导航</span>

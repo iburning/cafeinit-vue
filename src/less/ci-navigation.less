@@ -1,0 +1,47 @@
+/**
+ * @fileoverview ci-navigation
+ * @author: burning <www.cafeinit.com>
+ * @version: 2016-11-12
+ */
+
+
+.ci-navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  list-style: none;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  padding: 0;
+  margin: 0 0 1em 0;
+  border-bottom: 1px solid @color-border;
+  background-color: @color-background;
+}
+
+.ci-navigation-left-item,
+.ci-navigation-right-item,
+.ci-navigation-title {
+  overflow: hidden;
+  height: @base-height;
+  padding: 0 15px;
+  margin: 0;
+  line-height: @base-height;
+  font-size: @font-size-small;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ci-navigation-left-item,
+.ci-navigation-right-item {
+  flex: 1;
+}
+
+.ci-navigation-title {
+  flex: 3;
+}
