@@ -2,7 +2,7 @@
   <div id="modals">
     <div class="ci-btn-area">
       <ci-link-button style="primary" block="block" v-on:click="isShowModal = true">Show Modal</ci-link-button>
-      <ci-link-button style="primary" block="block" v-on:click="isShowAlert = true">Show Alert</ci-link-button>
+      <ci-link-button style="primary" block="block" v-on:click="showAlert">Show Alert</ci-link-button>
       <ci-link-button style="primary" block="block" v-on:click="isShowConfirm = true">Show Confirm</ci-link-button>
       <ci-link-button style="primary" block="block" v-on:click="isShowActions = true">Show Actions</ci-link-button>
     </div>
@@ -13,7 +13,7 @@
       <div slot="body">Modal Content</div>
     </ci-modal>
 
-    <ci-alert v-bind:is-show="isShowAlert" v-on:close="onCloseAlert">Alert Content</ci-alert>
+    <ci-alert v-bind:is-show="isShowAlert" v-bind:content="alertContent" v-on:close="onCloseAlert">Alert Content</ci-alert>
 
     <ci-confirm v-bind:is-show="isShowConfirm"
       v-on:ok="onConfirmOK" v-on:cancel="onConfirmCancel">Are you happy?</ci-confirm>
@@ -39,11 +39,18 @@ export default {
       isShowModal: false,
       isShowAlert: false,
       isShowConfirm: false,
-      isShowActions: false
+      isShowActions: false,
+
+      alertContent: 'Hello Alert'
     }
   },
 
   methods: {
+    showAlert() {
+      this.alertContent = 'HELLO ALERT';
+      this.isShowAlert = true;
+    },
+
     onCloseAlert(sender) {
       console.log('alertOnClose', sender)
       this.isShowAlert = false

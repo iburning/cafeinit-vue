@@ -2,7 +2,8 @@
   <ci-modal v-bind:is-show="isActive"
     v-bind:is-show-button="true">
     <div class="am-modal-hd" v-if="title">{{title}}</div>
-    <div class="am-modal-bd"><slot>Hello CafeInit</slot></div>
+    <div class="am-modal-bd" v-if="content">{{content}}</div>
+    <div class="am-modal-bd" v-else><slot>Hello CafeInit</slot></div>
     <div class="am-modal-footer">
       <span class="am-modal-btn" v-on:click="close">{{okText}}</span>
     </div>
