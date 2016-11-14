@@ -1,16 +1,16 @@
 <template>
-  <div v-show="isActive" v-bind:is-close-via-dimmer="isCloseViaDimmer">
-    <div tabindex="-1"
-      v-bind:class="[
-        'am-modal',
-        isShowButton ? '' : 'am-modal-no-btn',
-        isActive ? 'am-modal-active' : '',
-        size ? ('am-modal-' + size) : ''
-      ]"
-      v-on:click="closeViaDimmer">
-      <div class="am-modal-dialog" v-on:click="onClick">
-        <slot></slot>
-      </div>
+  <div tabindex="-1"
+    v-show="isActive"
+    v-bind:is-close-via-dimmer="isCloseViaDimmer"
+    v-bind:class="[
+      'am-modal',
+      isShowButton ? '' : 'am-modal-no-btn',
+      isActive ? 'am-modal-active' : '',
+      size ? ('am-modal-' + size) : ''
+    ]"
+    v-on:click="closeViaDimmer">
+    <div class="am-modal-dialog" v-on:click="onClick">
+      <slot></slot>
     </div>
 
     <div v-bind:class="{
