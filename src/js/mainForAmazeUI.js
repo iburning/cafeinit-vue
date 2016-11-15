@@ -1,7 +1,7 @@
 /**
  * @fileoverview main for amazeui
  * @author: burning <www.cafeinit.com>
- * @version: 2016-11-09
+ * @version: 2016-11-15
  */
 
 import CIAlertTip from './alertTip/AMAlertTip'
@@ -43,6 +43,7 @@ import CIForm from './form/AMForm'
 import CIInput from './form/AMInput'
 import CIRadio from './form/AMRadio'
 import CISelect from './form/AMSelect'
+import CISwitch from './form/AMSwitch'
 
 import CIButton from './button/AMButton'
 import CILinkButton from './button/AMLinkButton'
@@ -96,6 +97,7 @@ const CIComponents = {
   'ci-input': CIInput,
   'ci-radio': CIRadio,
   'ci-select': CISelect,
+  'ci-switch': CISwitch,
 
   /* form modal */
   'ci-modal': CIModal,

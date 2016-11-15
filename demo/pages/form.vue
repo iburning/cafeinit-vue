@@ -61,6 +61,14 @@
               {title: 'Bussiness', value: '2'}
             ]"
             v-model="type"></ci-radio>
+
+          <ci-switch title="技能" name="skills"
+            v-bind:items="[
+              {title: 'HTML', value: 'html'},
+              {title: 'CSS', value: 'css'},
+              {title: 'JavaScript', value: 'javascript'}
+            ]"
+            v-model="skills"></ci-switch>
         </ci-block-body>
       </ci-block>
 
