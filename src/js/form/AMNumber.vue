@@ -28,7 +28,7 @@ export default config
     height: @height;
     padding: 0 0.5em;
     line-height: @height;
-    text-align: right;
+    text-align: center;
   }
 }
 </style>
