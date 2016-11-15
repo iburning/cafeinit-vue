@@ -37,6 +37,14 @@
         ]"
         v-model="type"></ci-list-radio>
 
+      <ci-list-switch title="技能" name="skills"
+        v-bind:items="[
+          {title: 'HTML', value: 'html'},
+          {title: 'CSS', value: 'css'},
+          {title: 'JavaScript', value: 'javascript'}
+        ]"
+        v-model="skills"></ci-list-switch>
+
       <div class="ci-btn-area">
         <ci-button style="primary" block="block" v-on:click="save">保存</ci-button>
       </div>

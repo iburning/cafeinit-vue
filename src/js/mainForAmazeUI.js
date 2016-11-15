@@ -26,6 +26,7 @@ import CIListCell from './list/CIListCell'
 import CIListHeader from './list/CIListHeader'
 import CIListCheckbox from './list/AMListCheckbox'
 import CIListRadio from './list/AMListRadio'
+import CIListSwitch from './list/AMListSwitch'
 
 import CILoading from './loading/CILoading'
 
@@ -80,6 +81,7 @@ const CIComponents = {
   'ci-list-header': CIListHeader,
   'ci-list-checkbox': CIListCheckbox,
   'ci-list-radio': CIListRadio,
+  'ci-list-switch': CIListSwitch,
 
   'ci-loading': CILoading,
   'ci-navigation': CINavigation,
