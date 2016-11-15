@@ -26,6 +26,7 @@ export default config
   input {
     display: inline-block;
     height: @height;
+    padding: 0 0.5em;
     line-height: @height;
     text-align: right;
   }

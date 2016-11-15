@@ -34,7 +34,7 @@ export default {
 
     size: {
       type: Number,
-      default: 3
+      default: 4
     },
 
     placeholder: String,
@@ -57,39 +57,29 @@ export default {
   },
 
   methods: {
+    checkValue(value) {
+      value = (value < this.min) ? this.min : value;
+      value = (value > this.max) ? this.max : value;
+      return value;
+    },
+
     reduce() {
-      var value = this.currentValue - this.step;
-      if (value < this.min) {
-        value = this.min;
-      }
-      else {
-        value = value;
-      }
-      console.log('CINumber.reduce', this.step, value);
-      this.currentValue = value;
-      this.$emit('input', value)
+      this.currentValue = this.checkValue(this.currentValue - this.step)
+      this.$emit('input', this.currentValue)
     },
 
     increase() {
-      var value = this.currentValue + this.step;
-      if (value > this.max) {
-        value = this.max;
-      }
-      else {
-        value = value;
-      }
-      console.log('CINumber.increase', this.step, value)
-      this.currentValue = value;
-      this.$emit('input', value)
+      this.currentValue = this.checkValue(this.currentValue + this.step)
+      this.$emit('input', this.currentValue)
     },
 
     onChange: function (evt) {
-      console.log('CINumber.onChange', this.currentValue)
+      this.currentValue = this.checkValue(this.currentValue)
       this.$emit('change', this.currentValue)
     },
 
     onInput: function (evt) {
-      console.log('CINumber.input', this.currentValue)
+      this.currentValue = this.checkValue(this.currentValue)
       this.$emit('input', this.currentValue)
     }
   }

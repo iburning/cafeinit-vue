@@ -20,6 +20,12 @@
           <ci-input title="密码" type="password" name="password" placeholder="6-18位字母数字"
             title-width="4em" v-model="password"></ci-input>
         </ci-list-cell>
+
+        <ci-list-cell>
+          <ci-number title="数量" name="count" placeholder="0"
+            title-width="4em" v-model="count"
+            v-bind:step="5" v-bind:min="0" v-bind:max="20"></ci-number>
+        </ci-list-cell>
       </ci-list>
 
       <ci-list-checkbox title="技能" name="skills"
@@ -58,6 +64,7 @@ export default {
 
   data() {
     return {
+      count: 5,
       category: 1,
       email: 'iburning@live.cn',
       password: '',
