@@ -41,7 +41,9 @@ import CITreeNav from './treeNav/CITreeNav'
 /* for form */
 import CICheckbox from './form/AMCheckbox'
 import CIForm from './form/AMForm'
+import CIFormGroup from './form/AMFormGroup'
 import CIInput from './form/AMInput'
+import CINumber from './form/AMNumber'
 import CIRadio from './form/AMRadio'
 import CISelect from './form/AMSelect'
 import CISwitch from './form/AMSwitch'
@@ -96,7 +98,9 @@ const CIComponents = {
 
   'ci-checkbox': CICheckbox,
   'ci-form': CIForm,
+  'ci-form-group': CIFormGroup,
   'ci-input': CIInput,
+  'ci-number': CINumber,
   'ci-radio': CIRadio,
   'ci-select': CISelect,
   'ci-switch': CISwitch,

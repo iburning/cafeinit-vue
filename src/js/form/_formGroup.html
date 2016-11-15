@@ -1,0 +1,6 @@
+<div v-bind:class="ns + 'form-group'">
+  <label v-if="title"
+    v-bind:class="ns + 'control-label'"
+    v-bind:style="{width: titleWidth}">{{title}}</label>
+  <slot></slot>
+</div>

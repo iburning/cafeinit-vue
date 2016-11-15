@@ -32,6 +32,10 @@
           <ci-input title="密码" type="password" name="password" placeholder="6-18位字母数字"
             title-width="4em" v-model="password"></ci-input>
 
+          <ci-number title="数量" name="count" placeholder="0"
+            title-width="4em" v-model="count"
+            v-bind:step="5" v-bind:min="0" v-bind:max="20"></ci-number>
+
           <ci-checkbox inline="inline" title="技能" title-width="4em" name="skills"
             v-bind:items="[
               {title: 'HTML', value: 'html'},
@@ -87,6 +91,7 @@ export default {
     return {
       email: 'iburning@live.cn',
       password: '',
+      count: 0,
       category: '2',
       skills: ['html', 'javascript'],
       gender: 'female',
