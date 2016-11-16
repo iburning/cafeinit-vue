@@ -3,9 +3,12 @@
       width: width + 'px',
       height: height + 'px'
     }">
-    <div class="preview"></div>
     <i class="fa fa-plus ci-icon-plus"></i>
-    <input type="file" class="picker" accept="image/jpeg,image/x-png" />
+    <div class="preview" v-if="previewSrc" v-bind:style="{
+      'background-image': 'url(' + previewSrc + ')'
+      }"></div>
+    <input type="file" class="picker" accept="image/jpeg,image/x-png"
+      v-on:change="onChange" />
   </div>
 </template>
 
@@ -15,6 +18,16 @@ export default {
 
   props: {
     src: String,
+
+    maxCount: {
+      type: [Number, String],
+      default: 1
+    },
+
+    maxSize: {
+      type: [Number, String],
+      default: 2
+    },
 
     width: {
       type: [Number, String],
@@ -26,9 +39,98 @@ export default {
       default: 100
     },
 
-    radius: {
-      type: String,
-      default: ''
+    isPreview: {
+      type: Boolean,
+      default: true
+    }
+  },
+
+  data() {
+    return {
+      files() {
+        return []
+      },
+      previewSrc: ''
+    }
+  },
+
+  computed: {
+    maxSizeBit() {
+      return this.maxSize * 1024 * 1024
+    }
+  },
+
+  methods: {
+    onChange(evt) {
+      var that = this
+      var files = evt.target.files
+
+      if (files.length) {
+        this.files = files
+        this.checkFiles(function (err) {
+          if (err) {
+            that.$emit('error', err, evt)
+          }
+          else {
+            if (that.isPreview) {
+              that.readImage(files[0], function (data) {
+                that.previewSrc = data;
+              })
+            }
+
+            that.$emit('change', files, evt)
+          }
+        })
+      }
+    },
+
+    checkFiles(done) {
+      var errors = [];
+
+      if (this.files.length > this.maxCount) {
+        errors.push({
+          code: 100,
+          tip: '最多只能选择' + this.maxCount + '张图片'
+        })
+      }
+
+      for (var i = 0; i < this.files.length; i++) {
+        var file = this.files[i];
+        if (file.size > this.maxSizeBit) {
+          var tip = '图片超过了' + this.maxSize + 'MB'
+          if (i > 0) {
+            tip = '第' + (i + 1) + '张' + tip
+          }
+          errors.push({
+            code: 101,
+            tip: tip
+          })
+          continue
+        }
+      }
+
+      if (errors.length) {
+        done(errors[0])
+      }
+      else {
+        done()
+      }
+    },
+
+    readImage(file, done) {
+      var that = this
+      var reader = new FileReader()
+
+      reader.onload = function (evt) {
+        // console.log('onload', evt)
+        var data = evt.target.result
+        if (data.indexOf('data:;') === 0) {
+          data = data.replace('data:;', 'data:image/jpeg;')
+        }
+        done(data);
+      }
+
+      reader.readAsDataURL(file)
     }
   }
 }
