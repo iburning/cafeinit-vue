@@ -20,6 +20,7 @@ import CIGrid from './grid/AMGrid'
 import CIGridCell from './grid/AMGridCell'
 
 import CIImage from './image/CIImage'
+import CIImagePicker from './imagePicker/CIImagePicker'
 
 import CIList from './list/CIList'
 import CIListCell from './list/CIListCell'
@@ -99,6 +100,7 @@ const CIComponents = {
   'ci-checkbox': CICheckbox,
   'ci-form': CIForm,
   'ci-form-group': CIFormGroup,
+  'ci-image-picker': CIImagePicker,
   'ci-input': CIInput,
   'ci-number': CINumber,
   'ci-radio': CIRadio,

@@ -49,6 +49,11 @@
         <strong class="title">Form List</strong>
         <span class="sub-title">表单列表</span>
       </ci-list-cell>
+
+      <ci-list-cell accessory="link" to="/image-picker">
+        <strong class="title">Image Picker</strong>
+        <span class="sub-title">图片选择器</span>
+      </ci-list-cell>
     </ci-list>
 
     <ci-list-header>浮层/模态窗</ci-list-header>

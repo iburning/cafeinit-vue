@@ -14,6 +14,7 @@ import FormList from './pages/formList'
 import Gallery from './pages/gallery'
 import Grid from './pages/grid'
 import Images from './pages/images'
+import ImagePicker from './pages/imagePicker'
 import List from './pages/list'
 import Loading from './pages/loading'
 import Modals from './pages/modals'
@@ -33,6 +34,7 @@ export default [
   { path: '/gallery', component: Gallery },
   { path: '/grid', component: Grid },
   { path: '/images', component: Images },
+  { path: '/image-picker', component: ImagePicker },
   { path: '/list', component: List },
   { path: '/loading', component: Loading },
   { path: '/modals', component: Modals },
