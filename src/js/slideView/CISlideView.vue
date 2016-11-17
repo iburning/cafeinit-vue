@@ -148,9 +148,11 @@ export default {
       let y = 0
       if (this.direction == 'horizontal') {
         x = -this.itemWidth * index
+        this.position.x = x
       }
       else if (this.direction == 'vertical') {
         y = -this.itemHeight * index
+        this.position.y = y
       }
       this._setTransform(x, y)
 
@@ -158,12 +160,12 @@ export default {
         done()
       }
 
-      console.log('from %s move %s step(s) to %s', lastIndex, step, index)
+      // console.log('from %s move %s step(s) to %s', lastIndex, step, index)
       this.$emit('did-move', index, lastIndex)
     },
 
     moveTo(target) {
-      console.log('moveTo', target, this.currentIndex)
+      // console.log('moveTo', target, this.currentIndex)
       this.move(target - this.currentIndex)
     },
 
@@ -181,17 +183,10 @@ export default {
       x = parseInt(x) || 0
       y = parseInt(y) || 0
 
-      this.position.x = x
-      this.position.y = y
-
       let pos = [x + 'px', y + 'px', '0px']
       let transform = 'translate3d(' + pos.join(',') + ')'
       this.$content.style.webkitTransform = transform
       this.$content.style.transform = transform
-
-      if (typeof done == 'function') {
-        done()
-      }
     },
 
     _setTransition(duration) {
@@ -226,6 +221,7 @@ export default {
 
       if (this.direction == 'horizontal') {
         let dX = currentX - this.touchObject.startX
+        console.log(currentX, dX, this.touchObject.startX, this.position.x)
         this._setTransform(this.position.x + dX, 0)
       }
       else if (this.direction == 'vertical') {
@@ -236,13 +232,10 @@ export default {
 
     _slideEnd(evt) {
       this._setTransition(this.duration)
-      console.log('CISlideView._slideEnd', this.touchObject)
-
-      // let currentX = this.touchObject.x
-      // let currentY = this.touchObject.y
 
       if (this.direction == 'horizontal') {
-        let dX = this.position.x - this.position.startX
+        let dX = this.touchObject.x - this.touchObject.startX
+        console.log('CISlideView._slideEnd', dX)
         if (dX > 0) {     // 向右滑，向前翻1页
           this.move(-1)
         }
