@@ -5,7 +5,14 @@
         <ci-image-picker width="80" height="80"
           maxSize="5"
           v-on:change="imagePickerOnChange"
-          v-on:error="imagePickerOnError"></ci-image>
+          v-on:error="imagePickerOnError"></ci-image-picker>
+
+        <ci-image-picker width="80" height="80"
+          maxSize="5"
+          v-bind:disabled="imagePickerDisabled"
+          v-on:click="imagePickerOnClick"
+          v-on:change="imagePickerOnChange"
+          v-on:error="imagePickerOnError"></ci-image-picker>
       </ci-block-body>
     </ci-block>
 
@@ -15,6 +22,12 @@
       v-bind:is-show="isShowAlert"
       v-bind:content="alertContent"
       v-on:close="isShowAlert = false"></ci-alert>
+
+    <ci-modal class="popup-image"
+      v-bind:is-show="isShowPopupImage"
+      v-on:close="isShowPopupImage = false">
+      <ci-image width="300" height="300" v-bind:src="popupImageSrc" />
+    </ci-alert>
   </div>
 </template>
 
@@ -28,7 +41,11 @@ export default {
       alertContent: '',
       files: [],
       uploadApi: 'http://test2016.jiheapp.com/v1/image/img_upd',
-      isUploading: false
+      isUploading: false,
+      imagePickerDisabled: false,
+
+      isShowPopupImage: false,
+      popupImageSrc: ''
     }
   },
 
@@ -37,6 +54,7 @@ export default {
       var that = this;
       // console.log('imagePickerOnChange', files)
       if (files.length) {
+        console.log('imagePickerOnChange', typeof files[0], files[0])
         // this.willUpload()
         this.isUploading = true;
 
@@ -47,6 +65,7 @@ export default {
         }, function (err, res) {
           console.log('upload', err, res)
           that.isUploading = false
+          that.imagePickerDisabled = true
           // that.didUpload()
           if (err) {
             that.alertContent = err.tip
@@ -103,10 +122,46 @@ export default {
       } else {
         return null
       }
+    },
+
+    imagePickerOnClick(files) {
+      var that = this;
+      if (files.length) {
+        console.log('imagePickerOnClick', typeof files[0], files[0])
+
+        var reader = new FileReader()
+
+        reader.onload = function (evt) {
+          // console.log('onload', evt)
+          var data = evt.target.result
+          that.popupImageSrc = data
+          that.isShowPopupImage = true
+        }
+
+        reader.readAsDataURL(files[0])
+      }
+    },
+
+    showImage(image) {
+      console.log('showImage', typeof image, image)
+      // this.popupImageSrc = image
+      this.popupImageSrc = 'http://test.img.jiheapp.com/customer/20161116/20161116234558372717004105.jpg'
+      this.isShowPopupImage = true
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+.popup-image {
+  background-color: #000;
+
+  .am-modal-dialog {
+    width: 300px;
+  }
+}
+
+.am-modal-dialog {
+  width: 300px;
+}
 </style>

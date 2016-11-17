@@ -8,6 +8,7 @@
       'background-image': 'url(' + previewSrc + ')'
       }"></div>
     <input type="file" class="picker" accept="image/jpeg,image/x-png"
+      v-on:click="onClick"
       v-on:change="onChange" />
   </div>
 </template>
@@ -42,6 +43,11 @@ export default {
     isPreview: {
       type: Boolean,
       default: true
+    },
+
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -61,6 +67,14 @@ export default {
   },
 
   methods: {
+    onClick(evt) {
+      console.log('CIImagePicker.onClick')
+      if (this.disabled) {
+        evt.preventDefault()
+      }
+      this.$emit('click', this.files, evt)
+    },
+
     onChange(evt) {
       var that = this
       var files = evt.target.files
