@@ -3,14 +3,16 @@
     <div ref="content"
       class="ci-slide-view-content"
       v-bind:style="contentStyle"
+      v-on:mousedown="_slideStart"
+      v-on:mousemove="_slideMove"
+      v-on:mouseup="_slideEnd"
       v-on:touchstart="_slideStart"
       v-on:touchmove="_slideMove"
       v-on:touchend="_slideEnd">
       <slot></slot>
     </div>
-    <span class="ci-slide-view-page">{{currentIndex}}/{{itemCount}}</span>
-    <a class="ci-slide-view-prev" href="javascript:;" v-on:click="move(-1)">&lt;</a>
-    <a class="ci-slide-view-next" href="javascript:;" v-on:click="move(1)">&gt;</a>
+    <a v-if="isShowButtons" class="ci-slide-view-prev" href="javascript:;" v-on:click="move(-1)">&lt;</a>
+    <a v-if="isShowButtons" class="ci-slide-view-next" href="javascript:;" v-on:click="move(1)">&gt;</a>
   </div>
 </template>
 
@@ -41,7 +43,12 @@ export default {
 
     isAutoplay: {
       type: Boolean,
-      default: true
+      default: false
+    },
+
+    isShowButtons: {
+      type: Boolean,
+      default: false
     },
 
     itemWidth: {
@@ -61,8 +68,6 @@ export default {
       itemCount: 0,
 
       position: {
-        startX: 0,
-        startY: 0,
         x: 0,
         y: 0
       },
@@ -72,7 +77,9 @@ export default {
         startY: 0,
         x: 0,
         x: 0
-      }
+      },
+
+      isDragging: false
     }
   },
 
@@ -102,8 +109,17 @@ export default {
     }
   },
 
+  watch: {
+    itemWidth(val) {
+      console.log('CISlideView.itemWidth', val)
+      for (let i = 0; i < this.$items.length; i++) {
+        this.$items[i].width = this.itemWidth
+        this.$items[i].height = this.itemHeight
+      }
+    }
+  },
+
   mounted() {
-    console.log('CISlideView.mounted', this)
     this.$content = this.$refs.content
     this.$items = this.$children
     for (let i = 0; i < this.$items.length; i++) {
@@ -190,6 +206,9 @@ export default {
     },
 
     _slideStart(evt) {
+      console.log('CISlideView._slideStart', evt)
+      evt.preventDefault()    // !important
+      this.isDragging = true
       this._setTransition()
 
       let currentX = (evt.touches) ? evt.touches[0].pageX : evt.clientX
@@ -201,12 +220,13 @@ export default {
         x: currentX,
         y: currentY
       }
-
-      this.position.startX = this.position.x
-      this.position.startY = this.position.y
     },
 
     _slideMove(evt) {
+      // console.log('CISlideView._slideMove', evt)
+      if (!this.isDragging) {
+        return
+      }
       let currentX = (evt.touches) ? evt.touches[0].pageX : evt.clientX
       let currentY = (evt.touches) ? evt.touches[0].pageY : evt.clientY
 
@@ -225,7 +245,12 @@ export default {
     },
 
     _slideEnd(evt) {
-      var that = this;
+      console.log('CISlideView._slideEnd', evt)
+      if (!this.isDragging) {
+        return
+      }
+      var that = this
+      this.isDragging = false
       this._setTransition(this.duration)
 
       window.setTimeout(function () {
@@ -262,7 +287,7 @@ export default {
         else if (that.direction == 'vertical') {
           that._setTransform(0, that.position.y + dY)
         }
-      }, 0)
+      }, 100)
     }
   }
 }

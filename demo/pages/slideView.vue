@@ -1,19 +1,15 @@
 <template>
-  <div class="page-slide-view">
-    <div class="box">
-      <ci-slide-view ref="my-slide-view"
-        v-bind:isAutoplay="false"
-        v-bind:index="2"
-        v-bind:item-width="itemWidth"
-        v-bind:item-height="itemHeight">
-        <ci-slide-view-item class="box-item">A</ci-slide-view-item>
-        <ci-slide-view-item class="box-item">B</ci-slide-view-item>
-        <ci-slide-view-item class="box-item">C</ci-slide-view-item>
-        <ci-slide-view-item class="box-item">D</ci-slide-view-item>
-        <ci-slide-view-item class="box-item">E</ci-slide-view-item>
-        <ci-slide-view-item class="box-item">F</ci-slide-view-item>
-      </ci-slide-view>
-    </div>
+  <div id="page-slide-view">
+    <ci-slide-view class="banner"
+      v-bind:isAutoplay="false"
+      v-bind:index="0"
+      v-bind:item-width="itemWidth"
+      v-bind:item-height="itemHeight"
+      v-bind:isShowButtons="false">
+      <ci-slide-view-item class="box-item" v-for="item in items">
+        <ci-image v-bind:src="item.banner" v-bind:width="itemWidth" v-bind:height="itemHeight"></ci-image>
+      </ci-slide-view-item>
+    </ci-slide-view>
   </div>
 </template>
 
@@ -24,40 +20,27 @@ export default {
   data() {
     return {
       itemWidth: 300,
-      itemHeight: 100
+      itemHeight: 150,
+      items: [
+        { banner: 'http://i3.mifile.cn/a4/91214487-3c8c-4fa5-b27d-1fea1e2f8773' },
+        { banner: 'http://i3.mifile.cn/a4/d1e41f4a-2fb3-42cc-86be-4f4be9e046df' },
+        { banner: 'http://i3.mifile.cn/a4/a8c14776-3d56-484f-8d5a-958693d3afdc' },
+        { banner: 'http://i3.mifile.cn/a4/592af129-b3ea-487f-9fe3-848c588fa681' },
+        { banner: 'http://i3.mifile.cn/a4/ac593fe5-c5ab-4541-9526-f113b03ee213' }
+      ]
     }
   },
 
   mounted() {
-    // const mySlideView = this.$refs['my-slide-view']
-    // // mySlideView.move(-3)
-    // // mySlideView.moveTo(11)
+    this.itemWidth = window.innerWidth;
+    this.itemHeight = parseInt(this.itemWidth * 0.375)
   }
 }
 </script>
 
 <style lang="less">
-.box {
-  width: 300px + 10px;
-  margin: 50px auto;
-  border: 5px solid #ddd;
-
-  .box-item {
-    width: 200px;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 30px;
-    line-height: 100px;
-  }
-}
-
-@item-color: #52b888;
 .ci-slide-view {
   position: relative;
-}
-
-.ci-slide-view-content {
-  background-color: @item-color;
 }
 
 .ci-slide-view-item {
