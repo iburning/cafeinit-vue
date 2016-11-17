@@ -2,24 +2,16 @@
   <div class="page-slide-view">
     <div class="box">
       <ci-slide-view ref="my-slide-view"
+        v-bind:isAutoplay="false"
         v-bind:index="2"
         v-bind:item-width="itemWidth"
         v-bind:item-height="itemHeight">
-        <ci-slide-view-item v-bind:width="itemWidth" v-bind:height="itemHeight">
-          <div class="box-item">A</div>
-        </ci-slide-view-item>
-        <ci-slide-view-item v-bind:width="itemWidth" v-bind:height="itemHeight">
-          <div class="box-item">B</div>
-        </ci-slide-view-item>
-        <ci-slide-view-item v-bind:isActived="true" v-bind:width="itemWidth" v-bind:height="itemHeight">
-          <div class="box-item">C</div>
-        </ci-slide-view-item>
-        <ci-slide-view-item v-bind:width="itemWidth" v-bind:height="itemHeight">
-          <div class="box-item">D</div>
-        </ci-slide-view-item>
-        <ci-slide-view-item v-bind:width="itemWidth" v-bind:height="itemHeight">
-          <div class="box-item">E</div>
-        </ci-slide-view-item>
+        <ci-slide-view-item class="box-item">A</ci-slide-view-item>
+        <ci-slide-view-item class="box-item">B</ci-slide-view-item>
+        <ci-slide-view-item class="box-item">C</ci-slide-view-item>
+        <ci-slide-view-item class="box-item">D</ci-slide-view-item>
+        <ci-slide-view-item class="box-item">E</ci-slide-view-item>
+        <ci-slide-view-item class="box-item">F</ci-slide-view-item>
       </ci-slide-view>
     </div>
   </div>
