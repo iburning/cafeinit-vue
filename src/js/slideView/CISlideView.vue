@@ -39,9 +39,14 @@ export default {
       default: 100
     },
 
-    orientation: {
+    direction: {
       type: String,
       default: 'horizontal'   // horizontal / vertical
+    },
+
+    duration: {
+      type: Number,
+      default: 500
     }
   },
 
@@ -67,7 +72,7 @@ export default {
         height: this.itemHeight + 'px'
       }
 
-      if (this.orientation == 'vertical') {
+      if (this.direction == 'vertical') {
         style = {
           width: this.itemWidth + 'px',
           height: this.itemHeight * this.itemCount + 'px'
@@ -89,6 +94,7 @@ export default {
     this.$content = this.$refs.content
     this.$items = this.$children
     this.itemCount = this.$items.length
+    this._setTransition(this.duration)
     this.moveTo(this.currentIndex)
   },
 
@@ -112,13 +118,13 @@ export default {
 
       var x = 0
       var y = 0
-      if (this.orientation == 'horizontal') {
+      if (this.direction == 'horizontal') {
         x = -this.itemWidth * index
       }
-      else if (this.orientation == 'vertical') {
+      else if (this.direction == 'vertical') {
         y = -this.itemHeight * index
       }
-      this.setPosition(x, y)
+      this._setTransform(x, y)
 
       console.log('from %s move %s step(s) to %s', lastIndex, step, index)
       this.$emit('did-move', index, lastIndex)
@@ -136,6 +142,22 @@ export default {
       // console.log('CISlideView.setPosition', x, y, this.contentStyle)
       this.$content.style.webkitTransform = transform
       this.$content.style.transform = transform
+    },
+
+    _setTransform(x, y, z) {
+      x = parseInt(x) || 0
+      y = parseInt(y) || 0
+      z = parseInt(z) || 0
+      let pos = [x + 'px', y + 'px', z + 'px']
+      let transform = 'translate3d(' + pos.join(',') + ')'
+      this.$content.style.webkitTransform = transform
+      this.$content.style.transform = transform
+    },
+
+    _setTransition(duration) {
+      let transition = (duration === 'none') ? 'none' : duration + 'ms'
+      this.$content.style.webkitTransition = transition
+      this.$content.style.transition = transition
     }
   }
 }

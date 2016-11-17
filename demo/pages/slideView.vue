@@ -6,19 +6,19 @@
         v-bind:item-width="itemWidth"
         v-bind:item-height="itemHeight">
         <ci-slide-view-item v-bind:width="itemWidth" v-bind:height="itemHeight">
-          A
+          <div class="box-item">A</div>
         </ci-slide-view-item>
         <ci-slide-view-item v-bind:width="itemWidth" v-bind:height="itemHeight">
-          B
+          <div class="box-item">B</div>
         </ci-slide-view-item>
         <ci-slide-view-item v-bind:isActived="true" v-bind:width="itemWidth" v-bind:height="itemHeight">
-          C
+          <div class="box-item">C</div>
         </ci-slide-view-item>
         <ci-slide-view-item v-bind:width="itemWidth" v-bind:height="itemHeight">
-          D
+          <div class="box-item">D</div>
         </ci-slide-view-item>
         <ci-slide-view-item v-bind:width="itemWidth" v-bind:height="itemHeight">
-          E
+          <div class="box-item">E</div>
         </ci-slide-view-item>
       </ci-slide-view>
     </div>
@@ -49,6 +49,14 @@ export default {
   width: 300px + 10px;
   margin: 50px auto;
   border: 5px solid #ddd;
+
+  .box-item {
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 30px;
+    line-height: 100px;
+  }
 }
 
 @item-color: #52b888;
