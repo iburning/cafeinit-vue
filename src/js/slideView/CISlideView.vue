@@ -102,12 +102,6 @@ export default {
     }
   },
 
-  watch: {
-    contentStyle(val, oldVal) {
-      console.log('CISlideView.contentStyle', val, oldVal)
-    }
-  },
-
   mounted() {
     console.log('CISlideView.mounted', this)
     this.$content = this.$refs.content
@@ -221,7 +215,7 @@ export default {
 
       if (this.direction == 'horizontal') {
         let dX = currentX - this.touchObject.startX
-        console.log(currentX, dX, this.touchObject.startX, this.position.x)
+        // console.log(currentX, dX, this.touchObject.startX, this.position.x)
         this._setTransform(this.position.x + dX, 0)
       }
       else if (this.direction == 'vertical') {
@@ -231,21 +225,44 @@ export default {
     },
 
     _slideEnd(evt) {
+      var that = this;
       this._setTransition(this.duration)
 
-      if (this.direction == 'horizontal') {
-        let dX = this.touchObject.x - this.touchObject.startX
-        console.log('CISlideView._slideEnd', dX)
-        if (dX > 0) {     // 向右滑，向前翻1页
-          this.move(-1)
+      window.setTimeout(function () {
+        if (that.direction == 'horizontal') {
+          let dX = that.touchObject.x - that.touchObject.startX
+          console.log('CISlideView._slideEnd', dX, that.position.x)
+          if (dX > 0) {     // 向右滑，向前翻1页
+            if (that.position.x >= 0) {
+              that.move(0)
+            }
+            else {
+              if (Math.abs(dX) >= that.itemWidth * 0.25) {
+                that.move(-1)
+              }
+              else {
+                that.move(0)
+              }
+            }
+          }
+          else {      // 向左滑，向后翻1页
+            if (that.position.x <= -that.itemWidth * (that.itemCount - 1)) {
+              that.move(0)
+            }
+            else {
+              if (Math.abs(dX) >= that.itemWidth * 0.25) {
+                that.move(1)
+              }
+              else {
+                that.move(0)
+              }
+            }
+          }
         }
-        else {      // 向左滑，向后翻1页
-          this.move(1)
+        else if (that.direction == 'vertical') {
+          that._setTransform(0, that.position.y + dY)
         }
-      }
-      else if (this.direction == 'vertical') {
-        this._setTransform(0, this.position.y + dY)
-      }
+      }, 0)
     }
   }
 }
