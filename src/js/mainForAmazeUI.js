@@ -58,6 +58,10 @@ import CIActions from './modal/AMActions'
 import CIAlert from './modal/AMAlert'
 import CIConfirm from './modal/AMConfirm'
 
+/* for component */
+import CISlideView from './slideView/CISlideView'
+import CISlideViewItem from './slideView/CISlideViewItem'
+
 import CIScrollHelper from './utils/CIScrollHelper'
 
 
@@ -111,7 +115,11 @@ const CIComponents = {
   'ci-modal': CIModal,
   'ci-actions': CIActions,
   'ci-alert': CIAlert,
-  'ci-confirm': CIConfirm
+  'ci-confirm': CIConfirm,
+
+  /* components */
+  'ci-slide-view': CISlideView,
+  'ci-slide-view-item': CISlideViewItem
 }
 
 // export default {
