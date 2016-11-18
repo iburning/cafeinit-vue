@@ -206,7 +206,7 @@ export default {
     },
 
     _slideStart(evt) {
-      console.log('CISlideView._slideStart', evt)
+      // console.log('CISlideView._slideStart', evt)
       evt.preventDefault()    // !important
       this.isDragging = true
       this._setTransition()
@@ -235,8 +235,33 @@ export default {
 
       if (this.direction == 'horizontal') {
         let dX = currentX - this.touchObject.startX
-        // console.log(currentX, dX, this.touchObject.startX, this.position.x)
-        this._setTransform(this.position.x + dX, 0)
+
+        // 滑动范围在阀值以内跟随移动
+        if (Math.abs(dX) < this.itemWidth * 0.25) {
+          this._setTransform(this.position.x + dX, 0)
+        }
+        // 滑动范围超过阀值后自动移动
+        else {
+          this.isDragging = false
+          this._setTransition(this.duration)
+
+          if (dX > 0) {   // 向右拖动，往前翻页
+            if (this.currentIndex == 0) {
+              this.move(0)
+            }
+            else {
+              this.move(-1)
+            }
+          }
+          else {          // 向左拖动，往后翻页
+            if (this.currentIndex == (this.itemCount - 1)) {
+              this.move(0)
+            }
+            else {
+              this.move(1)
+            }
+          }
+        }
       }
       else if (this.direction == 'vertical') {
         let dY = currentY - this.touchObject.startY
@@ -245,49 +270,21 @@ export default {
     },
 
     _slideEnd(evt) {
-      console.log('CISlideView._slideEnd', evt)
-      if (!this.isDragging) {
-        return
-      }
-      var that = this
+      // console.log('CISlideView._slideEnd', evt)
       this.isDragging = false
       this._setTransition(this.duration)
 
-      window.setTimeout(function () {
-        if (that.direction == 'horizontal') {
-          let dX = that.touchObject.x - that.touchObject.startX
-          console.log('CISlideView._slideEnd', dX, that.position.x)
-          if (dX > 0) {     // 向右滑，向前翻1页
-            if (that.position.x >= 0) {
-              that.move(0)
-            }
-            else {
-              if (Math.abs(dX) >= that.itemWidth * 0.25) {
-                that.move(-1)
-              }
-              else {
-                that.move(0)
-              }
-            }
-          }
-          else {      // 向左滑，向后翻1页
-            if (that.position.x <= -that.itemWidth * (that.itemCount - 1)) {
-              that.move(0)
-            }
-            else {
-              if (Math.abs(dX) >= that.itemWidth * 0.25) {
-                that.move(1)
-              }
-              else {
-                that.move(0)
-              }
-            }
-          }
+      if (this.direction == 'horizontal') {
+        let dX = this.touchObject.x - this.touchObject.startX
+
+        // 当停止滑动时，移动范围在阀值以内则回归
+        if (Math.abs(dX) < this.itemWidth * 0.25) {
+          this.move(0)
         }
-        else if (that.direction == 'vertical') {
-          that._setTransform(0, that.position.y + dY)
-        }
-      }, 100)
+      }
+      else if (this.direction == 'vertical') {
+        this._setTransform(0, this.position.y + dY)
+      }
     }
   }
 }
