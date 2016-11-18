@@ -56,6 +56,11 @@ export default {
       default: false
     },
 
+    value: {
+      type: Array,
+      default: []
+    },
+
     itemWidth: {
       type: Number,
       default: 100
@@ -71,6 +76,8 @@ export default {
     return {
       currentIndex: this.index,
       _itemCount: 0,
+
+      items: this.value,
 
       position: {
         x: 0,
@@ -127,21 +134,51 @@ export default {
   watch: {
     itemWidth(val) {
       // console.log('CISlideView.itemWidth', val)
-      for (let i = 0; i < this.$items.length; i++) {
+      for (let i = 0; i < this._itemCount; i++) {
         this.$items[i].width = this.itemWidth
         this.$items[i].height = this.itemHeight
       }
       this.moveTo(this.currentIndex, 0)
-    }
+    },
+
+    value() {
+      var that = this
+      console.log('value change', this.$children.length)
+      // setTimeout(function () {
+      //   that._init()
+      // }, 500)
+    },
+    //
+    // items() {
+    //   console.log('items')
+    // },
+    //
+    // $items() {
+    //   console.log('$items')
+    // },
+    //
+    // _itemCount() {
+    //   console.log('_itemCount')
+    // }
   },
 
   mounted() {
     var that = this
+    console.log('CISlideView.mounted', this.$children.length, this)
+
+    if (this.isLoop) {
+      let firstItem = this.items[0]
+      let lastItem = this.items[this.items.length - 1]
+      this.items.unshift(lastItem)
+      this.items.push(firstItem)
+      this.$emit('change', this.items)
+    }
+
     this.$content = this.$refs.content
 
     if (this.isLoop) {
       this.$content.addEventListener('transitionend', function (evt) {
-        console.log('transitionend', evt)
+        // console.log('transitionend', evt)
         if (that.currentIndex == 0) {
           that.moveTo(that._itemCount - 2, 0)
         }
@@ -151,28 +188,53 @@ export default {
       })
     }
 
-    this.$items = this.$children
-    for (let i = 0; i < this.$items.length; i++) {
-      this.$items[i].width = this.itemWidth
-      this.$items[i].height = this.itemHeight
-    }
-    this._itemCount = this.$items.length
+    this._init()
+  },
 
-    if (this.isLoop) {
-      this.moveTo(this.currentIndex + 1, 0)
-    }
-    else {
-      this.moveTo(this.currentIndex, 0)
-    }
+  beforeMount() {
+    console.log('CISlideView.beforeMount', this.$children.length, this)
+  },
 
-    // this._setTransition(this.duration)
+  created() {
+    console.log('CISlideView.created', this.$children.length, this)
+  },
 
-    if (this.isAutoplay) {
-      this.play()
-    }
+  update() {
+    console.log('CISlideView.update', this.$children.length, this)
+  },
+
+  activated() {
+    console.log('CISlideView.activated', this.$children.length, this)
+  },
+
+  destroyed() {
+    console.log('CISlideView.destroyed', this.$children.length, this)
   },
 
   methods: {
+    _init() {
+      this.$items = this.$children
+      this._itemCount = this.$items.length
+
+      for (let i = 0; i < this._itemCount; i++) {
+        this.$items[i].width = this.itemWidth
+        this.$items[i].height = this.itemHeight
+      }
+
+      console.log('_init', this._itemCount, this.$items)
+
+      if (this.isLoop) {
+        this.moveTo(this.currentIndex + 1, 0)
+      }
+      else {
+        this.moveTo(this.currentIndex, 0)
+      }
+
+      if (this.isAutoplay) {
+        this.play()
+      }
+    },
+
     move(step, duration, done) {
       step = (step % this._itemCount);
       let lastIndex = this.currentIndex
@@ -202,7 +264,7 @@ export default {
         this.position.y = y
       }
 
-      console.log('move %s step(s) from %s to %s, duration=%s', step, lastIndex, index, duration)
+      // console.log('move %s step(s) from %s to %s, duration=%s', step, lastIndex, index, duration)
       this._setTransition(duration)
       this._setTransform(x, y)
 
@@ -219,7 +281,7 @@ export default {
     },
 
     moveTo(target, duration) {
-      console.log('moveTo %s form %s, duration=%s', target, this.currentIndex, duration)
+      // console.log('moveTo %s form %s, duration=%s', target, this.currentIndex, duration)
       this.move(target - this.currentIndex, duration)
     },
 
@@ -231,7 +293,7 @@ export default {
           that.play()
         }
         else {
-          that.move(1, function () {
+          that.move(1, that.duration, function () {
             that.play()
           })
         }
@@ -249,8 +311,8 @@ export default {
     },
 
     _setTransition(duration) {
-      let transition = (duration === 0) ? 'none' : ((parseInt(duration) || this.duration) + 'ms')
-      console.log('_setTransition', duration, transition)
+      let transition = (duration === 0 || duration === 'none') ? 'none' : ((parseInt(duration) || this.duration) + 'ms')
+      // console.log('_setTransition', duration, transition)
       this.$content.style.webkitTransition = transition
       this.$content.style.transition = transition
     },
@@ -260,7 +322,7 @@ export default {
       evt.preventDefault()    // !important
       this.isTouching = true
       this.isDragging = true
-      this._setTransition()
+      // this._setTransition()
 
       let currentX = (evt.touches) ? evt.touches[0].pageX : evt.clientX
       let currentY = (evt.touches) ? evt.touches[0].pageY : evt.clientY
@@ -289,6 +351,7 @@ export default {
 
         // 滑动范围在阀值以内跟随移动
         if (Math.abs(dX) < this.itemWidth * 0.25) {
+          this._setTransition('none')
           this._setTransform(this.position.x + dX, 0)
         }
         // 滑动范围超过阀值后自动移动
@@ -324,7 +387,7 @@ export default {
       // console.log('CISlideView._slideEnd', evt)
       this.isTouching = false
       this.isDragging = false
-      this._setTransition(this.duration)
+      // this._setTransition(this.duration)
 
       if (this.direction == 'horizontal') {
         let dX = this.touchObject.x - this.touchObject.startX

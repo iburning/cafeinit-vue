@@ -1,6 +1,24 @@
 <template>
   <div id="page-slide-view">
     <ci-slide-view class="banner" ref="my-slide-view"
+      v-model="items"
+      v-bind:duration="300"
+      v-bind:isAutoplay="false"
+      v-bind:isLoop="true"
+      v-bind:index="0"
+      v-bind:item-width="itemWidth"
+      v-bind:item-height="itemHeight"
+      v-bind:isShowButtons="true"
+      v-on:did-change="mySlideViewDidChange"
+      v-on:init-items="initItems">
+      <ci-slide-view-item class="box-item" v-for="item in items">
+        <ci-image v-bind:src="item.banner" v-bind:width="itemWidth" v-bind:height="itemHeight"></ci-image>
+      </ci-slide-view-item>
+    </ci-slide-view>
+
+    <p>{{currentIndex}}/{{itemCount}}</p>
+
+    <!-- <ci-slide-view class="banner" ref="my-slide-view"
       v-bind:duration="300"
       v-bind:isAutoplay="false"
       v-bind:isLoop="false"
@@ -12,9 +30,8 @@
       <ci-slide-view-item class="box-item" v-for="item in items">
         <ci-image v-bind:src="item.banner" v-bind:width="itemWidth" v-bind:height="itemHeight"></ci-image>
       </ci-slide-view-item>
-    </ci-slide-view>
+    </ci-slide-view> -->
 
-    <span>{{currentIndex}} / {{itemCount}}</span>
   </div>
 </template>
 
@@ -51,14 +68,22 @@ export default {
 
   methods: {
     mySlideViewDidChange(index, lastIndex) {
-      console.log('mySlideViewDidChange', index, lastIndex)
+      // console.log('mySlideViewDidChange', index, lastIndex)
       this.currentIndex = index
+    },
+
+    initItems(items) {
+      this.items = items
     }
   }
 }
 </script>
 
 <style lang="less">
+.banner {
+  margin-bottom: 25px;
+}
+
 .ci-slide-view {
   position: relative;
 }
