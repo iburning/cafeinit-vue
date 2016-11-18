@@ -79,7 +79,8 @@ export default {
         x: 0
       },
 
-      isDragging: false
+      isDragging: false,      // 是否在滑动
+      isTouching: false       // 是否在触屏
     }
   },
 
@@ -183,9 +184,14 @@ export default {
       let that = this
 
       window.setTimeout(function () {
-        that.move(1, function () {
+        if (that.isTouching) {
           that.play()
-        })
+        }
+        else {
+          that.move(1, function () {
+            that.play()
+          })
+        }
       }, this.delay)
     },
 
@@ -208,6 +214,7 @@ export default {
     _slideStart(evt) {
       // console.log('CISlideView._slideStart', evt)
       evt.preventDefault()    // !important
+      this.isTouching = true
       this.isDragging = true
       this._setTransition()
 
@@ -271,6 +278,7 @@ export default {
 
     _slideEnd(evt) {
       // console.log('CISlideView._slideEnd', evt)
+      this.isTouching = false
       this.isDragging = false
       this._setTransition(this.duration)
 

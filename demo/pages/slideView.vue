@@ -1,7 +1,7 @@
 <template>
   <div id="page-slide-view">
     <ci-slide-view class="banner"
-      v-bind:isAutoplay="false"
+      v-bind:isAutoplay="true"
       v-bind:index="0"
       v-bind:item-width="itemWidth"
       v-bind:item-height="itemHeight"
