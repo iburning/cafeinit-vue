@@ -58,7 +58,14 @@ export default {
 
     value: {
       type: Array,
-      default: []
+      default: function () {
+        return []
+      }
+    },
+
+    itemCount: {
+      type: Number,
+      default: 0
     },
 
     itemWidth: {
@@ -75,9 +82,7 @@ export default {
   data() {
     return {
       currentIndex: this.index,
-      _itemCount: 0,
-
-      items: this.value,
+      // items: this.value,
 
       position: {
         x: 0,
@@ -97,14 +102,28 @@ export default {
   },
 
   computed: {
-    itemCount() {
-      if (this.isLoop) {
-        return this._itemCount - 2
-      }
-      else {
-        return this._itemCount
-      }
+    _itemCount() {
+      return this.isLoop ? (this.itemCount + 2) : this.itemCount
     },
+
+    // items() {
+    //   if (this.isLoop) {
+    //     if (this.value.length) {
+    //       // let firstItem = this.value[0]
+    //       // let lastItem = this.value[this.value.length - 1]
+    //       // this.value.unshift(lastItem)
+    //       // this.value.push(firstItem)
+    //       return this.value
+    //       // this.$emit('change', this.items)
+    //     }
+    //     else {
+    //       return []
+    //     }
+    //   }
+    //   else {
+    //     return this.value
+    //   }
+    // },
 
     wiewStyle() {
       return {
@@ -132,48 +151,20 @@ export default {
   },
 
   watch: {
-    itemWidth(val) {
-      // console.log('CISlideView.itemWidth', val)
-      for (let i = 0; i < this._itemCount; i++) {
-        this.$items[i].width = this.itemWidth
-        this.$items[i].height = this.itemHeight
-      }
-      this.moveTo(this.currentIndex, 0)
-    },
+    // items(val) {
+    //   console.log('items change', val.length, val)
+    //   this._itemCount = val.length
+    //   // this._init()
+    // },
 
-    value() {
-      var that = this
-      console.log('value change', this.$children.length)
-      // setTimeout(function () {
-      //   that._init()
-      // }, 500)
-    },
-    //
-    // items() {
-    //   console.log('items')
-    // },
-    //
-    // $items() {
-    //   console.log('$items')
-    // },
-    //
-    // _itemCount() {
-    //   console.log('_itemCount')
+    // itemWidth() {
+    //   this._initPosition()
     // }
   },
 
   mounted() {
-    var that = this
-    console.log('CISlideView.mounted', this.$children.length, this)
-
-    if (this.isLoop) {
-      let firstItem = this.items[0]
-      let lastItem = this.items[this.items.length - 1]
-      this.items.unshift(lastItem)
-      this.items.push(firstItem)
-      this.$emit('change', this.items)
-    }
-
+    console.log('CISlideView.mounted', this.itemWidth, this)
+    var that = this;
     this.$content = this.$refs.content
 
     if (this.isLoop) {
@@ -188,55 +179,21 @@ export default {
       })
     }
 
-    this._init()
-  },
+    if (this.isLoop) {
+      this.moveTo(this.currentIndex + 1, 0)
+    }
+    else {
+      this.moveTo(this.currentIndex, 0)
+    }
 
-  beforeMount() {
-    console.log('CISlideView.beforeMount', this.$children.length, this)
-  },
-
-  created() {
-    console.log('CISlideView.created', this.$children.length, this)
-  },
-
-  update() {
-    console.log('CISlideView.update', this.$children.length, this)
-  },
-
-  activated() {
-    console.log('CISlideView.activated', this.$children.length, this)
-  },
-
-  destroyed() {
-    console.log('CISlideView.destroyed', this.$children.length, this)
+    if (this.isAutoplay) {
+      this.play()
+    }
   },
 
   methods: {
-    _init() {
-      this.$items = this.$children
-      this._itemCount = this.$items.length
-
-      for (let i = 0; i < this._itemCount; i++) {
-        this.$items[i].width = this.itemWidth
-        this.$items[i].height = this.itemHeight
-      }
-
-      console.log('_init', this._itemCount, this.$items)
-
-      if (this.isLoop) {
-        this.moveTo(this.currentIndex + 1, 0)
-      }
-      else {
-        this.moveTo(this.currentIndex, 0)
-      }
-
-      if (this.isAutoplay) {
-        this.play()
-      }
-    },
-
     move(step, duration, done) {
-      step = (step % this._itemCount);
+      step = (step % this._itemCount)
       let lastIndex = this.currentIndex
       let index = this.currentIndex + step
 
@@ -247,11 +204,6 @@ export default {
         index = index - this._itemCount
       }
       this.currentIndex = index;
-
-      for (let i; i < this._itemCount; i++) {
-        // this.$items[i].actived = false
-      }
-      // this.$items[index].actived = true
 
       let x = 0
       let y = 0

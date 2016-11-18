@@ -1,6 +1,24 @@
 <template>
   <div id="page-slide-view">
     <ci-slide-view class="banner" ref="my-slide-view"
+      v-bind:duration="300"
+      v-bind:isAutoplay="true"
+      v-bind:isLoop="true"
+      v-bind:index="0"
+      v-bind:item-count="items.length - 2"
+      v-bind:item-width="itemWidth"
+      v-bind:item-height="itemHeight"
+      v-bind:isShowButtons="true"
+      v-on:did-change="mySlideViewDidChange">
+      <ci-slide-view-item class="box-item" v-for="item in items"
+        v-bind:width="itemWidth" v-bind:height="itemHeight">
+        <ci-image v-bind:src="item.banner" v-bind:width="itemWidth" v-bind:height="itemHeight"></ci-image>
+      </ci-slide-view-item>
+    </ci-slide-view>
+
+    <p>{{currentIndex}}/{{itemCount}}</p>
+
+    <!-- <ci-slide-view class="banner" ref="my-slide-view"
       v-model="items"
       v-bind:duration="300"
       v-bind:isAutoplay="false"
@@ -11,23 +29,8 @@
       v-bind:isShowButtons="true"
       v-on:did-change="mySlideViewDidChange"
       v-on:init-items="initItems">
-      <ci-slide-view-item class="box-item" v-for="item in items">
-        <ci-image v-bind:src="item.banner" v-bind:width="itemWidth" v-bind:height="itemHeight"></ci-image>
-      </ci-slide-view-item>
-    </ci-slide-view>
-
-    <p>{{currentIndex}}/{{itemCount}}</p>
-
-    <!-- <ci-slide-view class="banner" ref="my-slide-view"
-      v-bind:duration="300"
-      v-bind:isAutoplay="false"
-      v-bind:isLoop="false"
-      v-bind:index="0"
-      v-bind:item-width="itemWidth"
-      v-bind:item-height="itemHeight"
-      v-bind:isShowButtons="true"
-      v-on:did-change="mySlideViewDidChange">
-      <ci-slide-view-item class="box-item" v-for="item in items">
+      <ci-slide-view-item class="box-item" v-for="item in items"
+        v-bind:width="itemWidth" v-bind:height="itemHeight">
         <ci-image v-bind:src="item.banner" v-bind:width="itemWidth" v-bind:height="itemHeight"></ci-image>
       </ci-slide-view-item>
     </ci-slide-view> -->
@@ -41,16 +44,16 @@ export default {
 
   data() {
     return {
-      itemWidth: 300,
-      itemHeight: 150,
+      itemWidth: window.innerWidth,
+      itemHeight: parseInt(window.innerWidth * 0.35),
       items: [
-        // { banner: 'http://i3.mifile.cn/a4/ac593fe5-c5ab-4541-9526-f113b03ee213' },
+        { banner: 'http://i3.mifile.cn/a4/ac593fe5-c5ab-4541-9526-f113b03ee213' },
         { banner: 'http://i3.mifile.cn/a4/91214487-3c8c-4fa5-b27d-1fea1e2f8773' },
         { banner: 'http://i3.mifile.cn/a4/d1e41f4a-2fb3-42cc-86be-4f4be9e046df' },
         { banner: 'http://i3.mifile.cn/a4/a8c14776-3d56-484f-8d5a-958693d3afdc' },
         { banner: 'http://i3.mifile.cn/a4/592af129-b3ea-487f-9fe3-848c588fa681' },
         { banner: 'http://i3.mifile.cn/a4/ac593fe5-c5ab-4541-9526-f113b03ee213' },
-        // { banner: 'http://i3.mifile.cn/a4/91214487-3c8c-4fa5-b27d-1fea1e2f8773' }
+        { banner: 'http://i3.mifile.cn/a4/91214487-3c8c-4fa5-b27d-1fea1e2f8773' }
       ],
 
       itemCount: 0,
@@ -58,17 +61,8 @@ export default {
     }
   },
 
-  mounted() {
-    this.itemWidth = window.innerWidth;
-    this.itemHeight = parseInt(this.itemWidth * 0.375)
-
-    let mySlideView = this.$refs['my-slide-view']
-    this.itemCount = mySlideView.itemCount
-  },
-
   methods: {
     mySlideViewDidChange(index, lastIndex) {
-      // console.log('mySlideViewDidChange', index, lastIndex)
       this.currentIndex = index
     },
 

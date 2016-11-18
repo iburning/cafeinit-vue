@@ -13,26 +13,19 @@ export default {
   name: 'ci-slide-view-item',
 
   props: {
-    // width: {
-    //   type: Number,
-    //   default: 100
-    // },
-    //
-    // height: {
-    //   type: Number,
-    //   default: 100
-    // },
+    width: {
+      type: Number,
+      default: 100
+    },
+
+    height: {
+      type: Number,
+      default: 100
+    },
 
     isActived: {
       type: Boolean,
       default: false
-    }
-  },
-
-  data() {
-    return {
-      width: 100,
-      height: 100
     }
   },
 
