@@ -82,7 +82,7 @@ export default {
   data() {
     return {
       currentIndex: this.index,
-      // items: this.value,
+      items: this.value,
 
       position: {
         x: 0,
@@ -103,18 +103,24 @@ export default {
 
   computed: {
     _itemCount() {
-      return this.isLoop ? (this.itemCount + 2) : this.itemCount
+      if (this.value && this.value.length) {
+        return this.value.length
+      }
+      else {
+        return this.isLoop ? (this.itemCount + 2) : this.itemCount
+      }
     },
 
     // items() {
+    //   console.log('computed items')
     //   if (this.isLoop) {
     //     if (this.value.length) {
-    //       // let firstItem = this.value[0]
-    //       // let lastItem = this.value[this.value.length - 1]
-    //       // this.value.unshift(lastItem)
-    //       // this.value.push(firstItem)
+    //       let firstItem = this.value[0]
+    //       let lastItem = this.value[this.value.length - 1]
+    //       this.value.unshift(lastItem)
+    //       this.value.push(firstItem)
+    //       this.$emit('change', this.items)
     //       return this.value
-    //       // this.$emit('change', this.items)
     //     }
     //     else {
     //       return []
@@ -163,8 +169,19 @@ export default {
   },
 
   mounted() {
-    console.log('CISlideView.mounted', this.itemWidth, this)
-    var that = this;
+    console.log('CISlideView.mounted', this.items.length, this)
+    const that = this;
+
+    if (this.isLoop) {
+      if (this.items.length) {
+        let firstItem = this.items[0]
+        let lastItem = this.items[this.items.length - 1]
+        this.items.unshift(lastItem)
+        this.items.push(firstItem)
+        this.$emit('change', this.items)
+      }
+    }
+
     this.$content = this.$refs.content
 
     if (this.isLoop) {
@@ -238,7 +255,7 @@ export default {
     },
 
     play() {
-      let that = this
+      const that = this
 
       window.setTimeout(function () {
         if (that.isTouching) {

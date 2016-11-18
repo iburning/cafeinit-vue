@@ -3,7 +3,8 @@
       'ci-slide-view-item': true,
       'ci-actived': isActived
     }"
-    v-bind:style="wiewStyle">
+    v-bind:style="wiewStyle"
+    v-bind:index="index">
     <slot></slot>
   </div>
 </template>
@@ -13,6 +14,11 @@ export default {
   name: 'ci-slide-view-item',
 
   props: {
+    index: {
+      type: Number,
+      default: 0
+    },
+
     width: {
       type: Number,
       default: 100
