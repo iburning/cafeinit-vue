@@ -46,6 +46,11 @@ export default {
       default: false
     },
 
+    isLoop: {
+      type: Boolean,
+      default: false
+    },
+
     isShowButtons: {
       type: Boolean,
       default: false
@@ -65,7 +70,7 @@ export default {
   data() {
     return {
       currentIndex: this.index,
-      itemCount: 0,
+      _itemCount: 0,
 
       position: {
         x: 0,
@@ -85,6 +90,15 @@ export default {
   },
 
   computed: {
+    itemCount() {
+      if (this.isLoop) {
+        return this._itemCount - 2
+      }
+      else {
+        return this._itemCount
+      }
+    },
+
     wiewStyle() {
       return {
         overflow: 'hidden',
@@ -95,14 +109,14 @@ export default {
 
     contentStyle() {
       let style = {
-        width: this.itemWidth * this.itemCount + 'px',
+        width: this.itemWidth * this._itemCount + 'px',
         height: this.itemHeight + 'px'
       }
 
       if (this.direction == 'vertical') {
         style = {
           width: this.itemWidth + 'px',
-          height: this.itemHeight * this.itemCount + 'px'
+          height: this.itemHeight * this._itemCount + 'px'
         }
       }
 
@@ -112,24 +126,46 @@ export default {
 
   watch: {
     itemWidth(val) {
-      console.log('CISlideView.itemWidth', val)
+      // console.log('CISlideView.itemWidth', val)
       for (let i = 0; i < this.$items.length; i++) {
         this.$items[i].width = this.itemWidth
         this.$items[i].height = this.itemHeight
       }
+      this.moveTo(this.currentIndex, 0)
     }
   },
 
   mounted() {
+    var that = this
     this.$content = this.$refs.content
+
+    if (this.isLoop) {
+      this.$content.addEventListener('transitionend', function (evt) {
+        console.log('transitionend', evt)
+        if (that.currentIndex == 0) {
+          that.moveTo(that._itemCount - 2, 0)
+        }
+        else if (that.currentIndex == that._itemCount - 1) {
+          that.moveTo(1, 0)
+        }
+      })
+    }
+
     this.$items = this.$children
     for (let i = 0; i < this.$items.length; i++) {
       this.$items[i].width = this.itemWidth
       this.$items[i].height = this.itemHeight
     }
-    this.itemCount = this.$items.length
-    this._setTransition(this.duration)
-    this.moveTo(this.currentIndex)
+    this._itemCount = this.$items.length
+
+    if (this.isLoop) {
+      this.moveTo(this.currentIndex + 1, 0)
+    }
+    else {
+      this.moveTo(this.currentIndex, 0)
+    }
+
+    // this._setTransition(this.duration)
 
     if (this.isAutoplay) {
       this.play()
@@ -137,20 +173,20 @@ export default {
   },
 
   methods: {
-    move(step, done) {
-      step = (step % this.itemCount);
+    move(step, duration, done) {
+      step = (step % this._itemCount);
       let lastIndex = this.currentIndex
       let index = this.currentIndex + step
 
       if (index < 0) {
-        index = this.itemCount + index
+        index = this._itemCount + index
       }
-      if (index > (this.itemCount - 1)) {
-        index = index - this.itemCount
+      if (index > (this._itemCount - 1)) {
+        index = index - this._itemCount
       }
       this.currentIndex = index;
 
-      for (let i; i < this.itemCount; i++) {
+      for (let i; i < this._itemCount; i++) {
         // this.$items[i].actived = false
       }
       // this.$items[index].actived = true
@@ -165,19 +201,26 @@ export default {
         y = -this.itemHeight * index
         this.position.y = y
       }
+
+      console.log('move %s step(s) from %s to %s, duration=%s', step, lastIndex, index, duration)
+      this._setTransition(duration)
       this._setTransform(x, y)
 
       if (typeof done === 'function') {
         done()
       }
 
-      // console.log('from %s move %s step(s) to %s', lastIndex, step, index)
-      this.$emit('did-move', index, lastIndex)
+      if (this.isLoop) {
+        this.$emit('did-change', index - 1, lastIndex - 1)
+      }
+      else {
+        this.$emit('did-change', index, lastIndex)
+      }
     },
 
-    moveTo(target) {
-      // console.log('moveTo', target, this.currentIndex)
-      this.move(target - this.currentIndex)
+    moveTo(target, duration) {
+      console.log('moveTo %s form %s, duration=%s', target, this.currentIndex, duration)
+      this.move(target - this.currentIndex, duration)
     },
 
     play() {
@@ -206,7 +249,8 @@ export default {
     },
 
     _setTransition(duration) {
-      let transition = (!duration || duration == 'none') ? 'none' : duration + 'ms'
+      let transition = (duration === 0) ? 'none' : ((parseInt(duration) || this.duration) + 'ms')
+      console.log('_setTransition', duration, transition)
       this.$content.style.webkitTransition = transition
       this.$content.style.transition = transition
     },
@@ -261,7 +305,7 @@ export default {
             }
           }
           else {          // 向左拖动，往后翻页
-            if (this.currentIndex == (this.itemCount - 1)) {
+            if (this.currentIndex == (this._itemCount - 1)) {
               this.move(0)
             }
             else {
