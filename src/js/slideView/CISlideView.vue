@@ -11,8 +11,8 @@
       v-on:touchend="_slideEnd">
       <slot></slot>
     </div>
-    <a v-if="isShowButtons" class="ci-slide-view-prev" href="javascript:;" v-on:click="move(-1)">&lt;</a>
-    <a v-if="isShowButtons" class="ci-slide-view-next" href="javascript:;" v-on:click="move(1)">&gt;</a>
+    <a v-if="isShowButtons" class="ci-slide-view-prev" href="javascript:;" v-on:click="onClickButton(-1)">&lt;</a>
+    <a v-if="isShowButtons" class="ci-slide-view-next" href="javascript:;" v-on:click="onClickButton(1)">&gt;</a>
   </div>
 </template>
 
@@ -83,6 +83,7 @@ export default {
     return {
       currentIndex: this.index,
       items: this.value,
+      isMoving: false,
 
       position: {
         x: 0,
@@ -111,26 +112,6 @@ export default {
       }
     },
 
-    // items() {
-    //   console.log('computed items')
-    //   if (this.isLoop) {
-    //     if (this.value.length) {
-    //       let firstItem = this.value[0]
-    //       let lastItem = this.value[this.value.length - 1]
-    //       this.value.unshift(lastItem)
-    //       this.value.push(firstItem)
-    //       this.$emit('change', this.items)
-    //       return this.value
-    //     }
-    //     else {
-    //       return []
-    //     }
-    //   }
-    //   else {
-    //     return this.value
-    //   }
-    // },
-
     wiewStyle() {
       return {
         overflow: 'hidden',
@@ -156,18 +137,6 @@ export default {
     }
   },
 
-  watch: {
-    // items(val) {
-    //   console.log('items change', val.length, val)
-    //   this._itemCount = val.length
-    //   // this._init()
-    // },
-
-    // itemWidth() {
-    //   this._initPosition()
-    // }
-  },
-
   mounted() {
     console.log('CISlideView.mounted', this.items.length, this)
     const that = this;
@@ -184,17 +153,21 @@ export default {
 
     this.$content = this.$refs.content
 
-    if (this.isLoop) {
-      this.$content.addEventListener('transitionend', function (evt) {
-        // console.log('transitionend', evt)
+
+    this.$content.addEventListener('transitionend', function (evt) {
+      // console.log('transitionend', evt)
+      that.isMoving = false
+
+      if (that.isLoop) {
         if (that.currentIndex == 0) {
           that.moveTo(that._itemCount - 2, 0)
         }
         else if (that.currentIndex == that._itemCount - 1) {
           that.moveTo(1, 0)
         }
-      })
-    }
+      }
+    })
+
 
     if (this.isLoop) {
       this.moveTo(this.currentIndex + 1, 0)
@@ -284,6 +257,13 @@ export default {
       // console.log('_setTransition', duration, transition)
       this.$content.style.webkitTransition = transition
       this.$content.style.transition = transition
+    },
+
+    onClickButton(step) {
+      if (!this.isMoving) {
+        this.isMoving = true
+        this.move(step)
+      }
     },
 
     _slideStart(evt) {
