@@ -58,7 +58,7 @@ import CIActions from './modal/AMActions'
 import CIAlert from './modal/AMAlert'
 import CIConfirm from './modal/AMConfirm'
 
-/* for component */
+import CISlider from './slider/CISlider'
 import CISlideView from './slideView/CISlideView'
 import CISlideViewItem from './slideView/CISlideViewItem'
 
@@ -117,7 +117,7 @@ const CIComponents = {
   'ci-alert': CIAlert,
   'ci-confirm': CIConfirm,
 
-  /* components */
+  'ci-slider': CISlider,
   'ci-slide-view': CISlideView,
   'ci-slide-view-item': CISlideViewItem
 }

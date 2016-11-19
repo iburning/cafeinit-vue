@@ -22,6 +22,7 @@ import Navigation from './pages/navigation'
 import PageDemo from './pages/pageDemo'
 import Pagination from './pages/pagination'
 import TabBar from './pages/tabBar'
+import Slider from './pages/slider'
 import SlideView from './pages/slideView'
 
 export default [
@@ -43,5 +44,6 @@ export default [
   { path: '/page-demo', component: PageDemo },
   { path: '/pagination', component: Pagination },
   { path: '/tab-bar', component: TabBar },
+  { path: '/slider', component: Slider },
   { path: '/slide-view', component: SlideView }
 ]
