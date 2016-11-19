@@ -2,13 +2,15 @@
   <div id="page-slide-view">
     <ci-slide-view class="banner" ref="my-slide-view"
       v-model="items"
-      v-bind:duration="1000"
-      v-bind:isAutoplay="false"
+      v-bind:duration="300"
+      v-bind:delay="3000"
+      v-bind:isAutoplay="true"
       v-bind:isLoop="true"
       v-bind:index="0"
       v-bind:item-width="itemWidth"
       v-bind:item-height="itemHeight"
-      v-bind:isShowButtons="true"
+      v-bind:isShowButtons="false"
+      v-bind:isShowDots="true"
       v-on:did-change="mySlideViewDidChange">
       <ci-slide-view-item class="box-item" v-for="(item, index) in items"
         v-bind:index="index" v-bind:width="itemWidth" v-bind:height="itemHeight">
@@ -17,7 +19,6 @@
     </ci-slide-view>
 
     <p>{{currentIndex}}</p>
-
   </div>
 </template>
 
@@ -83,15 +84,32 @@ export default {
   right: 10px;
 }
 
-.ci-slide-view-page {
+.ci-slide-view-dots {
   display: block;
   position: absolute;
-  right: 10px;
-  top: 5px;
-  height: 20px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  height: 30px;
   text-align: center;
-  line-height: 20px;
-  font-size: 10px;
+}
+
+.ci-slide-view-dot {
+  display: inline-block;
+  overflow: hidden;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  margin: 0 2px;
+  border-radius: 50%;
+  background-color: #fff;
+  text-indent: -100px;
   opacity: 0.5;
+
+  &.ci-actived {
+    background-color: #52b888;
+  }
 }
 </style>

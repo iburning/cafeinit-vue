@@ -11,6 +11,13 @@
       v-on:touchend="_slideEnd">
       <slot></slot>
     </div>
+    <ul v-if="isShowDots" class="ci-slide-view-dots">
+      <li v-for="index in dots"
+        v-bind:class="{
+          'ci-slide-view-dot': true,
+          'ci-actived': index == currentIndex
+        }">{{index}} / {{currentIndex}}</li>
+    </ul>
     <a v-if="isShowButtons" class="ci-slide-view-prev" href="javascript:;" v-on:click="onClickButton(-1)">&lt;</a>
     <a v-if="isShowButtons" class="ci-slide-view-next" href="javascript:;" v-on:click="onClickButton(1)">&gt;</a>
   </div>
@@ -52,6 +59,11 @@ export default {
     },
 
     isShowButtons: {
+      type: Boolean,
+      default: false
+    },
+
+    isShowDots: {
       type: Boolean,
       default: false
     },
@@ -110,6 +122,23 @@ export default {
       else {
         return this.isLoop ? (this.itemCount + 2) : this.itemCount
       }
+    },
+
+    dots() {
+      let dots = []
+
+      if (this.isLoop) {
+        for (let i = 1; i < this._itemCount - 1; i++) {
+          dots.push(i)
+        }
+      }
+      else {
+        for (let i = 0; i < this._itemCount; i++) {
+          dots.push(i)
+        }
+      }
+
+      return dots
     },
 
     wiewStyle() {
