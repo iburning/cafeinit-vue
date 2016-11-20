@@ -20,6 +20,7 @@ import Loading from './pages/loading'
 import Modals from './pages/modals'
 import Navigation from './pages/navigation'
 import NumberInput from './pages/number'
+import Offcanvas from './pages/offcanvas'
 import PageDemo from './pages/pageDemo'
 import Pagination from './pages/pagination'
 import TabBar from './pages/tabBar'
@@ -45,6 +46,7 @@ export default [
   { path: '/number', component: NumberInput },
   { path: '/page-demo', component: PageDemo },
   { path: '/pagination', component: Pagination },
+  { path: '/offcanvas', component: Offcanvas },
   { path: '/tab-bar', component: TabBar },
   { path: '/slider', component: Slider },
   { path: '/slide-view', component: SlideView }

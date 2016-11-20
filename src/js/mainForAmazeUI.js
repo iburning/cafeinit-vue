@@ -32,6 +32,7 @@ import CIListSwitch from './list/AMListSwitch'
 import CILoading from './loading/CILoading'
 
 import CINavigation from './navigation/CINavigation.vue'
+import CIOffcanvas from './offcanvas/CIOffcanvas.vue'
 import CIPagination from './pagination/AMPagination.vue'
 
 import CITabBar from './tabView/CITabBar'
@@ -93,6 +94,7 @@ const CIComponents = {
   'ci-loading': CILoading,
   'ci-navigation': CINavigation,
   'ci-pagination': CIPagination,
+  'ci-offcanvas': CIOffcanvas,
   'ci-tab-bar': CITabBar,
   // 'ci-table': CITable,
   'ci-tree-nav': CITreeNav,

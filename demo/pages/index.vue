@@ -119,6 +119,11 @@
         <span class="sub-title">等待</span>
       </ci-list-cell>
 
+      <ci-list-cell accessory="link" to="/offcanvas">
+        <strong class="title">Offcanvas</strong>
+        <span class="sub-title">抽屉</span>
+      </ci-list-cell>
+
       <ci-list-cell accessory="link" to="/slide-view">
         <strong class="title">Slide View</strong>
         <span class="sub-title">滚动视图</span>
