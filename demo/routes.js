@@ -19,6 +19,7 @@ import List from './pages/list'
 import Loading from './pages/loading'
 import Modals from './pages/modals'
 import Navigation from './pages/navigation'
+import NumberInput from './pages/number'
 import PageDemo from './pages/pageDemo'
 import Pagination from './pages/pagination'
 import TabBar from './pages/tabBar'
@@ -41,6 +42,7 @@ export default [
   { path: '/loading', component: Loading },
   { path: '/modals', component: Modals },
   { path: '/navigation', component: Navigation },
+  { path: '/number', component: NumberInput },
   { path: '/page-demo', component: PageDemo },
   { path: '/pagination', component: Pagination },
   { path: '/tab-bar', component: TabBar },

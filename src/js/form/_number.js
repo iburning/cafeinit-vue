@@ -24,12 +24,14 @@ export default {
 
     min: {
       type: Number,
-      default: Number.MIN_VALUE
+      // default: Number.MIN_VALUE
+      default: 0
     },
 
     max: {
       type: Number,
-      default: Number.MAX_VALUE
+      // default: Number.MAX_VALUE
+      default: 100
     },
 
     size: {
@@ -56,6 +58,12 @@ export default {
     }
   },
 
+  watch: {
+    value(val) {
+      this.currentValue = Number(val) || 0
+    }
+  },
+
   methods: {
     checkValue(value) {
       value = (value < this.min) ? this.min : value;
@@ -73,13 +81,11 @@ export default {
       this.$emit('input', this.currentValue)
     },
 
-    onChange: function (evt) {
-      this.currentValue = this.checkValue(this.currentValue)
+    onChange(evt) {
       this.$emit('change', this.currentValue)
     },
 
-    onInput: function (evt) {
-      this.currentValue = this.checkValue(this.currentValue)
+    onInput(evt) {
       this.$emit('input', this.currentValue)
     }
   }

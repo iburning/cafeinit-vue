@@ -50,6 +50,16 @@
         <span class="sub-title">表单列表</span>
       </ci-list-cell>
 
+      <ci-list-cell accessory="link" to="/slider">
+        <strong class="title">Slider</strong>
+        <span class="sub-title">滑动选择</span>
+      </ci-list-cell>
+
+      <ci-list-cell accessory="link" to="/number">
+        <strong class="title">Number</strong>
+        <span class="sub-title">数字输入框</span>
+      </ci-list-cell>
+
       <ci-list-cell accessory="link" to="/image-picker">
         <strong class="title">Image Picker</strong>
         <span class="sub-title">图片选择器</span>

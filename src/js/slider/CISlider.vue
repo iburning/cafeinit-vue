@@ -59,6 +59,7 @@ export default {
   watch: {
     value(val) {
       // console.log('watch value', val)
+      val = parseInt(val) || 0
       val = (val < this.min) ? this.min : val
       val = (val > this.max) ? this.max : val
       let r = val / (this.max - this.min)
