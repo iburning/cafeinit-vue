@@ -34,7 +34,11 @@
 
           <ci-number title="数量" name="count" placeholder="0"
             title-width="4em" v-model="count"
-            v-bind:step="5" v-bind:min="0" v-bind:max="20"></ci-number>
+            v-bind:step="5" v-bind:min="0" v-bind:max="20"></ci-number> {{count}}
+
+          <ci-number title="质量" name="count" placeholder="0"
+            title-width="4em" v-model="count"
+            v-bind:step="1" v-bind:min="0" v-bind:max="20"></ci-number> {{count}}
 
           <ci-checkbox inline="inline" title="技能" title-width="4em" name="skills"
             v-bind:items="[

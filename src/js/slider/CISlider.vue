@@ -1,8 +1,6 @@
 <template>
   <div class="ci-slider"
-    v-bind:style="{
-      width: width + 'px'
-    }"
+    v-bind:style="{ width: width + 'px' }"
     v-on:touchstart="onTouchStart"
     v-on:touchmove="onTouchMove"
     v-on:touchend="onTouchEnd">
@@ -16,24 +14,14 @@ export default {
   name: 'ci-slider',
 
   props: {
-    max: {
-      type: Number,
-      default: 100
-    },
-
-    min: {
-      type: Number,
-      default: 0
-    },
-
-    width: {
+    width: {          // 组件宽度
       type: Number,
       default: 200
     },
 
     step: {
       type: Number,
-      default: 1
+      default: 0
     },
 
     value: {
@@ -45,33 +33,42 @@ export default {
   data() {
     return {
       currentValue: this.value,
-
-      touchObject: {
-        startX: 0,
-        startY: 0
-      },
-
-      startX: 0,
-      endX: 0,
+      max: 100,
+      min: 0,
 
       handle: {
         width: 30,
         height: 30,
         x: 0,
         y: 0
+      },
+
+      touchObject: {
+        startX: 0,
+        startY: 0
       }
     }
   },
 
   computed: {
-    distance() {
+    distance() {      // handle可移动的距离
       return this.width - this.handle.width
     }
   },
 
   watch: {
+    value(val) {
+      if (val >= this.min && val <= this.max) {
+        this.currentValue = val
+      }
+    },
+
     currentValue(val, oldVal) {
       if (val != oldVal) {
+        let r = val / (this.max - this.min)
+        let x = this.distance * r
+        this.setBarLightWidth(r)
+        this.setHandleTransform(x)
         this.$emit('input', val)
       }
     }
@@ -83,13 +80,13 @@ export default {
 
     let r = this.value / (this.max - this.min)
     let x = this.distance * r
-    this.setBarLight(r)
-    this.setTransform(x)
+    this.setBarLightWidth(r)
+    this.setHandleTransform(x)
   },
 
   methods: {
     onTouchStart(evt) {
-      // evt.preventDefault()
+      evt.preventDefault()
       // console.log('CISlider.onTouchStart', evt)
       this.touchObject.startX = evt.touches[0].pageX
       this.touchObject.startY = evt.touches[0].pageY
@@ -101,8 +98,6 @@ export default {
 
       let r = x / this.distance
       this.currentValue = (this.max - this.min) * r
-      this.setBarLight(r)
-      this.setTransform(x)
     },
 
     onTouchMove(evt) {
@@ -115,15 +110,19 @@ export default {
 
       let r = x / this.distance
       this.currentValue = (this.max - this.min) * r
-      this.setBarLight(r)
-      this.setTransform(x)
     },
 
     onTouchEnd(evt) {
       // console.log('CISlider.onTouchEnd', evt)
+      // console.log('CISlider.onTouchEnd', this.currentValue)
+      // alert(typeof this.step + this.step)
+      if (this.step > 0) {
+        // alert(Math.round(this.currentValue / this.step))
+        this.currentValue = Math.round(this.currentValue / this.step) * this.step
+      }
     },
 
-    setTransform(x, y) {
+    setHandleTransform(x, y) {
       x = parseInt(x) || 0
       y = parseInt(y) || 0
 
@@ -133,51 +132,9 @@ export default {
       this.$handle.style.transform = transform
     },
 
-    setBarLight(r) {
+    setBarLightWidth(r) {
       this.$barLight.style.width = r * 100 + '%'
     }
   }
 }
 </script>
-
-<style lang="less">
-.ci-slider {
-  position: relative;
-  min-width: 200px;
-  height: 30px;
-
-  &:before,
-  & > .ci-slider-bar-light {
-    z-index: 1;
-    content: ' ';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    height: 4px;
-    margin-top: -2px;
-    border-radius: 2px;
-  }
-
-  &:before {
-    background: #ddd;
-    width: 100%;
-  }
-
-  & > .ci-slider-bar-light {
-    background: #52b888;
-    width: 0;
-  }
-}
-
-.ci-slider-handle {
-  z-index: 10;
-  display: block;
-  position: relative;
-  width: 30px;
-  height: 30px;
-  border: solid 1px #ddd;
-  border-radius: 50%;
-  background-color: #fff;
-}
-</style>
