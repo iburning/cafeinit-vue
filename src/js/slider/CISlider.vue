@@ -25,14 +25,14 @@ export default {
     },
 
     value: {
-      type: Number,
+      type: [Number, String],
       default: 0
     }
   },
 
   data() {
     return {
-      currentValue: this.value,
+      currentValue: parseInt(this.value) || 0,
       max: 100,
       min: 0,
 
@@ -58,19 +58,22 @@ export default {
 
   watch: {
     value(val) {
-      if (val >= this.min && val <= this.max) {
-        this.currentValue = val
-      }
+      // console.log('watch value', val)
+      val = (val < this.min) ? this.min : val
+      val = (val > this.max) ? this.max : val
+      let r = val / (this.max - this.min)
+      let x = this.distance * r
+      this.setBarLightWidth(r)
+      this.setHandleTransform(x)
     },
 
     currentValue(val, oldVal) {
-      if (val != oldVal) {
-        let r = val / (this.max - this.min)
-        let x = this.distance * r
-        this.setBarLightWidth(r)
-        this.setHandleTransform(x)
-        this.$emit('input', val)
-      }
+      // console.log('watch currentValue', val)
+      let r = val / (this.max - this.min)
+      let x = this.distance * r
+      this.setBarLightWidth(r)
+      this.setHandleTransform(x)
+      this.$emit('input', parseInt(val))
     }
   },
 
@@ -78,7 +81,12 @@ export default {
     this.$handle = this.$refs.handle
     this.$barLight = this.$refs['bar-light']
 
-    let r = this.value / (this.max - this.min)
+    let value = parseInt(this.currentValue) || 0
+    value = (value < this.min) ? this.min : value
+    value = (value > this.max) ? this.max : value
+    this.currentValue = value
+
+    let r = this.currentValue / (this.max - this.min)
     let x = this.distance * r
     this.setBarLightWidth(r)
     this.setHandleTransform(x)
@@ -114,10 +122,7 @@ export default {
 
     onTouchEnd(evt) {
       // console.log('CISlider.onTouchEnd', evt)
-      // console.log('CISlider.onTouchEnd', this.currentValue)
-      // alert(typeof this.step + this.step)
       if (this.step > 0) {
-        // alert(Math.round(this.currentValue / this.step))
         this.currentValue = Math.round(this.currentValue / this.step) * this.step
       }
     },

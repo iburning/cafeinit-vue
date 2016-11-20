@@ -1,15 +1,21 @@
 <template>
   <div id="page-slider">
-    <ci-list>
-      <ci-list-cell>
-        <ci-slider v-model="x"></ci-slider>
-        {{x}}
-      </ci-list-cell>
-      <ci-list-cell>
-        <ci-slider v-model="x" v-bind:width="300" v-bind:step="10"></ci-slider>
-        {{x}}
-      </ci-list-cell>
-    </ci-list>
+    <ci-form>
+      <ci-list>
+        <ci-list-cell>
+          <ci-slider ref="my-slider" v-model="x"></ci-slider>
+          {{x}}
+        </ci-list-cell>
+
+        <ci-list-cell>
+          <ci-input type="text" v-model="x"></ci-input>
+        </ci-list-cell>
+
+        <ci-list-cell>
+          <ci-button v-on:click="showValue">Show Value</ci-button>
+        </ci-list-cell>
+      </ci-list>
+    </ci-from>
   </div>
 </template>
 
@@ -19,7 +25,14 @@ export default {
 
   data() {
     return {
-      x: 50
+      x: 50,
+      x1: 150
+    }
+  },
+
+  methods: {
+    showValue() {
+      console.log(this.x, this.$refs['my-slider'].value)
     }
   }
 }
