@@ -1,0 +1,26 @@
+/**
+ * @fileoverview ci-radio
+ * @author: burning <www.cafeinit.com>
+ * @version: 2016-11-21
+ */
+
+.am-radio,
+.am-radio-inline {
+  input[type=radio] {
+    appearance: none;
+    float: none;
+
+    &::before {
+      content: '\f192';
+      display: inline-block;
+      color: @color-gray;
+      font-size: 1.125em;
+    }
+
+    &:checked {
+      &::before {
+        color: @color-primary;
+      }
+    }
+  }
+}

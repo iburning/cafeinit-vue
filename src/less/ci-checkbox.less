@@ -1,0 +1,26 @@
+/**
+ * @fileoverview ci-checkbox
+ * @author: burning <www.cafeinit.com>
+ * @version: 2016-11-21
+ */
+
+.am-checkbox,
+.am-checkbox-inline {
+  input[type=checkbox] {
+    appearance: none;
+    float: none;
+
+    &::before {
+      content: '\f046';
+      display: inline-block;
+      color: @color-gray;
+      font-size: 1.125em;
+    }
+
+    &:checked {
+      &::before {
+        color: @color-primary;
+      }
+    }
+  }
+}
