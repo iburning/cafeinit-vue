@@ -14,7 +14,7 @@
       <p v-if="text">{{text}}</p>
     </div>
 
-    <div v-bind:class="[
+    <div v-if="isShowDimmer" v-bind:class="[
         ns + 'dimmer',
         isActive ? (ns + 'active') : ''
       ]"></div>
@@ -38,9 +38,15 @@ export default {
 
     type: String,
     text: [String, Number],
+
     duration: {
       type: Number,
       default: 2000
+    },
+
+    isShowDimmer: {
+      type: Boolean,
+      default: true
     }
   },
 
@@ -102,46 +108,3 @@ export default {
   }
 }
 </script>
-
-<style lang="less">
-.ci-dimmer {
-  z-index: 1000;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-
-.ci-toast-content {
-  z-index: 1100;
-  position: fixed;
-  top: 30%;
-  left: 50%;
-  min-width: 120px;
-  max-width: 80%;
-  padding: 15px;
-  border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.25);
-  text-align: center;
-  color: #fff;
-
-  p {
-    margin: 0;
-  }
-}
-
-.ci-toast-icon {
-  display: block;
-  width: 48px;
-  height: 48px;
-  margin: 0 auto;
-  font-weight: lighter;
-  font-size: 48px;
-  line-height: 48px;
-}
-
-</style>

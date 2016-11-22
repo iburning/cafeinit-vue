@@ -1,10 +1,11 @@
 <template>
   <div id="page-toasts">
     <div class="ci-btn-area">
-      <ci-link-button style="primary" block="block" v-on:click="showToast('success', 'Hello CafeInit')">Show Success Toast</ci-link-button>
+      <ci-link-button style="primary" block="block" v-on:click="showToast('success', 'Hello CafeInit', 0)">Show Success Toast</ci-link-button>
       <ci-link-button style="primary" block="block" v-on:click="showToast('error', 'Some error message...')">Show Error Toast</ci-link-button>
       <ci-link-button style="primary" block="block" v-on:click="showToast('warn', 'Stop!')">Show Warn Toast</ci-link-button>
       <ci-link-button style="primary" block="block" v-on:click="showToast('waiting', '', 10000)">Show Waiting Toast</ci-link-button>
+      <ci-link-button style="primary" block="block" v-on:click="showToast('', 'Message only, long long long... long long long...')">Show Text Toast</ci-link-button>
     </div>
 
     <ci-toast v-model="isShowToast"
@@ -30,8 +31,8 @@ export default {
       this.toastType = type
       this.toastText = text
 
-      if (parseInt(duration)) {
-        this.toastDuration = duration
+      if (parseInt(duration) >= 0) {
+        this.toastDuration = parseInt(duration)
       }
       else {
         this.toastDuration = 2000
