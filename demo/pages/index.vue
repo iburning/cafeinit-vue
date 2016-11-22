@@ -77,6 +77,11 @@
         <strong class="title">Modals</strong>
         <span class="sub-title">模态窗</span>
       </ci-list-cell>
+
+      <ci-list-cell accessory="link" to="/toasts">
+        <strong class="title">Toasts</strong>
+        <span class="sub-title">土司提示</span>
+      </ci-list-cell>
     </ci-list>
 
     <ci-list-header>导航</ci-list-header>

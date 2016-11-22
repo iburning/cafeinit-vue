@@ -62,6 +62,8 @@ import CIConfirm from './modal/AMConfirm'
 import CISlider from './slider/CISlider'
 import CISlideView from './slideView/CISlideView'
 import CISlideViewItem from './slideView/CISlideViewItem'
+import CIToast from './toast/CIToast'
+
 
 import CIScrollHelper from './utils/CIScrollHelper'
 
@@ -121,7 +123,8 @@ const CIComponents = {
 
   'ci-slider': CISlider,
   'ci-slide-view': CISlideView,
-  'ci-slide-view-item': CISlideViewItem
+  'ci-slide-view-item': CISlideViewItem,
+  'ci-toast': CIToast
 }
 
 // export default {
