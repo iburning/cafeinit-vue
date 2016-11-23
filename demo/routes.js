@@ -6,6 +6,7 @@
 
 import Index from './pages/index'
 import AlertTip from './pages/alertTip'
+import Badges from './pages/badges'
 import Block from './pages/block'
 import Breadcrumb from './pages/breadcrumb'
 import Buttons from './pages/buttons'
@@ -31,6 +32,7 @@ import SlideView from './pages/slideView'
 export default [
   { path: '/', component: Index },
   { path: '/alert-tip', component: AlertTip },
+  { path: '/badges', component: Badges },
   { path: '/block', component: Block },
   { path: '/breadcrumb', component: Breadcrumb },
   { path: '/buttons', component: Buttons },

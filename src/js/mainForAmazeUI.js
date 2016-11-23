@@ -5,6 +5,7 @@
  */
 
 import CIAlertTip from './alertTip/AMAlertTip'
+import CIBadge from './badge/CIBadge'
 
 import CIBlock from './block/CIBlock'
 import CIBlockBody from './block/CIBlockBody'
@@ -70,6 +71,7 @@ import CIScrollHelper from './utils/CIScrollHelper'
 
 const CIComponents = {
   'ci-alert-tip': CIAlertTip,
+  'ci-badge': CIBadge,
 
   'ci-block': CIBlock,
   'ci-block-body': CIBlockBody,

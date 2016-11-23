@@ -114,6 +114,11 @@
 
     <ci-list-header>其他</ci-list-header>
     <ci-list>
+      <ci-list-cell accessory="link" to="/badges">
+        <strong class="title">Badges</strong>
+        <span class="sub-title">小徽章</span>
+      </ci-list-cell>
+
       <ci-list-cell accessory="link" to="/images">
         <strong class="title">Images</strong>
         <span class="sub-title">图片</span>
