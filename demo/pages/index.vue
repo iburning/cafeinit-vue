@@ -7,8 +7,8 @@
         <span class="sub-title">区块</span>
       </ci-list-cell>
 
-      <ci-list-cell accessory="link" to="/gallery">
-        <strong class="title">Gallery</strong>
+      <ci-list-cell accessory="link" to="/collection">
+        <strong class="title">Collection</strong>
         <span class="sub-title">阵列</span>
       </ci-list-cell>
 

@@ -1,5 +1,5 @@
 <template>
-  <li class="ci-gallery-cell">
+  <li class="ci-collection-cell">
     <slot></slot>
   </li>
 </template>
@@ -7,6 +7,6 @@
 
 <script>
 export default {
-  name: 'ci-gallery-cell'
+  name: 'ci-collection-cell'
 }
 </script>

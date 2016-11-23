@@ -10,9 +10,9 @@ import Badges from './pages/badges'
 import Block from './pages/block'
 import Breadcrumb from './pages/breadcrumb'
 import Buttons from './pages/buttons'
+import Collection from './pages/collection'
 import FormView from './pages/form'
 import FormList from './pages/formList'
-import Gallery from './pages/gallery'
 import Grid from './pages/grid'
 import Images from './pages/images'
 import ImagePicker from './pages/imagePicker'
@@ -36,9 +36,9 @@ export default [
   { path: '/block', component: Block },
   { path: '/breadcrumb', component: Breadcrumb },
   { path: '/buttons', component: Buttons },
+  { path: '/collection', component: Collection },
   { path: '/form', component: FormView },
   { path: '/form-list', component: FormList },
-  { path: '/gallery', component: Gallery },
   { path: '/grid', component: Grid },
   { path: '/images', component: Images },
   { path: '/image-picker', component: ImagePicker },

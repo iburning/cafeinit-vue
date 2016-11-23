@@ -13,8 +13,8 @@ import CIBlockHeader from './block/CIBlockHeader'
 
 import CIBreadcrumb from './breadcrumb/BSBreadcrumb'
 
-import CIGallery from './gallery/CIGallery'
-import CIGalleryCell from './gallery/CIGalleryCell'
+import CICollection from './collection/CICollection'
+import CICollectionCell from './collection/CICollectionCell'
 
 import CIGrid from './grid/BSGrid'
 import CIGridCell from './grid/BSGridCell'
@@ -65,8 +65,8 @@ const CIComponents = {
 
   'ci-breadcrumb': CIBreadcrumb,
 
-  'ci-gallery': CIGallery,
-  'ci-gallery-cell': CIGalleryCell,
+  'ci-collection': CICollection,
+  'ci-collection-cell': CICollectionCell,
 
   'ci-image': CIImage,
 

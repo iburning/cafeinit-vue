@@ -1,11 +1,11 @@
 <template>
-  <ul class="ci-gallery">
+  <ul class="ci-collection">
     <slot></slot>
   </ul>
 </template>
 
 <script>
 export default {
-  name: 'ci-gallery'
+  name: 'ci-collection'
 }
 </script>
