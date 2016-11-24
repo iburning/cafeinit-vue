@@ -24,10 +24,11 @@ import NumberInput from './pages/number'
 import Offcanvas from './pages/offcanvas'
 import PageDemo from './pages/pageDemo'
 import Pagination from './pages/pagination'
-import TabBar from './pages/tabBar'
-import Toasts from './pages/toasts'
+import Rate from './pages/rate'
 import Slider from './pages/slider'
 import SlideView from './pages/slideView'
+import TabBar from './pages/tabBar'
+import Toasts from './pages/toasts'
 
 export default [
   { path: '/', component: Index },
@@ -50,8 +51,9 @@ export default [
   { path: '/page-demo', component: PageDemo },
   { path: '/pagination', component: Pagination },
   { path: '/offcanvas', component: Offcanvas },
-  { path: '/tab-bar', component: TabBar },
-  { path: '/toasts', component: Toasts },
+  { path: '/rate', component: Rate },
   { path: '/slider', component: Slider },
-  { path: '/slide-view', component: SlideView }
+  { path: '/slide-view', component: SlideView },
+  { path: '/tab-bar', component: TabBar },
+  { path: '/toasts', component: Toasts }
 ]
