@@ -139,6 +139,11 @@
         <span class="sub-title">滚动视图</span>
       </ci-list-cell>
 
+      <ci-list-cell accessory="link" to="/sticky">
+        <strong class="title">Sticky</strong>
+        <span class="sub-title">固定元素</span>
+      </ci-list-cell>
+
       <ci-list-cell accessory="link" to="/page-demo">
         <strong class="title">Page Demo</strong>
         <span class="sub-title">页面实例</span>

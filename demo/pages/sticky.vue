@@ -3,7 +3,12 @@
     <div style="height: 300px;"></div>
 
     <ci-sticky v-on:sticky="onSticky" v-on:unsticky="onUnsticky">
-      <div class="test">STICKY</div>
+      <ci-tab-bar
+        v-bind:items="[
+            { className: 'btn-shares', text: 'Shares', },
+            { className: 'btn-items', text: 'Items' },
+            { className: 'btn-friends', text: 'Friends' }
+          ]"></ci-tab-bar>
     </ci-sticky>
 
     <div style="height: 1200px;"></div>
@@ -23,11 +28,11 @@ export default {
 
   methods: {
     onSticky(sender) {
-      console.log('onSticky', sender)
+      // console.log('onSticky', sender)
     },
 
     onUnsticky(sender) {
-      console.log('onUnsticky', sender)
+      // console.log('onUnsticky', sender)
     }
   }
 }
