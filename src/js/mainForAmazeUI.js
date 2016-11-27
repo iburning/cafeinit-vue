@@ -65,7 +65,7 @@ import CISlideView from './slideView/CISlideView'
 import CISlideViewItem from './slideView/CISlideViewItem'
 import CISticky from './sticky/CISticky'
 import CIToast from './toast/CIToast'
-
+import CIToTop from './toTop/CIToTop'
 
 import CICompnentHelper from './utils/CICompnentHelper'
 import CIScrollHelper from './utils/CIScrollHelper'
@@ -129,7 +129,8 @@ const CIComponents = {
   'ci-slide-view': CISlideView,
   'ci-slide-view-item': CISlideViewItem,
   'ci-sticky': CISticky,
-  'ci-toast': CIToast
+  'ci-toast': CIToast,
+  'ci-to-top': CIToTop
 }
 
 // export default {

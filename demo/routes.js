@@ -30,6 +30,7 @@ import SlideView from './pages/slideView'
 import Sticky from './pages/sticky'
 import TabBar from './pages/tabBar'
 import Toasts from './pages/toasts'
+import ToTop from './pages/toTop'
 
 export default [
   { path: '/', component: Index },
@@ -57,5 +58,6 @@ export default [
   { path: '/slide-view', component: SlideView },
   { path: '/sticky', component: Sticky },
   { path: '/tab-bar', component: TabBar },
-  { path: '/toasts', component: Toasts }
+  { path: '/toasts', component: Toasts },
+  { path: '/to-top', component: ToTop }
 ]
