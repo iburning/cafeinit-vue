@@ -27,6 +27,7 @@ import Pagination from './pages/pagination'
 import Rate from './pages/rate'
 import Slider from './pages/slider'
 import SlideView from './pages/slideView'
+import Sticky from './pages/sticky'
 import TabBar from './pages/tabBar'
 import Toasts from './pages/toasts'
 
@@ -54,6 +55,7 @@ export default [
   { path: '/rate', component: Rate },
   { path: '/slider', component: Slider },
   { path: '/slide-view', component: SlideView },
+  { path: '/sticky', component: Sticky },
   { path: '/tab-bar', component: TabBar },
   { path: '/toasts', component: Toasts }
 ]
