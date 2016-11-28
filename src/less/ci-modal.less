@@ -22,22 +22,23 @@
   }
 }
 
-.ci-modal-container {
+.ci-modal-container,
+.ci-modal-dialog {
   z-index: 1500;
   position: relative;
   display: inline-block;
   vertical-align: middle;
   width: 260px;
   max-width: 100%;
+  min-height: @base-height;
+  max-height: 100%;
   margin: auto;
   transition: all 0.3s ease;
 }
 
 .ci-modal-dialog {
-  .ci-modal-container {
-    background-color: @color-white;
-    border-radius: 10px;
-  }
+  background-color: @color-white;
+  border-radius: 10px;
 }
 
 .ci-modal-header {
@@ -116,16 +117,8 @@
 .ci-enter, .ci-leave-active {
   opacity: 0;
 
-  .ci-modal-container {
-    transform: scale(0.75);
-  }
-}
-
-
-.ci-enter-active, .ci-leave-active {
-  opacity: 0;
-
-  .ci-modal-container {
+  .ci-modal-container,
+  .ci-modal-dialog {
     transform: scale(0.75);
   }
 

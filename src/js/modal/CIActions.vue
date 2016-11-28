@@ -1,17 +1,17 @@
 <template>
   <transition name="ci">
-    <div v-bind:class="ns + 'modal'" v-on:click="modalOnClick">
+    <div v-bind:class="ns + 'modal'">
       <div v-bind:class="ns + 'modal-actions'">
         <div class="ci-modal-actions-group">
           <ci-list>
             <ci-list-cell v-for="(item, index) in items"
               v-bind:class="[
                 item.className,
-                (selectedIndex == index) ? 'am-active': ''
+                (currentIndex == index) ? 'ci-active': ''
               ]"
-              v-on:click="itemOnClick(index, item)">
+              v-on:click.native="itemOnClick(index, item)">
               <router-link v-if="item.to" v-bind:to="item.to">{{item.text}}</router-link>
-              <a v-else href="javascritp:;">{{item.text}}</a>
+              <a v-else href="javascript:;">{{item.text}}</a>
             </ci-list-cell>
           </ci>
         </div>
@@ -22,7 +22,7 @@
         </div>
       </div>
 
-      <div v-bind:class="ns + 'dimmer'"></div>
+      <div v-bind:class="ns + 'dimmer'" v-on:click="modalOnClick"></div>
     </div>
   </transition>
 </template>

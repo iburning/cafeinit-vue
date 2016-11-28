@@ -22,9 +22,9 @@ export default {
   },
 
   methods: {
-    onClick(evt) {
+    modalOnClick() {
       if (this.isCloseViaDimmer) {
-        this.$emit('close', 'dimmer', this)
+        this.$emit('close', 'dimmer')
       }
     }
   }

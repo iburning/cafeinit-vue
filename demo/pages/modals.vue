@@ -5,7 +5,7 @@
       <ci-link-button style="primary" block="block" v-on:click="isShowAlert1 = true">Show Alert with Title</ci-link-button>
       <ci-link-button style="primary" block="block" v-on:click="isShowAlert2 = true">Show Alert</ci-link-button>
       <ci-link-button style="primary" block="block" v-on:click="isShowConfirm = true">Show Confirm</ci-link-button>
-      <ci-link-button style="primary" block="block" v-on:click="isShowActions = true">Show Actions</ci-link-button>
+      <ci-link-button style="primary" block="block" v-on:click="isShowActions = true">Show Actions ({{actionsIndex}})</ci-link-button>
     </div>
 
     <ci-modal v-if="isShowModal" v-on:close="isShowModal = false">
@@ -37,6 +37,7 @@
         { className: 'btn-friends', text: 'Friends' }
       ]"
       cancel-text="Cancel"
+      v-model="actionsIndex"
       v-on:click-item="actionsOnClickItem"
       v-on:cancel="actionsOnCancel"></ci-actions>
   </div>
@@ -52,7 +53,8 @@ export default {
       isShowAlert1: false,
       isShowAlert2: false,
       isShowConfirm: false,
-      isShowActions: false
+      isShowActions: false,
+      actionsIndex: 1
     }
   },
 

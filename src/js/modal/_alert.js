@@ -29,12 +29,14 @@ export default {
   },
 
   methods: {
-    onCloseModal(type, sender) {
-      this.$emit('close', type, sender)
+    modalOnClick() {
+      if (this.isCloseViaDimmer) {
+        this.$emit('close', 'dimmer')
+      }
     },
 
-    onClickButton() {
-      this.$emit('close', 'button', this)
+    buttonOnClick() {
+      this.$emit('close', 'button')
     }
   }
 }

@@ -30,21 +30,21 @@ export default {
       }
     },
 
-    index: {
-      type: Number,
+    value: {
+      type: [Number, String],
       default: 0
     }
   },
 
   data() {
     return {
-      selectedIndex: this.index
+      currentIndex: this.value
     }
   },
 
   watch: {
-    isShow(val) {
-      this.isActive = val
+    value(val) {
+      this.currentIndex = val
     }
   },
 
@@ -54,8 +54,9 @@ export default {
     },
 
     itemOnClick(index, item) {
-      this.selectedIndex = index
+      this.currentIndex = index
       this.$emit('click-item', index, item)
+      this.$emit('input', index)
     },
 
     cancelButtonOnClick() {
