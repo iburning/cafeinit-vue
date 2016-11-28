@@ -1,11 +1,11 @@
 /**
- * @fileoverview ci-modal
+ * @fileoverview ci-confirm
  * @author: burning <www.cafeinit.com>
  * @version: 2016-11-28
  */
 
 export default {
-  name: 'ci-alert',
+  name: 'ci-confirm',
 
   props: {
     ns: {
@@ -22,19 +22,19 @@ export default {
       default: '确认'
     },
 
-    isCloseViaDimmer: {
-      type: Boolean,
-      default: true
+    concelText: {
+      type: String,
+      default: '取消'
     }
   },
 
   methods: {
-    onCloseModal(type, sender) {
-      this.$emit('close', type, sender)
+    cancel() {
+      this.$emit('cancel')
     },
 
-    onClickButton() {
-      this.$emit('close', 'button', this)
+    ok() {
+      this.$emit('ok')
     }
   }
 }

@@ -62,12 +62,17 @@
   display: table-cell;
   height: @base-height;
   padding: 0 10px;
+  border-right: 1px solid @color-border;
   text-decoration: none;
 
   overflow: hidden;
   word-wrap: normal;
   text-overflow: ellipsis;
   white-space: nowrap;
+
+  &:last-child {
+    border-right: none;
+  }
 }
 
 .ci-enter, .ci-leave-active {

@@ -52,7 +52,7 @@ import CILinkButton from './button/CILinkButton.vue'
 import CIModal from './modal/CIModal.vue'
 // import CIActions from './modal/CIActions.vue'
 import CIAlert from './modal/CIAlert.vue'
-// import CIConfirm from './modal/CIConfirm.vue'
+import CIConfirm from './modal/CIConfirm.vue'
 
 import CIScrollHelper from './utils/CIScrollHelper'
 
@@ -104,7 +104,7 @@ const CIComponents = {
   'ci-modal': CIModal,
   // 'ci-actions': CIActions,
   'ci-alert': CIAlert,
-  // 'ci-confirm': CIConfirm
+  'ci-confirm': CIConfirm
 }
 
 // export default {

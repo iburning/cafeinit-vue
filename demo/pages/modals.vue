@@ -4,6 +4,7 @@
       <ci-link-button style="primary" block="block" v-on:click="isShowModal = true">Show Modal</ci-link-button>
       <ci-link-button style="primary" block="block" v-on:click="isShowAlert1 = true">Show Alert with Title</ci-link-button>
       <ci-link-button style="primary" block="block" v-on:click="isShowAlert2 = true">Show Alert</ci-link-button>
+      <ci-link-button style="primary" block="block" v-on:click="isShowConfirm = true">Show Confirm</ci-link-button>
     </div>
 
     <ci-modal v-if="isShowModal" v-on:close="isShowModal = false">
@@ -20,6 +21,12 @@
       v-bind:is-close-via-dimmer="false">
       My Alert Content
     </ci-alert>
+
+    <ci-confirm v-if="isShowConfirm"
+      v-on:cancel="confirmOnCancel"
+      v-on:ok="confirmOnOK">
+      Delete all messages?
+    </ci-confirm>
   </div>
 </template>
 
@@ -31,7 +38,20 @@ export default {
     return {
       isShowModal: false,
       isShowAlert1: false,
-      isShowAlert2: false
+      isShowAlert2: false,
+      isShowConfirm: false
+    }
+  },
+
+  methods: {
+    confirmOnCancel() {
+      console.log('confirmOnCancel')
+      this.isShowConfirm = false
+    },
+
+    confirmOnOK() {
+      console.log('confirmOnOK')
+      this.isShowConfirm = false
     }
   }
 }

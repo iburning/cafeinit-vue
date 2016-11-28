@@ -13,14 +13,11 @@ export default {
       default: 'ci-'
     },
 
+    size: String,
+
     isCloseViaDimmer: {     // 是否通过点击遮罩层关闭模态框，默认为true
       type: Boolean,
       default: true
-    },
-
-    size: {
-      type: String,
-      default: ''       // lg
     }
   },
 
