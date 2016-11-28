@@ -1,89 +1,51 @@
 <template>
-  <div tabindex="-1"
-    v-show="isActive"
-    v-bind:is-close-via-dimmer="isCloseViaDimmer"
-    v-bind:class="[
-      'am-modal',
-      isShowButton ? '' : 'am-modal-no-btn',
-      isActive ? 'am-modal-active' : '',
-      size ? ('am-modal-' + size) : ''
-    ]"
-    v-on:click="closeViaDimmer">
-    <div class="am-modal-dialog" v-on:click="onClick">
-      <slot></slot>
-    </div>
+  <transition name="ci">
+    <div v-bind:class="ns + 'modal'" v-on:click="onClick">
+      <div v-bind:class="ns + 'modal-dialog'">
+        <slot></slot>
+      </div>
 
-    <div v-bind:class="{
-        'am-dimmer': true,
-        'am-active': isActive
-      }"
-      transition="modal-fade"></div>
-  </div>
+      <div v-bind:class="ns + 'dimmer'"></div>
+    </div>
+  </transition>
 </template>
 
 <script>
-export default {
-  name: 'ci-modal',
+import config from './_modal'
 
-  props: {
-    isShow: {
-      type: Boolean,
-      default: false
-    },
+config.props.ns = {
+  type: String,
+  default: 'am-'
+}
 
-    isCloseViaDimmer: {     // 是否通过点击遮罩层关闭模态框，默认为true
-      type: Boolean,
-      default: true
-    },
+export default config
+</script>
 
-    isShowButton: {
-      type: Boolean,
-      default: false
-    },
+<style lang="less" scoped>
+@import "../../less/varialbes.less";
 
-    size: {
-      type: String,
-      default: ''       // lg
-    }
-  },
+.am-modal, .am-dimmer {
+  display: block;
+  opacity: 1;
+  transform: none;
+  transition: opacity .3s ease;
+}
 
-  data() {
-    return {
-      isActive: this.isShow
-    }
-  },
+.am-modal-dialog {
+  z-index: 1500;
+  transition: all 0.3s ease;
+}
 
-  watch: {
-    isShow(val) {
-      this.isActive = val
-    }
-  },
+.am-modal-btn {
+  color: @color-primary;
+}
 
-  mounted() {
-    //
-  },
 
-  methods: {
-    show() {
-      this.isActive = true
-    },
+.ci-enter, .ci-leave-active {
+  opacity: 0;
 
-    close() {
-      // console.log('modal close')
-      this.isActive = false
-      this.$emit('close', 'button')
-    },
-
-    onClick(evt) {
-      evt.stopPropagation();
-    },
-
-    closeViaDimmer() {
-      if (this.isCloseViaDimmer) {
-        this.isActive = false
-        this.$emit('close', 'dimmer')
-      }
-    }
+  .am-modal-dialog {
+    transform: scale(0.75);
   }
 }
-</script>
+</style>

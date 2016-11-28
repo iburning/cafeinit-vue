@@ -6,6 +6,7 @@
 
 var path = require('path')
 var webpack = require('webpack')
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: {
@@ -64,5 +65,7 @@ module.exports = {
   babel: {
     presets: ['es2015'],
     plugins: ['transform-runtime']
-  }
+  },
+
+  // plugins: [new BundleAnalyzerPlugin()]
 }

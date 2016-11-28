@@ -1,6 +1,6 @@
 <template>
   <div id="page-sticky">
-    <div style="height: 300px;"></div>
+    <div style="height:150px;background-color:#52b888">Banner</div>
 
     <ci-sticky v-on:sticky="onSticky" v-on:unsticky="onUnsticky">
       <ci-tab-bar

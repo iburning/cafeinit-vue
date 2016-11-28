@@ -21,10 +21,12 @@ import CIGridCell from './grid/CIGridCell.vue'
 
 import CIImage from './image/CIImage'
 
-import CIList from './list/CIList.vue'
-import CIListCell from './list/CIListCell.vue'
-import CIListCheckbox from './list/CIListCheckbox.vue'
-import CIListRadio from './list/CIListRadio.vue'
+import CIList from './list/CIList'
+import CIListCell from './list/CIListCell'
+import CIListHeader from './list/CIListHeader'
+import CIListCheckbox from './list/AMListCheckbox'
+import CIListRadio from './list/AMListRadio'
+import CIListSwitch from './list/AMListSwitch'
 
 import CILoading from './loading/CILoading.vue'
 
@@ -47,7 +49,7 @@ import CILinkButton from './button/CILinkButton.vue'
 
 
 /* for modal */
-// import CIModal from './modal/CIModal.vue'
+import CIModal from './modal/CIModal.vue'
 // import CIActions from './modal/CIActions.vue'
 // import CIAlert from './modal/CIAlert.vue'
 // import CIConfirm from './modal/CIConfirm.vue'
@@ -75,8 +77,10 @@ const CIComponents = {
 
   'ci-list': CIList,
   'ci-list-cell': CIListCell,
+  'ci-list-header': CIListHeader,
   'ci-list-checkbox': CIListCheckbox,
   'ci-list-radio': CIListRadio,
+  'ci-list-switch': CIListSwitch,
 
   'ci-loading': CILoading,
 
@@ -97,7 +101,7 @@ const CIComponents = {
   'ci-select': CISelect,
 
   /* form modal */
-  // 'ci-modal': CIModal,
+  'ci-modal': CIModal,
   // 'ci-actions': CIActions,
   // 'ci-alert': CIAlert,
   // 'ci-confirm': CIConfirm

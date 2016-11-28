@@ -1,5 +1,5 @@
 <template>
-  <transition name="ci">
+  <transition name="ci-modal">
     <div v-bind:class="ns + 'modal'" v-on:click="onClick">
       <div v-bind:class="ns + 'modal-container'">
         <slot></slot>
@@ -10,4 +10,21 @@
   </transition>
 </template>
 
-<script src="./_modal"></script>
+<script>
+export default {
+  name: 'ci-modal',
+
+  props: {
+    ns: {
+      type: String,
+      default: 'ci-'
+    }
+  },
+
+  methods: {
+    onClick(evt) {
+      this.$emit('close')
+    }
+  }
+}
+</script>

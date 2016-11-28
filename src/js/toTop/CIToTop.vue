@@ -31,21 +31,25 @@ export default {
 
   mounted() {
     const that = this
-    const screenHeight = window.screen.height
 
+    this.check()
     window.addEventListener('scroll', function (evt) {
-      if (window.scrollY > screenHeight) {
-        that.isShow = true
-      }
-      else {
-        that.isShow = false
-      }
+      that.check()
     })
   },
 
   methods: {
     onClick() {
       this.scrollToTop()
+    },
+
+    check() {
+      if (window.scrollY > window.screen.height) {
+        this.isShow = true
+      }
+      else {
+        this.isShow = false
+      }
     },
 
     scrollToTop() {

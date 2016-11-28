@@ -10,7 +10,12 @@ export default {
   props: {
     ns: String,
 
-    isShow: {
+    value: {
+      type: Boolean,
+      default: false
+    },
+
+    isShowCloseButton: {
       type: Boolean,
       default: false
     },
@@ -28,14 +33,22 @@ export default {
 
   data: function () {
     return {
-      isActive: this.isShow,
+      isShow: this.value,
       timer: null
+    }
+  },
+
+  watch: {
+    value(val) {
+      this.isShow = val
     }
   },
 
   methods: {
     show() {
-      this.isActive = true
+      this.isShow = true
+      this.$emit('input', this.isShow)
+      this.$emit('show', this)
 
       if (this.timer) {
         clearTimeout(this.timer)
@@ -47,13 +60,13 @@ export default {
     },
 
     close() {
-      this.isActive = false
-      this.$emit('close')
+      this.isShow = false
+      this.$emit('input', this.isShow)
+      this.$emit('close', this)
     },
 
     autoClose() {
       var that = this
-      // console.log('autoClose', this.timer)
 
       this.timer = setTimeout(function () {
         that.close()

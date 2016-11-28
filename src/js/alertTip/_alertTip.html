@@ -1,6 +1,10 @@
 <div
-  v-show="isActive"
+  v-show="isShow"
   v-bind:class="[
     ns + 'alert',
     style ? (ns + 'alert-' + style) : ''
-  ]"><slot></slot></div>
+  ]"><slot></slot>
+  <button v-if="isShowCloseButton"
+    v-bind:class="ns + 'close'"
+    v-on:click="close">&times;</button>
+</div>
