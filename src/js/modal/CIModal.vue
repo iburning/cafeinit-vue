@@ -1,5 +1,5 @@
 <template>
-  <transition name="ci">
+  <transition name="cci">
     <div v-bind:class="ns + 'modal'" v-on:click="onClick">
       <div v-bind:class="ns + 'modal-container'">
         <slot></slot>
@@ -10,4 +10,4 @@
   </transition>
 </template>
 
-<script src="./_modal"></script>
+<script src="./_modal.js"></script>

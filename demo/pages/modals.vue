@@ -5,6 +5,7 @@
       <ci-link-button style="primary" block="block" v-on:click="isShowAlert1 = true">Show Alert with Title</ci-link-button>
       <ci-link-button style="primary" block="block" v-on:click="isShowAlert2 = true">Show Alert</ci-link-button>
       <ci-link-button style="primary" block="block" v-on:click="isShowConfirm = true">Show Confirm</ci-link-button>
+      <ci-link-button style="primary" block="block" v-on:click="isShowActions = true">Show Actions</ci-link-button>
     </div>
 
     <ci-modal v-if="isShowModal" v-on:close="isShowModal = false">
@@ -27,6 +28,17 @@
       v-on:ok="confirmOnOK">
       Delete all messages?
     </ci-confirm>
+
+    <ci-actions v-if="isShowActions"
+      v-bind:items="[
+        { className: 'btn-home', text: 'Home', to: '/home' },
+        { className: 'btn-shares', text: 'Shares' },
+        { className: 'btn-items', text: 'Items' },
+        { className: 'btn-friends', text: 'Friends' }
+      ]"
+      cancel-text="Cancel"
+      v-on:click-item="actionsOnClickItem"
+      v-on:cancel="actionsOnCancel"></ci-actions>
   </div>
 </template>
 
@@ -39,7 +51,8 @@ export default {
       isShowModal: false,
       isShowAlert1: false,
       isShowAlert2: false,
-      isShowConfirm: false
+      isShowConfirm: false,
+      isShowActions: false
     }
   },
 
@@ -52,6 +65,16 @@ export default {
     confirmOnOK() {
       console.log('confirmOnOK')
       this.isShowConfirm = false
+    },
+
+    actionsOnClickItem(index, item) {
+      console.log('actionsItemOnClick', index, item)
+      this.isShowActions = false
+    },
+
+    actionsOnCancel() {
+      console.log('actionsOnCancel')
+      this.isShowActions = false
     }
   }
 }

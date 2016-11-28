@@ -1,45 +1,40 @@
 <template>
-  <div v-show="isActive">
-    <div tabindex="-1"
-      v-bind:class="[
-        'am-modal-actions',
-        isActive ? 'am-modal-active' : ''
-      ]">
-      <div class="am-modal-actions-group">
-        <ul class="am-list">
-          <li v-for="(item, index) in items"
-            v-bind:class="[
-              item.className,
-              (selectedIndex == index) ? 'am-active': ''
-            ]"
-            v-on:click="onClickItem(index, item)">
-            <router-link v-if="item.to" v-bind:to="item.to">{{item.text}}</router-link>
-            <a v-else href="javascritp:;">{{item.text}}</a>
-          </li>
-        </ul>
+  <transition name="ci">
+    <div tabindex="-1" class="am-modal" v-on:click="modalOnClick">
+      <div class="am-modal-actions">
+        <div class="am-modal-actions-group">
+          <ul class="am-list">
+            <li v-for="(item, index) in items"
+              v-bind:class="[
+                item.className,
+                (selectedIndex == index) ? 'am-active': ''
+              ]"
+              v-on:click="itemOnClick(index, item)">
+              <router-link v-if="item.to" v-bind:to="item.to">{{item.text}}</router-link>
+              <a v-else href="javascritp:;">{{item.text}}</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="am-modal-actions-group">
+          <a class="am-btn am-btn-default am-btn-block" href="javasrcript:;"
+            v-on:click="cancelButtonOnClick">{{cancelText}}</a>
+        </div>
       </div>
 
-      <div class="am-modal-actions-group">
-        <a class="am-btn am-btn-secondary am-btn-block" href="javasrcript:;"
-          v-on:click="close">{{cancelText}}</a>
-      </div>
+      <div v-bind:class="ns + 'dimmer'"></div>
     </div>
-
-    <div v-bind:class="{
-        'am-dimmer': true,
-        'am-active': isActive
-      }"
-      v-on:click="closeViaDimmer"
-      transition="modal-fade"></div>
-  </div>
+  </transition>
 </template>
 
 <script>
 export default {
+  name: 'ci-actions',
+
   props: {
-    isShow: {
-      type: Boolean,
-      default: false
+    ns: {
+      type: String,
+      default: 'am-'
     },
 
     isCloseViaDimmer: {     // 是否通过点击遮罩层关闭模态框，默认为true
@@ -78,68 +73,51 @@ export default {
     }
   },
 
-  transitions: {
-    'modal-fade': {
-      beforeEnter(el) {
-        // ...
-      },
-
-      enter(el) {
-        // ...
-      },
-
-      afterEnter(el) {
-        // ...
-      },
-
-      enterCancelled(el) {
-        // ...
-      },
-
-      beforeLeave: function (el) {
-        // ...
-      },
-
-      leave: function (el) {
-        // ...
-      },
-
-      afterLeave: function (el) {
-        // ...
-      },
-
-      leaveCancelled(el) {
-        // ...
-      }
-    }
-  },
-
-  mounted() {
-    //
-  },
-
   methods: {
-    show() {
-      this.isActive = true
+    modalOnClick() {
+      this.$emit('cancel', 'dimmer')
     },
 
-    close() {
-      this.isActive = false
-      this.$emit('cancel', 'button')
-    },
-
-    closeViaDimmer() {
-      if (this.isCloseViaDimmer) {
-        this.isActive = false
-        this.$emit('cancel', 'dimmer')
-      }
-    },
-
-    onClickItem(index, item) {
+    itemOnClick(index, item) {
       this.selectedIndex = index
-      this.isActive = false
       this.$emit('click-item', index, item)
+    },
+
+    cancelButtonOnClick() {
+      this.$emit('cancel', 'button')
     }
   }
 }
 </script>
+
+<style lang="less" scoped>
+.am-modal, .am-dimmer {
+  display: block;
+  opacity: 1;
+  transform: none;
+  transition: opacity .3s ease;
+}
+
+.am-modal-dialog {
+  z-index: 1500;
+  transition: all 0.3s ease;
+}
+
+.ci-enter, .ci-leave-active {
+  opacity: 0;
+
+  .am-modal-dialog {
+    transform: scale(0.75);
+  }
+}
+
+.am-modal-actions {
+  transform: translateY(0);
+}
+
+.ci-enter, .ci-leave-active {
+  .am-modal-actions {
+    transform: translateY(100%);
+  }
+}
+</style>

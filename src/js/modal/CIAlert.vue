@@ -14,4 +14,4 @@
   </ci-modal>
 </template>
 
-<script src="./_alert"></script>
+<script src="./_alert.js"></script>

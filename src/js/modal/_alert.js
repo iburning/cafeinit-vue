@@ -1,5 +1,5 @@
 /**
- * @fileoverview ci-modal
+ * @fileoverview ci-alert
  * @author: burning <www.cafeinit.com>
  * @version: 2016-11-28
  */

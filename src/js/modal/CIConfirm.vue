@@ -16,4 +16,4 @@
   </ci-modal>
 </template>
 
-<script src="./_confirm"></script>
+<script src="./_confirm.js"></script>
