@@ -26,7 +26,9 @@ export default {
 
   methods: {
     onClick(evt) {
-      this.$emit('close')
+      if (this.isCloseViaDimmer) {
+        this.$emit('close', 'dimmer', this)
+      }
     }
   }
 }

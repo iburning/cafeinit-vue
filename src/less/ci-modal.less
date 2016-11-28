@@ -33,6 +33,43 @@
   transition: all 0.3s ease;
 }
 
+.ci-modal-dialog {
+  .ci-modal-container {
+    background-color: @color-white;
+    border-radius: 10px;
+  }
+}
+
+.ci-modal-header {
+  padding: 15px 15px 10px 15px;
+  font-size: @font-size-smaller;
+  font-weight: 500;
+}
+
+.ci-modal-body {
+  padding: 15px;
+}
+
+.ci-modal-footer {
+  display: table;
+  width: 100%;
+  border-top: 1px solid @color-border;
+  height: @base-height;
+  line-height: @base-height;
+}
+
+.ci-modal-btn {
+  display: table-cell;
+  height: @base-height;
+  padding: 0 10px;
+  text-decoration: none;
+
+  overflow: hidden;
+  word-wrap: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .ci-enter, .ci-leave-active {
   opacity: 0;
 
