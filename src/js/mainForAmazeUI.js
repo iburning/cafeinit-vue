@@ -64,9 +64,11 @@ import CIRate from './rate/CIRate'
 import CISlider from './slider/CISlider'
 import CISlideView from './slideView/CISlideView'
 import CISlideViewItem from './slideView/CISlideViewItem'
+import CISticky from './sticky/CISticky'
 import CIToast from './toast/CIToast'
+import CIToTop from './toTop/CIToTop'
 
-
+import CICompnentHelper from './utils/CICompnentHelper'
 import CIScrollHelper from './utils/CIScrollHelper'
 
 
@@ -128,7 +130,9 @@ const CIComponents = {
   'ci-slider': CISlider,
   'ci-slide-view': CISlideView,
   'ci-slide-view-item': CISlideViewItem,
-  'ci-toast': CIToast
+  'ci-sticky': CISticky,
+  'ci-toast': CIToast,
+  'ci-to-top': CIToTop
 }
 
 // export default {
@@ -143,6 +147,7 @@ module.exports = {
   },
 
   utils: {
+    CICompnentHelper: CICompnentHelper,
     CIScrollHelper: CIScrollHelper
   }
 }
