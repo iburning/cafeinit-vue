@@ -134,6 +134,11 @@
         <span class="sub-title">抽屉</span>
       </ci-list-cell>
 
+      <ci-list-cell accessory="link" to="/rate">
+        <strong class="title">Rate</strong>
+        <span class="sub-title">评分</span>
+      </ci-list-cell>
+
       <ci-list-cell accessory="link" to="/slide-view">
         <strong class="title">Slide View</strong>
         <span class="sub-title">滚动视图</span>

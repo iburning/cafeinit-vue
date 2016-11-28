@@ -60,6 +60,7 @@ import CIActions from './modal/AMActions'
 import CIAlert from './modal/AMAlert'
 import CIConfirm from './modal/AMConfirm'
 
+import CIRate from './rate/CIRate'
 import CISlider from './slider/CISlider'
 import CISlideView from './slideView/CISlideView'
 import CISlideViewItem from './slideView/CISlideViewItem'
@@ -114,6 +115,7 @@ const CIComponents = {
   'ci-input': CIInput,
   'ci-number': CINumber,
   'ci-radio': CIRadio,
+  'ci-rate': CIRate,
   'ci-select': CISelect,
   'ci-switch': CISwitch,
 

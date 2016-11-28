@@ -1,0 +1,47 @@
+/**
+ * @fileoverview ci-rate
+ * @author: burning <www.cafeinit.com>
+ * @version: 2016-11-24
+ */
+
+.ci-rate {
+  clear: both;
+  height: 30px;
+}
+
+.ci-rate-item {
+  @width: 30px;
+
+  display: block;
+  position: relative;
+  float: left;
+  width: @width;
+  height: @width;
+  text-align: center;
+  font-size: @width;
+  line-height: @width;
+
+  i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #ddd;
+  }
+}
+
+.ci-rate-item-on {
+  i {
+    color: #ff3366;
+  }
+}
+
+.ci-rate-item-half {
+  i:first-child {
+    color: #ddd;
+  }
+
+  i:last-child {
+    overflow: hidden;
+    color: #ff3366;
+  }
+}

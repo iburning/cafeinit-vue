@@ -2,23 +2,29 @@
   <div id="page-rate">
     <ci-list>
       <ci-list-cell>
-        <ci-rate v-model="rate"></ci-rate> {{rate}}
+        <span class="title">
+          <ci-rate v-model="rate"></ci-rate>
+        </span>
+        <span class="sub-title">{{rate}}</span>
+      </ci-list-cell>
+
+      <ci-list-cell>
+        <span class="title">
+          <ci-rate value="4.75" v-bind:disabled="true"></ci-rate>
+        </span>
+        <span class="sub-title">4.75</span>
       </ci-list-cell>
     </ci-list>
   </div>
 </template>
 
 <script>
-import CIRate from '../components/CIRate.vue'
-
 export default {
   name: 'page-rate',
-  components: {
-    'ci-rate': CIRate
-  },
+
   data() {
     return {
-      rate: 3.75
+      rate: 4
     }
   }
 }
