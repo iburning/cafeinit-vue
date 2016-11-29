@@ -2,8 +2,8 @@
   <div v-bind:class="ns + 'modal'">
     <div v-bind:class="ns + 'modal-actions'">
       <div v-bind:class="ns + 'modal-actions-group'">
-        <ul class="am-list">
-          <li v-for="(item, index) in items"
+        <ci-list>
+          <ci-list-cell v-for="(item, index) in items"
             v-bind:class="[
               item.className,
               (currentIndex == index) ? (ns + 'active') : ''
@@ -11,17 +11,17 @@
             v-on:click="itemOnClick(index, item)">
             <router-link v-if="item.to" v-bind:to="item.to">{{item.text}}</router-link>
             <a v-else href="javascript:;">{{item.text}}</a>
-          </li>
-        </ul>
+          </ci-list-cell>
+        </ci-list>
       </div>
 
       <div v-bind:class="ns + 'modal-actions-group'">
-        <a v-bind:class="[
-            ns + 'btn',
-            ns + 'btn-default',
-            ns + 'btn-block'
-          ]" href="javasrcript:;"
-          v-on:click="cancelButtonOnClick">{{cancelText}}</a>
+        <ci-list>
+          <ci-list-cell class="modal-actions-cancel"
+            v-on:click="cancelButtonOnClick">
+            <a href="javascript:;">{{cancelText}}</a>
+          </ci-list-cell>
+        </ci-list>
       </div>
     </div>
 

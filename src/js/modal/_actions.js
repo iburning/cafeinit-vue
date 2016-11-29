@@ -54,12 +54,14 @@ export default {
     },
 
     itemOnClick(index, item) {
+      console.log('modal._actions.itemOnClick', index, item)
       this.currentIndex = index
       this.$emit('click-item', index, item)
       this.$emit('input', index)
     },
 
     cancelButtonOnClick() {
+      console.log('modal._actions.cancelButtonOnClick')
       this.$emit('cancel', 'button')
     }
   }

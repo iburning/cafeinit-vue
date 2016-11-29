@@ -22,7 +22,6 @@
   }
 }
 
-.ci-modal-container,
 .ci-modal-dialog {
   z-index: 1500;
   position: relative;
@@ -36,9 +35,12 @@
   transition: all 0.3s ease;
 }
 
-.ci-modal-dialog {
-  background-color: @color-white;
-  border-radius: 10px;
+.ci-modal-alert,
+.ci-modal-confim {
+  .ci-modal-dialog {
+    background-color: @color-white;
+    border-radius: 10px;
+  }
 }
 
 .ci-modal-header {
@@ -76,6 +78,7 @@
   }
 }
 
+.modal-actions,
 .ci-modal-actions {
   z-index: 1200;
   position: fixed;
@@ -88,6 +91,7 @@
   transition: all 0.3s ease;
 }
 
+.modal-actions-group,
 .ci-modal-actions-group {
   background-color: @color-white;
   overflow: hidden;
@@ -122,6 +126,7 @@
     transform: scale(0.75);
   }
 
+  .modal-actions,
   .ci-modal-actions {
     transform: translateY(100%);
   }
@@ -153,6 +158,7 @@
   display: inline-block;
   vertical-align: middle;
   width: 80%;
+  min-width: 260px;
   max-width: 100%;
   min-height: @base-height;
   max-height: 100%;

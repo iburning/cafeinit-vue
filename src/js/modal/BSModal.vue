@@ -1,8 +1,6 @@
 <template>
   <transition name="ci">
-    <div v-bind:class="[
-        ns + 'modal'
-      ]">
+    <div v-bind:class="ns + 'modal'">
       <div v-bind:class="ns + 'modal-dialog'">
         <slot></slot>
       </div>

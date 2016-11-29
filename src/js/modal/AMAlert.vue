@@ -9,9 +9,8 @@
         <div v-bind:class="ns + 'modal-bd'" v-if="content">{{content}}</div>
         <div v-bind:class="ns + 'modal-bd'" v-else><slot>Hello CafeInit</slot></div>
         <div v-bind:class="ns + 'modal-footer'">
-          <span v-bind:class="ns + 'modal-btn'" v-on:click="buttonOnClick">
-            {{okText}}
-          </span>
+          <span v-bind:class="ns + 'modal-btn'"
+            v-on:click="buttonOnClick">{{okText}}</span>
         </div>
       </div>
 

@@ -1,6 +1,6 @@
 <template>
   <router-link v-if="to" v-bind:to="to" tag="li" class="ci-list-cell">
-    <div class="ci-list-cell-body">
+    <div class="ci-list-cell-body" v-on:click="$emit('click')">
       <slot></slot>
     </div>
     <div class="ci-list-cell-accessory" v-if="accessory">
@@ -8,7 +8,7 @@
     </div>
   </router-link>
 
-  <li v-else class="ci-list-cell">
+  <li v-else class="ci-list-cell" v-on:click="$emit('click')">
     <div class="ci-list-cell-body">
       <slot></slot>
     </div>

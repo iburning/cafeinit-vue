@@ -1,14 +1,16 @@
 <template>
   <transition name="ci">
-    <div v-bind:class="ns + 'modal'">
+    <div v-bind:class="[
+        ns + 'modal',
+        ns + 'modal-alert'
+      ]">
       <div v-bind:class="ns + 'modal-dialog'">
-        <div class="ci-modal-header" v-if="title">{{title}}</div>
-        <div class="ci-modal-body" v-if="content">{{content}}</div>
-        <div class="ci-modal-body" v-else><slot>Hello CafeInit</slot></div>
-        <div class="ci-modal-footer">
-          <a class="ci-modal-btn" href="javascript:;" v-on:click="buttonOnClick">
-            {{okText}}
-          </a>
+        <div v-bind:class="ns + 'modal-header'" v-if="title">{{title}}</div>
+        <div v-bind:class="ns + 'modal-body'" v-if="content">{{content}}</div>
+        <div v-bind:class="ns + 'modal-body'" v-else><slot>Hello CafeInit</slot></div>
+        <div v-bind:class="ns + 'modal-footer'">
+          <a v-bind:class="ns + 'modal-btn'" href="javascript:;"
+            v-on:click="buttonOnClick">{{okText}}</a>
         </div>
       </div>
 

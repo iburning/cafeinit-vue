@@ -10,9 +10,7 @@
           <div v-bind:class="ns + 'modal-body'" v-if="content">{{content}}</div>
           <div v-bind:class="ns + 'modal-body'" v-else><slot>Hello CafeInit</slot></div>
           <div v-bind:class="ns + 'modal-footer'">
-            <ci-link-button style="primary" v-on:click="buttonOnClick">
-              {{okText}}
-            </ci-link-button>
+            <ci-link-button style="primary" v-on:click="buttonOnClick">{{okText}}</ci-link-button>
           </div>
         </div>
       </div>

@@ -48,7 +48,7 @@ import CILinkButton from './button/BSLinkButton'
 
 /* for modal */
 import CIModal from './modal/BSModal'
-// import CIActions from './modal/BSActions'
+import CIActions from './modal/BSActions'
 import CIAlert from './modal/BSAlert'
 import CIConfirm from './modal/BSConfirm'
 
@@ -98,7 +98,7 @@ const CIComponents = {
 
   /* form modal */
   'ci-modal': CIModal,
-  // 'ci-actions': CIActions,
+  'ci-actions': CIActions,
   'ci-alert': CIAlert,
   'ci-confirm': CIConfirm
 }
