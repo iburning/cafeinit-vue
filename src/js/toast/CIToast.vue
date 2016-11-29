@@ -1,24 +1,18 @@
 <template>
-  <div tabindex="-1"
-    v-show="isActive"
-    v-bind:class="[
-      ns + 'toast',
-      isActive ? (ns + 'toast-active') : ''
-    ]">
-    <div v-bind:class="ns + 'toast-content'">
-      <i v-if="type" v-bind:class="[
-          ns + 'toast-icon',
-          faClassName,
-          (type == 'waiting') ? 'ci-icon-spin' : ''
-        ]"></i>
-      <p v-if="text">{{text}}</p>
-    </div>
+  <transition name="ci" v-on:after-enter="onAfterEnter">
+    <div v-bind:class="ns + 'toast'">
+      <div v-bind:class="ns + 'toast-content'">
+        <i v-if="type" v-bind:class="[
+            ns + 'toast-icon',
+            faClassName,
+            (type == 'waiting') ? 'ci-icon-spin' : ''
+          ]"></i>
+        <p v-if="text">{{text}}</p>
+      </div>
 
-    <div v-if="isShowDimmer" v-bind:class="[
-        ns + 'dimmer',
-        isActive ? (ns + 'active') : ''
-      ]"></div>
-  </div>
+      <div v-bind:class="ns + 'dimmer'"></div>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -42,17 +36,11 @@ export default {
     duration: {
       type: Number,
       default: 2000
-    },
-
-    isShowDimmer: {
-      type: Boolean,
-      default: true
     }
   },
 
   data() {
     return {
-      isActive: this.value,
       timer: null
     }
   },
@@ -71,35 +59,19 @@ export default {
     }
   },
 
-  watch: {
-    value(val) {
-      if (val) {
-        this.show()
-      }
-      else {
-        this.hide()
-      }
-    }
-  },
-
   methods: {
-    show() {
+    onAfterEnter() {
       const that = this
-      this.isActive = true
-      this.$emit('input', this.isActive)
-      this.$emit('show', this)
 
       if (this.duration > 0) {
         this.timer = window.setTimeout(function () {
-          that.hide()
+          that.close()
         }, this.duration)
       }
     },
 
-    hide() {
-      this.isActive = false
-      this.$emit('input', this.isActive)
-      this.$emit('hide', this)
+    close() {
+      this.$emit('close')
 
       if (this.timer) {
         window.clearTimeout(this.timer)

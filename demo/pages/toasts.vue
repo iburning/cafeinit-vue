@@ -8,8 +8,9 @@
       <ci-link-button style="primary" block="block" v-on:click="showToast('', 'Message only, long long long... long long long...')">Show Text Toast</ci-link-button>
     </div>
 
-    <ci-toast v-model="isShowToast"
-      v-bind:type="toastType" v-bind:text="toastText" v-bind:duration="toastDuration"></ci-toast>
+    <ci-toast v-if="isShowToast"
+      v-bind:type="toastType" v-bind:text="toastText" v-bind:duration="toastDuration"
+      v-on:close="isShowToast = false"></ci-toast>
   </div>
 </template>
 
