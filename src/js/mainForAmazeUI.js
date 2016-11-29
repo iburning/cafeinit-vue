@@ -117,7 +117,6 @@ const CIComponents = {
   'ci-input': CIInput,
   'ci-number': CINumber,
   'ci-radio': CIRadio,
-  'ci-rate': CIRate,
   'ci-select': CISelect,
   'ci-switch': CISwitch,
 
@@ -127,6 +126,8 @@ const CIComponents = {
   'ci-alert': CIAlert,
   'ci-confirm': CIConfirm,
 
+
+  'ci-rate': CIRate,
   'ci-slider': CISlider,
   'ci-slide-view': CISlideView,
   'ci-slide-view-item': CISlideViewItem,

@@ -54,6 +54,15 @@ import CIActions from './modal/CIActions.vue'
 import CIAlert from './modal/CIAlert.vue'
 import CIConfirm from './modal/CIConfirm.vue'
 
+import CIRate from './rate/CIRate'
+import CISlider from './slider/CISlider'
+import CISlideView from './slideView/CISlideView'
+import CISlideViewItem from './slideView/CISlideViewItem'
+import CISticky from './sticky/CISticky'
+import CIToast from './toast/CIToast'
+import CIToTop from './toTop/CIToTop'
+
+import CICompnentHelper from './utils/CICompnentHelper'
 import CIScrollHelper from './utils/CIScrollHelper'
 
 
@@ -104,7 +113,15 @@ const CIComponents = {
   'ci-modal': CIModal,
   'ci-actions': CIActions,
   'ci-alert': CIAlert,
-  'ci-confirm': CIConfirm
+  'ci-confirm': CIConfirm,
+
+  'ci-rate': CIRate,
+  'ci-slider': CISlider,
+  'ci-slide-view': CISlideView,
+  'ci-slide-view-item': CISlideViewItem,
+  'ci-sticky': CISticky,
+  'ci-toast': CIToast,
+  'ci-to-top': CIToTop
 }
 
 // export default {

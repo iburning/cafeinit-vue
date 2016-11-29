@@ -2,8 +2,7 @@
   <transition name="ci">
     <div v-bind:class="[
         ns + 'modal',
-        ns + 'modal-confirm',
-        ns + 'modal-active'
+        ns + 'modal-confirm'
       ]">
       <div v-bind:class="ns + 'modal-dialog'">
         <div v-bind:class="ns + 'modal-hd'" v-if="title">{{title}}</div>

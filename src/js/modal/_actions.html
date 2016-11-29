@@ -1,9 +1,6 @@
 <transition name="ci">
   <div v-bind:class="ns + 'modal'">
-    <div v-bind:class="[
-        ns + 'modal-actions',
-        ns + 'modal-active'
-      ]">
+    <div v-bind:class="ns + 'modal-actions'">
       <div v-bind:class="ns + 'modal-actions-group'">
         <ul class="am-list">
           <li v-for="(item, index) in items"
