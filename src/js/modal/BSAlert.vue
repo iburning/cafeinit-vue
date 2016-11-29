@@ -1,80 +1,36 @@
 <template>
-  <ci-modal
-    v-bind:is-show.sync="isShow"
-    v-bind:is-close-via-dimmer="isCloseViaDimmer"
-    v-bind:is-fead="isFead"
-    v-bind:size="size">
-    <div class="modal-header" slot="header" v-if="title">
-      <h4 class="modal-title">{{title}}</h4>
+  <transition name="ci">
+    <div v-bind:class="[
+        ns + 'modal',
+        ns + 'modal-alert'
+      ]">
+      <div v-bind:class="ns + 'modal-dialog'">
+        <div v-bind:class="ns + 'modal-content'">
+          <div v-bind:class="ns + 'modal-header'" v-if="title"><h4>{{title}}</h4></div>
+          <div v-bind:class="ns + 'modal-body'" v-if="content">{{content}}</div>
+          <div v-bind:class="ns + 'modal-body'" v-else><slot>Hello CafeInit</slot></div>
+          <div v-bind:class="ns + 'modal-footer'">
+            <ci-link-button style="primary" v-on:click="buttonOnClick">
+              {{okText}}
+            </ci-link-button>
+          </div>
+        </div>
+      </div>
+
+      <div v-bind:class="ns + 'dimmer'" v-on:click="modalOnClick"></div>
     </div>
-    <div class="modal-body" slot="body"><slot>{{{content}}}</slot></div>
-    <div class="modal-footer" slot="footer">
-      <ci-link-button v-on:click="close">{{okText}}</ci-link-button>
-    </div>
-  </ci-modal>
+  </transition>
 </template>
 
-
 <script>
-export default {
-  props: {
-    isShow: {
-      type: Boolean,
-      default: false,
-      twoWay: true
-    },
+import config from './_alert.js'
 
-    isCloseViaDimmer: {   // 是否通过点击遮罩层关闭模态框，默认为true
-      type: Boolean,
-      default: true
-    },
-
-    isFead: {       // 是否使用淡入淡出效果
-      type: Boolean,
-      default: true
-    },
-
-    size: {
-      type: String,
-      default: ''       // sm / lg
-    },
-
-    title: {
-      type: String,
-      default: ''
-    },
-
-    content: {
-      type: String,
-      default: ''
-    },
-
-    okText: {
-      type: String,
-      default: '确认'
-    }
-  },
-
-  ready() {
-    // ...
-  },
-
-  watch: {
-    isShow(val) {
-      if (!val) {
-        this.$dispatch('close')
-      }
-    }
-  },
-
-  methods: {
-    show() {
-      this.isShow = true
-    },
-
-    close() {
-      this.isShow = false
-    }
-  }
+config.props.ns = {
+  type: String,
+  default: ''
 }
+
+export default config
 </script>
+
+<style lang="less" src="../../less/am-modal.less" scoped></style>
