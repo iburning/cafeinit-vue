@@ -6,7 +6,7 @@
 
 .am-switch {
   @size: 30px;
-  @distance: 20px;
+  @distance: 25px;
 
   display: block;
   height: @size;
@@ -45,7 +45,7 @@
       height: @size;
       border-radius: @size / 2;
       background-color: @color-gray-lighter;
-      transition:transform .35s cubic-bezier(0.45, 1, 0.4, 1);
+      transition:transform .3s cubic-bezier(0.45, 1, 0.4, 1);
     }
 
     &:after {
@@ -58,7 +58,7 @@
       border-radius: @size / 2;
       background-color: @color-white;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-      transition:transform .35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+      transition:transform .3s cubic-bezier(0.4, 0.4, 0.25, 1.35);
     }
 
     &:checked {

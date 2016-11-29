@@ -6,21 +6,23 @@
 
 .am-checkbox,
 .am-checkbox-inline {
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+
   input[type=checkbox] {
-    appearance: none;
-    float: none;
+    position: absolute;
+    left: -500px;
+    margin: 0;
+  }
 
-    &::before {
-      content: '\f046';
-      display: inline-block;
-      color: @color-gray;
-      font-size: 1.125em;
-    }
+  input[type=checkbox]:checked+i:before {
+    color: @color-primary;
+  }
 
-    &:checked {
-      &::before {
-        color: @color-primary;
-      }
-    }
+  i {
+    float: left;
+    margin: 0 5px;
+    font-size: 1.5em;
   }
 }
