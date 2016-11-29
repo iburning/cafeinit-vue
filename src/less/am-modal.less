@@ -1,0 +1,41 @@
+/**
+ * @fileoverview am-modal
+ * @author: burning <www.cafeinit.com>
+ * @version: 2016-11-28
+ */
+
+@import "./varialbes.less";
+
+.am-modal, .am-dimmer {
+  display: block;
+  opacity: 1;
+  transform: none;
+}
+
+.am-modal-dialog {
+  z-index: 1500;
+  transition: all 0.3s ease;
+}
+
+.am-modal-btn {
+  color: @color-primary;
+}
+
+
+.ci-enter, .ci-leave-active {
+  opacity: 0;
+
+  .am-modal-dialog {
+    transform: scale(0.75);
+  }
+}
+
+.am-modal-actions {
+  transform: translateY(0);
+}
+
+.ci-enter, .ci-leave-active {
+  .am-modal-actions {
+    transform: translateY(100%);
+  }
+}
