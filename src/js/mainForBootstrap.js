@@ -50,7 +50,7 @@ import CILinkButton from './button/BSLinkButton'
 import CIModal from './modal/BSModal'
 // import CIActions from './modal/BSActions'
 import CIAlert from './modal/BSAlert'
-// import CIConfirm from './modal/BSConfirm'
+import CIConfirm from './modal/BSConfirm'
 
 import CIScrollHelper from './utils/CIScrollHelper'
 
@@ -100,7 +100,7 @@ const CIComponents = {
   'ci-modal': CIModal,
   // 'ci-actions': CIActions,
   'ci-alert': CIAlert,
-  // 'ci-confirm': CIConfirm
+  'ci-confirm': CIConfirm
 }
 
 // export default {
