@@ -6,13 +6,9 @@
       height: height + 'px',
       'border-radius': radius + 'px'
     }">
-    <img v-bind:src="src" v-bind:style="{
-      'margin-left': imageLeft + 'px',
-      'margin-top': imageTop + 'px',
-      width: imageWidth + 'px',
-      height: imageHeight + 'px',
-      'border-radius': radius + 'px'
-    }" />
+
+    <ci-loading v-if="status == STATUS.WILL_LOAD || status == STATUS.LOADING" size="3"></ci-loading>
+    <img v-if="status == STATUS.DID_LOAD" v-bind:src="src" v-bind:style="imageStyle" />
   </div>
 </template>
 
@@ -38,13 +34,25 @@ export default {
     },
 
     radius: {
-      type: String,
-      default: ''
+      type: [Number, String],
+      default: 0
+    },
+
+    isLazy: {
+      type: Boolean,
+      default: false
     }
   },
 
   data() {
     return {
+      STATUS: {
+        WILL_LOAD: 0,
+        ON_LOAD: 1,
+        DID_LOAD: 2
+      },
+      status: 0,
+
       imageWidth: 0,
       imageHeight: 0,
       imageLeft: 0,
@@ -53,20 +61,61 @@ export default {
     }
   },
 
+  computed: {
+    imageStyle() {
+      return {
+        'width': this.imageWidth + 'px',
+        'height': this.imageHeight + 'px',
+        'margin-left': this.imageLeft + 'px',
+        'margin-top': this.imageTop + 'px',
+        'border-radius': this.radius + 'px'
+      }
+    }
+  },
+
   mounted() {
-    this.getImage()
+    if (this.isLazy) {
+      if (this.$el.offsetTop < window.screen.height) {
+        this.loadImage(this.src)
+      }
+
+      window.addEventListener('scroll', this.windowScrollHandler)
+    }
+    else {
+      this.loadImage(this.src)
+    }
   },
 
   methods: {
-    getImage() {
-      var that = this
-      var image = new Image()
-      image.src = this.src
+    windowScrollHandler(evt) {
+      if (window.scrollY >= this.$el.offsetTop - window.screen.height) {
+        this.loadImage(this.src)
+      }
+    },
 
-      image.onload = function () {
+    loadImage(src) {
+      if (this.status == this.STATUS.ON_LOAD
+        || this.status == this.STATUS.DID_LOAD) {
+        return
+      }
+
+      const that = this
+      const image = new Image()
+
+      this.status = this.STATUS.ON_LOAD
+
+      console.log('CIImage.loadImage', this.status, src)
+
+      image.onload = function (evt) {
+        window.removeEventListener('scroll', this.windowScrollHandler)
         that.imageRatio = image.width / image.height
         that.resetImage()
+        that.status = that.STATUS.DID_LOAD
+
+        console.log('CIImage.loadImage', that.status, that.imageRatio, evt)
       }
+
+      image.src = src
     },
 
     resetImage() {
