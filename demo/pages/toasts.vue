@@ -27,6 +27,11 @@ export default {
     }
   },
 
+  mounted() {
+    // for console test
+    window.showToast = this.showToast
+  },
+
   methods: {
     showToast(type, text, duration) {
       this.toastType = type
