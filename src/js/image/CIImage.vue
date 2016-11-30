@@ -5,9 +5,11 @@
       width: width + 'px',
       height: height + 'px',
       'border-radius': radius + 'px'
-    }">
+    }"
+    v-on:click="onClick">
 
-    <ci-loading v-if="status == STATUS.WILL_LOAD || status == STATUS.LOADING" size="3"></ci-loading>
+    <img v-if="status == STATUS.WILL_LOAD || status == STATUS.LOADING" class="ci-image-loading"
+      src="data:image/png;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
     <img v-if="status == STATUS.DID_LOAD" v-bind:src="src" v-bind:style="imageStyle" />
   </div>
 </template>
@@ -75,7 +77,7 @@ export default {
 
   mounted() {
     if (this.isLazy) {
-      if (this.$el.offsetTop < window.screen.height) {
+      if (window.scrollY >= this.$el.offsetTop - window.screen.height) {
         this.loadImage(this.src)
       }
 
@@ -111,8 +113,6 @@ export default {
         that.imageRatio = image.width / image.height
         that.resetImage()
         that.status = that.STATUS.DID_LOAD
-
-        console.log('CIImage.loadImage', that.status, that.imageRatio, evt)
       }
 
       image.src = src
@@ -143,6 +143,10 @@ export default {
           this.imageTop = -parseInt((this.imageHeight - this.height) / 2)
         }
       }
+    },
+
+    onClick(evt) {
+      this.$emit('click', evt)
     }
   }
 }

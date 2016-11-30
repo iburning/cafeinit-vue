@@ -1,6 +1,8 @@
 <template>
   <div id="page-images">
-    <ci-image v-bind:is-lazy="true" v-bind:src="imageSrc" width="300" height="300" radius='25'></ci-image>
+    <ci-image v-bind:is-lazy="true" v-bind:src="imageSrc"
+      width="300" height="300" radius='25'
+      v-on:click="imageOnClick"></ci-image>
 
     <ci-image v-bind:src="imageSrc" width="300" height="200" radius='20'></ci-image>
 
@@ -33,6 +35,12 @@ export default {
   data() {
     return {
       imageSrc: 'https://img30.360buyimg.com/popWaterMark/jfs/t3034/278/2345638110/141275/166e9a8f/57d67b45N2991179b.jpg'
+    }
+  },
+
+  methods: {
+    imageOnClick: function (evt) {
+      console.log('imageOnClick', evt, this)
     }
   }
 }
