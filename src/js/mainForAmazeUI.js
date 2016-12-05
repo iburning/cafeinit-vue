@@ -75,15 +75,14 @@ import CIScrollHelper from './utils/CIScrollHelper'
 
 const CIComponents = {
   'ci-alert-tip': CIAlertTip,
-  'ci-badge': CIBadge,
 
+  'ci-badge': CIBadge,
   'ci-block': CIBlock,
   'ci-block-body': CIBlockBody,
   'ci-block-footer': CIBlockFooter,
   'ci-block-header': CIBlockHeader,
 
   'ci-breadcrumb': CIBreadcrumb,
-
   'ci-collection': CICollection,
   'ci-collection-cell': CICollectionCell,
 
@@ -126,7 +125,6 @@ const CIComponents = {
   'ci-actions': CIActions,
   'ci-alert': CIAlert,
   'ci-confirm': CIConfirm,
-
 
   'ci-rate': CIRate,
   'ci-scroll-view': CIScrollView,

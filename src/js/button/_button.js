@@ -67,7 +67,7 @@ export default {
         return 'am-icon-circle-o-notch am-icon-spin'
       }
       else {
-        return 'fa fa-circle-o-notch ci-icon-spin'
+        return 'fa fa-circle-o-notch fa-spin'
       }
     }
   },

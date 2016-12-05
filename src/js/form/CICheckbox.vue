@@ -1,4 +1,4 @@
-<template src="./_checkbox.html"><template>
+<template src="./_checkbox.html"></template>
 
 <script>
 import config from './_checkbox'
