@@ -25,6 +25,7 @@ import Offcanvas from './pages/offcanvas'
 import PageDemo from './pages/pageDemo'
 import Pagination from './pages/pagination'
 import Rate from './pages/rate'
+import ScrollView from './pages/scrollView'
 import Slider from './pages/slider'
 import SlideView from './pages/slideView'
 import Sticky from './pages/sticky'
@@ -54,6 +55,7 @@ export default [
   { path: '/pagination', component: Pagination },
   { path: '/offcanvas', component: Offcanvas },
   { path: '/rate', component: Rate },
+  { path: '/scroll-view', component: ScrollView },
   { path: '/slider', component: Slider },
   { path: '/slide-view', component: SlideView },
   { path: '/sticky', component: Sticky },

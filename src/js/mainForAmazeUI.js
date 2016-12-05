@@ -61,6 +61,7 @@ import CIAlert from './modal/AMAlert'
 import CIConfirm from './modal/AMConfirm'
 
 import CIRate from './rate/CIRate'
+import CIScrollView from './scrollView/CIScrollView'
 import CISlider from './slider/CISlider'
 import CISlideView from './slideView/CISlideView'
 import CISlideViewItem from './slideView/CISlideViewItem'
@@ -128,6 +129,7 @@ const CIComponents = {
 
 
   'ci-rate': CIRate,
+  'ci-scroll-view': CIScrollView,
   'ci-slider': CISlider,
   'ci-slide-view': CISlideView,
   'ci-slide-view-item': CISlideViewItem,

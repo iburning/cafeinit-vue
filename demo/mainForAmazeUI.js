@@ -19,5 +19,14 @@ const router = new VueRouter({
 })
 
 const app = new Vue({
-  router
+  router,
+
+  data() {
+    return {
+      appSize: {
+        width: window.screen.width,
+        height: window.screen.height
+      }
+    }
+  }
 }).$mount('#app')

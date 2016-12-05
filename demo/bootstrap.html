@@ -14,6 +14,36 @@
     <div id="app">
       <router-view></router-view>
     </div>
+
+    <div id="debug"></div>
+
+    <script>
+      window.onload = function () {
+        console.log('window.onload');
+
+        var $debug = document.getElementById('debug');
+        $debug.innerHTML = 'DEBUG';
+
+        window.addEventListener('click', function (evt) {
+          $debug.innerHTML = 'click';
+        });
+
+        window.addEventListener('touchstart', function (evt) {
+          // evt.preventDefault();
+          $debug.innerHTML = 'touchstart';
+        });
+
+        window.addEventListener('touchmove', function (evt) {
+          evt.preventDefault();
+          $debug.innerHTML = 'touchmove';
+        });
+
+        window.addEventListener('touchend', function (evt) {
+          // evt.stopPropagation();
+          $debug.innerHTML = 'touchend';
+        });
+      }
+    </script>
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/js/main-for-bootstrap.bundle.js"></script>
   </body>

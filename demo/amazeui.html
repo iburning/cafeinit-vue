@@ -9,11 +9,114 @@
     <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css" />
   </head>
 
-  <body>
-    <h1 style="padding: 10px;font-size: 12px;">CafeInit Vue for AmezeUI</h1>
-    <div id="app">
+  <body style="height: 100%; width: 100%; overflow: auto;">
+    <div id="app" v-bind:size="appSize">
+      <h1 style="padding: 20px 10px;margin: 0;font-size: 12px;">CafeInit Vue for AmezeUI</h1>
       <router-view></router-view>
     </div>
+
+    <div id="debug">debug</div>
+
+    <style>
+
+    /*body {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }*/
+
+      #debug {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+      }
+    </style>
+
+    <script>
+      var $debug = document.getElementById('debug')
+      // window.addEventListener('touchstart', function (evt) {
+      //   evt.preventDefault()
+      // })
+      //
+      // document.getElementById('app').addEventListener('touchstart', function (evt) {
+      //   $debug.innerHTML = 'touchstart'
+      //   // if (this.scrollTop === 0) {
+      //   //   this.scrollTop += 1
+      //   // }
+      //   // else if (this.scrollTop + this.offsetHeight >= this.scrollHeight) {
+      //   //   this.scrollTop -= 1
+      //   // }
+      // })
+
+      var $debug = document.getElementById('debug')
+
+      var isLockTouchMove = false
+
+      var touchInfo = {
+        startX: 0,
+        startY: 0,
+        lastX: 0,
+        lastY: 0
+      }
+
+      i = 0;
+
+      window.addEventListener('touchstart', function (evt) {
+        console.log('touchstart', evt)
+        // isLockTouchMove = false
+        const touch = evt.touches[0]
+        this.touchInfo.lastY = touch.pageY
+      })
+
+      window.addEventListener('touchmove', function (evt) {
+        // console.log('touchmove', evt)
+        $debug.innerHTML = 'touchmove' + (i++)
+        isLockTouchMove = false
+        const touch = evt.touches[0]
+        const direction = (touch.pageY > this.touchInfo.lastY) ? 'down' : 'up'
+
+        if (window.scrollY == 0) {
+          if (touch.pageY > this.touchInfo.lastY) {
+            isLockTouchMove = true
+          }
+          else {
+            isLockTouchMove = false
+          }
+        }
+
+        if (window.scrollY >= document.body.offsetHeight - window.screen.height) {
+          if (touch.pageY < this.touchInfo.lastY) {
+            isLockTouchMove = true
+          }
+          else {
+            isLockTouchMove = false
+          }
+        }
+
+        // const info = [window.scrollY, touch.pageY, this.touchInfo.lastY, direction, isLockTouchMove]
+        const info = [window.scrollY, direction, isLockTouchMove]
+        // $debug.innerHTML = info.join(', ')
+
+        this.touchInfo.lastY = touch.pageY
+
+        if (isLockTouchMove) {
+          $debug.innerHTML = 'preventDefault'
+          evt.preventDefault()
+        }
+      })
+
+      window.addEventListener('error', function (evt) {
+        alert('Error')
+      })
+    </script>
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/js/main-for-amazeui.bundle.js"></script>
   </body>
