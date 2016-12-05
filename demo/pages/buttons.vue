@@ -12,7 +12,7 @@
         <ci-button>Default Button</ci-button>
         <ci-button tag-name="a">An a Button</ci-button>
         <ci-button style="primary">Primary Button</ci-button>
-        <ci-button style="secondary">Secondary Button</ci-button>
+        <ci-button style="info">Info Button</ci-button>
         <ci-button style="success">Success Button</ci-button>
         <ci-button style="warning">Warning Button</ci-button>
         <ci-button style="danger">Danger Button</ci-button>
@@ -69,7 +69,7 @@ export default {
 </script>
 
 <style scoped>
-.btn, .am-btn {
+.btn, .am-btn, .ci-btn {
   margin-bottom: 1em;
 }
 </style>

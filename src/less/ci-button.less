@@ -1,133 +1,192 @@
 /**
  * @fileoverview ci-button
  * @author: burning <www.cafeinit.com>
- * @version: 2016-09-12
+ * @version: 2016-12-05
  */
 
+// @btn-line-height: 1em;
+
+@btn-default-color: @color-white;
+@btn-default-bg: @color-default;
+@btn-default-border:  @color-default;
+
+@btn-primary-color: @color-white;
+@btn-primary-bg: @color-primary;
+@btn-primary-border:  @color-primary;
+
+@btn-info-color: @color-white;
+@btn-info-bg: @color-info;
+@btn-info-border:  @color-info;
+
+@btn-success-color: @color-white;
+@btn-success-bg: @color-success;
+@btn-success-border:  @color-success;
+
+@btn-warning-color: @color-white;
+@btn-warning-bg: @color-warning;
+@btn-warning-border:  @color-warning;
+
+@btn-danger-color: @color-white;
+@btn-danger-bg: @color-danger;
+@btn-danger-border:  @color-danger;
+
+
+@btn-xs-font-size: @font-size-smaller;
+@btn-sm-font-size: @font-size-small;
+@btn-md-font-size: @font-size-normal;
+@btn-lg-font-size: @font-size-big;
+@btn-xl-font-size: @font-size-bigger;
+
+
+.@{ns}btn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  margin: 0;
+  border: 1px solid transparent;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  // line-height: @btn-line-height;
+  font-size: @btn-md-font-size;
+  font-weight: normal;
+
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  appearance: none;
+
+  transition: background-color 300ms ease-out, border-color 300ms ease-out;
+}
+
+
+.@{ns}btn-default {
+  .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
+  .hook-btn-default;
+}
+
+.@{ns}btn-primary {
+  .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
+  .hook-btn-primary;
+}
+
+.@{ns}btn-info {
+  .button-variant(@btn-info-color; @btn-info-bg; @btn-info-border);
+  .hook-btn-primary;
+}
+
+.@{ns}btn-success {
+  .button-variant(@btn-success-color; @btn-success-bg; @btn-success-border);
+  .hook-btn-primary;
+}
+
+.@{ns}btn-warning {
+  .button-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-border);
+  .hook-btn-primary;
+}
+
+.@{ns}btn-danger {
+  .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
+  .hook-btn-primary;
+}
+
+
+/* button size */
+.@{ns}btn-xs {
+  font-size: @btn-xs-font-size;
+}
+
+.@{ns}btn-sm {
+  font-size: @btn-sm-font-size;
+}
+
+.@{ns}btn-lg {
+  font-size: @btn-lg-font-size;
+}
+
+.@{ns}btn-xl {
+  font-size: @btn-xl-font-size;
+}
+
+
+.@{ns}btn-block {
+  width: 100%;
+}
+
+.@{ns}btn-radius {
+  border-radius: 5px;
+}
+
+.@{ns}btn-round {
+  border-radius: 1000px;
+}
+
+
+// Mixins
+// =============================================================================
 
 .button-variant(@color; @background; @border) {
   color: @color;
   background-color: @background;
   border-color: @border;
 
-  &:focus,
-  &.focus {
+  a&:visited {
     color: @color;
-    background-color: darken(@background, 10%);
-        border-color: darken(@border, 25%);
   }
-  &:hover {
-    color: @color;
-    background-color: darken(@background, 10%);
-        border-color: darken(@border, 12%);
-  }
-  &:active,
-  &.active,
-  .open > .dropdown-toggle& {
-    color: @color;
-    background-color: darken(@background, 10%);
-        border-color: darken(@border, 12%);
 
-    &:hover,
-    &:focus,
-    &.focus {
-      color: @color;
-      background-color: darken(@background, 17%);
-          border-color: darken(@border, 25%);
-    }
-  }
+  &:hover,
+  &:focus,
   &:active,
-  &.active,
-  .open > .dropdown-toggle& {
-    background-image: none;
+  &.@{ns}active {
+    color: @color;
+    border-color: darken(@border, 15%);
   }
-  &.disabled,
+
+  &:hover,
+  &:focus {
+    background-color: darken(@background, 10%);
+  }
+
+  &:active,
+  &.@{ns}active {
+    background-image: none;
+    background-color: darken(@background, 15%);
+  }
+
+  &.@{ns}disabled,
   &[disabled],
   fieldset[disabled] & {
+    &,
     &:hover,
     &:focus,
-    &.focus {
+    &:active,
+    &.@{ns}active {
       background-color: @background;
-          border-color: @border;
+      border-color: @border;
+      opacity: 0.5;
     }
   }
-
-  .badge {
-    color: @background;
-    background-color: @color;
-  }
 }
 
 
-.btn-primary {
-  .button-variant(@color-white; @color-primary; @color-primary)
-}
+// Hooks
+// =============================================================================
 
+.hook-btn() {}
+.hook-btn-hover() {}
+.hook-btn-active() {}
+.hook-btn-disable() {}
 
-.am-btn {
-  position: relative;
+.hook-btn-default() {}
+.hook-btn-primary() {}
+.hook-btn-warning() {}
+.hook-btn-danger() {}
+.hook-btn-success() {}
+.hook-btn-secondary() {}
 
-  .am-badge {
-    position: absolute;
-  }
-}
-
-.am-btn-primary {
-  .button-variant(@color-white; @color-primary; @color-primary)
-}
-
-
-.am-btn-primary.am-disabled,
-.am-btn-primary.am-disabled.am-active,
-.am-btn-primary.am-disabled:active,
-.am-btn-primary.am-disabled:focus,
-.am-btn-primary.am-disabled:hover,
-.am-btn-primary[disabled],
-.am-btn-primary[disabled].am-active,
-.am-btn-primary[disabled]:active,
-.am-btn-primary[disabled]:focus,
-.am-btn-primary[disabled]:hover,
-fieldset[disabled] .am-btn-primary,
-fieldset[disabled] .am-btn-primary.am-active,
-fieldset[disabled] .am-btn-primary:active,
-fieldset[disabled] .am-btn-primary:focus,
-fieldset[disabled] .am-btn-primary:hover {
-  background-color: lighten(@color-primary, 10%);
-  border-color: lighten(@color-primary, 10%);
-}
-
-.am-btn-link,
-.am-btn-link:focus,
-.am-btn-link:hover {
-  color: @color-primary;
-}
-
-
-@-webkit-keyframes icon-spin {
-  0% {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-  }
-
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
-}
-
-@keyframes icon-spin {
-  0% {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-  }
-
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
-}
-
-.am-icon-spin {
-  -webkit-animation: icon-spin 2s infinite linear;
-  animation: icon-spin 2s infinite linear
-}
+.hook-btn-xs() {}
+.hook-btn-sm() {}
+.hook-btn-xl() {}
+.hook-btn-lg() {}
