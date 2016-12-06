@@ -11,7 +11,7 @@ var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlug
 module.exports = {
   entry: {
     'cafeinit-vue': './src/js/main.js',
-    // 'cafeinit-vue-amazeui': './src/js/mainForAmazeUI.js',
+    'cafeinit-vue-amazeui': './src/js/mainForAmazeUI.js',
     // 'cafeinit-vue-bootstrap': './src/js/mainForBootstrap.js'
   },
 

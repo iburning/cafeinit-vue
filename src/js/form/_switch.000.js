@@ -1,18 +1,21 @@
 /**
- * @fileoverview form radio
+ * @fileoverview form switch
  * @author: burning <www.cafeinit.com>
- * @version: 2016-11-08
+ * @version: 2016-11-15
  */
 
 export default {
-  name: 'ci-radio',
+  name: 'ci-switch',
 
   props: {
-    ns: String,
+    ns: {
+      type: String,
+      default: 'ci-'
+    },
+
     title: String,
     titleWidth: String,
     name: String,
-    inline: String,
 
     items: {
       type: Array,
@@ -23,24 +26,16 @@ export default {
     },
 
     value: {
-      type: String,
-      default: ''
+      type: Array,
+      default: function () {
+        return []
+      }
     }
   },
 
   data() {
     return {
       model: this.value
-    }
-  },
-
-  computed: {
-    className(){
-      let className = this.ns + 'radio'
-      if (this.inline) {
-        className += '-inline'
-      }
-      return className
     }
   },
 

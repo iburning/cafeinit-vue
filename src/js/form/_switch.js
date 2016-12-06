@@ -8,46 +8,30 @@ export default {
   name: 'ci-switch',
 
   props: {
-    ns: {
-      type: String,
-      default: 'ci-'
-    },
-
+    ns: String,
     title: String,
     titleWidth: String,
     name: String,
-
-    items: {
-      type: Array,
-      default: function () {
-        return []
-      },
-      required: true
+    value: {
+      type: Boolean,
+      default: true
     },
 
-    value: {
-      type: Array,
-      default: function () {
-        return []
-      }
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
 
   data() {
     return {
-      model: this.value
+      currentValue: this.value
     }
   },
 
   watch: {
     value(val) {
-      this.model = this.value
-    }
-  },
-
-  methods: {
-    onChange: function (evt) {
-      this.$emit('input', this.model)
+      this.currentValue = val
     }
   }
 }

@@ -42,12 +42,12 @@ import CITreeNav from './treeNav/CITreeNav'
 // import CITable from './table/AMTable'
 
 /* for form */
-import CICheckbox from './form/AMCheckbox'
+import CICheckbox from './form/CICheckbox'
 import CIForm from './form/AMForm'
 import CIFormGroup from './form/AMFormGroup'
 import CIInput from './form/AMInput'
-import CINumber from './form/AMNumber'
-import CIRadio from './form/AMRadio'
+import CINumber from './form/CINumber'
+import CIRadio from './form/CIRadio'
 import CISelect from './form/AMSelect'
 import CISwitch from './form/AMSwitch'
 

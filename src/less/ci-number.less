@@ -1,0 +1,42 @@
+/**
+ * @fileoverview ci-number
+ * @author: burning <www.cafeinit.com>
+ * @version: 2016-12-06
+ */
+
+.@{ns}number {
+  @size: 30px;
+
+  width: @size * 4;
+  height: @size;
+
+  .ci-btn {
+    display: block;
+    width: @size;
+    height: @size;
+    padding: 0;
+    margin: 0;
+    line-height: @size;
+  }
+
+  .btn-minus {
+    float: left;
+  }
+
+  .btn-plus {
+    float: right;
+  }
+
+  input {
+    width: @size * 2;
+    appearance: none;
+    padding: 0 0.5em;
+    margin: 0;
+    border: 1px solid @input-border-color;
+    border-radius: 0;
+    outline: 0;
+    line-height: @size - 2;
+
+    background-color: transparent;
+  }
+}

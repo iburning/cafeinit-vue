@@ -4,28 +4,19 @@
  * @version: 2016-11-15
  */
 
-.am-switch {
+.@{ns}switch {
   @size: 30px;
   @distance: 25px;
 
-  display: block;
-  height: @size;
-  margin-top: 10px;
-  margin-bottom: 10px;
   vertical-align: middle;
-
-  label {
-    display: inline;
-    margin-bottom: 0;
-    font-weight: 400;
-  }
+  text-align: right;
 
   input {
     appearance: none;
-
-    position: relative;
-    float: right;
     box-sizing: border-box;
+
+    display: inline-block;
+    position: relative;
     width: @size + @distance + 2px;
     height: @size + 2px;
     margin: 0;

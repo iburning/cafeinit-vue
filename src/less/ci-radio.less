@@ -4,25 +4,36 @@
  * @version: 2016-11-21
  */
 
-.am-radio,
-.am-radio-inline {
+.@{ns}checkbox,
+.@{ns}checkbox-inline,
+.@{ns}radio,
+.@{ns}radio-inline {
   position: relative;
   overflow: hidden;
-  padding-left: 0;
+  padding: 0.25em;
 
-  input[type=radio] {
+  input {
     position: absolute;
     left: -500px;
-    margin: 0;
   }
 
-  input[type=radio]:checked+i:before {
+  input:checked+i:before {
     color: @color-primary;
   }
 
   i {
-    float: left;
-    margin: 0 5px;
-    font-size: 1.5em;
+    font-size: 1.25em;
   }
+}
+
+.@{ns}checkbox,
+.@{ns}radio {
+  display: block;
+  // margin-bottom: 0.5em;
+}
+
+.@{ns}checkbox-inline,
+.@{ns}radio-inline {
+  display: inline-block;
+  margin-right: 1em;
 }

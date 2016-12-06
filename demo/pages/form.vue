@@ -34,11 +34,11 @@
 
           <ci-number title="数量" name="count" placeholder="0"
             title-width="4em" v-model="count"
-            v-bind:step="5" v-bind:min="0" v-bind:max="20"></ci-number> {{count}}
+            v-bind:step="5" v-bind:min="0" v-bind:max="20"></ci-number>
 
           <ci-number title="质量" name="count" placeholder="0"
             title-width="4em" v-model="count"
-            v-bind:step="1" v-bind:min="0" v-bind:max="20"></ci-number> {{count}}
+            v-bind:step="1" v-bind:min="0" v-bind:max="20"></ci-number>
 
           <ci-checkbox inline="inline" title="技能" title-width="4em" name="skills"
             v-bind:items="[
@@ -48,7 +48,7 @@
             ]"
             v-model="skills"></ci-checkbox>
 
-          <ci-checkbox title="技能" name="skills"
+          <ci-checkbox title="技能" title-width="4em" name="skills"
             v-bind:items="[
               {title: 'HTML', value: 'html'},
               {title: 'CSS', value: 'css'},
@@ -70,13 +70,11 @@
             ]"
             v-model="type"></ci-radio>
 
-          <ci-switch title="技能" name="skills"
-            v-bind:items="[
-              {title: 'HTML', value: 'html'},
-              {title: 'CSS', value: 'css'},
-              {title: 'JavaScript', value: 'javascript'}
-            ]"
-            v-model="skills"></ci-switch>
+          <ci-switch title="是否启用" name="is_working"
+            v-model="isWorking"></ci-switch>
+
+          <ci-input title="是否启用" type="text" disable="disable"
+            v-model="isWorkingString"></ci-input>
         </ci-block-body>
       </ci-block>
 
@@ -99,7 +97,14 @@ export default {
       category: '2',
       skills: ['html', 'javascript'],
       gender: 'female',
-      type: '1'
+      type: '1',
+      isWorking: false
+    }
+  },
+
+  computed: {
+    isWorkingString() {
+      return this.isWorking ? 'Working' : 'Not working'
     }
   },
 
