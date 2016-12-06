@@ -5,48 +5,40 @@
  */
 
 
-@input-padding: 0.5em;
-@input-color: @color-gray-light;
-@input-border-color: @color-border;
-
-
 .ci-form-group {
+  list-style: none;
+  display: -webkit-flex;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   padding: 0;
-  margin: 0 0 1em 0;
-
-  line-height: 1.6em;
+  margin: 0;
 }
 
-// .ci-label {
-//   padding: 0;
-//   margin: 0 0.5em 0 0;
-//   min-width: 2em;
-//   font-weight: normal;
-// }
-
-.ci-control-label {
-  margin-right: 0.5em;
+.ci-label {
+  padding: 0;
+  margin: 0 0.5em 0 0;
+  min-width: 2em;
+  font-weight: normal;
 }
 
 .ci-form-control {
   flex: 1;
   width: 100%;
-  padding: @input-padding;
+  padding: 0;
   margin: 0;
-  border: 1px solid @input-border-color;
+  border: 0;
   outline: 0;
 
-  appearance: none;
+  -webkit-appearance: none;
   background-color: transparent;
-  color: @input-color;
+  color: @color-gray-light;
 
-  // >label {
-  //   padding: 0;
-  //   margin: 0 0.75em 0 0;
-  //   font-weight: normal;
-  // }
+  >label {
+    padding: 0;
+    margin: 0 0.75em 0 0;
+    font-weight: normal;
+  }
 }
 
 
