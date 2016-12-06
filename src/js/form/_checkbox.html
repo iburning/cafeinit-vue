@@ -2,18 +2,8 @@
   <label v-if="title"
     v-bind:class="ns + 'control-label'"
     v-bind:style="{width: titleWidth}">{{title}}</label>
-  <div class="ci-form-control" v-if="inline">
-    <label v-bind:class="ns + 'checkbox-inline'" v-for="item in items">
-      <input type="checkbox"
-        v-bind:name="name"
-        v-bind:value="item.value"
-        v-model="model"
-        v-on:change="onChange" />
-      <i class="fa fa-check-square-o"></i> {{item.title}}
-    </label>
-  </div>
-  <div class="ci-form-control" v-else>
-    <label v-bind:class="ns + 'checkbox'" v-for="item in items">
+  <div v-bind:class="ns + 'form-control'">
+    <label v-bind:class="className" v-for="item in items">
       <input type="checkbox"
         v-bind:name="name"
         v-bind:value="item.value"

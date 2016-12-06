@@ -36,6 +36,16 @@ export default {
     }
   },
 
+  computed: {
+    className(){
+      let className = this.ns + 'checkbox'
+      if (this.inline) {
+        className += '-inline'
+      }
+      return className
+    }
+  },
+
   watch: {
     value(val) {
       this.model = this.value

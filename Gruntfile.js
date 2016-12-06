@@ -35,7 +35,7 @@ module.exports = function (grunt) {
     less: {
       build: {
         options: {
-          compress: true,   // Compress output by removing some whitespaces.
+          compress: false,   // Compress output by removing some whitespaces.
           plugins: [
             new (require('less-plugin-autoprefix'))({browsers: ['last 2 versions']}),
             // new (require('less-plugin-clean-css'))(cleanCssOptions)

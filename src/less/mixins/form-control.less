@@ -1,0 +1,58 @@
+/**
+ * @fileoverview form-control
+ * @author: burning <www.cafeinit.com>
+ * @version: 2016-12-06
+ */
+
+.form-control(@ns) {
+  box-shadow: none;
+  height: auto;
+  border: none;
+
+  .@{ns}checkbox,
+  .@{ns}checkbox-inline,
+  .@{ns}radio,
+  .@{ns}radio-inline {
+    position: relative;
+    overflow: hidden;
+    padding: 0.25em;
+
+    input {
+      position: absolute;
+      left: -500px;
+    }
+
+    input:checked+i:before {
+      color: @color-primary;
+    }
+
+    i {
+      font-size: 1.25em;
+    }
+  }
+
+  .@{ns}checkbox,
+  .@{ns}radio {
+    display: block;
+    // margin-bottom: 0.5em;
+  }
+
+  .@{ns}checkbox-inline,
+  .@{ns}radio-inline {
+    display: inline-block;
+    margin-right: 1em;
+  }
+}
+
+.form-control-border(@size:1px, @color:@color-border) {
+  appearance: none;
+  background-color: transparent;
+
+  padding: 0.25em 0.5em;
+  margin: 0;
+  border: solid @size @color;
+  border-radius: 0;
+  outline: 0;
+
+  line-height: 1.625em;
+}

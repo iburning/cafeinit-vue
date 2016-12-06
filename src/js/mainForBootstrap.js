@@ -35,13 +35,14 @@ import CITreeNav from './treeNav/CITreeNav'
 //
 // import CITable from './table/BSTable'
 //
-//
 /* for form */
 import CICheckbox from './form/BSCheckbox'
 import CIForm from './form/BSForm'
 import CIInput from './form/BSInput'
+import CINumber from './form/BSNumber'
 import CIRadio from './form/BSRadio'
 import CISelect from './form/BSSelect'
+import CISwitch from './form/BSSwitch'
 
 import CIButton from './button/BSButton'
 import CILinkButton from './button/BSLinkButton'
@@ -92,9 +93,12 @@ const CIComponents = {
 
   'ci-checkbox': CICheckbox,
   'ci-form': CIForm,
+  // 'ci-image-picker': CIImagePicker,
   'ci-input': CIInput,
+  'ci-number': CINumber,
   'ci-radio': CIRadio,
   'ci-select': CISelect,
+  'ci-switch': CISwitch,
 
   /* form modal */
   'ci-modal': CIModal,
