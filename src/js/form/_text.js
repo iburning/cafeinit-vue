@@ -1,18 +1,18 @@
 /**
- * @fileoverview form input
+ * @fileoverview form text
  * @author: burning <www.cafeinit.com>
- * @version: 2016-11-08
+ * @version: 2016-12-06
  */
 
 export default {
-  name: 'ci-input',
+  name: 'ci-text',
 
   props: {
     ns: String,
     title: String,
     titleWidth: String,
     name: String,
-    value: [String, Number],
+    value: [String, Number, Boolean],
     placeholder: String,
     maxlength: Number,
     minlength: Number,
@@ -35,12 +35,12 @@ export default {
 
   methods: {
     onChange: function (evt) {
-      // console.log('_input.onChange', evt.target.value)
+      // console.log('_text.onChange', evt.target.value)
       this.$emit('change', evt.target.value)
     },
 
     onInput: function (evt) {
-      // console.log('_input.onInput', evt.target.value)
+      // console.log('_text.onInput', evt.target.value)
       this.$emit('input', evt.target.value)
     }
   }

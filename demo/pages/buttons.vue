@@ -3,20 +3,18 @@
     <ci-block>
       <ci-block-header to="/home">Style</ci-block-header>
       <ci-block-body>
-        <ci-link-button class="more" to="/home">more</ci-link-button>
-        <ci-link-button class="my-class" to="/home">Href Button</ci-link-button>
-        <ci-link-button v-on:click="click">Event Button</ci-link-button>
+        <ci-button class="to-home" type="link" to="home">to home</ci-button>
+        <ci-button class="link-more" type="link" v-bind:to="{ path: 'list', query: { page: 1 } }">more</ci-button>
+        <ci-button type="link" style="primary" v-on:click="click">Link Button</ci-button>
 
-        <ci-button type="submit" v-on:click="submit">Submit Button</ci-button>
-
+        <ci-button type="submit" style="primary" v-on:click="submit">Submit Button</ci-button>
         <ci-button>Default Button</ci-button>
-        <ci-button tag-name="a">An a Button</ci-button>
         <ci-button style="primary">Primary Button</ci-button>
         <ci-button style="info">Info Button</ci-button>
         <ci-button style="success">Success Button</ci-button>
         <ci-button style="warning">Warning Button</ci-button>
         <ci-button style="danger">Danger Button</ci-button>
-        <ci-button style="link">Link Button</ci-button>
+        <ci-button style="link">Link Style Button</ci-button>
       </ci-block-body>
     </ci-block>
 

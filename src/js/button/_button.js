@@ -13,6 +13,11 @@ export default {
       default: ''
     },
 
+    to: {
+      type: [Object, String],
+      default: ''
+    },
+
     type: {
       type: String,
       default: 'button'
@@ -63,12 +68,7 @@ export default {
     },
 
     loadingIconClassName: function () {
-      if (this.ns === 'am-') {
-        return 'am-icon-circle-o-notch am-icon-spin'
-      }
-      else {
-        return 'fa fa-circle-o-notch fa-spin'
-      }
+      return 'fa fa-circle-o-notch fa-spin'
     }
   },
 

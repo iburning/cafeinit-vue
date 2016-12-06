@@ -4,135 +4,149 @@
  * @version: 2016-11-09
  */
 
+/* Alert & Modal & Toast */
 import CIAlertTip from './alertTip/CIAlertTip'
-import CIBadge from './badge/CIBadge'
 
-import CIBlock from './block/CIBlock'
-import CIBlockBody from './block/CIBlockBody'
-import CIBlockFooter from './block/CIBlockFooter'
-import CIBlockHeader from './block/CIBlockHeader'
-
-import CIBreadcrumb from './breadcrumb/CIBreadcrumb'
-
-import CICollection from './collection/CICollection'
-import CICollectionCell from './collection/CICollectionCell'
-
-import CIGrid from './grid/CIGrid.vue'
-import CIGridCell from './grid/CIGridCell'
-
-import CIImage from './image/CIImage'
-import CIImagePicker from './imagePicker/CIImagePicker'
-
-import CIList from './list/CIList'
-import CIListCell from './list/CIListCell'
-import CIListHeader from './list/CIListHeader'
-import CIListCheckbox from './list/AMListCheckbox'
-import CIListRadio from './list/AMListRadio'
-import CIListSwitch from './list/AMListSwitch'
-
-import CILoading from './loading/CILoading'
-
-import CINavigation from './navigation/CINavigation'
-import CIOffcanvas from './offcanvas/CIOffcanvas'
-import CIPagination from './pagination/AMPagination'
-
-import CITabBar from './tabView/CITabBar'
-import CITreeNav from './treeNav/CITreeNav'
-
-// import CITable from './table/CITable.vue'
-
-/* for form */
-import CICheckbox from './form/CICheckbox'
-import CIForm from './form/CIForm'
-import CIFormGroup from './form/CIFormGroup'
-import CIInput from './form/CIInput'
-import CINumber from './form/CINumber'
-import CIRadio from './form/CIRadio'
-import CISelect from './form/CISelect'
-import CISwitch from './form/CISwitch'
-
-import CIButton from './button/CIButton'
-import CILinkButton from './button/CILinkButton'
-
-
-/* for modal */
 import CIModal from './modal/CIModal'
 import CIActions from './modal/CIActions'
 import CIAlert from './modal/CIAlert'
 import CIConfirm from './modal/CIConfirm'
 
-import CIRate from './rate/CIRate'
-import CIScrollView from './scrollView/CIScrollView'
+import CIToast from './toast/CIToast'
+
+
+/* Buttons & Form */
+import CIButton from './button/CIButton'
+
+import CIForm from './form/CIForm'
+import CICheckbox from './form/CICheckbox'
+import CINumber from './form/CINumber'
+import CIRadio from './form/CIRadio'
+import CISelect from './form/CISelect'
+import CISwitch from './form/CISwitch'
+import CIText from './form/CIText'
+
+import CIListCheckbox from './list/CIListCheckbox'
+import CIListRadio from './list/CIListRadio'
+import CIListSwitch from './list/CIListSwitch'
+
+import CIImagePicker from './imagePicker/CIImagePicker'
 import CISlider from './slider/CISlider'
+
+
+/* Layout */
+import CIBlock from './block/CIBlock'
+import CIBlockBody from './block/CIBlockBody'
+import CIBlockFooter from './block/CIBlockFooter'
+import CIBlockHeader from './block/CIBlockHeader'
+
+import CICollection from './collection/CICollection'
+import CICollectionCell from './collection/CICollectionCell'
+
+import CIGrid from './grid/CIGrid'
+import CIGridCell from './grid/CIGridCell'
+
+import CIList from './list/CIList'
+import CIListCell from './list/CIListCell'
+import CIListHeader from './list/CIListHeader'
+
+import CIOffcanvas from './offcanvas/CIOffcanvas.vue'
+import CIScrollView from './scrollView/CIScrollView'
+
 import CISlideView from './slideView/CISlideView'
 import CISlideViewItem from './slideView/CISlideViewItem'
+
+
+/* Navigation */
+import CIBreadcrumb from './breadcrumb/CIBreadcrumb'
+import CIPagination from './pagination/CIPagination.vue'
+import CINavigation from './navigation/CINavigation.vue'
+import CITabBar from './tabView/CITabBar'
+import CITreeNav from './treeNav/CITreeNav'
+
+
+/* Others */
+import CIBadge from './badge/CIBadge'
+import CIImage from './image/CIImage'
+import CILoading from './loading/CILoading'
+import CIRate from './rate/CIRate'
 import CISticky from './sticky/CISticky'
-import CIToast from './toast/CIToast'
 import CIToTop from './toTop/CIToTop'
 
+
+/* Helper */
 import CICompnentHelper from './utils/CICompnentHelper'
 import CIScrollHelper from './utils/CIScrollHelper'
 
 
 const CIComponents = {
+  /* Alert & Modal & Toast */
   'ci-alert-tip': CIAlertTip,
 
-  'ci-block': CIBlock,
-  'ci-block-body': CIBlockBody,
-  'ci-block-footer': CIBlockFooter,
-  'ci-block-header': CIBlockHeader,
-
-  'ci-breadcrumb': CIBreadcrumb,
-  'ci-collection': CICollection,
-  'ci-collection-cell': CICollectionCell,
-
-  'ci-grid': CIGrid,
-  'ci-grid-cell': CIGridCell,
-
-  'ci-image': CIImage,
-
-  'ci-list': CIList,
-  'ci-list-cell': CIListCell,
-  'ci-list-header': CIListHeader,
-  'ci-list-checkbox': CIListCheckbox,
-  'ci-list-radio': CIListRadio,
-  'ci-list-switch': CIListSwitch,
-
-  'ci-loading': CILoading,
-  'ci-navigation': CINavigation,
-  'ci-pagination': CIPagination,
-  'ci-offcanvas': CIOffcanvas,
-  'ci-tab-bar': CITabBar,
-  // 'ci-table': CITable,
-  'ci-tree-nav': CITreeNav,
-
-  /* for form */
-  'ci-button': CIButton,
-  'ci-link-button': CILinkButton,
-
-  'ci-checkbox': CICheckbox,
-  'ci-form': CIForm,
-  'ci-form-group': CIFormGroup,
-  'ci-image-picker': CIImagePicker,
-  'ci-input': CIInput,
-  'ci-number': CINumber,
-  'ci-radio': CIRadio,
-  'ci-select': CISelect,
-  'ci-switch': CISwitch,
-
-  /* form modal */
   'ci-modal': CIModal,
   'ci-actions': CIActions,
   'ci-alert': CIAlert,
   'ci-confirm': CIConfirm,
 
-  'ci-rate': CIRate,
-  'ci-scroll-view': CIScrollView,
+  'ci-toast': CIToast,
+
+
+  /* Buttons & Form */
+  'ci-button': CIButton,
+
+  'ci-form': CIForm,
+  'ci-checkbox': CICheckbox,
+  'ci-number': CINumber,
+  'ci-radio': CIRadio,
+  'ci-select': CISelect,
+  'ci-switch': CISwitch,
+  'ci-text': CIText,
+
+  'ci-list-checkbox': CIListCheckbox,
+  'ci-list-radio': CIListRadio,
+  'ci-list-switch': CIListSwitch,
+
+  'ci-image-picker': CIImagePicker,
   'ci-slider': CISlider,
+
+
+  /* Layout */
+  'ci-block': CIBlock,
+  'ci-block-body': CIBlockBody,
+  'ci-block-footer': CIBlockFooter,
+  'ci-block-header': CIBlockHeader,
+
+  'ci-collection': CICollection,
+  'ci-collection-cell': CICollectionCell,
+
+  'ci-list': CIList,
+  'ci-list-cell': CIListCell,
+  'ci-list-header': CIListHeader,
+
+  'ci-grid': CIGrid,
+  'ci-grid-cell': CIGridCell,
+
+  'ci-offcanvas': CIOffcanvas,
+  'ci-scroll-view': CIScrollView,
+
   'ci-slide-view': CISlideView,
   'ci-slide-view-item': CISlideViewItem,
+
+
+  /* Navigation */
+  'ci-breadcrumb': CIBreadcrumb,
+  'ci-pagination': CIPagination,
+  'ci-navigation': CINavigation,
+  'ci-tab-bar': CITabBar,
+  'ci-tree-nav': CITreeNav,
+
+
+  /* Others */
+  'ci-badge': CIBadge,
+  'ci-image': CIImage,
+  'ci-loading': CILoading,
+  'ci-rate': CIRate,
   'ci-sticky': CISticky,
-  'ci-toast': CIToast,
   'ci-to-top': CIToTop
 }
 

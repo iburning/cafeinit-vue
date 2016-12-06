@@ -1,81 +1,65 @@
 /**
- * @fileoverview main for amazeui
+ * @fileoverview components
  * @author: burning <www.cafeinit.com>
- * @version: 2016-11-15
+ * @version: 2016-12-06
  */
 
-/* Alert & Modal & Toast */
-import CIAlertTip from './alertTip/AMAlertTip'
-
-import CIActions from './modal/AMActions'
-import CIAlert from './modal/AMAlert'
-import CIConfirm from './modal/AMConfirm'
-import CIModal from './modal/AMModal'
-
-import CIToast from './toast/CIToast'
-
-
-/* Buttons & Form */
-import CIButton from './button/AMButton'
-import CILinkButton from './button/AMLinkButton'
-
-import CIForm from './form/AMForm'
-import CICheckbox from './form/AMCheckbox'
-import CINumber from './form/AMNumber'
-import CIRadio from './form/AMRadio'
-import CISelect from './form/AMSelect'
-import CISwitch from './form/AMSwitch'
-import CIText from './form/AMInput'
-
-import CIListCheckbox from './list/AMListCheckbox'
-import CIListRadio from './list/AMListRadio'
-import CIListSwitch from './list/AMListSwitch'
-
-import CIImagePicker from './imagePicker/CIImagePicker'
-import CISlider from './slider/CISlider'
-
-
-/* Layout */
+import CIAlertTip from './alertTip/CIAlertTip'
+import CIBadge from './badge/CIBadge'
 import CIBlock from './block/CIBlock'
 import CIBlockBody from './block/CIBlockBody'
 import CIBlockFooter from './block/CIBlockFooter'
 import CIBlockHeader from './block/CIBlockHeader'
-
+import CIBreadcrumb from './breadcrumb/CIBreadcrumb'
 import CICollection from './collection/CICollection'
 import CICollectionCell from './collection/CICollectionCell'
-
-import CIGrid from './grid/AMGrid'
-import CIGridCell from './grid/AMGridCell'
-
+import CIGrid from './grid/CIGrid.vue'
+import CIGridCell from './grid/CIGridCell'
+import CIImage from './image/CIImage'
+import CIImagePicker from './imagePicker/CIImagePicker'
 import CIList from './list/CIList'
 import CIListCell from './list/CIListCell'
 import CIListHeader from './list/CIListHeader'
+import CIListCheckbox from './list/AMListCheckbox'
+import CIListRadio from './list/AMListRadio'
+import CIListSwitch from './list/AMListSwitch'
+import CILoading from './loading/CILoading'
+import CINavigation from './navigation/CINavigation'
+import CIOffcanvas from './offcanvas/CIOffcanvas'
 
-import CIOffcanvas from './offcanvas/CIOffcanvas.vue'
-import CIScrollView from './scrollView/CIScrollView'
-
-import CISlideView from './slideView/CISlideView'
-import CISlideViewItem from './slideView/CISlideViewItem'
-
-
-/* Navigation */
-import CIBreadcrumb from './breadcrumb/AMBreadcrumb'
-import CIPagination from './pagination/AMPagination.vue'
-import CINavigation from './navigation/CINavigation.vue'
+import CIPagination from './pagination/AMPagination'
 import CITabBar from './tabView/CITabBar'
 import CITreeNav from './treeNav/CITreeNav'
 
+/* for form */
+import CICheckbox from './form/CICheckbox'
+import CIForm from './form/CIForm'
+import CIFormGroup from './form/CIFormGroup'
+import CIInput from './form/CIInput'
+import CINumber from './form/CINumber'
+import CIRadio from './form/CIRadio'
+import CISelect from './form/CISelect'
+import CISwitch from './form/CISwitch'
 
-/* Others */
-import CIBadge from './badge/AMBadge'
-import CIImage from './image/CIImage'
-import CILoading from './loading/CILoading'
+import CIButton from './button/CIButton'
+import CILinkButton from './button/CILinkButton'
+
+
+/* for modal */
+import CIModal from './modal/CIModal'
+import CIActions from './modal/CIActions'
+import CIAlert from './modal/CIAlert'
+import CIConfirm from './modal/CIConfirm'
+
 import CIRate from './rate/CIRate'
+import CIScrollView from './scrollView/CIScrollView'
+import CISlider from './slider/CISlider'
+import CISlideView from './slideView/CISlideView'
+import CISlideViewItem from './slideView/CISlideViewItem'
 import CISticky from './sticky/CISticky'
+import CIToast from './toast/CIToast'
 import CIToTop from './toTop/CIToTop'
 
-
-/* Helper */
 import CICompnentHelper from './utils/CICompnentHelper'
 import CIScrollHelper from './utils/CIScrollHelper'
 
@@ -83,7 +67,6 @@ import CIScrollHelper from './utils/CIScrollHelper'
 const CIComponents = {
   'ci-alert-tip': CIAlertTip,
 
-  'ci-badge': CIBadge,
   'ci-block': CIBlock,
   'ci-block-body': CIBlockBody,
   'ci-block-footer': CIBlockFooter,
@@ -145,7 +128,7 @@ const CIComponents = {
 
 // export default {
 module.exports = {
-  name: 'CafeinitVue for AmazeUI',
+  name: 'CafeinitVue',
   ver: '1.0.0',
 
   components: (Vue) => {

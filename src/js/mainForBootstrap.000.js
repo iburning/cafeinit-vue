@@ -10,12 +10,15 @@ import CIBlock from './block/CIBlock'
 import CIBlockBody from './block/CIBlockBody'
 import CIBlockFooter from './block/CIBlockFooter'
 import CIBlockHeader from './block/CIBlockHeader'
+
 import CIBreadcrumb from './breadcrumb/BSBreadcrumb'
 
 import CICollection from './collection/CICollection'
 import CICollectionCell from './collection/CICollectionCell'
+
 import CIGrid from './grid/BSGrid'
 import CIGridCell from './grid/BSGridCell'
+
 import CIImage from './image/CIImage'
 
 import CIList from './list/CIList'

@@ -3,11 +3,11 @@
     <ci-form class="my-form" horizontal="horizontal">
       <ci-block>
         <ci-block-body>
-          <ci-input class="my-email" title="电子邮箱" type="email" name="email" placeholder="请输入邮箱"
-            v-model="email"></ci-input>
+          <ci-text class="my-email" title="电子邮箱" type="email" name="email" placeholder="请输入邮箱"
+            v-model="email"></ci-text>
 
-          <ci-input title="密码" type="password" name="password" placeholder="6-18位字母数字"
-            title-width="4em" v-model="password"></ci-input>
+          <ci-text title="密码" type="password" name="password" placeholder="6-18位字母数字"
+            title-width="4em" v-model="password"></ci-text>
         </ci-block-body>
 
         <ci-block-footer>
@@ -26,11 +26,11 @@
             ]"
             v-model="category"></ci-select>
 
-          <ci-input title="电子邮箱" type="email" name="email" placeholder="请输入邮箱"
-            v-model="email"></ci-input>
+          <ci-text title="电子邮箱" type="email" name="email" placeholder="请输入邮箱"
+            v-model="email"></ci-text>
 
-          <ci-input title="密码" type="password" name="password" placeholder="6-18位字母数字"
-            title-width="4em" v-model="password"></ci-input>
+          <ci-text title="密码" type="password" name="password" placeholder="6-18位字母数字"
+            title-width="4em" v-model="password"></ci-text>
 
           <ci-number title="数量" name="count" placeholder="0"
             title-width="4em" v-model="count"
@@ -73,8 +73,8 @@
           <ci-switch title="是否启用" name="is_working"
             v-model="isWorking"></ci-switch>
 
-          <ci-input title="是否启用" type="text" disable="disable"
-            v-model="isWorkingString"></ci-input>
+          <ci-text title="是否启用" type="text" disabled="disabled"
+            v-model="isWorkingString"></ci-text>
         </ci-block-body>
       </ci-block>
 
