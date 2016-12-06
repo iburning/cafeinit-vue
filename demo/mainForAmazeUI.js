@@ -7,7 +7,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import CafeinitVue from 'cafeinit-vue-amazeui'
-import CafeinitVueCss from 'cafeinit-vue.css'
+import CafeinitVueCss from 'ci-amazeui.css'
 import routes from './routes'
 
 Vue.use(VueRouter)

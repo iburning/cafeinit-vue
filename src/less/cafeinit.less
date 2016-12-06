@@ -1,85 +1,8 @@
 /**
- * @fileoverview common
+ * @fileoverview cafeinit
  * @author: burning <www.cafeinit.com>
  * @version: 2016-11-24
  */
 
-
-@import "./varialbes";
-@import "./mixins";
-@import "./vendor-prefixes";
-@import "./normalize";
-
-
-* {
-  box-sizing: border-box;
-}
-
-
-body {
-  background-color: #efefef;
-  font-size: 16px;
-  line-height: 1.6em;
-}
-
-
-a {
-  color: @color-primary;
-
-  &:hover {
-    color: darken(@color-primary, 15%);
-  }
-}
-
-
-.app-title {
-  padding: 10px;
-  margin: 0;
-  font-size: @font-size-large;
-}
-
-.ci-btn-area {
-  margin: 1.5em;
-}
-
-
-.ci-scroll {
-  overflow: auto;
-  -moz-overflow-scrolling: touch;
-  -webkit-overflow-scrolling: touch;
-  overflow-scrolling: touch;
-  width: 100%;
-  height: 200px;
-  background-color: #eee;
-}
-
-
-.ci-icon-spin {
-  -webkit-animation: icon-spin 2s infinite linear;
-  animation: icon-spin 2s infinite linear;
-}
-
-
-@import "./ci-badge";
-@import "./ci-block";
-@import "./ci-button";
-@import "./ci-dimmer";
-@import "./ci-form";
-@import "./ci-collection";
-@import "./ci-image";
-@import "./ci-image-picker";
-@import "./ci-list";
-@import "./ci-loading";
-@import "./ci-modal";
-@import "./ci-pagination";
-@import "./ci-navigation";
-@import "./ci-rate";
-@import "./ci-slider";
-@import "./ci-sticky";
-@import "./ci-tab-bar";
-@import "./ci-toast";
-@import "./ci-to-top";
-@import "./ci-tree-nav";
-
-@import "./bs-button";
-@import "./bs-form";
+@ns: ~"ci-";
+@import "./main";

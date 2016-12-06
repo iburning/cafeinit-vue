@@ -27,7 +27,9 @@ module.exports = {
       'cafeinit-vue': path.resolve(__dirname, '../dist/js/cafeinit-vue.amd.js'),
       'cafeinit-vue-amazeui': path.resolve(__dirname, '../dist/js/cafeinit-vue-amazeui.amd.js'),
       'cafeinit-vue-bootstrap': path.resolve(__dirname, '../dist/js/cafeinit-vue-bootstrap.amd.js'),
-      'cafeinit-vue.css': path.resolve(__dirname, '../dist/css/cafeinit.css')
+      'cafeinit-vue.css': path.resolve(__dirname, '../dist/css/cafeinit.css'),
+      'ci-amazeui.css': path.resolve(__dirname, '../dist/css/ci-amazeui.css'),
+      'ci-bootstrap.css': path.resolve(__dirname, '../dist/css/ci-bootstrap.css')
     }
   },
 

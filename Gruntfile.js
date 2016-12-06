@@ -43,7 +43,9 @@ module.exports = function (grunt) {
         },
         files: [
           {
-            '<%= config.dist %>/css/cafeinit.css': '<%= config.src %>/less/cafeinit.less'
+            '<%= config.dist %>/css/cafeinit.css': '<%= config.src %>/less/cafeinit.less',
+            '<%= config.dist %>/css/ci-amazeui.css': '<%= config.src %>/less/ci-amazeui.less',
+            '<%= config.dist %>/css/ci-bootstrap.css': '<%= config.src %>/less/ci-bootstrap.less'
           }
         ]
       }
