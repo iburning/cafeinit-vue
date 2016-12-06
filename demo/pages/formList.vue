@@ -12,13 +12,13 @@
         </ci-list-cell>
 
         <ci-list-cell>
-          <ci-input title="电子邮箱" type="email" name="email" placeholder="请输入邮箱"
-            v-model="email"></ci-input>
+          <ci-text title="电子邮箱" type="email" name="email" placeholder="请输入邮箱"
+            v-model="email"></ci-text>
         </ci-list-cell>
 
         <ci-list-cell>
-          <ci-input title="密码" type="password" name="password" placeholder="6-18位字母数字"
-            title-width="4em" v-model="password"></ci-input>
+          <ci-text title="密码" type="password" name="password" placeholder="6-18位字母数字"
+            title-width="4em" v-model="password"></ci-text>
         </ci-list-cell>
 
         <ci-list-cell>

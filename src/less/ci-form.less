@@ -1,16 +1,15 @@
 /**
  * @fileoverview ci-form
  * @author: burning <www.cafeinit.com>
- * @version: 2016-08-19
+ * @version: 2016-12-06
  */
 
 
-@input-padding: 0.5em;
-@input-color: @color-gray-light;
+@input-padding: 0.25em 0.5em;
+@input-color: @color-gray;
 @input-border-color: @color-border;
 
-
-.ci-form-group {
+.@{ns}form-group {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
@@ -18,23 +17,19 @@
   line-height: 1.625em;
 }
 
-// .ci-label {
-//   padding: 0;
-//   margin: 0 0.5em 0 0;
-//   min-width: 2em;
-//   font-weight: normal;
-// }
+.@{ns}list {
+  .@{ns}form-group {
+    margin-bottom: 0;
+  }
+}
 
-@input-color: @color-gray;
-@input-border-color: @color-border;
-
-.ci-control-label {
+.@{ns}control-label {
   min-width: 2em;
   padding: 0.25em 0;
   margin-right: 0.75em;
 }
 
-.ci-form-control {
+.@{ns}form-control {
   flex: 1;
   width: 100%;
 
@@ -43,10 +38,10 @@
   line-height: inherit;
 }
 
-input.ci-form-control,
-select.ci-form-control {
+input.@{ns}form-control,
+select.@{ns}form-control {
   appearance: none;
-  padding: 0.25em 0.5em;
+  padding: @input-padding;
   margin: 0;
   border: 1px solid @input-border-color;
   border-radius: 0;
@@ -55,18 +50,6 @@ select.ci-form-control {
   background-color: transparent;
 }
 
-
-.ci-list-radio {
-  .ci-radio {
-    float: right;
-  }
-}
-
-.ci-list {
-  .form-group {
-    margin-bottom: 0;
-  }
-}
 
 @import "./ci-number";
 @import "./ci-radio";

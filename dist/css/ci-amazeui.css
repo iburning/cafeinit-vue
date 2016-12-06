@@ -210,6 +210,9 @@ a {
 a:hover {
   color: #117964;
 }
+.ci-text-right {
+  text-align: right;
+}
 .app-title {
   padding: 10px;
   margin: 0;
@@ -651,26 +654,26 @@ fieldset[disabled] .am-btn-danger.am-active {
 /**
  * @fileoverview ci-form
  * @author: burning <www.cafeinit.com>
- * @version: 2016-08-19
+ * @version: 2016-12-06
  */
-.ci-form-group {
-  list-style: none;
+.am-form-group {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex-pack: start;
-      justify-content: flex-start;
   padding: 0;
   margin: 0 0 1em 0;
   line-height: 1.625em;
 }
-.ci-control-label {
+.am-list .am-form-group {
+  margin-bottom: 0;
+}
+.am-control-label {
   min-width: 2em;
   padding: 0.25em 0;
   margin-right: 0.75em;
 }
-.ci-form-control {
+.am-form-control {
   -ms-flex: 1;
       flex: 1;
   width: 100%;
@@ -678,8 +681,8 @@ fieldset[disabled] .am-btn-danger.am-active {
   vertical-align: middle;
   line-height: inherit;
 }
-input.ci-form-control,
-select.ci-form-control {
+input.am-form-control,
+select.am-form-control {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -689,12 +692,6 @@ select.ci-form-control {
   border-radius: 0;
   outline: 0;
   background-color: transparent;
-}
-.ci-list-radio .ci-radio {
-  float: right;
-}
-.ci-list .form-group {
-  margin-bottom: 0;
 }
 /**
  * @fileoverview ci-number
@@ -773,64 +770,69 @@ select.ci-form-control {
   display: inline-block;
   margin-right: 1em;
 }
+.am-list .am-checkbox,
+.am-list .am-radio {
+  padding: 0;
+}
 /**
  * @fileoverview ci-switch
  * @author: burning <www.cafeinit.com>
  * @version: 2016-11-15
  */
 .am-switch {
-  vertical-align: middle;
-  text-align: right;
-}
-.am-switch input {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  box-sizing: border-box;
   display: inline-block;
   position: relative;
-  width: 57px;
-  height: 32px;
+  width: 55px;
+  height: 30px;
   margin: 0;
   border: 1px solid #ddd;
-  border-radius: 16px;
+  border-radius: 15px;
   outline: 0;
   background-color: #f7f7f7;
   transition: background-color 0.1s, border 0.1s;
 }
-.am-switch input:before {
+.am-switch:before {
   content: ' ';
   position: absolute;
   top: 0;
   left: 0;
-  width: 55px;
-  height: 30px;
-  border-radius: 15px;
+  width: 53px;
+  height: 28px;
+  border-radius: 14px;
   background-color: #eeeeee;
   transition: transform 0.3s cubic-bezier(0.45, 1, 0.4, 1);
 }
-.am-switch input:after {
+.am-switch:after {
   content: ' ';
   position: absolute;
   top: 0;
   left: 0;
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
   background-color: #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s cubic-bezier(0.4, 0.4, 0.25, 1.35);
 }
-.am-switch input:checked {
+.am-switch:checked {
   border-color: #1abc9c;
   background-color: #1abc9c;
   outline: 0;
 }
-.am-switch input:checked:before {
+.am-switch:checked:before {
   transform: scale(0);
 }
-.am-switch input:checked:after {
+.am-switch:checked:after {
   transform: translateX(25px);
+}
+.am-list .am-switch {
+  text-align: right;
+}
+.am-list .am-switch label {
+  float: left;
 }
 /**
  * @fileoverview ci-collection
@@ -1015,20 +1017,6 @@ select.ci-form-control {
   margin-left: 0.5em;
   text-align: center;
   color: #999999;
-}
-.ci-list-cell .am-form-group {
-  margin-bottom: 0;
-}
-.ci-list-cell .am-form-group label {
-  margin: 0;
-}
-.ci-list-checkbox label,
-.ci-list-radio label {
-  display: block;
-  min-height: 20px;
-  margin-bottom: 0;
-  font-weight: 400;
-  cursor: pointer;
 }
 /**
  * @fileoverview ci-loading
