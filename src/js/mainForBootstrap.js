@@ -23,6 +23,7 @@ import CIImage from './image/CIImage'
 
 import CIList from './list/CIList'
 import CIListCell from './list/CIListCell'
+import CIListHeader from './list/CIListHeader'
 import CIListCheckbox from './list/BSListCheckbox'
 import CIListRadio from './list/BSListRadio'
 
@@ -76,6 +77,7 @@ const CIComponents = {
 
   'ci-list': CIList,
   'ci-list-cell': CIListCell,
+  'ci-list-header': CIListHeader,
   'ci-list-checkbox': CIListCheckbox,
   'ci-list-radio': CIListRadio,
 

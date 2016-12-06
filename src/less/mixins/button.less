@@ -1,0 +1,48 @@
+/**
+ * @fileoverview button
+ * @author: burning <www.cafeinit.com>
+ * @version: 2016-12-06
+ */
+
+.button-variant(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+
+  a&:visited {
+    color: @color;
+  }
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.@{ns}active {
+    color: @color;
+    border-color: darken(@border, 15%);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: darken(@background, 10%);
+  }
+
+  &:active,
+  &.@{ns}active {
+    background-image: none;
+    background-color: darken(@background, 15%);
+  }
+
+  &.@{ns}disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.@{ns}active {
+      background-color: @background;
+      border-color: @border;
+      opacity: 0.5;
+    }
+  }
+}

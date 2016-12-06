@@ -4,10 +4,14 @@
  * @version: 2016-12-06
  */
 
-@import "./mixins/form-control";
+@import "./mixins/form";
 @import "./mixins/number";
 @import "./mixins/switch";
 
+
+.form-group {
+  .form-group()
+}
 
 .form-control {
   .form-control(~"");
@@ -16,6 +20,10 @@
 input.form-control,
 select.form-control {
   .form-control-border();
+}
+
+.control-label {
+  .control-label()
 }
 
 
