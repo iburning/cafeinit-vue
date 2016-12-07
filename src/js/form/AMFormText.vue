@@ -1,7 +1,7 @@
-<template src="./_number.html"></template>
+<template src="./_formText.html"></template>
 
 <script>
-import config from './_number'
+import config from './_formText'
 
 config.props.ns = {
   type: String,

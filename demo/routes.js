@@ -20,7 +20,6 @@ import List from './pages/list'
 import Loading from './pages/loading'
 import Modals from './pages/modals'
 import Navigation from './pages/navigation'
-import NumberInput from './pages/number'
 import Offcanvas from './pages/offcanvas'
 import PageDemo from './pages/pageDemo'
 import Pagination from './pages/pagination'
@@ -32,6 +31,9 @@ import Sticky from './pages/sticky'
 import TabBar from './pages/tabBar'
 import Toasts from './pages/toasts'
 import ToTop from './pages/toTop'
+
+import FormNumber from './pages/form/number'
+import FormText from './pages/form/text'
 
 export default [
   { path: '/', component: Index },
@@ -50,7 +52,6 @@ export default [
   { path: '/loading', component: Loading },
   { path: '/modals', component: Modals },
   { path: '/navigation', component: Navigation },
-  { path: '/number', component: NumberInput },
   { path: '/page-demo', component: PageDemo },
   { path: '/pagination', component: Pagination },
   { path: '/offcanvas', component: Offcanvas },
@@ -61,5 +62,8 @@ export default [
   { path: '/sticky', component: Sticky },
   { path: '/tab-bar', component: TabBar },
   { path: '/toasts', component: Toasts },
-  { path: '/to-top', component: ToTop }
+  { path: '/to-top', component: ToTop },
+
+  { path: '/form/number', component: FormNumber },
+  { path: '/form/text', component: FormText }
 ]

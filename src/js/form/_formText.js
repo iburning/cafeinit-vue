@@ -1,14 +1,16 @@
 /**
- * @fileoverview text
+ * @fileoverview form text
  * @author: burning <www.cafeinit.com>
  * @version: 2016-12-06
  */
 
 export default {
-  name: 'ci-text',
+  name: 'ci-form-text',
 
   props: {
     ns: String,
+    title: String,
+    titleWidth: String,
     name: String,
     value: [String, Number],
 
@@ -31,13 +33,25 @@ export default {
     }
   },
 
+  data() {
+    return {
+      currentValue: this.value
+    }
+  },
+
+  watch: {
+    value(val) {
+      this.currentValue = val
+    }
+  },
+
   methods: {
     onChange: function (evt) {
-      this.$emit('change', evt.target.value)
+      this.$emit('change', this.currentValue)
     },
 
     onInput: function (evt) {
-      this.$emit('input', evt.target.value)
+      this.$emit('input', this.currentValue)
     }
   }
 }

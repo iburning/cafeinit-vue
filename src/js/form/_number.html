@@ -1,25 +1,16 @@
-<div v-bind:class="ns + 'form-group'">
-  <label v-if="title"
-    v-bind:class="ns + 'control-label'"
-    v-bind:style="{width: titleWidth}">{{title}}</label>
-  <div v-bind:class="ns + 'form-control'">
-    <div v-bind:class="ns + 'number'">
-      <ci-button class="btn-minus" style="primary"
-        v-on:click="reduce">
-        <i class="fa fa-minus ci-icon-minus"></i>
-      </ci-button>
-      <ci-button class="btn-plus" style="primary"
-        v-on:click="increase">
-        <i class="fa fa-plus ci-icon-plus"></i>
-      </ci-button>
-
-      <input type="number"
-        v-model="currentValue"
-        v-bind:name="name"
-        v-bind:placeholder="placeholder"
-        v-bind:disabled="disabled"
-        v-on:change="onChange"
-        v-on:input="onInput" />
-    </div>
-  </div>
+<div v-bind:class="ns + 'number'">
+  <ci-button v-bind:class="ns + 'btn-minus'" style="primary" v-on:click="reduce">
+    <i class="fa fa-minus"></i>
+  </ci-button>
+  <ci-button v-bind:class="ns + 'btn-plus'" style="primary" v-on:click="increase">
+    <i class="fa fa-plus"></i>
+  </ci-button>
+  <input type="number"
+    v-model="currentValue"
+    v-bind:class="ns + 'number-input'"
+    v-bind:name="name"
+    v-bind:placeholder="placeholder"
+    v-bind:disabled="disabled"
+    v-on:change="onChange"
+    v-on:input="onInput" />
 </div>

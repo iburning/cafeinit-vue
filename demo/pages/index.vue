@@ -55,9 +55,14 @@
         <span class="sub-title">滑动选择</span>
       </ci-list-cell>
 
-      <ci-list-cell accessory="link" to="/number">
+      <ci-list-cell accessory="link" to="/form/number">
         <strong class="title">Number</strong>
-        <span class="sub-title">数字输入框</span>
+        <span class="sub-title">数字</span>
+      </ci-list-cell>
+
+      <ci-list-cell accessory="link" to="/form/text">
+        <strong class="title">Text</strong>
+        <span class="sub-title">文本</span>
       </ci-list-cell>
 
       <ci-list-cell accessory="link" to="/image-picker">

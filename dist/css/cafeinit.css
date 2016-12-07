@@ -210,6 +210,12 @@ a {
 a:hover {
   color: #117964;
 }
+.ci-text-left {
+  text-align: left;
+}
+.ci-text-center {
+  text-align: center;
+}
 .ci-text-right {
   text-align: right;
 }
@@ -663,7 +669,6 @@ fieldset[disabled] .ci-btn-danger.ci-active {
       flex-wrap: wrap;
   padding: 0;
   margin: 0 0 1em 0;
-  line-height: 1.625em;
 }
 .ci-list .ci-form-group {
   margin-bottom: 0;
@@ -671,7 +676,8 @@ fieldset[disabled] .ci-btn-danger.ci-active {
 .ci-control-label {
   min-width: 2em;
   padding: 0.25em 0;
-  margin-right: 0.75em;
+  margin: 0 0.75em 0 0;
+  font-weight: normal;
 }
 .ci-form-control {
   -ms-flex: 1;
@@ -679,18 +685,18 @@ fieldset[disabled] .ci-btn-danger.ci-active {
   width: 100%;
   color: #555555;
   vertical-align: middle;
-  line-height: inherit;
 }
-input.ci-form-control,
-select.ci-form-control {
+.ci-text {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  width: 100%;
   padding: 0.25em 0.5em;
   margin: 0;
   border: 1px solid #ddd;
   border-radius: 0;
   outline: 0;
+  line-height: inherit;
   background-color: transparent;
 }
 /**
@@ -699,8 +705,11 @@ select.ci-form-control {
  * @version: 2016-12-06
  */
 .ci-number {
+  display: inline-block;
   width: 120px;
   height: 30px;
+  padding: 0;
+  margin: 0;
 }
 .ci-number .ci-btn {
   display: block;
@@ -710,24 +719,20 @@ select.ci-form-control {
   margin: 0;
   line-height: 30px;
 }
-.ci-number .btn-minus {
+.ci-number .ci-btn-minus {
   float: left;
 }
-.ci-number .btn-plus {
+.ci-number .ci-btn-plus {
   float: right;
 }
-.ci-number input {
-  width: 60px;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  padding: 0 0.5em;
+.ci-number-input {
+  width: 60px !important;
+  padding: 0 0.5em!important;
   margin: 0;
   border: 1px solid #ddd;
   border-radius: 0;
   outline: 0;
-  line-height: 28px;
-  background-color: transparent;
+  line-height: 28px !important;
 }
 /**
  * @fileoverview ci-radio

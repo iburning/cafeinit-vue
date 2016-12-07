@@ -14,10 +14,10 @@
   flex-wrap: wrap;
   padding: 0;
   margin: 0 0 1em 0;
-  line-height: 1.625em;
+  // line-height: 1.625em;
 }
 
-.@{ns}list {
+.ci-list {
   .@{ns}form-group {
     margin-bottom: 0;
   }
@@ -26,7 +26,8 @@
 .@{ns}control-label {
   min-width: 2em;
   padding: 0.25em 0;
-  margin-right: 0.75em;
+  margin: 0 0.75em 0 0;
+  font-weight: normal;
 }
 
 .@{ns}form-control {
@@ -35,18 +36,32 @@
 
   color: @input-color;
   vertical-align: middle;
-  line-height: inherit;
+
+  // input,
+  // select {
+  //   appearance: none;
+  //   width: 100%;
+  //   padding: @input-padding;
+  //   margin: 0;
+  //   border: 1px solid @input-border-color;
+  //   border-radius: 0;
+  //   outline: 0;
+  //
+  //   line-height: inherit;
+  //   background-color: transparent;
+  // }
 }
 
-input.@{ns}form-control,
-select.@{ns}form-control {
+.@{ns}text {
   appearance: none;
+  width: 100%;
   padding: @input-padding;
   margin: 0;
   border: 1px solid @input-border-color;
   border-radius: 0;
   outline: 0;
 
+  line-height: inherit;
   background-color: transparent;
 }
 

@@ -1,14 +1,16 @@
 /**
- * @fileoverview number
+ * @fileoverview form number
  * @author: burning <www.cafeinit.com>
- * @version: 2016-12-07
+ * @version: 2016-11-15
  */
 
 export default {
-  name: 'ci-number',
+  name: 'ci-form-number',
 
   props: {
     ns: String,
+    title: String,
+    titleWidth: String,
     name: String,
     value: {
       type: [Number, String],
@@ -63,22 +65,6 @@ export default {
   },
 
   methods: {
-    checkValue(value) {
-      value = (value < this.min) ? this.min : value;
-      value = (value > this.max) ? this.max : value;
-      return value;
-    },
-
-    reduce() {
-      this.currentValue = this.checkValue(this.currentValue - this.step)
-      this.$emit('input', this.currentValue)
-    },
-
-    increase() {
-      this.currentValue = this.checkValue(this.currentValue + this.step)
-      this.$emit('input', this.currentValue)
-    },
-
     onChange(evt) {
       this.$emit('change', this.currentValue)
     },
