@@ -3,12 +3,12 @@
     <ci-list>
       <ci-list-cell>
         <ci-form-text v-model="username"
-          title="用户名" title-width="3em"></ci-form-text>
+          title="用户名" title-width="4em"></ci-form-text>
       </ci-list-cell>
 
       <ci-list-cell>
         <ci-form-text v-model="password" type="password"
-          title="密码" title-width="3em"></ci-form-text>
+          title="密码" title-width="4em"></ci-form-text>
       </ci-list-cell>
     </ci-list>
 
@@ -46,7 +46,7 @@ export default {
 
   methods: {
     submit() {
-      __alert(this.username)
+      __alert('username: ' + this.username)
     }
   }
 }

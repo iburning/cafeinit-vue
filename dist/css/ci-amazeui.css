@@ -686,7 +686,8 @@ fieldset[disabled] .am-btn-danger.am-active {
   color: #555555;
   vertical-align: middle;
 }
-.am-text {
+.am-number input,
+.am-text input {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -706,18 +707,12 @@ fieldset[disabled] .am-btn-danger.am-active {
  */
 .am-number {
   display: inline-block;
-  width: 120px;
-  height: 30px;
-  padding: 0;
-  margin: 0;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  font-size: 14px;
 }
 .am-number .am-btn {
   display: block;
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  margin: 0;
-  line-height: 30px;
 }
 .am-number .am-btn-minus {
   float: left;
@@ -726,13 +721,9 @@ fieldset[disabled] .am-btn-danger.am-active {
   float: right;
 }
 .am-number-input {
-  width: 60px !important;
-  padding: 0 0.5em!important;
-  margin: 0;
-  border: 1px solid #ddd;
-  border-radius: 0;
-  outline: 0;
-  line-height: 28px !important;
+  width: 5em!important;
+  border: none!important;
+  text-align: center;
 }
 /**
  * @fileoverview ci-radio
