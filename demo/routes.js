@@ -32,6 +32,7 @@ import TabBar from './pages/tabBar'
 import Toasts from './pages/toasts'
 import ToTop from './pages/toTop'
 
+import FormCheckbox from './pages/form/checkbox'
 import FormNumber from './pages/form/number'
 import FormSwitch from './pages/form/switch'
 import FormText from './pages/form/text'
@@ -65,6 +66,7 @@ export default [
   { path: '/toasts', component: Toasts },
   { path: '/to-top', component: ToTop },
 
+  { path: '/form/checkbox', component: FormCheckbox },
   { path: '/form/number', component: FormNumber },
   { path: '/form/switch', component: FormSwitch },
   { path: '/form/text', component: FormText }

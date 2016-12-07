@@ -701,6 +701,56 @@ fieldset[disabled] .ci-btn-danger.ci-active {
   background-color: transparent;
 }
 /**
+ * @fileoverview ci-checkbox
+ * @author: burning <www.cafeinit.com>
+ * @version: 2016-11-21
+ */
+.ci-checkbox,
+.ci-checkbox-inline {
+  position: relative;
+  overflow: hidden;
+}
+.ci-checkbox input[type=checkbox],
+.ci-checkbox-inline input[type=checkbox] {
+  position: absolute;
+  left: -500px;
+}
+.ci-checkbox input[type=checkbox]:checked + label,
+.ci-checkbox-inline input[type=checkbox]:checked + label {
+  color: #1abc9c;
+}
+.ci-checkbox label,
+.ci-checkbox-inline label {
+  display: block;
+}
+.ci-checkbox i,
+.ci-checkbox-inline i {
+  float: left;
+  margin: 0 0.25em 0 0;
+  font-size: 1.5em;
+}
+.ci-checkboxs {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.ci-checkboxs .ci-checkbox {
+  -ms-flex: 1;
+      flex: 1;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+.ci-checkboxs .ci-checkbox-inline {
+  -ms-flex: 1;
+      flex: 1;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+.ci-list-checkbox .ci-checkbox {
+  text-align: right;
+}
+/**
  * @fileoverview ci-number
  * @author: burning <www.cafeinit.com>
  * @version: 2016-12-06
@@ -730,46 +780,6 @@ fieldset[disabled] .ci-btn-danger.ci-active {
  * @author: burning <www.cafeinit.com>
  * @version: 2016-11-21
  */
-.ci-checkbox,
-.ci-checkbox-inline,
-.ci-radio,
-.ci-radio-inline {
-  position: relative;
-  overflow: hidden;
-  padding: 0.25em;
-}
-.ci-checkbox input,
-.ci-checkbox-inline input,
-.ci-radio input,
-.ci-radio-inline input {
-  position: absolute;
-  left: -500px;
-}
-.ci-checkbox input:checked + i:before,
-.ci-checkbox-inline input:checked + i:before,
-.ci-radio input:checked + i:before,
-.ci-radio-inline input:checked + i:before {
-  color: #1abc9c;
-}
-.ci-checkbox i,
-.ci-checkbox-inline i,
-.ci-radio i,
-.ci-radio-inline i {
-  font-size: 1.25em;
-}
-.ci-checkbox,
-.ci-radio {
-  display: block;
-}
-.ci-checkbox-inline,
-.ci-radio-inline {
-  display: inline-block;
-  margin-right: 1em;
-}
-.ci-list .ci-checkbox,
-.ci-list .ci-radio {
-  padding: 0;
-}
 /**
  * @fileoverview ci-switch
  * @author: burning <www.cafeinit.com>
@@ -777,18 +787,18 @@ fieldset[disabled] .ci-btn-danger.ci-active {
  */
 .ci-switch {
   display: block;
-  height: 30px;
+  height: 36px;
 }
 .ci-switch input {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   position: relative;
-  width: 55px;
-  height: 30px;
+  width: 66px;
+  height: 36px;
   margin: 0;
   border: 1px solid #ddd;
-  border-radius: 15px;
+  border-radius: 18px;
   outline: 0;
   background-color: #f7f7f7;
   transition: background-color 0.1s, border 0.1s;
@@ -800,7 +810,7 @@ fieldset[disabled] .ci-btn-danger.ci-active {
   right: 1px;
   bottom: 1px;
   left: 1px;
-  border-radius: 14px;
+  border-radius: 17px;
   background-color: #eeeeee;
   transition: transform 0.3s cubic-bezier(0.45, 1, 0.4, 1);
 }
@@ -809,9 +819,9 @@ fieldset[disabled] .ci-btn-danger.ci-active {
   position: absolute;
   top: 0;
   left: 0;
-  width: 28px;
-  height: 28px;
-  border-radius: 14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 17px;
   background-color: #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s cubic-bezier(0.4, 0.4, 0.25, 1.35);
@@ -825,7 +835,7 @@ fieldset[disabled] .ci-btn-danger.ci-active {
   transform: scale(0);
 }
 .ci-switch input:checked:after {
-  transform: translateX(25px);
+  transform: translateX(30px);
 }
 /**
  * @fileoverview ci-collection

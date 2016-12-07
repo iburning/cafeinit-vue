@@ -1,0 +1,20 @@
+<div>
+  <ci-list-header v-if="title">{{title}}</ci-list-header>
+  <ci-list class="ci-list-checkbox">
+    <ci-list-cell v-for="(item, index) in items">
+      <div v-bind:class="ns + 'checkbox'">
+        <input type="checkbox"
+          v-model="currentValue"
+          v-bind:id="'checkbox-' + _uid + '-' + index"
+          v-bind:name="name"
+          v-bind:value="item.value"
+          v-bind:disabled="disabled"
+          v-on:change="onChange" />
+        <label v-bind:for="'checkbox-' + _uid + '-' + index">
+          <i class="fa fa-check-square-o"></i>
+          <span>{{ item.title || item.value }}</span>
+        </label>
+      </div>
+    </ci-list-cell>
+  </ci-list>
+</div>

@@ -4,25 +4,49 @@
  * @version: 2016-11-21
  */
 
-// .@{ns}checkbox,
-// .@{ns}checkbox-inline {
-//   position: relative;
-//   overflow: hidden;
-//   padding-left: 0;
-// 
-//   input[type=checkbox] {
-//     position: absolute;
-//     left: -500px;
-//     margin: 0;
-//   }
-//
-//   input[type=checkbox]:checked+i:before {
-//     color: @color-primary;
-//   }
-//
-//   i {
-//     float: left;
-//     margin: 0 5px;
-//     font-size: 1.5em;
-//   }
-// }
+.@{ns}checkbox,
+.@{ns}checkbox-inline {
+  position: relative;
+  overflow: hidden;
+
+  input[type=checkbox] {
+    position: absolute;
+    left: -500px;
+  }
+
+  input[type=checkbox]:checked+label {
+    color: @color-primary;
+  }
+
+  label {
+    display: block;
+  }
+
+  i {
+    float: left;
+    margin: 0 0.25em 0 0;
+    font-size: 1.5em;
+  }
+}
+
+
+.@{ns}checkboxs {
+  display: flex;
+  flex-wrap: wrap;
+
+  .@{ns}checkbox {
+    flex: 1;
+    flex-basis: 100%;
+  }
+
+  .@{ns}checkbox-inline {
+    flex: 1;
+    flex-basis: 50%;
+  }
+}
+
+.@{ns}list-checkbox {
+  .@{ns}checkbox {
+    text-align: right;
+  }
+}

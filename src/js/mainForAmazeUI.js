@@ -23,6 +23,7 @@ import CIFormNumber from './form/AMFormNumber'
 import CIFormText from './form/AMFormText'
 
 import CICheckbox from './form/AMCheckbox'
+import CICheckboxList from './form/AMCheckboxList'
 import CINumber from './form/AMNumber'
 import CIRadio from './form/AMRadio'
 import CISelect from './form/AMSelect'
@@ -102,6 +103,7 @@ const CIComponents = {
   'ci-form-text': CIFormText,
 
   'ci-checkbox': CICheckbox,
+  'ci-checkbox-list': CICheckboxList,
   'ci-number': CINumber,
   'ci-radio': CIRadio,
   'ci-select': CISelect,
