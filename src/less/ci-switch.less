@@ -1,74 +1,77 @@
 /**
  * @fileoverview ci-switch
  * @author: burning <www.cafeinit.com>
- * @version: 2016-11-15
+ * @version: 2016-12-06
  */
 
 .@{ns}switch {
-  @size: 30px - 2px;
+  @size: 30px;
   @distance: 25px;
 
-  appearance: none;
+  display: block;
+  height: @size;
 
-  display: inline-block;
-  position: relative;
-  width: @size + @distance + 2px;
-  height: @size + 2px;
-  margin: 0;
-  border: 1px solid @color-border;
-  border-radius: (@size + 2px) / 2;
-  outline: 0;
-
-  background-color: lighten(@color-border, 10%);
-  transition: background-color .1s, border .1s;
-
-  &:before {
-    content: ' ';
-    position: absolute;
-    top: 0;
-    left: 0;
+  input {
+    appearance: none;
+    position: relative;
     width: @size + @distance;
     height: @size;
+    margin: 0;
+    border: 1px solid @color-border;
     border-radius: @size / 2;
-    background-color: @color-gray-lighter;
-    transition:transform .3s cubic-bezier(0.45, 1, 0.4, 1);
-  }
-
-  &:after {
-    content: ' ';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: @size;
-    height: @size;
-    border-radius: @size / 2;
-    background-color: @color-white;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-    transition:transform .3s cubic-bezier(0.4, 0.4, 0.25, 1.35);
-  }
-
-  &:checked {
-    border-color: @color-primary;
-    background-color: @color-primary;
     outline: 0;
 
+    background-color: lighten(@color-border, 10%);
+    transition: background-color .1s, border .1s;
+
     &:before {
-      transform: scale(0);
+      content: ' ';
+      position: absolute;
+      top: 1px;
+      right: 1px;
+      bottom: 1px;
+      left: 1px;
+      border-radius: (@size - 2px) / 2;
+      background-color: @color-gray-lighter;
+      transition:transform .3s cubic-bezier(0.45, 1, 0.4, 1);
     }
 
     &:after {
-      transform: translateX(@distance);
+      content: ' ';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: @size - 2px;
+      height: @size - 2px;
+      border-radius: (@size - 2px) / 2;
+      background-color: @color-white;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+      transition:transform .3s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+    }
+
+    &:checked {
+      border-color: @color-primary;
+      background-color: @color-primary;
+      outline: 0;
+
+      &:before {
+        transform: scale(0);
+      }
+
+      &:after {
+        transform: translateX(@distance);
+      }
     }
   }
 }
 
 
-.@{ns}list {
-  .@{ns}switch {
-    text-align: right;
-
-    label {
-      float: left;
-    }
-  }
-}
+// .@{ns}list {
+//   .@{ns}switch {
+//     text-align: right;
+//
+//     label {
+//       float: left;
+//     }
+//   }
+// }

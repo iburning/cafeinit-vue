@@ -1,7 +1,7 @@
 /**
- * @fileoverview form switch
+ * @fileoverview switch
  * @author: burning <www.cafeinit.com>
- * @version: 2016-11-15
+ * @version: 2016-12-06
  */
 
 export default {
@@ -32,6 +32,14 @@ export default {
   watch: {
     value(val) {
       this.currentValue = val
+    }
+  },
+
+  methods: {
+    onChange(evt) {
+      this.currentValue = !this.currentValue;
+      console.log('_switch.onChange', this.currentValue)
+      this.$emit('input', this.currentValue)
     }
   }
 }

@@ -773,13 +773,16 @@ fieldset[disabled] .am-btn-danger.am-active {
 /**
  * @fileoverview ci-switch
  * @author: burning <www.cafeinit.com>
- * @version: 2016-11-15
+ * @version: 2016-12-06
  */
 .am-switch {
+  display: block;
+  height: 30px;
+}
+.am-switch input {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  display: inline-block;
   position: relative;
   width: 55px;
   height: 30px;
@@ -790,18 +793,18 @@ fieldset[disabled] .am-btn-danger.am-active {
   background-color: #f7f7f7;
   transition: background-color 0.1s, border 0.1s;
 }
-.am-switch:before {
+.am-switch input:before {
   content: ' ';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 53px;
-  height: 28px;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
   border-radius: 14px;
   background-color: #eeeeee;
   transition: transform 0.3s cubic-bezier(0.45, 1, 0.4, 1);
 }
-.am-switch:after {
+.am-switch input:after {
   content: ' ';
   position: absolute;
   top: 0;
@@ -813,22 +816,16 @@ fieldset[disabled] .am-btn-danger.am-active {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s cubic-bezier(0.4, 0.4, 0.25, 1.35);
 }
-.am-switch:checked {
+.am-switch input:checked {
   border-color: #1abc9c;
   background-color: #1abc9c;
   outline: 0;
 }
-.am-switch:checked:before {
+.am-switch input:checked:before {
   transform: scale(0);
 }
-.am-switch:checked:after {
+.am-switch input:checked:after {
   transform: translateX(25px);
-}
-.am-list .am-switch {
-  text-align: right;
-}
-.am-list .am-switch label {
-  float: left;
 }
 /**
  * @fileoverview ci-collection

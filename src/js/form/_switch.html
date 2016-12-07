@@ -1,15 +1,22 @@
-<div v-bind:class="ns + 'form-group'">
-  <label v-if="title"
+<div v-if="title" v-bind:class="ns + 'form-group'">
+  <label
     v-bind:class="ns + 'control-label'"
     v-bind:style="{width: titleWidth}">{{title}}</label>
-  <div v-bind:class="[
-      ns + 'form-control',
-      ns + 'text-right'
-    ]">
-    <input v-bind:class="ns + 'switch'"
-      type="checkbox"
-      v-bind:name="name"
-      v-bind:value="value"
-      v-on:change="$emit('input', this.currentValue)" />
+  <div v-bind:class="[ ns + 'form-control', ns + 'text-right' ]">
+    <div v-bind:class="ns + 'switch'">
+      <input type="checkbox"
+        v-bind:name="name"
+        v-bind:checked="value"
+        v-bind:disabled="disabled"
+        v-on:change="onChange" />
+    </div>
   </div>
+</div>
+
+<div v-else v-bind:class="ns + 'switch'">
+  <input type="checkbox"
+    v-bind:name="name"
+    v-bind:checked="value"
+    v-bind:disabled="disabled"
+    v-on:change="onChange" />
 </div>

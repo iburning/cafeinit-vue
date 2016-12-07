@@ -60,6 +60,11 @@
         <span class="sub-title">数字</span>
       </ci-list-cell>
 
+      <ci-list-cell accessory="link" to="/form/switch">
+        <strong class="title">Switch</strong>
+        <span class="sub-title">状态切换</span>
+      </ci-list-cell>
+
       <ci-list-cell accessory="link" to="/form/text">
         <strong class="title">Text</strong>
         <span class="sub-title">文本</span>

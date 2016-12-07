@@ -33,6 +33,7 @@ import Toasts from './pages/toasts'
 import ToTop from './pages/toTop'
 
 import FormNumber from './pages/form/number'
+import FormSwitch from './pages/form/switch'
 import FormText from './pages/form/text'
 
 export default [
@@ -65,5 +66,6 @@ export default [
   { path: '/to-top', component: ToTop },
 
   { path: '/form/number', component: FormNumber },
+  { path: '/form/switch', component: FormSwitch },
   { path: '/form/text', component: FormText }
 ]
