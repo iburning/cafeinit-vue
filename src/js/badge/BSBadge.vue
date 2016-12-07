@@ -5,7 +5,7 @@ import config from './_badge'
 
 config.props.ns = {
   type: String,
-  default: 'ci-'
+  default: ''
 }
 
 export default config

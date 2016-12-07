@@ -17,7 +17,6 @@ import CIToast from './toast/CIToast'
 
 /* Buttons & Form */
 import CIButton from './button/AMButton'
-import CILinkButton from './button/AMLinkButton'
 
 import CIForm from './form/AMForm'
 import CICheckbox from './form/AMCheckbox'
@@ -25,7 +24,7 @@ import CINumber from './form/AMNumber'
 import CIRadio from './form/AMRadio'
 import CISelect from './form/AMSelect'
 import CISwitch from './form/AMSwitch'
-import CIText from './form/AMInput'
+import CIText from './form/AMText'
 
 import CIListCheckbox from './list/AMListCheckbox'
 import CIListRadio from './list/AMListRadio'
@@ -81,65 +80,73 @@ import CIScrollHelper from './utils/CIScrollHelper'
 
 
 const CIComponents = {
+  /* Alert & Modal & Toast */
   'ci-alert-tip': CIAlertTip,
 
-  'ci-badge': CIBadge,
-  'ci-block': CIBlock,
-  'ci-block-body': CIBlockBody,
-  'ci-block-footer': CIBlockFooter,
-  'ci-block-header': CIBlockHeader,
-
-  'ci-breadcrumb': CIBreadcrumb,
-  'ci-collection': CICollection,
-  'ci-collection-cell': CICollectionCell,
-
-  'ci-grid': CIGrid,
-  'ci-grid-cell': CIGridCell,
-
-  'ci-image': CIImage,
-
-  'ci-list': CIList,
-  'ci-list-cell': CIListCell,
-  'ci-list-header': CIListHeader,
-  'ci-list-checkbox': CIListCheckbox,
-  'ci-list-radio': CIListRadio,
-  'ci-list-switch': CIListSwitch,
-
-  'ci-loading': CILoading,
-  'ci-navigation': CINavigation,
-  'ci-pagination': CIPagination,
-  'ci-offcanvas': CIOffcanvas,
-  'ci-tab-bar': CITabBar,
-  // 'ci-table': CITable,
-  'ci-tree-nav': CITreeNav,
-
-  /* for form */
-  'ci-button': CIButton,
-  'ci-link-button': CILinkButton,
-
-  'ci-checkbox': CICheckbox,
-  'ci-form': CIForm,
-  'ci-form-group': CIFormGroup,
-  'ci-image-picker': CIImagePicker,
-  'ci-input': CIInput,
-  'ci-number': CINumber,
-  'ci-radio': CIRadio,
-  'ci-select': CISelect,
-  'ci-switch': CISwitch,
-
-  /* form modal */
   'ci-modal': CIModal,
   'ci-actions': CIActions,
   'ci-alert': CIAlert,
   'ci-confirm': CIConfirm,
 
-  'ci-rate': CIRate,
-  'ci-scroll-view': CIScrollView,
+  'ci-toast': CIToast,
+
+
+  /* Buttons & Form */
+  'ci-button': CIButton,
+
+  'ci-form': CIForm,
+  'ci-checkbox': CICheckbox,
+  'ci-number': CINumber,
+  'ci-radio': CIRadio,
+  'ci-select': CISelect,
+  'ci-switch': CISwitch,
+  'ci-text': CIText,
+
+  'ci-list-checkbox': CIListCheckbox,
+  'ci-list-radio': CIListRadio,
+  'ci-list-switch': CIListSwitch,
+
+  'ci-image-picker': CIImagePicker,
   'ci-slider': CISlider,
+
+
+  /* Layout */
+  'ci-block': CIBlock,
+  'ci-block-body': CIBlockBody,
+  'ci-block-footer': CIBlockFooter,
+  'ci-block-header': CIBlockHeader,
+
+  'ci-collection': CICollection,
+  'ci-collection-cell': CICollectionCell,
+
+  'ci-list': CIList,
+  'ci-list-cell': CIListCell,
+  'ci-list-header': CIListHeader,
+
+  'ci-grid': CIGrid,
+  'ci-grid-cell': CIGridCell,
+
+  'ci-offcanvas': CIOffcanvas,
+  'ci-scroll-view': CIScrollView,
+
   'ci-slide-view': CISlideView,
   'ci-slide-view-item': CISlideViewItem,
+
+
+  /* Navigation */
+  'ci-breadcrumb': CIBreadcrumb,
+  'ci-pagination': CIPagination,
+  'ci-navigation': CINavigation,
+  'ci-tab-bar': CITabBar,
+  'ci-tree-nav': CITreeNav,
+
+
+  /* Others */
+  'ci-badge': CIBadge,
+  'ci-image': CIImage,
+  'ci-loading': CILoading,
+  'ci-rate': CIRate,
   'ci-sticky': CISticky,
-  'ci-toast': CIToast,
   'ci-to-top': CIToTop
 }
 

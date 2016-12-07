@@ -1,30 +1,29 @@
 <template>
   <div id="page-picker">
-    <ci-block>
-      <ci-block-body>
-        <ci-image-picker width="80" height="80"
-          maxSize="5"
+    <ci-list>
+      <ci-list-cell>
+        <ci-image-picker max-size="5" width="80" height="80"
           v-on:change="imagePickerOnChange"
           v-on:error="imagePickerOnError"></ci-image-picker>
+      </ci-list-cell>
 
-        <ci-image-picker width="80" height="80"
-          maxSize="5"
+      <ci-list-cell>
+        <ci-image-picker max-size="5" width="80" height="80"
           v-bind:disabled="imagePickerDisabled"
           v-on:click="imagePickerOnClick"
           v-on:change="imagePickerOnChange"
           v-on:error="imagePickerOnError"></ci-image-picker>
-      </ci-block-body>
-    </ci-block>
+      </ci-list-cell>
+    </ci-list>
 
-    <ci-loading v-if="isUploading"></ci-loading>
-
-    <ci-alert
-      v-bind:is-show="isShowAlert"
-      v-bind:content="alertContent"
-      v-on:close="isShowAlert = false"></ci-alert>
+    <ci-toast
+      v-if="isShowToast"
+      type="waiting"
+      text="Upoading..."
+      v-on:close="isShowToast = false"></ci-toast>
 
     <ci-modal class="popup-image"
-      v-bind:is-show="isShowPopupImage"
+      v-if="isShowPopupImage"
       v-on:close="isShowPopupImage = false">
       <ci-image width="300" height="300" v-bind:src="popupImageSrc" />
     </ci-alert>
@@ -37,10 +36,8 @@ export default {
 
   data() {
     return {
-      isShowAlert: false,
-      alertContent: '',
-      files: [],
-      uploadApi: 'http://test2016.jiheapp.com/v1/image/img_upd',
+      isShowToast: false,
+      toastText: 'Uploading...',
       isUploading: false,
       imagePickerDisabled: false,
 
@@ -49,29 +46,26 @@ export default {
     }
   },
 
+  watch: {
+    isUploading(val) {
+      this.isShowToast = val
+    }
+  },
+
   methods: {
-    imagePickerOnChange(files) {
+    imagePickerOnChange(files, sender) {
       var that = this;
       // console.log('imagePickerOnChange', files)
       if (files.length) {
-        console.log('imagePickerOnChange', typeof files[0], files[0])
-        // this.willUpload()
-        this.isUploading = true;
+        console.log('imagePickerOnChange', typeof files[0], files[0], sender)
+        this.isUploading = true
 
-        this.upload(files[0], {
-          token: 'srvVryySHwXvvh7e',
-          customer_id: '43841',
-          dir: 2    // 1: 商品  2：用户  3： 店铺
-        }, function (err, res) {
-          console.log('upload', err, res)
+        // uploading...
+
+        let timer = setTimeout(function () {
           that.isUploading = false
-          that.imagePickerDisabled = true
-          // that.didUpload()
-          if (err) {
-            that.alertContent = err.tip
-            that.isShowAlert = true
-          }
-        })
+          clearTimeout(timer)
+        }, 2000)
       }
     },
 

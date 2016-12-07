@@ -933,7 +933,7 @@ select.form-control {
   text-align: center;
   color: #999999;
 }
-.ci-image-picker .preview {
+.ci-image-picker-preview {
   position: absolute;
   left: 0;
   top: 0;

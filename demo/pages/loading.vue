@@ -3,8 +3,8 @@
     <ci-loading v-if="isLoading"></ci-loading>
 
     <div class="ci-btn-area">
-      <ci-link-button style="primary" block="block"
-        v-on:click="isLoading = !isLoading">{{status}}</ci-link-button>
+      <ci-button style="primary" block="block"
+        v-on:click="isLoading = !isLoading">{{status}}</ci-button>
     </div>
   </div>
 </template>

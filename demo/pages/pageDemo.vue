@@ -1,7 +1,7 @@
 <template>
   <div class="page-demo">
     <ci-navigation title="PAGE TITLE">
-      <ci-link-button slot="right-item" style="link" size="xs">More</ci-link-button>
+      <ci-button slot="right-item" style="link" size="xs">More</ci-button>
     </ci-navigation>
 
     <ci-image src="http://img14.360buyimg.com/n1/jfs/t2452/131/2370374232/57731/16c803cc/56cd1077Nb76bbf85.jpg"

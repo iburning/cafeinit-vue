@@ -1,11 +1,11 @@
 <template>
   <div id="page-toasts">
     <div class="ci-btn-area">
-      <ci-link-button style="primary" block="block" v-on:click="showToast('success', 'Hello CafeInit', 0)">Show Success Toast</ci-link-button>
-      <ci-link-button style="primary" block="block" v-on:click="showToast('error', 'Some error message...')">Show Error Toast</ci-link-button>
-      <ci-link-button style="primary" block="block" v-on:click="showToast('warn', 'Stop!')">Show Warn Toast</ci-link-button>
-      <ci-link-button style="primary" block="block" v-on:click="showToast('waiting', '', 10000)">Show Waiting Toast</ci-link-button>
-      <ci-link-button style="primary" block="block" v-on:click="showToast('', 'Message only, long long long... long long long...')">Show Text Toast</ci-link-button>
+      <ci-button style="primary" block="block" v-on:click="showToast('success', 'Hello CafeInit', 0)">Show Success Toast</ci-button>
+      <ci-button style="primary" block="block" v-on:click="showToast('error', 'Some error message...')">Show Error Toast</ci-button>
+      <ci-button style="primary" block="block" v-on:click="showToast('warn', 'Stop!')">Show Warn Toast</ci-button>
+      <ci-button style="primary" block="block" v-on:click="showToast('waiting', '', 10000)">Show Waiting Toast</ci-button>
+      <ci-button style="primary" block="block" v-on:click="showToast('', 'Message only, long long long... long long long...')">Show Text Toast</ci-button>
     </div>
 
     <ci-toast v-if="isShowToast"

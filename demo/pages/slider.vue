@@ -8,7 +8,7 @@
         </ci-list-cell>
 
         <ci-list-cell>
-          <ci-input type="text" v-model="x"></ci-input>
+          <ci-text type="text" v-model="x"></ci-text>
         </ci-list-cell>
 
         <ci-list-cell>

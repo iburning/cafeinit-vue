@@ -3,9 +3,10 @@
       width: width + 'px',
       height: height + 'px'
     }">
-    <i class="fa fa-plus ci-icon-plus"></i>
-    <div class="preview" v-if="previewSrc" v-bind:style="{
-      'background-image': 'url(' + previewSrc + ')'
+    <slot><i class="fa fa-plus ci-icon-plus"></i></slot>
+    <div class="ci-image-picker-preview" v-if="isPreview"
+      v-bind:style="{
+        'background-image': 'url(' + previewSrc + ')'
       }"></div>
     <input type="file" class="picker" accept="image/jpeg,image/x-png"
       v-on:click="onClick"
@@ -68,11 +69,10 @@ export default {
 
   methods: {
     onClick(evt) {
-      console.log('CIImagePicker.onClick')
       if (this.disabled) {
         evt.preventDefault()
       }
-      this.$emit('click', this.files, evt)
+      this.$emit('click', this.files, this)
     },
 
     onChange(evt) {
@@ -83,7 +83,7 @@ export default {
         this.files = files
         this.checkFiles(function (err) {
           if (err) {
-            that.$emit('error', err, evt)
+            that.$emit('error', err, that)
           }
           else {
             if (that.isPreview) {
@@ -92,7 +92,7 @@ export default {
               })
             }
 
-            that.$emit('change', files, evt)
+            that.$emit('change', files, that)
           }
         })
       }

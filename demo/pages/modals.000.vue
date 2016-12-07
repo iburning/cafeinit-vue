@@ -1,11 +1,11 @@
 <template>
   <div id="modals">
     <div class="ci-btn-area">
-      <ci-link-button style="primary" block="block" v-on:click="isShowModal = true">Show Modal</ci-link-button>
-      <ci-link-button style="primary" block="block" v-on:click="showAlert">Show Alert</ci-link-button>
-      <ci-link-button style="primary" block="block" v-on:click="showAlert2">Show Alert 2</ci-link-button>
-      <ci-link-button style="primary" block="block" v-on:click="isShowConfirm = true">Show Confirm</ci-link-button>
-      <ci-link-button style="primary" block="block" v-on:click="isShowActions = true">Show Actions</ci-link-button>
+      <ci-button style="primary" block="block" v-on:click="isShowModal = true">Show Modal</ci-button>
+      <ci-button style="primary" block="block" v-on:click="showAlert">Show Alert</ci-button>
+      <ci-button style="primary" block="block" v-on:click="showAlert2">Show Alert 2</ci-button>
+      <ci-button style="primary" block="block" v-on:click="isShowConfirm = true">Show Confirm</ci-button>
+      <ci-button style="primary" block="block" v-on:click="isShowActions = true">Show Actions</ci-button>
     </div>
 
 

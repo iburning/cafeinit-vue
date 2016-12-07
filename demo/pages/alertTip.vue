@@ -11,9 +11,9 @@
     </ci-alert-tip>
 
     <div class="ci-btn-area">
-      <ci-link-button style="primary" block="block" v-on:click="isShowSuccesAlert = true">Show success alert tip ({{isShowSuccesAlert}})</ci-link-button>
+      <ci-button style="primary" block="block" v-on:click="isShowSuccesAlert = true">Show success alert tip ({{isShowSuccesAlert}})</ci-button>
 
-      <ci-link-button style="primary" block="block" v-on:click="showTip">Show alert tip</ci-link-button>
+      <ci-button style="primary" block="block" v-on:click="showTip">Show alert tip</ci-button>
     </div>
   </div>
 </template>
