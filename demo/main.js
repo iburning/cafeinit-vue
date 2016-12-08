@@ -13,6 +13,10 @@ import routes from './routes'
 Vue.use(VueRouter)
 Vue.use(CafeinitVue.components)
 
+window.__alert = function (text) {
+  alert(text)
+}
+
 const router = new VueRouter({
   // mode: 'history',
   routes // （缩写）相当于 routes: routes

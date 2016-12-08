@@ -37,6 +37,9 @@ import FormNumber from './pages/form/number'
 import FormSwitch from './pages/form/switch'
 import FormText from './pages/form/text'
 
+/* Demo pages */
+import SelectAll from './pages/demo/selectAll'
+
 export default [
   { path: '/', component: Index },
   { path: '/alert-tip', component: AlertTip },
@@ -69,5 +72,7 @@ export default [
   { path: '/form/checkbox', component: FormCheckbox },
   { path: '/form/number', component: FormNumber },
   { path: '/form/switch', component: FormSwitch },
-  { path: '/form/text', component: FormText }
+  { path: '/form/text', component: FormText },
+
+  { path: '/demo/select-all', component: SelectAll }
 ]

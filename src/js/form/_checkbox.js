@@ -14,20 +14,23 @@ export default {
     name: String,
     inline: String,
 
-    value: {
+    // value: {
+    //   type: Array,
+    //   default: function () {
+    //     return []
+    //   }
+    // },
+
+    value: [Array, Boolean],
+
+    items: {
       type: Array,
       default: function () {
         return []
       }
     },
 
-    items: {
-      type: Array,
-      default: function () {
-        return []
-      },
-      required: true
-    },
+    item: Object,
 
     disabled: {
       type: Boolean,
