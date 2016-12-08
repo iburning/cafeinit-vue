@@ -750,8 +750,8 @@ fieldset[disabled] .ci-btn-danger.ci-active {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
 }
-.ci-list-checkbox .ci-checkbox {
-  text-align: right;
+.ci-list-checkbox .ci-checkbox i {
+  float: right;
 }
 /**
  * @fileoverview ci-number
@@ -832,8 +832,8 @@ fieldset[disabled] .ci-btn-danger.ci-active {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
 }
-.ci-list-radio .ci-radio {
-  text-align: right;
+.ci-list-radio .ci-radio i {
+  float: right;
 }
 /**
  * @fileoverview ci-switch

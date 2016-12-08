@@ -4,49 +4,51 @@
  * @version: 2016-11-21
  */
 
- .@{ns}radio,
- .@{ns}radio-inline {
-   position: relative;
-   overflow: hidden;
+.@{ns}radio,
+.@{ns}radio-inline {
+  position: relative;
+  overflow: hidden;
 
-   input[type=radio] {
-     position: absolute;
-     left: -500px;
-   }
+  input[type=radio] {
+    position: absolute;
+    left: -500px;
+  }
 
-   input[type=radio]:checked+label {
-     color: @color-primary;
-   }
+  input[type=radio]:checked+label {
+    color: @color-primary;
+  }
 
-   label {
-     display: block;
-   }
+  label {
+    display: block;
+  }
 
-   i {
-     float: left;
-     margin: 0 0.25em;
-     font-size: 1.5em;
-   }
- }
+  i {
+    float: left;
+    margin: 0 0.25em;
+    font-size: 1.5em;
+  }
+}
 
 
- .@{ns}radios {
-   display: flex;
-   flex-wrap: wrap;
+.@{ns}radios {
+  display: flex;
+  flex-wrap: wrap;
 
-   .@{ns}radio {
-     flex: 1;
-     flex-basis: 100%;
-   }
+  .@{ns}radio {
+    flex: 1;
+    flex-basis: 100%;
+  }
 
-   .@{ns}radio-inline {
-     flex: 1;
-     flex-basis: 50%;
-   }
- }
+  .@{ns}radio-inline {
+    flex: 1;
+    flex-basis: 50%;
+  }
+}
 
- .@{ns}list-radio {
-   .@{ns}radio {
-     text-align: right;
-   }
- }
+.@{ns}list-radio {
+  .@{ns}radio {
+    i {
+      float: right;
+    }
+  }
+}

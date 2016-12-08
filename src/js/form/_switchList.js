@@ -33,7 +33,7 @@ export default {
     },
 
     currentValue(val) {
-      this.$emit('input', this.currentValue)
+      this.$emit('input', val)
     }
   }
 }

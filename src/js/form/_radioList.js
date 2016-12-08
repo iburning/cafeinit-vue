@@ -12,7 +12,6 @@ export default {
     title: String,
     name: String,
     value: [String, Boolean],
-    option: Object,
 
     options: {
       type: Array,
@@ -31,16 +30,10 @@ export default {
   watch: {
     value(val) {
       this.currentValue = val
-    }
-  },
-
-  methods: {
-    onChange: function (evt) {
-      this.$emit('input', this.currentValue)
     },
 
-    onClick: function () {
-      this.$emit('click', this.currentValue)
+    currentValue(val) {
+      this.$emit('input', val)
     }
   }
 }
