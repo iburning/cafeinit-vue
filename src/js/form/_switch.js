@@ -35,10 +35,6 @@ export default {
   methods: {
     onChange: function (evt) {
       this.$emit('input', this.currentValue)
-    },
-
-    onClick: function () {
-      this.$emit('click', this.currentValue)
     }
   }
 }
