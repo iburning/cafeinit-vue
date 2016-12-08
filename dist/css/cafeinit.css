@@ -756,24 +756,31 @@ fieldset[disabled] .ci-btn-danger.ci-active {
  * @version: 2016-12-06
  */
 .ci-number {
+  position: relative;
   display: inline-block;
-  overflow: hidden;
-  border: 1px solid #ddd;
-  font-size: 14px;
+  width: 144px;
+  height: 36px;
+}
+.ci-number input {
+  height: 36px;
+  padding-left: 46px;
+  padding-right: 46px;
+  text-align: center;
 }
 .ci-number .ci-btn {
+  position: absolute;
   display: block;
+  width: 36px;
+  height: 36px;
+  padding: 0;
 }
 .ci-number .ci-btn-minus {
-  float: left;
+  left: 0;
+  top: 0;
 }
 .ci-number .ci-btn-plus {
-  float: right;
-}
-.ci-number-input {
-  width: 5em!important;
-  border: none!important;
-  text-align: center;
+  right: 0;
+  top: 0;
 }
 /**
  * @fileoverview ci-radio

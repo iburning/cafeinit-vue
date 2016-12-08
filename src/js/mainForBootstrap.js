@@ -19,6 +19,7 @@
  import CIButton from './button/BSButton'
 
  import CIForm from './form/BSForm'
+ import CIFormGroup from './form/BSFormGroup'
  import CICheckbox from './form/BSCheckbox'
  import CINumber from './form/BSNumber'
  import CIRadio from './form/BSRadio'
@@ -95,6 +96,7 @@ const CIComponents = {
   'ci-button': CIButton,
 
   'ci-form': CIForm,
+  'ci-form-group': CIFormGroup,
   'ci-checkbox': CICheckbox,
   'ci-number': CINumber,
   'ci-radio': CIRadio,

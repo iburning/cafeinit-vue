@@ -2,27 +2,29 @@
   <div id="page-text">
     <ci-list>
       <ci-list-cell>
-        <ci-form-text v-model="username"
-          title="用户名" title-width="4em"></ci-form-text>
+        <ci-form-group title="用户名" title-width="4em">
+          <ci-text v-model="username"></ci-text>
+        </ci-form-group>
       </ci-list-cell>
 
       <ci-list-cell>
-        <ci-form-text v-model="password" type="password"
-          title="密码" title-width="4em"></ci-form-text>
+        <ci-form-group title="密码" title-width="4em">
+          <ci-text v-model="password" type="password"></ci-text>
+        </ci-form-group>
       </ci-list-cell>
     </ci-list>
 
     <ci-list>
       <ci-list-cell>
-        <ci-form-text v-model="username" placeholder="Username"></ci-form-text>
+        <ci-text v-model="username" placeholder="Username"></ci-text>
       </ci-list-cell>
 
       <ci-list-cell>
-        <ci-form-text v-model="email" type="email" placeholder="abc@company.com"></ci-form-text>
+        <ci-text v-model="email" type="email" placeholder="abc@company.com"></ci-text>
       </ci-list-cell>
 
       <ci-list-cell>
-        <ci-form-text v-model="password" type="password" placeholder="Password"></ci-form-text>
+        <ci-text v-model="password" type="password" placeholder="Password"></ci-text>
       </ci-list-cell>
     </ci-list>
 

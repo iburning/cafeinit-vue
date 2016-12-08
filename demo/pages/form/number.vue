@@ -2,7 +2,14 @@
   <div id="page-number">
     <ci-list>
       <ci-list-cell>
-        <ci-form-number v-model="count" title="Count"></ci-form-number>
+        <ci-form-group title="Count" align="right">
+          <ci-number v-model="count"></ci-number>
+        </ci-form-group>
+      </ci-list-cell>
+      <ci-list-cell>
+        <ci-form-group title="Count">
+          <ci-text v-model="count"></ci-text>
+        </ci-form-group>
       </ci-list-cell>
     </ci-list>
 

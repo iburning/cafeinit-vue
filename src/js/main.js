@@ -19,6 +19,7 @@ import CIToast from './toast/CIToast'
 import CIButton from './button/CIButton'
 
 import CIForm from './form/CIForm'
+import CIFormGroup from './form/CIFormGroup'
 import CICheckbox from './form/CICheckbox'
 import CICheckboxList from './form/CICheckboxList'
 import CINumber from './form/CINumber'
@@ -96,6 +97,7 @@ const CIComponents = {
   'ci-button': CIButton,
 
   'ci-form': CIForm,
+  'ci-form-group': CIFormGroup,
   'ci-checkbox': CICheckbox,
   'ci-checkbox-list': CICheckboxList,
   'ci-number': CINumber,

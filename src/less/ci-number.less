@@ -7,27 +7,34 @@
 .@{ns}number {
   @size: 36px;
 
+  position: relative;
   display: inline-block;
-  overflow: hidden;
-  // padding: 0.25em;
-  border: 1px solid #ddd;
-  font-size: @font-size-small;
+  width: @size * 4;
+  height: @size;
+  // font-size: @font-size-small;
+
+  input {
+    height: @size;
+    padding-left: @size + 10px;
+    padding-right: @size + 10px;
+    text-align: center;
+  }
 
   .@{ns}btn {
+    position: absolute;
     display: block;
+    width: @size;
+    height: @size;
+    padding: 0;
   }
 
   .@{ns}btn-minus {
-    float: left;
+    left: 0;
+    top:0;
   }
 
   .@{ns}btn-plus {
-    float: right;
-  }
-
-  &-input {
-    width: 5em!important;
-    border: none!important;
-    text-align: center;
+    right: 0;
+    top:0;
   }
 }

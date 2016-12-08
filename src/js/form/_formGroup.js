@@ -11,5 +11,6 @@ export default {
     ns: String,
     title: String,
     titleWidth: String,
+    align: String
   }
 }

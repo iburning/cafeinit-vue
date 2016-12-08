@@ -1,10 +1,4 @@
 <div v-bind:class="ns + 'number'">
-  <ci-button v-bind:class="ns + 'btn-minus'" style="primary" size="sm" v-on:click="reduce">
-    <i class="fa fa-minus"></i>
-  </ci-button>
-  <ci-button v-bind:class="ns + 'btn-plus'" style="primary" size="sm" v-on:click="increase">
-    <i class="fa fa-plus"></i>
-  </ci-button>
   <input type="number"
     v-model="currentValue"
     v-bind:class="ns + 'number-input'"
@@ -13,4 +7,10 @@
     v-bind:disabled="disabled"
     v-on:change="onChange"
     v-on:input="onInput" />
+  <ci-button v-bind:class="ns + 'btn-minus'" style="primary" size="sm" v-on:click="reduce">
+    <i class="fa fa-minus"></i>
+  </ci-button>
+  <ci-button v-bind:class="ns + 'btn-plus'" style="primary" size="sm" v-on:click="increase">
+    <i class="fa fa-plus"></i>
+  </ci-button>
 </div>
