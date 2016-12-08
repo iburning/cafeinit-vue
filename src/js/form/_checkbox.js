@@ -9,28 +9,17 @@ export default {
 
   props: {
     ns: String,
-    title: String,
-    titleWidth: String,
     name: String,
     inline: String,
-
-    // value: {
-    //   type: Array,
-    //   default: function () {
-    //     return []
-    //   }
-    // },
-
     value: [Array, Boolean],
+    option: Object,
 
-    items: {
+    options: {
       type: Array,
       default: function () {
         return []
       }
     },
-
-    item: Object,
 
     disabled: {
       type: Boolean,

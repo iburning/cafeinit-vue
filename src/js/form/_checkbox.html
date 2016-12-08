@@ -1,54 +1,30 @@
-<div v-if="title" v-bind:class="ns + 'form-group'">
-  <label
-    v-bind:class="ns + 'control-label'"
-    v-bind:style="{width: titleWidth}">{{title}}</label>
-  <div v-bind:class="[ ns + 'form-control', ns + 'checkboxs' ]">
-    <div v-for="(item, index) in items"
-      v-bind:class="ns + (inline ? 'checkbox-inline' : 'checkbox')">
-      <input type="checkbox"
-        v-model="currentValue"
-        v-bind:id="'checkbox-' + _uid + '-' + index"
-        v-bind:name="name"
-        v-bind:value="item.value"
-        v-bind:disabled="disabled"
-        v-on:change="onChange" />
-      <label v-bind:for="'checkbox-' + _uid + '-' + index">
-        <i class="fa fa-check-square-o"></i>
-        <span>{{ item.title || item.value }}</span>
-      </label>
-    </div>
-  </div>
+<div v-if="option" v-bind:class="ns + 'checkbox'">
+  <input type="checkbox"
+    v-model="currentValue"
+    v-bind:id="'checkbox-' + _uid"
+    v-bind:name="name"
+    v-bind:value="option.value"
+    v-bind:disabled="disabled"
+    v-on:change="onChange" />
+  <label v-bind:for="'checkbox-' + _uid">
+    <i class="fa fa-check-square-o"></i>
+    <span>{{ option.title || option.value }}</span>
+  </label>
 </div>
 
-<div v-else>
-  <div v-if="item" v-bind:class="ns + 'checkbox'">
+<div v-else v-bind:class="ns + 'checkboxs'">
+  <div v-for="(option, index) in options"
+    v-bind:class="ns + (inline ? 'checkbox-inline' : 'checkbox')">
     <input type="checkbox"
       v-model="currentValue"
-      v-bind:id="'checkbox-' + _uid"
+      v-bind:id="'checkbox-' + _uid + '-' + index"
       v-bind:name="name"
-      v-bind:value="item.value"
+      v-bind:value="option.value"
       v-bind:disabled="disabled"
       v-on:change="onChange" />
-    <label v-bind:for="'checkbox-' + _uid">
+    <label v-bind:for="'checkbox-' + _uid + '-' + index">
       <i class="fa fa-check-square-o"></i>
-      <span>{{item.title}}</span>
+      <span>{{ option.title || option.value }}</span>
     </label>
-  </div>
-
-  <div v-else v-bind:class="ns + 'checkboxs'">
-    <div v-for="(item, index) in items"
-      v-bind:class="ns + (inline ? 'checkbox-inline' : 'checkbox')">
-      <input type="checkbox"
-        v-model="currentValue"
-        v-bind:id="'checkbox-' + _uid + '-' + index"
-        v-bind:name="name"
-        v-bind:value="item.value"
-        v-bind:disabled="disabled"
-        v-on:change="onChange" />
-      <label v-bind:for="'checkbox-' + _uid + '-' + index">
-        <i class="fa fa-check-square-o"></i>
-        <span>{{ item.title || item.value }}</span>
-      </label>
-    </div>
   </div>
 </div>
