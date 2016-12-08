@@ -2,14 +2,15 @@
   <div id="page-select">
     <ci-list>
       <ci-list-cell>
-        <ci-form-group title="Skills">
-          <ci-select name="skills" v-model="skill"
-            v-bind:options="skillOptions"></ci-select>
+        <ci-form-group title="Skill">
+          <ci-select name="skill" v-model="skill"
+            v-bind:options="skillOptions"
+            v-on:change="onSkillChange"></ci-select>
         </ci-form-group>
       </ci-list-cell>
 
       <ci-list-cell>
-        <ci-select name="skills" v-model="skill"
+        <ci-select name="skill" v-model="skill"
           v-bind:options="skillOptions"></ci-select>
         </ci-form-group>
       </ci-list-cell>
@@ -39,6 +40,10 @@ export default {
   },
 
   methods: {
+    onSkillChange(obj) {
+      console.log('onSkillChange', obj)
+    },
+
     submit() {
       __alert('skill: ' + this.skill)
     }

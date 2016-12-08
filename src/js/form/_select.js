@@ -38,6 +38,7 @@
 
    methods: {
      onChange: function (evt) {
+       this.$emit('change', this.currentValue)
        this.$emit('input', this.currentValue)
      }
    }
