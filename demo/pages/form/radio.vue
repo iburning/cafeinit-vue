@@ -2,7 +2,7 @@
   <div id="page-radio">
     <ci-list>
       <ci-list-cell>
-        <ci-form-group title="Gender">
+        <ci-form-group title="Gender" title-width="3em">
           <ci-radio name="gender" inline="inline" v-model="gender"
             v-bind:options="[
               { title: 'Male', value: 'M' },
@@ -12,7 +12,7 @@
       </ci-list-cell>
 
       <ci-list-cell>
-        <ci-form-group title="Skill">
+        <ci-form-group title="Skill" title-width="3em">
           <ci-radio name="skill" v-model="skill"
             v-bind:options="skillOptions"></ci-radio>
         </ci-form-group>

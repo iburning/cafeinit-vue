@@ -29,8 +29,6 @@ import CISelect from './form/CISelect'
 import CISwitch from './form/CISwitch'
 import CIText from './form/CIText'
 
-import CIListCheckbox from './list/CIListCheckbox'
-import CIListRadio from './list/CIListRadio'
 import CIListSwitch from './list/CIListSwitch'
 
 import CIImagePicker from './imagePicker/CIImagePicker'
