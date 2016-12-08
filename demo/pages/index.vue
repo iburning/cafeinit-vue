@@ -65,7 +65,7 @@
         <span class="sub-title">选择</span>
       </ci-list-cell>
 
-      <ci-list-cell accessory="link" to="/slider">
+      <ci-list-cell accessory="link" to="/form/slider">
         <strong class="title">Slider</strong>
         <span class="sub-title">滑动选择</span>
       </ci-list-cell>

@@ -46,6 +46,11 @@ export default {
       touchObject: {
         startX: 0,
         startY: 0
+      },
+
+      origin: {
+        x: 0,
+        y: 0
       }
     }
   },
@@ -81,6 +86,10 @@ export default {
   mounted() {
     this.$handle = this.$refs.handle
     this.$barLight = this.$refs['bar-light']
+    this.origin = {
+      x: this.$el.offsetLeft,
+      y: this.$el.offsetHeight
+    }
 
     let value = parseInt(this.currentValue) || 0
     value = (value < this.min) ? this.min : value
@@ -96,11 +105,12 @@ export default {
   methods: {
     onTouchStart(evt) {
       evt.preventDefault()
-      // console.log('CISlider.onTouchStart', evt)
+      console.log('CISlider.onTouchStart', evt.touches[0])
       this.touchObject.startX = evt.touches[0].pageX
       this.touchObject.startY = evt.touches[0].pageY
 
-      let x = this.touchObject.startX - this.handle.width
+      // let x = this.touchObject.startX - this.handle.width
+      let x = this.touchObject.startX - this.origin.x - this.handle.width / 2
       x = (x < 0) ? 0 : x
       x = (x > this.distance) ? this.distance : x
       this.handle.x = x
