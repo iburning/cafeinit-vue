@@ -1392,13 +1392,25 @@ select {
  * @author: burning <www.cafeinit.com>
  * @version: 2016-11-18
  */
-.ci-slider {
+.am-slider {
+  display: inline-block;
+}
+.am-slider .am-slider-value {
+  float: left;
+  width: 2em;
+  height: 30px;
+  line-height: 30px;
+}
+.am-slider .am-slider-value + .am-slider-bar {
+  margin-left: 2.5em;
+}
+.am-slider .am-slider-bar {
   position: relative;
   min-width: 200px;
   height: 30px;
 }
-.ci-slider:before,
-.ci-slider > .ci-slider-bar-light {
+.am-slider .am-slider-bar:before,
+.am-slider .am-slider-bar-light {
   z-index: 1;
   content: ' ';
   display: block;
@@ -1409,15 +1421,15 @@ select {
   margin-top: -2px;
   border-radius: 2px;
 }
-.ci-slider:before {
+.am-slider .am-slider-bar:before {
   background: #ddd;
   width: 100%;
 }
-.ci-slider > .ci-slider-bar-light {
-  background: #52b888;
+.am-slider .am-slider-bar-light {
+  background: #1abc9c;
   width: 0;
 }
-.ci-slider-handle {
+.am-slider .am-slider-handle {
   z-index: 10;
   display: block;
   position: relative;

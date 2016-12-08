@@ -1,11 +1,14 @@
 <template>
-  <div class="ci-slider"
-    v-bind:style="{ width: width + 'px' }"
-    v-on:touchstart="onTouchStart"
-    v-on:touchmove="onTouchMove"
-    v-on:touchend="onTouchEnd">
-    <div ref="bar-light" class="ci-slider-bar-light"></div>
-    <div ref="handle" class="ci-slider-handle"></div>
+  <div class="ci-slider">
+    <div v-if="isShowValue" class="ci-slider-value">{{value}}</div>
+    <div ref="bar" class="ci-slider-bar"
+      v-bind:style="{ width: width + 'px' }"
+      v-on:touchstart="onTouchStart"
+      v-on:touchmove="onTouchMove"
+      v-on:touchend="onTouchEnd">
+      <div ref="bar-light" class="ci-slider-bar-light"></div>
+      <div ref="handle" class="ci-slider-handle"></div>
+    </div>
   </div>
 </template>
 
@@ -27,6 +30,11 @@ export default {
     value: {
       type: [Number, String],
       default: 0
+    },
+
+    isShowValue: {
+      type: Boolean,
+      default: true
     }
   },
 
@@ -85,10 +93,11 @@ export default {
 
   mounted() {
     this.$handle = this.$refs.handle
+    this.$bar = this.$refs.bar
     this.$barLight = this.$refs['bar-light']
     this.origin = {
-      x: this.$el.offsetLeft,
-      y: this.$el.offsetHeight
+      x: this.$bar.offsetLeft,
+      y: this.$bar.offsetHeight
     }
 
     let value = parseInt(this.currentValue) || 0
@@ -105,11 +114,10 @@ export default {
   methods: {
     onTouchStart(evt) {
       evt.preventDefault()
-      console.log('CISlider.onTouchStart', evt.touches[0])
+      // console.log('CISlider.onTouchStart', evt.touches[0])
       this.touchObject.startX = evt.touches[0].pageX
       this.touchObject.startY = evt.touches[0].pageY
 
-      // let x = this.touchObject.startX - this.handle.width
       let x = this.touchObject.startX - this.origin.x - this.handle.width / 2
       x = (x < 0) ? 0 : x
       x = (x > this.distance) ? this.distance : x
