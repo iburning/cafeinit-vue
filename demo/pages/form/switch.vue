@@ -2,17 +2,20 @@
   <div id="page-switch">
     <ci-list>
       <ci-list-cell>
-        <ci-switch title="Active" v-model="isActived"></ci-switch>
+        <ci-form-group title="Active" title-width="4em" align="right">
+          <ci-switch v-model="isActived"></ci-switch>
+        </ci-form-group>
       </ci-list-cell>
 
       <ci-list-cell>
-        <ci-switch title="Unactive" v-model="isUnactived"></ci-switch>
-      </ci-list-cell>
-
-      <ci-list-cell>
-        <ci-switch v-model="isActived"></ci-switch>
+        <ci-form-group title="Unactive" title-width="4em" align="right">
+          <ci-switch v-model="isUnactived"></ci-switch>
+        </ci-form-group>
       </ci-list-cell>
     </ci-list>
+
+    <ci-switch-list title="Skills" name="skills" v-model="skills"
+      v-bind:options="skillOptions"></ci-switch-list>
 
     <div class="ci-btn-area">
       <ci-button style="primary" block="block" v-on:click="submit">Submit</ci-button>
@@ -26,7 +29,16 @@ export default {
 
   data() {
     return {
-      isActived: true
+      isActived: true,
+
+      skillOptions: [
+        { value: 'javascript', title: 'Javascript' },
+        { value: 'html', title: 'HTML' },
+        { value: 'css', title: 'CSS' },
+        { value: 'oc', title: 'Objective-C', disabled: true },
+        { value: 'swift', title: 'Swift' }
+      ],
+      skills: ['javascript', 'swift']
     }
   },
 
@@ -38,7 +50,10 @@ export default {
 
   methods: {
     submit() {
-      __alert('isActived: ' + this.isActived)
+      let info = [];
+      info.push('isActived: ' + this.isActived)
+      info.push('skills: ' + this.skills)
+      __alert(info.join('\n'))
     }
   }
 }

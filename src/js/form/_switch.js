@@ -9,17 +9,14 @@ export default {
 
   props: {
     ns: String,
-    title: String,
-    titleWidth: String,
     name: String,
-    value: {
-      type: Boolean,
-      default: true
-    },
-
-    disabled: {
-      type: Boolean,
-      default: false
+    inline: String,
+    value: [Array, Boolean],
+    option: {
+      type: Object,
+      default: function () {
+        return {}
+      }
     }
   },
 
@@ -36,10 +33,12 @@ export default {
   },
 
   methods: {
-    onChange(evt) {
-      this.currentValue = !this.currentValue;
-      console.log('_switch.onChange', this.currentValue)
+    onChange: function (evt) {
       this.$emit('input', this.currentValue)
+    },
+
+    onClick: function () {
+      this.$emit('click', this.currentValue)
     }
   }
 }

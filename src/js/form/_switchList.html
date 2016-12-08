@@ -1,0 +1,21 @@
+<div>
+  <ci-list-header v-if="title">{{title}}</ci-list-header>
+  <ci-list class="ci-list-switch">
+    <ci-list-cell v-for="(option, index) in options">
+      <ci-form-group v-bind:title="option.title" align="right">
+        <div v-bind:class="[
+            ns + 'switch',
+            option.disabled ? (ns + 'disabled') : ''
+          ]">
+          <input type="checkbox"
+            v-model="currentValue"
+            v-bind:name="name"
+            v-bind:value="option.value"
+            v-bind:disabled="option.disabled"
+            v-on:change="onChange"
+            v-on:click="onClick" />
+        </div>
+      </ci-form-group>
+    </ci-list-cell>
+  </ci-list>
+</div>

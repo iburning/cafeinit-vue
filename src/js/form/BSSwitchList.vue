@@ -1,7 +1,7 @@
-<template src="./_listSwitch.html"></template>
+<template src="./_switchList.html"></template>
 
 <script>
-import config from './_listSwitch'
+import config from './_switchList'
 
 config.props.ns = {
   type: String,

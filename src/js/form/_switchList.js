@@ -1,49 +1,47 @@
 /**
  * @fileoverview switch list
  * @author: burning <www.cafeinit.com>
- * @version: 2016-11-15
+ * @version: 2016-12-08
  */
 
 export default {
-  name: 'ci-list-switch',
+  name: 'ci-switch-list',
 
   props: {
     ns: String,
     title: String,
-    titleWidth: String,
     name: String,
+    value: [Array, Boolean],
+    option: Object,
 
-    value: {
+    options: {
       type: Array,
       default: function () {
         return []
       }
-    },
-
-    items: {
-      type: Array,
-      default: function () {
-        return []
-      },
-      required: true
     }
   },
 
   data() {
     return {
-      model: this.value
+      currentValue: this.value
     }
   },
 
   watch: {
     value(val) {
-      this.model = this.value
+      this.currentValue = val
     }
   },
 
+
   methods: {
     onChange: function (evt) {
-      this.$emit('input', this.model)
+      this.$emit('input', this.currentValue)
+    },
+
+    onClick: function () {
+      this.$emit('click', this.currentValue)
     }
   }
 }

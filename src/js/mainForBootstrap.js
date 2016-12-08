@@ -26,9 +26,8 @@ import CIRadio from './form/BSRadio'
 import CIRadioList from './form/BSRadioList'
 import CISelect from './form/BSSelect'
 import CISwitch from './form/BSSwitch'
+import CISwitchList from './form/BSSwitchList'
 import CIText from './form/BSText'
-
-import CIListSwitch from './list/BSListSwitch'
 
 import CIImagePicker from './imagePicker/CIImagePicker'
 import CISlider from './slider/CISlider'
@@ -102,9 +101,8 @@ const CIComponents = {
   'ci-radio-list': CIRadioList,
   'ci-select': CISelect,
   'ci-switch': CISwitch,
+  'ci-switch-list': CISwitchList,
   'ci-text': CIText,
-
-  'ci-list-switch': CIListSwitch,
 
   'ci-image-picker': CIImagePicker,
   'ci-slider': CISlider,
