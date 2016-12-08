@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iburning/cafeinit-vue-2.git"
+    "url": "git+https://github.com/iburning/cafeinit-vue.git"
   },
   "keywords": [
     "webpack",
@@ -22,9 +22,9 @@
   "author": "burning <iburning@live.cn>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/iburning/cafeinit-vue-2/issues"
+    "url": "https://github.com/iburning/cafeinit-vue/issues"
   },
-  "homepage": "https://github.com/iburning/cafeinit-vue-2#readme",
+  "homepage": "https://github.com/iburning/cafeinit-vue#readme",
   "devDependencies": {
     "babel-core": "^6.18.0",
     "babel-loader": "^6.2.6",
