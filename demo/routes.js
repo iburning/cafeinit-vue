@@ -34,6 +34,7 @@ import ToTop from './pages/toTop'
 
 import FormCheckbox from './pages/form/checkbox'
 import FormNumber from './pages/form/number'
+import FormRadio from './pages/form/radio'
 import FormSwitch from './pages/form/switch'
 import FormText from './pages/form/text'
 
@@ -71,6 +72,7 @@ export default [
 
   { path: '/form/checkbox', component: FormCheckbox },
   { path: '/form/number', component: FormNumber },
+  { path: '/form/radio', component: FormRadio },
   { path: '/form/switch', component: FormSwitch },
   { path: '/form/text', component: FormText },
 

@@ -1,11 +1,15 @@
-<div v-if="option" v-bind:class="ns + 'checkbox'">
+<div v-if="option" v-bind:class="[
+    ns + 'checkbox',
+    option.disabled ? (ns + 'disabled') : ''
+  ]">
   <input type="checkbox"
     v-model="currentValue"
     v-bind:id="'checkbox-' + _uid"
     v-bind:name="name"
     v-bind:value="option.value"
-    v-bind:disabled="disabled"
-    v-on:change="onChange" />
+    v-bind:disabled="option.disabled"
+    v-on:change="onChange"
+    v-on:click="onClick" />
   <label v-bind:for="'checkbox-' + _uid">
     <i class="fa fa-check-square-o"></i>
     <span>{{ option.title || option.value }}</span>
@@ -14,14 +18,18 @@
 
 <div v-else v-bind:class="ns + 'checkboxs'">
   <div v-for="(option, index) in options"
-    v-bind:class="ns + (inline ? 'checkbox-inline' : 'checkbox')">
+    v-bind:class="[
+      ns + (inline ? 'checkbox-inline' : 'checkbox'),
+      option.disabled ? (ns + 'disabled') : ''
+    ]">
     <input type="checkbox"
       v-model="currentValue"
       v-bind:id="'checkbox-' + _uid + '-' + index"
       v-bind:name="name"
       v-bind:value="option.value"
-      v-bind:disabled="disabled"
-      v-on:change="onChange" />
+      v-bind:disabled="option.disabled"
+      v-on:change="onChange"
+      v-on:click="onClick" />
     <label v-bind:for="'checkbox-' + _uid + '-' + index">
       <i class="fa fa-check-square-o"></i>
       <span>{{ option.title || option.value }}</span>

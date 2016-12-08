@@ -20,5 +20,3 @@ config.props.ns = {
 
 export default config
 </script>
-
-<style lang="less" src="../../less/am-modal.less" scoped></style>

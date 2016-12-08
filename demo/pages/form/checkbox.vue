@@ -10,7 +10,7 @@
 
       <ci-list-cell>
         <ci-form-group title="Skills">
-          <ci-checkbox name="skills" disabled="disabled"
+          <ci-checkbox name="skills"
             v-model="skills" v-bind:options="skillOptions"></ci-checkbox>
         </ci-form-group>
       </ci-list-cell>
@@ -20,7 +20,7 @@
       <ci-list-cell>
         <ci-checkbox name="select-all"
           v-model="isSelectAll" v-bind:option="{ title: 'Select All' }"
-          v-on:click.native="isSelectAllSilent = false"></ci-checkbox>
+          v-on:click="isSelectAllSilent = false"></ci-checkbox>
       </ci-list-cell>
     </ci-list>
 
@@ -42,7 +42,9 @@ export default {
       skillOptions: [
         { value: 'javascript', title: 'Javascript' },
         { value: 'html', title: 'HTML' },
-        { value: 'css', title: 'CSS' }
+        { value: 'css', title: 'CSS' },
+        { value: 'oc', title: 'Objective-C', disabled: true },
+        { value: 'swift', title: 'Swift' }
       ],
       skills: ['javascript'],
       isSelectAll: false,
@@ -50,12 +52,27 @@ export default {
     }
   },
 
+  computed: {
+    skillOptionsRealeCount() {
+      let count = 0
+      for (let i = 0; i < this.skillOptions.length; i++) {
+        if (!this.skillOptions[i].disabled) {
+          count++
+        }
+      }
+      return count
+    }
+  },
+
   watch: {
     isSelectAll(val) {
+      console.log('isSelectAll', val)
       if (val) {
         let skills = []
         for (let i = 0; i < this.skillOptions.length; i++) {
-          skills.push(this.skillOptions[i].value)
+          if (!this.skillOptions[i].disabled) {
+            skills.push(this.skillOptions[i].value)
+          }
         }
         this.skills = skills
       }
@@ -68,10 +85,10 @@ export default {
 
     skills(val) {
       this.isSelectAllSilent = true
-      if (val.length == this.skillOptions.length) {
+      if (val.length == this.skillOptionsRealeCount) {
         this.isSelectAll = true
       }
-      else if (val.length < this.skillOptions.length) {
+      else if (val.length < this.skillOptionsRealeCount) {
         this.isSelectAll = false
       }
     }

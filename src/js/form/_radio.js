@@ -9,50 +9,38 @@ export default {
 
   props: {
     ns: String,
-    title: String,
-    titleWidth: String,
     name: String,
     inline: String,
+    value: [String, Boolean],
+    option: Object,
 
-    items: {
+    options: {
       type: Array,
       default: function () {
         return []
-      },
-      required: true
-    },
-
-    value: {
-      type: String,
-      default: ''
+      }
     }
   },
 
   data() {
     return {
-      model: this.value
-    }
-  },
-
-  computed: {
-    className(){
-      let className = this.ns + 'radio'
-      if (this.inline) {
-        className += '-inline'
-      }
-      return className
+      currentValue: this.value
     }
   },
 
   watch: {
     value(val) {
-      this.model = this.value
+      this.currentValue = val
     }
   },
 
   methods: {
     onChange: function (evt) {
-      this.$emit('input', this.model)
+      this.$emit('input', this.currentValue)
+    },
+
+    onClick: function () {
+      this.$emit('click', this.currentValue)
     }
   }
 }

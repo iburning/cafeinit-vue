@@ -19,11 +19,6 @@ export default {
       default: function () {
         return []
       }
-    },
-
-    disabled: {
-      type: Boolean,
-      default: false
     }
   },
 
@@ -42,6 +37,10 @@ export default {
   methods: {
     onChange: function (evt) {
       this.$emit('input', this.currentValue)
+    },
+
+    onClick: function () {
+      this.$emit('click', this.currentValue)
     }
   }
 }

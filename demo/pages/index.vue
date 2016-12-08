@@ -40,24 +40,29 @@
         <span class="sub-title">按钮</span>
       </ci-list-cell>
 
-      <ci-list-cell accessory="link" to="/form">
-        <strong class="title">Form</strong>
-        <span class="sub-title">表单</span>
+      <ci-list-cell accessory="link" to="/form/checkbox">
+        <strong class="title">Checkbox</strong>
+        <span class="sub-title">多选框</span>
       </ci-list-cell>
 
-      <ci-list-cell accessory="link" to="/form-list">
+      <!-- <ci-list-cell accessory="link" to="/form-list">
         <strong class="title">Form List</strong>
         <span class="sub-title">表单列表</span>
+      </ci-list-cell> -->
+
+      <ci-list-cell accessory="link" to="/form/number">
+        <strong class="title">Number</strong>
+        <span class="sub-title">数字</span>
+      </ci-list-cell>
+
+      <ci-list-cell accessory="link" to="/form/radio">
+        <strong class="title">Radio</strong>
+        <span class="sub-title">单选框</span>
       </ci-list-cell>
 
       <ci-list-cell accessory="link" to="/slider">
         <strong class="title">Slider</strong>
         <span class="sub-title">滑动选择</span>
-      </ci-list-cell>
-
-      <ci-list-cell accessory="link" to="/form/number">
-        <strong class="title">Number</strong>
-        <span class="sub-title">数字</span>
       </ci-list-cell>
 
       <ci-list-cell accessory="link" to="/form/switch">

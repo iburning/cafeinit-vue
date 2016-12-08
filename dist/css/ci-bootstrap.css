@@ -227,6 +227,9 @@ a:hover {
 .ci-btn-area {
   margin: 1.5em;
 }
+.ci-disabled {
+  opacity: 0.6;
+}
 .ci-scroll {
   overflow: auto;
   -moz-overflow-scrolling: touch;
@@ -787,6 +790,51 @@ fieldset[disabled] .btn-danger.active {
  * @author: burning <www.cafeinit.com>
  * @version: 2016-11-21
  */
+.radio,
+.radio-inline {
+  position: relative;
+  overflow: hidden;
+}
+.radio input[type=radio],
+.radio-inline input[type=radio] {
+  position: absolute;
+  left: -500px;
+}
+.radio input[type=radio]:checked + label,
+.radio-inline input[type=radio]:checked + label {
+  color: #1abc9c;
+}
+.radio label,
+.radio-inline label {
+  display: block;
+}
+.radio i,
+.radio-inline i {
+  float: left;
+  margin: 0 0.25em;
+  font-size: 1.5em;
+}
+.radios {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.radios .radio {
+  -ms-flex: 1;
+      flex: 1;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+.radios .radio-inline {
+  -ms-flex: 1;
+      flex: 1;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+.list-radio .radio {
+  text-align: right;
+}
 /**
  * @fileoverview ci-switch
  * @author: burning <www.cafeinit.com>
