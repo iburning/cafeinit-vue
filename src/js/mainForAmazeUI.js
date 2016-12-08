@@ -24,12 +24,11 @@ import CICheckbox from './form/AMCheckbox'
 import CICheckboxList from './form/AMCheckboxList'
 import CINumber from './form/AMNumber'
 import CIRadio from './form/AMRadio'
+import CIRadioList from './form/AMRadioList'
 import CISelect from './form/AMSelect'
 import CISwitch from './form/AMSwitch'
 import CIText from './form/AMText'
 
-import CIListCheckbox from './list/AMListCheckbox'
-import CIListRadio from './list/AMListRadio'
 import CIListSwitch from './list/AMListSwitch'
 
 import CIImagePicker from './imagePicker/CIImagePicker'
@@ -102,12 +101,11 @@ const CIComponents = {
   'ci-checkbox-list': CICheckboxList,
   'ci-number': CINumber,
   'ci-radio': CIRadio,
+  'ci-radio-list': CIRadioList,
   'ci-select': CISelect,
   'ci-switch': CISwitch,
   'ci-text': CIText,
 
-  'ci-list-checkbox': CIListCheckbox,
-  'ci-list-radio': CIListRadio,
   'ci-list-switch': CIListSwitch,
 
   'ci-image-picker': CIImagePicker,

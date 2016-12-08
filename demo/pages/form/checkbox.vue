@@ -16,6 +16,9 @@
       </ci-list-cell>
     </ci-list>
 
+    <ci-checkbox-list title="Skills" name="skills" v-model="skills"
+      v-bind:options="skillOptions"></ci-checkbox-list>
+
     <ci-list>
       <ci-list-cell>
         <ci-checkbox name="select-all"
@@ -23,9 +26,6 @@
           v-on:click="isSelectAllSilent = false"></ci-checkbox>
       </ci-list-cell>
     </ci-list>
-
-    <!-- <ci-checkbox-list title="Skills" name="skills" v-model="skills"
-      v-bind:options="skillOptions"></ci-checkbox-list> -->
 
     <div class="ci-btn-area">
       <ci-button style="primary" block="block" v-on:click="submit">Submit</ci-button>

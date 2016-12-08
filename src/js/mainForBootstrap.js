@@ -4,80 +4,79 @@
  * @version: 2016-09-28
  */
 
- /* Alert & Modal & Toast */
- import CIAlertTip from './alertTip/BSAlertTip'
+/* Alert & Modal & Toast */
+import CIAlertTip from './alertTip/BSAlertTip'
 
- import CIActions from './modal/BSActions'
- import CIAlert from './modal/BSAlert'
- import CIConfirm from './modal/BSConfirm'
- import CIModal from './modal/BSModal'
+import CIActions from './modal/BSActions'
+import CIAlert from './modal/BSAlert'
+import CIConfirm from './modal/BSConfirm'
+import CIModal from './modal/BSModal'
 
- import CIToast from './toast/CIToast'
-
-
- /* Buttons & Form */
- import CIButton from './button/BSButton'
-
- import CIForm from './form/BSForm'
- import CIFormGroup from './form/BSFormGroup'
- import CICheckbox from './form/BSCheckbox'
- import CINumber from './form/BSNumber'
- import CIRadio from './form/BSRadio'
- import CISelect from './form/BSSelect'
- import CISwitch from './form/BSSwitch'
- import CIText from './form/BSText'
-
- import CIListCheckbox from './list/BSListCheckbox'
- import CIListRadio from './list/BSListRadio'
- import CIListSwitch from './list/BSListSwitch'
-
- import CIImagePicker from './imagePicker/CIImagePicker'
- import CISlider from './slider/CISlider'
+import CIToast from './toast/CIToast'
 
 
- /* Layout */
- import CIBlock from './block/CIBlock'
- import CIBlockBody from './block/CIBlockBody'
- import CIBlockFooter from './block/CIBlockFooter'
- import CIBlockHeader from './block/CIBlockHeader'
+/* Buttons & Form */
+import CIButton from './button/BSButton'
 
- import CICollection from './collection/CICollection'
- import CICollectionCell from './collection/CICollectionCell'
+import CIForm from './form/BSForm'
+import CIFormGroup from './form/BSFormGroup'
+import CICheckbox from './form/BSCheckbox'
+import CINumber from './form/BSNumber'
+import CIRadio from './form/BSRadio'
+import CIRadioList from './form/BSRadioList'
+import CISelect from './form/BSSelect'
+import CISwitch from './form/BSSwitch'
+import CIText from './form/BSText'
 
- import CIGrid from './grid/BSGrid'
- import CIGridCell from './grid/BSGridCell'
+import CIListSwitch from './list/BSListSwitch'
 
- import CIList from './list/CIList'
- import CIListCell from './list/CIListCell'
- import CIListHeader from './list/CIListHeader'
-
- import CIOffcanvas from './offcanvas/CIOffcanvas.vue'
- import CIScrollView from './scrollView/CIScrollView'
-
- import CISlideView from './slideView/CISlideView'
- import CISlideViewItem from './slideView/CISlideViewItem'
+import CIImagePicker from './imagePicker/CIImagePicker'
+import CISlider from './slider/CISlider'
 
 
- /* Navigation */
- import CIBreadcrumb from './breadcrumb/BSBreadcrumb'
- import CIPagination from './pagination/BSPagination.vue'
- import CINavigation from './navigation/CINavigation.vue'
- import CITabBar from './tabView/CITabBar'
- import CITreeNav from './treeNav/CITreeNav'
+/* Layout */
+import CIBlock from './block/CIBlock'
+import CIBlockBody from './block/CIBlockBody'
+import CIBlockFooter from './block/CIBlockFooter'
+import CIBlockHeader from './block/CIBlockHeader'
+
+import CICollection from './collection/CICollection'
+import CICollectionCell from './collection/CICollectionCell'
+
+import CIGrid from './grid/BSGrid'
+import CIGridCell from './grid/BSGridCell'
+
+import CIList from './list/CIList'
+import CIListCell from './list/CIListCell'
+import CIListHeader from './list/CIListHeader'
+
+import CIOffcanvas from './offcanvas/CIOffcanvas.vue'
+import CIScrollView from './scrollView/CIScrollView'
+
+import CISlideView from './slideView/CISlideView'
+import CISlideViewItem from './slideView/CISlideViewItem'
 
 
- /* Others */
- import CIBadge from './badge/BSBadge'
- import CIImage from './image/CIImage'
- import CILoading from './loading/CILoading'
- import CIRate from './rate/CIRate'
- import CISticky from './sticky/CISticky'
- import CIToTop from './toTop/CIToTop'
+/* Navigation */
+import CIBreadcrumb from './breadcrumb/BSBreadcrumb'
+import CIPagination from './pagination/BSPagination.vue'
+import CINavigation from './navigation/CINavigation.vue'
+import CITabBar from './tabView/CITabBar'
+import CITreeNav from './treeNav/CITreeNav'
 
 
- /* Helper */
- import CICompnentHelper from './utils/CICompnentHelper'
- import CIScrollHelper from './utils/CIScrollHelper'
+/* Others */
+import CIBadge from './badge/BSBadge'
+import CIImage from './image/CIImage'
+import CILoading from './loading/CILoading'
+import CIRate from './rate/CIRate'
+import CISticky from './sticky/CISticky'
+import CIToTop from './toTop/CIToTop'
+
+
+/* Helper */
+import CICompnentHelper from './utils/CICompnentHelper'
+import CIScrollHelper from './utils/CIScrollHelper'
 
 
 const CIComponents = {
@@ -100,12 +99,11 @@ const CIComponents = {
   'ci-checkbox': CICheckbox,
   'ci-number': CINumber,
   'ci-radio': CIRadio,
+  'ci-radio-list': CIRadioList,
   'ci-select': CISelect,
   'ci-switch': CISwitch,
   'ci-text': CIText,
 
-  'ci-list-checkbox': CIListCheckbox,
-  'ci-list-radio': CIListRadio,
   'ci-list-switch': CIListSwitch,
 
   'ci-image-picker': CIImagePicker,

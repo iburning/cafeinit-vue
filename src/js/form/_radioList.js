@@ -1,17 +1,17 @@
 /**
- * @fileoverview checkbox list
+ * @fileoverview radio list
  * @author: burning <www.cafeinit.com>
- * @version: 2016-12-06
+ * @version: 2016-12-08
  */
 
 export default {
-  name: 'ci-checkbox-list',
+  name: 'ci-radio-list',
 
   props: {
     ns: String,
     title: String,
     name: String,
-    value: [Array, Boolean],
+    value: [String, Boolean],
     option: Object,
 
     options: {
@@ -33,7 +33,6 @@ export default {
       this.currentValue = val
     }
   },
-
 
   methods: {
     onChange: function (evt) {

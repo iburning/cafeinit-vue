@@ -1,21 +1,21 @@
 <div>
   <ci-list-header v-if="title">{{title}}</ci-list-header>
-  <ci-list class="ci-list-checkbox">
+  <ci-list class="ci-list-radio">
     <ci-list-cell v-for="(option, index) in options">
       <div v-bind:class="[
-          ns + 'checkbox',
+          ns + 'radio',
           option.disabled ? (ns + 'disabled') : ''
         ]">
-        <input type="checkbox"
+        <input type="radio"
           v-model="currentValue"
-          v-bind:id="'checkbox-' + _uid + '-' + index"
+          v-bind:id="'radio-' + _uid + '-' + index"
           v-bind:name="name"
           v-bind:value="option.value"
           v-bind:disabled="option.disabled"
           v-on:change="onChange"
           v-on:click="onClick" />
-        <label v-bind:for="'checkbox-' + _uid + '-' + index">
-          <i class="fa fa-check-square-o"></i>
+        <label v-bind:for="'radio-' + _uid + '-' + index">
+          <i class="fa fa-dot-circle-o"></i>
           <span>{{ option.title || option.value }}</span>
         </label>
       </div>

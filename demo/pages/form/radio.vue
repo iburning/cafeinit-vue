@@ -5,8 +5,8 @@
         <ci-form-group title="Gender">
           <ci-radio name="gender" inline="inline" v-model="gender"
             v-bind:options="[
-              { title: 'Male', value: 'm' },
-              { title: 'Female', value: 'f' }
+              { title: 'Male', value: 'M' },
+              { title: 'Female', value: 'F' }
             ]"></ci-radio>
         </ci-form-group>
       </ci-list-cell>
@@ -18,6 +18,9 @@
         </ci-form-group>
       </ci-list-cell>
     </ci-list>
+
+    <ci-radio-list title="Country" name="country" v-model="country"
+      v-bind:options="countryOptions"></ci-radio-list>
 
     <div class="ci-btn-area">
       <ci-button style="primary" block="block" v-on:click="submit">Submit</ci-button>
@@ -39,13 +42,26 @@ export default {
         { value: 'swift', title: 'Swift' }
       ],
       skill: 'javascript',
-      gender: ''
+      gender: '',
+
+      countryOptions: [
+        { value: 'AM', title: 'America' },
+        { value: 'CN', title: 'China' },
+        { value: 'EN', title: 'England' },
+        { value: 'JP', title: 'Japan', disabled: true },
+        { value: 'IN', title: 'India' }
+      ],
+      country: 'cn'
     }
   },
 
   methods: {
     submit() {
-      __alert('skill: ' + this.skill + ' gender: ' + this.gender)
+      let info = []
+      info.push('gender: ' + this.gender)
+      info.push('skill: ' + this.skill)
+      info.push('country: ' + this.country)
+      __alert(info.join('\n'))
     }
   }
 }
