@@ -59,22 +59,30 @@ export default {
     }
   },
 
+  watch: {
+    duration(val, oldVal) {
+      console.log('CIToast.duration', val, oldVal)
+      this.autoClose()
+    }
+  },
+
   methods: {
     onAfterEnter() {
+      console.log('CIToast.onAfterEnter', this.duration)
+      this.autoClose()
+    },
+
+    autoClose() {
       const that = this
 
       if (this.duration > 0) {
         this.timer = window.setTimeout(function () {
-          that.close()
+          that.$emit('close')
+
+          if (that.timer) {
+            window.clearTimeout(that.timer)
+          }
         }, this.duration)
-      }
-    },
-
-    close() {
-      this.$emit('close')
-
-      if (this.timer) {
-        window.clearTimeout(this.timer)
       }
     }
   }
