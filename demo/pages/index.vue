@@ -60,6 +60,11 @@
         <span class="sub-title">单选框</span>
       </ci-list-cell>
 
+      <ci-list-cell accessory="link" to="/form/select">
+        <strong class="title">Select</strong>
+        <span class="sub-title">选择</span>
+      </ci-list-cell>
+
       <ci-list-cell accessory="link" to="/slider">
         <strong class="title">Slider</strong>
         <span class="sub-title">滑动选择</span>

@@ -35,11 +35,9 @@ import ToTop from './pages/toTop'
 import FormCheckbox from './pages/form/checkbox'
 import FormNumber from './pages/form/number'
 import FormRadio from './pages/form/radio'
+import FormSelect from './pages/form/select'
 import FormSwitch from './pages/form/switch'
 import FormText from './pages/form/text'
-
-/* Demo pages */
-import SelectAll from './pages/demo/selectAll'
 
 export default [
   { path: '/', component: Index },
@@ -73,8 +71,7 @@ export default [
   { path: '/form/checkbox', component: FormCheckbox },
   { path: '/form/number', component: FormNumber },
   { path: '/form/radio', component: FormRadio },
+  { path: '/form/select', component: FormSelect },
   { path: '/form/switch', component: FormSwitch },
   { path: '/form/text', component: FormText },
-
-  { path: '/demo/select-all', component: SelectAll }
 ]

@@ -1,7 +1,7 @@
 /**
- * @fileoverview form select
+ * @fileoverview select
  * @author: burning <www.cafeinit.com>
- * @version: 2016-11-09
+ * @version: 2016-12-08
  */
 
  export default {
@@ -9,16 +9,13 @@
 
    props: {
      ns: String,
-     title: String,
-     titleWidth: String,
      name: String,
 
-     items: {
+     options: {
        type: Array,
        default: function () {
          return []
-       },
-       required: true
+       }
      },
 
      value: {
@@ -29,19 +26,19 @@
 
    data() {
      return {
-       model: this.value
+       currentValue: this.value
      }
    },
 
    watch: {
      value(val) {
-       this.model = this.value
+       this.currentValue = val
      }
    },
 
    methods: {
      onChange: function (evt) {
-       this.$emit('input', this.model)
+       this.$emit('input', this.currentValue)
      }
    }
  }

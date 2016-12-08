@@ -689,8 +689,8 @@ fieldset[disabled] .ci-btn-danger.ci-active {
   color: #555555;
   vertical-align: middle;
 }
-.ci-number input,
-.ci-text input {
+input,
+select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -834,6 +834,19 @@ fieldset[disabled] .ci-btn-danger.ci-active {
 }
 .ci-list-radio .ci-radio i {
   float: right;
+}
+/**
+ * @fileoverview ci-select
+ * @author: burning <www.cafeinit.com>
+ * @version: 2016-12-08
+ */
+.ci-select {
+  position: relative;
+}
+.ci-select i {
+  position: absolute;
+  top: 5px;
+  right: 10px;
 }
 /**
  * @fileoverview ci-switch

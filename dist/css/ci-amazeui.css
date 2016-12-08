@@ -689,8 +689,8 @@ fieldset[disabled] .am-btn-danger.am-active {
   color: #555555;
   vertical-align: middle;
 }
-.am-number input,
-.am-text input {
+input,
+select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -834,6 +834,19 @@ fieldset[disabled] .am-btn-danger.am-active {
 }
 .am-list-radio .am-radio i {
   float: right;
+}
+/**
+ * @fileoverview ci-select
+ * @author: burning <www.cafeinit.com>
+ * @version: 2016-12-08
+ */
+.am-select {
+  position: relative;
+}
+.am-select i {
+  position: absolute;
+  top: 5px;
+  right: 10px;
 }
 /**
  * @fileoverview ci-switch
