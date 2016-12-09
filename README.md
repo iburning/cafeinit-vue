@@ -1,4 +1,4 @@
-# cafeinit-vue-2
+# cafeinit-vue
 CafeInit for Vue.js
 
 
