@@ -1,15 +1,24 @@
 /**
- * @fileoverview CIBadge
+ * @fileoverview ci-badge
  * @author: burning <www.cafeinit.com>
  * @version: 2016-11-22
  */
 
 
-.am-badge-primary {
+.@{ns}badge-primary {
+  display: inline-block;
+  padding: 0.25em 0.625em;
+  border-radius: 1000px;
+
+  white-space: nowrap;
+  text-align: center;
+  line-height: 1em;
+
   background-color: @color-red;
+  color: @color-white;
 }
 
-.am-badge-dot {
+.@{ns}badge-dot {
   overflow: hidden;
   width: 8px;
   min-width: initial;

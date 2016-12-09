@@ -243,14 +243,22 @@ a:hover {
   animation: icon-spin 2s infinite linear;
 }
 /**
- * @fileoverview CIBadge
+ * @fileoverview ci-badge
  * @author: burning <www.cafeinit.com>
  * @version: 2016-11-22
  */
-.am-badge-primary {
+.badge-primary {
+  display: inline-block;
+  padding: 0.25em 0.625em;
+  border-radius: 1000px;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 1em;
   background-color: #ff3366;
+  color: #fff;
 }
-.am-badge-dot {
+.badge-dot {
   overflow: hidden;
   width: 8px;
   min-width: initial;
@@ -629,6 +637,7 @@ fieldset[disabled] .btn-danger.active {
 }
 .btn-block {
   width: 100%;
+  margin-bottom: 1em;
 }
 .btn-radius {
   border-radius: 5px;
@@ -1072,7 +1081,7 @@ select {
 .ci-list-cell-body .sub-title {
   display: block;
   float: left;
-  width: 40%;
+  width: 45%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -1141,7 +1150,7 @@ select {
   transition: all 0.3s ease;
 }
 .ci-modal-alert .ci-modal-dialog,
-.ci-modal-confim .ci-modal-dialog {
+.ci-modal-confirm .ci-modal-dialog {
   background-color: #fff;
   border-radius: 10px;
 }

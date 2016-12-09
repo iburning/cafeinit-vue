@@ -5,7 +5,7 @@
         <i v-if="type" v-bind:class="[
             ns + 'toast-icon',
             faClassName,
-            (type == 'waiting') ? 'ci-icon-spin' : ''
+            (type == 'waiting') ? 'fa-spin' : ''
           ]"></i>
         <p v-if="text">{{text}}</p>
       </div>

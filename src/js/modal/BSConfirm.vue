@@ -10,8 +10,8 @@
           <div v-bind:class="ns + 'modal-body'" v-if="content">{{content}}</div>
           <div v-bind:class="ns + 'modal-body'" v-else><slot>Are you sure?</slot></div>
           <div v-bind:class="ns + 'modal-footer'">
-            <ci-link-button style="default" v-on:click="cancel">{{concelText}}</ci-link-button>
-            <ci-link-button style="primary" v-on:click="ok">{{okText}}</ci-link-button>
+            <ci-button type="link" style="default" v-on:click="cancel">{{concelText}}</ci-button>
+            <ci-button type="link" style="primary" v-on:click="ok">{{okText}}</ci-button>
           </div>
         </div>
       </div>

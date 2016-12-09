@@ -7,6 +7,7 @@
     "build": "npm run build:lib && npm run build:amd && grunt less",
     "build:lib": "webpack -p --config ./webpack.config.js",
     "build:amd": "webpack -p --config ./webpack.config.amd.js",
+    "build:dev": "webpack --config ./webpack.config.amd.js",
     "demo": "webpack-dev-server --host $LOCALHOST --hot --open --inline --config demo/webpack.config.js --content-base demo/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

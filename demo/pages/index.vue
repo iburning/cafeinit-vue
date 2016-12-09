@@ -1,5 +1,5 @@
 <template>
-  <div id="index">
+  <div id="page-index">
     <ci-list-header>布局</ci-list-header>
     <ci-list>
       <ci-list-cell accessory="link" to="/block">
@@ -44,11 +44,6 @@
         <strong class="title">Checkbox</strong>
         <span class="sub-title">多选框</span>
       </ci-list-cell>
-
-      <!-- <ci-list-cell accessory="link" to="/form-list">
-        <strong class="title">Form List</strong>
-        <span class="sub-title">表单列表</span>
-      </ci-list-cell> -->
 
       <ci-list-cell accessory="link" to="/form/number">
         <strong class="title">Number</strong>
@@ -174,16 +169,16 @@
         <span class="sub-title">返回顶部</span>
       </ci-list-cell>
 
-      <ci-list-cell accessory="link" to="/page-demo">
+      <!-- <ci-list-cell accessory="link" to="/page-demo">
         <strong class="title">Page Demo</strong>
         <span class="sub-title">页面实例</span>
-      </ci-list-cell>
+      </ci-list-cell> -->
     </ci-list>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'index'
+  name: 'page-index'
 }
 </script>
