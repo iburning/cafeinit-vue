@@ -65,11 +65,11 @@ export default {
         this.round ? (this.ns + 'btn-round') : '',
         (this.status === 'active') ? (this.ns + 'active') : ''
       ]
-    },
-
-    loadingIconClassName: function () {
-      return 'fa fa-circle-o-notch fa-spin'
     }
+  },
+
+  mounted() {
+    console.log('_button', this.style)
   },
 
   methods: {
