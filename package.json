@@ -45,10 +45,12 @@
     "vue-hot-reload-api": "^2.0.6",
     "vue-html-loader": "^1.2.3",
     "vue-loader": "^9.7.0",
-    "vue-router": "^2.0.1",
     "vue-style-loader": "^1.0.0",
     "webpack": "^1.13.3",
     "webpack-bundle-analyzer": "^2.1.0",
     "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "vue-router": "^2.1.1"
   }
 }

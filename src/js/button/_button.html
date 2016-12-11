@@ -1,4 +1,4 @@
-<router-link v-if="type == 'link'"
+<router-link v-if="to || type == 'link'"
   v-bind:class="className"
   v-bind:disabled="status === 'disabled' || status === 'loading'"
   v-bind:to="to"

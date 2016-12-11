@@ -74,4 +74,6 @@ export default [
   { path: '/form/slider', component: FormSlider },
   { path: '/form/switch', component: FormSwitch },
   { path: '/form/text', component: FormText },
+
+  { name: 'index', path: '/index/:test', component: Index },
 ]

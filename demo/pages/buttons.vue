@@ -3,8 +3,15 @@
     <ci-block>
       <ci-block-header to="/home">Style</ci-block-header>
       <ci-block-body>
-        <ci-button class="to-home" type="link" to="home">to home</ci-button>
-        <ci-button class="link-more" type="link" v-bind:to="{ path: 'list', query: { page: 1 } }">more</ci-button>
+        <ci-button type="link" to="home">to home</ci-button>
+        <ci-button type="link" v-bind:to="{ path: 'list', query: { page: 1 } }">more</ci-button>
+        <ci-button v-bind:to="{ name: 'index', params: { test: 1 } }">more</ci-button>
+        <ci-button type="link" color="primary" size="sm"
+          v-bind:to="'/category/edit/' + 1">Edit</ci-button>
+        <ci-button type="link" color="primary" size="sm">Link Button</ci-button>
+
+        <ci-button color="primary" size="sm"
+          v-bind:to="'/category/edit/' + 1">Edit</ci-button>
         <ci-button type="link" style="primary" v-on:click="click">Link Button</ci-button>
 
         <ci-button type="submit" style="primary" v-on:click="submit">Submit Button</ci-button>

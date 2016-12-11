@@ -74,8 +74,7 @@ export default {
   },
 
   mounted() {
-    console.log('_button.style', this.style)
-    console.log('_button.color', this.color)
+    // ...
   },
 
   methods: {
