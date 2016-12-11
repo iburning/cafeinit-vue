@@ -9,12 +9,12 @@
 
         <ci-button type="submit" style="primary" v-on:click="submit">Submit Button</ci-button>
         <ci-button>Default Button</ci-button>
-        <ci-button style="primary">Primary Button</ci-button>
-        <ci-button style="info">Info Button</ci-button>
-        <ci-button style="success">Success Button</ci-button>
-        <ci-button style="warning">Warning Button</ci-button>
-        <ci-button style="danger">Danger Button</ci-button>
-        <ci-button style="link">Link Style Button</ci-button>
+        <ci-button color="primary">Primary Button</ci-button>
+        <ci-button color="info">Info Button</ci-button>
+        <ci-button color="success">Success Button</ci-button>
+        <ci-button color="warning">Warning Button</ci-button>
+        <ci-button color="danger">Danger Button</ci-button>
+        <ci-button color="link">Link Style Button</ci-button>
       </ci-block-body>
     </ci-block>
 

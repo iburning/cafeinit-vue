@@ -28,6 +28,11 @@ export default {
       default: 'default'
     },
 
+    color: {
+      type: String,
+      default: 'default'
+    },
+
     size: {
       type: String,
       default: ''
@@ -58,7 +63,7 @@ export default {
     className: function () {
       return [
         this.ns + 'btn',
-        this.style ? (this.ns + 'btn-' + this.style) : '',
+        this.color ? (this.ns + 'btn-' + this.color) : '',
         this.size ? (this.ns + 'btn-' + this.size) : '',
         this.block ? (this.ns + 'btn-block') : '',
         this.radius ? (this.ns + 'btn-radius') : '',
@@ -69,7 +74,8 @@ export default {
   },
 
   mounted() {
-    console.log('_button', this.style)
+    console.log('_button.style', this.style)
+    console.log('_button.color', this.color)
   },
 
   methods: {
