@@ -4,14 +4,19 @@
  * @version: 2016-11-28
  */
 
-.modal, .dimmer,
-.am-modal, .am-dimmer {
+.am-modal {
   display: block;
   overflow-x: hidden;
   overflow-y: auto;
   opacity: 1;
   transform: none;
   transition-duration: 0.3s;
+
+  .am-dimmer {
+    display: block;
+    position: absolute;
+    opacity: 1;
+  }
 }
 
 .am-modal-dialog {

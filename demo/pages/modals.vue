@@ -1,6 +1,6 @@
 <template>
   <div id="page-modals">
-    <div class="ci-btn-area">
+    <div class="ci-btn-area" style="height: 3000px;">
       <ci-button style="primary" block="block" v-on:click="isShowModal = true">Show Modal</ci-button>
       <ci-button style="primary" block="block" v-on:click="isShowAlert1 = true">Show Alert with Title</ci-button>
       <ci-button style="primary" block="block" v-on:click="isShowAlert2 = true">Show Alert</ci-button>

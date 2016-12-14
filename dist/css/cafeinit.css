@@ -1402,6 +1402,9 @@ select {
   height: 100%;
   vertical-align: middle;
 }
+.ci-modal .ci-dimmer {
+  position: absolute;
+}
 .ci-modal-dialog {
   z-index: 1500;
   position: relative;
