@@ -14,6 +14,14 @@
           v-bind:options="skillOptions"></ci-select>
         </ci-form-group>
       </ci-list-cell>
+
+      <ci-list-cell>
+        <ci-form-group title="Category">
+          <ci-select name="category" v-model="category"
+            v-bind:options="categoryOptions"></ci-select>
+          {{category}}
+        </ci-form-group>
+      </ci-list-cell>
     </ci-list>
 
     <div class="ci-btn-area">
@@ -35,7 +43,17 @@ export default {
         { value: 'oc', title: 'Objective-C', disabled: true },
         { value: 'swift', title: 'Swift' }
       ],
-      skill: 'javascript'
+      skill: 'javascript',
+
+      categoryOptions: [
+        { title: 'Javascript', value: { id: 1, name: 'Javascript' }},
+        { title: 'CSS', value: { id: 2, name: 'CSS' }},
+        { title: 'HTML', value: { id: 3, name: 'HTML' }},
+      ],
+      category: {
+        id: 3,
+        name: 'HTML'
+      }
     }
   },
 

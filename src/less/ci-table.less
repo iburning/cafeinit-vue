@@ -1,0 +1,69 @@
+/**
+ * @fileoverview ci-table
+ * @author: burning <www.cafeinit.com>
+ * @version: 2016-12-23
+ */
+
+
+table {
+  max-width: 100%;
+  background-color: @table-bg;
+  empty-cells: show;
+
+  code {
+    white-space: normal;
+  }
+}
+
+th {
+  text-align: left;
+}
+
+
+.@{ns}table {
+  width: 100%;
+  margin-bottom: 1.5em;   // @global-margin;
+  border-spacing: 0;
+  border-collapse: separate;
+
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: @table-cell-padding;
+        border-top: 1px solid @table-border-color;
+        line-height: @table-line-height;
+        vertical-align: top;
+      }
+    }
+  }
+
+  // Bottom align for headings
+  > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 1px solid @table-border-color;
+  }
+
+  // Remove top border from thead
+  > caption + thead,
+  > colgroup + thead,
+  > thead:first-child {
+    > tr:first-child {
+      > th,
+      > td {
+        border-top: 0;
+      }
+    }
+  }
+
+  // multiple tbody
+  > tbody + tbody {
+    tr:first-child {
+      td {
+        border-top: 2px solid @table-border-color;
+      }
+    }
+  }
+}

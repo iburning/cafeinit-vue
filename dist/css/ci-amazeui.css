@@ -498,6 +498,7 @@ select {
 .am-checkbox-inline input[type=checkbox] {
   position: absolute;
   left: -500px;
+  border: none;
 }
 .am-checkbox input[type=checkbox]:checked + label,
 .am-checkbox-inline input[type=checkbox]:checked + label {
@@ -580,6 +581,7 @@ select {
 .am-radio-inline input[type=radio] {
   position: absolute;
   left: -500px;
+  border: none;
 }
 .am-radio input[type=radio]:checked + label,
 .am-radio-inline input[type=radio]:checked + label {
@@ -987,6 +989,54 @@ select {
   top: 0;
   left: 0;
   width: 100%;
+}
+/**
+ * @fileoverview ci-table
+ * @author: burning <www.cafeinit.com>
+ * @version: 2016-12-23
+ */
+table {
+  max-width: 100%;
+  background-color: transparent;
+  empty-cells: show;
+}
+table code {
+  white-space: normal;
+}
+th {
+  text-align: left;
+}
+.am-table {
+  width: 100%;
+  margin-bottom: 1.5em;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+.am-table > thead > tr > th,
+.am-table > tbody > tr > th,
+.am-table > tfoot > tr > th,
+.am-table > thead > tr > td,
+.am-table > tbody > tr > td,
+.am-table > tfoot > tr > td {
+  padding: 0.5rem;
+  border-top: 1px solid #ddd;
+  line-height: 1.5em;
+  vertical-align: top;
+}
+.am-table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 1px solid #ddd;
+}
+.am-table > caption + thead > tr:first-child > th,
+.am-table > colgroup + thead > tr:first-child > th,
+.am-table > thead:first-child > tr:first-child > th,
+.am-table > caption + thead > tr:first-child > td,
+.am-table > colgroup + thead > tr:first-child > td,
+.am-table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+.am-table > tbody + tbody tr:first-child td {
+  border-top: 2px solid #ddd;
 }
 /**
  * @fileoverview ci-tab-bar

@@ -56,6 +56,8 @@ import CIScrollView from './scrollView/CIScrollView'
 import CISlideView from './slideView/CISlideView'
 import CISlideViewItem from './slideView/CISlideViewItem'
 
+import CITable from './table/CITable'
+
 
 /* Navigation */
 import CIBreadcrumb from './breadcrumb/CIBreadcrumb'
@@ -131,6 +133,8 @@ const CIComponents = {
 
   'ci-slide-view': CISlideView,
   'ci-slide-view-item': CISlideViewItem,
+
+  'ci-table': CITable,
 
 
   /* Navigation */

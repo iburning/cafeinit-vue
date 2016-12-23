@@ -1,7 +1,7 @@
 /**
  * @fileoverview table
  * @author: burning <www.cafeinit.com>
- * @version: 2016-12-23
+ * @version: 2016-09-12
  */
 
 export default {
@@ -9,6 +9,27 @@ export default {
     ns: {
       type: String,
       default: ''
+    },
+
+    headers: {
+      type: Array,
+      default() {
+        return [];
+      }
+    },
+
+    data: {
+      type: Array,
+      default() {
+        return [];
+      }
+    },
+
+    itemsClassName: {
+      type: Array,
+      default() {
+        return [];
+      }
     },
 
     striped: {
@@ -24,17 +45,6 @@ export default {
     hover: {
       type: String,
       default: ''
-    }
-  },
-
-  computed: {
-    classNames() {
-      return [
-        this.ns + 'table',
-        this.striped ? (this.ns + 'table-striped') : '',
-        this.bordered ? (this.ns + 'table-bordered') : '',
-        this.hover ? (this.ns + 'table-hover') : ''
-      ]
     }
   }
 }

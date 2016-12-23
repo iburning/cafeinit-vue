@@ -19,7 +19,7 @@
      },
 
      value: {
-       type: String,
+       type: [String, Number, Object],
        default: ''
      }
    },

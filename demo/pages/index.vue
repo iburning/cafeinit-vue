@@ -27,10 +27,10 @@
         <span class="sub-title">滚动列表</span>
       </ci-list-cell> -->
 
-      <!-- <ci-list-cell accessory="link" to="/tables">
-        <strong class="title">Tables</strong>
+      <ci-list-cell accessory="link" to="/table">
+        <strong class="title">Table</strong>
         <span class="sub-title">表格</span>
-      </ci-list-cell> -->
+      </ci-list-cell>
     </ci-list>
 
     <ci-list-header>按钮/表单</ci-list-header>

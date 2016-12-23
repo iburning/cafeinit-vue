@@ -28,6 +28,7 @@ import ScrollView from './pages/scrollView'
 import SlideView from './pages/slideView'
 import Sticky from './pages/sticky'
 import TabBar from './pages/tabBar'
+import Table from './pages/table'
 import Toasts from './pages/toasts'
 import ToTop from './pages/toTop'
 
@@ -63,6 +64,7 @@ export default [
   { path: '/scroll-view', component: ScrollView },
   { path: '/slide-view', component: SlideView },
   { path: '/sticky', component: Sticky },
+  { path: '/table', component: Table },
   { path: '/tab-bar', component: TabBar },
   { path: '/toasts', component: Toasts },
   { path: '/to-top', component: ToTop },
