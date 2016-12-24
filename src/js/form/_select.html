@@ -1,5 +1,16 @@
 <div v-bind:class="ns + 'select'">
-  <select
+  <select v-if="groups"
+    v-bind:name="name"
+    v-model="currentValue"
+    v-on:change="onChange">
+    <optgroup v-for="group in groups" v-bind:label="group.title">
+      <option v-for="option in group.options"
+        v-bind:value="option.value"
+        v-bind:disabled="option.disabled">{{option.title}}</option>
+    </optgroup>
+  </select>
+
+  <select v-else
     v-bind:name="name"
     v-model="currentValue"
     v-on:change="onChange">

@@ -18,6 +18,11 @@
        }
      },
 
+     groups: {
+       type: Array,
+       default: null
+     },
+
      value: {
        type: [String, Number, Object],
        default: ''
