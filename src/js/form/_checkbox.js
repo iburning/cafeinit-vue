@@ -24,23 +24,23 @@ export default {
 
   data() {
     return {
-      currentValue: this.value
+      myValue: this.value
     }
   },
 
   watch: {
     value(val) {
-      this.currentValue = val
+      this.myValue = val
     }
   },
 
   methods: {
     onChange: function (evt) {
-      this.$emit('input', this.currentValue)
+      this.$emit('input', this.myValue)
     },
 
     onClick: function () {
-      this.$emit('click', this.currentValue)
+      this.$emit('click', this.myValue)
     }
   }
 }

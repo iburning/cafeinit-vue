@@ -40,7 +40,7 @@ export default {
 
   data() {
     return {
-      currentValue: parseInt(this.value) || 0,
+      myValue: parseInt(this.value) || 0,
       max: 100,
       min: 0,
 
@@ -81,8 +81,8 @@ export default {
       this.setHandleTransform(x)
     },
 
-    currentValue(val, oldVal) {
-      // console.log('watch currentValue', val)
+    myValue(val, oldVal) {
+      // console.log('watch myValue', val)
       let r = val / (this.max - this.min)
       let x = this.distance * r
       this.setBarLightWidth(r)
@@ -100,12 +100,12 @@ export default {
       y: this.$bar.offsetHeight
     }
 
-    let value = parseInt(this.currentValue) || 0
+    let value = parseInt(this.myValue) || 0
     value = (value < this.min) ? this.min : value
     value = (value > this.max) ? this.max : value
-    this.currentValue = value
+    this.myValue = value
 
-    let r = this.currentValue / (this.max - this.min)
+    let r = this.myValue / (this.max - this.min)
     let x = this.distance * r
     this.setBarLightWidth(r)
     this.setHandleTransform(x)
@@ -124,7 +124,7 @@ export default {
       this.handle.x = x
 
       let r = x / this.distance
-      this.currentValue = (this.max - this.min) * r
+      this.myValue = (this.max - this.min) * r
     },
 
     onTouchMove(evt) {
@@ -136,13 +136,13 @@ export default {
       x = (x > this.distance) ? this.distance : x
 
       let r = x / this.distance
-      this.currentValue = (this.max - this.min) * r
+      this.myValue = (this.max - this.min) * r
     },
 
     onTouchEnd(evt) {
       // console.log('CISlider.onTouchEnd', evt)
       if (this.step > 0) {
-        this.currentValue = Math.round(this.currentValue / this.step) * this.step
+        this.myValue = Math.round(this.myValue / this.step) * this.step
       }
     },
 

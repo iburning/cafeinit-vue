@@ -20,7 +20,9 @@
 
      groups: {
        type: Array,
-       default: null
+       default: function () {
+         return []
+       }
      },
 
      value: {
@@ -31,7 +33,7 @@
 
    data() {
      return {
-       currentValue: function () {
+       myValue: function () {
          if (typeof this.value === 'object') {
            return Object.assign({}, this.value)
          }
@@ -45,18 +47,18 @@
    watch: {
      value(val) {
        if (typeof val ==='object') {
-         this.currentValue = Object.assign({}, val)
+         this.myValue = Object.assign({}, val)
        }
        else {
-         this.currentValue = val
+         this.myValue = val
        }
      }
    },
 
    methods: {
      onChange: function (evt) {
-       this.$emit('change', this.currentValue)
-       this.$emit('input', this.currentValue)
+       this.$emit('change', this.myValue)
+       this.$emit('input', this.myValue)
      }
    }
  }
