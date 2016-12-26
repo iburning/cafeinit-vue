@@ -31,13 +31,25 @@
 
    data() {
      return {
-       currentValue: this.value
+       currentValue: function () {
+         if (typeof this.value === 'object') {
+           return Object.assign({}, this.value)
+         }
+         else {
+           return this.value
+         }
+       }
      }
    },
 
    watch: {
      value(val) {
-       this.currentValue = val
+       if (typeof val ==='object') {
+         this.currentValue = Object.assign({}, val)
+       }
+       else {
+         this.currentValue = val
+       }
      }
    },
 
