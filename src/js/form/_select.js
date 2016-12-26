@@ -26,32 +26,20 @@
      },
 
      value: {
-       type: [String, Number, Object],
+       type: [String, Number],
        default: ''
      }
    },
 
    data() {
      return {
-       myValue: function () {
-         if (typeof this.value === 'object') {
-           return Object.assign({}, this.value)
-         }
-         else {
-           return this.value
-         }
-       }
+       myValue: this.value
      }
    },
 
    watch: {
      value(val) {
-       if (typeof val ==='object') {
-         this.myValue = Object.assign({}, val)
-       }
-       else {
-         this.myValue = val
-       }
+       this.myValue = val
      }
    },
 
