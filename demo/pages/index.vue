@@ -75,6 +75,11 @@
         <span class="sub-title">文本</span>
       </ci-list-cell>
 
+      <ci-list-cell accessory="link" to="/form/textarea">
+        <strong class="title">Textarea</strong>
+        <span class="sub-title">多行文本</span>
+      </ci-list-cell>
+
       <ci-list-cell accessory="link" to="/image-picker">
         <strong class="title">Image Picker</strong>
         <span class="sub-title">图片选择器</span>

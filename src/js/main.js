@@ -29,6 +29,7 @@ import CISelect from './form/CISelect'
 import CISwitch from './form/CISwitch'
 import CISwitchList from './form/CISwitchList'
 import CIText from './form/CIText'
+import CITextarea from './form/CITextarea'
 
 import CIImagePicker from './imagePicker/CIImagePicker'
 import CISlider from './slider/CISlider'
@@ -107,6 +108,7 @@ const CIComponents = {
   'ci-switch': CISwitch,
   'ci-switch-list': CISwitchList,
   'ci-text': CIText,
+  'ci-textarea': CITextarea,
 
   'ci-image-picker': CIImagePicker,
   'ci-slider': CISlider,

@@ -1,7 +1,7 @@
 /**
  * @fileoverview select
  * @author: burning <www.cafeinit.com>
- * @version: 2016-12-08
+ * @version: 2017-01-07
  */
 
  export default {
@@ -13,50 +13,56 @@
 
      options: {
        type: Array,
-       default: function () {
+       default() {
          return []
        }
      },
 
      groups: {
        type: Array,
-       default: null
+       default() {
+         return null
+       }
      },
 
      value: {
-       type: [String, Number, Object],
+       type: [String, Number],
        default: ''
      }
    },
 
    data() {
      return {
-       currentValue: function () {
-         if (typeof this.value === 'object') {
-           return Object.assign({}, this.value)
-         }
-         else {
-           return this.value
-         }
-       }
+      //  currentValue: function () {
+      //    if (typeof this.value === 'object') {
+      //      return Object.assign({}, this.value)
+      //    }
+      //    else {
+      //      return this.value
+      //    }
+      //  }
+      myValue: this.value
      }
    },
 
    watch: {
-     value(val) {
-       if (typeof val ==='object') {
-         this.currentValue = Object.assign({}, val)
-       }
-       else {
-         this.currentValue = val
-       }
-     }
+    //  value(val) {
+    //    if (typeof val ==='object') {
+    //      this.currentValue = Object.assign({}, val)
+    //    }
+    //    else {
+    //      this.currentValue = val
+    //    }
+    //  }
+    value(val) {
+      this.myValue = val
+    }
    },
 
    methods: {
      onChange: function (evt) {
-       this.$emit('change', this.currentValue)
-       this.$emit('input', this.currentValue)
+       this.$emit('change', this.myValue)
+       this.$emit('input', this.myValue)
      }
    }
  }

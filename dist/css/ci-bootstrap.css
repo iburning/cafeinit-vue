@@ -471,7 +471,8 @@ fieldset[disabled] .btn-danger.active {
   vertical-align: middle;
 }
 input,
-select {
+select,
+textarea {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;

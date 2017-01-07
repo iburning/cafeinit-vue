@@ -39,6 +39,7 @@ import FormSelect from './pages/form/select'
 import FormSlider from './pages/form/slider'
 import FormSwitch from './pages/form/switch'
 import FormText from './pages/form/text'
+import FormTextarea from './pages/form/textarea'
 
 export default [
   { path: '/', component: Index },
@@ -76,6 +77,7 @@ export default [
   { path: '/form/slider', component: FormSlider },
   { path: '/form/switch', component: FormSwitch },
   { path: '/form/text', component: FormText },
+  { path: '/form/textarea', component: FormTextarea },
 
   { name: 'index', path: '/index/:test', component: Index },
 ]

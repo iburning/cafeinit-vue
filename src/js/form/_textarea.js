@@ -1,24 +1,21 @@
 /**
- * @fileoverview text
+ * @fileoverview textarea
  * @author: burning <www.cafeinit.com>
- * @version: 2016-12-06
+ * @version: 2017-01-07
  */
 
 export default {
-  name: 'ci-text',
+  name: 'ci-textarea',
 
   props: {
     ns: String,
     name: String,
     value: [String, Number],
+    placeholder: [String, Number],
 
-    type: {
-      type: String,
-      default: 'text'
-    },
-
+    cols: [Number, String],
+    rows: [Number, String],
     maxlength: [Number, String],
-    placeholder: String,
 
     disabled: {
       type: Boolean,
