@@ -21,6 +21,11 @@ export default {
   props: {
     src: String,
 
+    index: {
+      type: Number,
+      default: 0
+    },
+
     maxCount: {
       type: [Number, String],
       default: 1
@@ -54,10 +59,8 @@ export default {
 
   data() {
     return {
-      files() {
-        return []
-      },
-      previewSrc: ''
+      files: [],
+      previewSrc: this.src
     }
   },
 
@@ -67,32 +70,39 @@ export default {
     }
   },
 
+  watch: {
+    src(val, oldVal) {
+      if (val != oldVal) {
+        this.previewSrc = val
+      }
+    }
+  },
+
   methods: {
     onClick(evt) {
       if (this.disabled) {
         evt.preventDefault()
       }
-      this.$emit('click', this.files, this)
+      this.$emit('click', this.files, this.index)
     },
 
     onChange(evt) {
-      var that = this
       var files = evt.target.files
 
       if (files.length) {
         this.files = files
-        this.checkFiles(function (err) {
+        this.checkFiles((err) => {
           if (err) {
-            that.$emit('error', err, that)
+            this.$emit('error', err, this.index)
           }
           else {
-            if (that.isPreview) {
-              that.readImage(files[0], function (data) {
-                that.previewSrc = data;
+            if (this.isPreview) {
+              this.readImage(files[0], (data) => {
+                this.previewSrc = data;
               })
             }
 
-            that.$emit('change', files, that)
+            this.$emit('change', files, this.index)
           }
         })
       }
@@ -132,10 +142,9 @@ export default {
     },
 
     readImage(file, done) {
-      var that = this
       var reader = new FileReader()
 
-      reader.onload = function (evt) {
+      reader.onload = (evt) => {
         // console.log('onload', evt)
         var data = evt.target.result
         if (data.indexOf('data:;') === 0) {
