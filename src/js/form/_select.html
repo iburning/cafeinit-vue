@@ -1,5 +1,5 @@
 <div v-bind:class="ns + 'select'">
-  <select v-if="groups"
+  <select v-if="groups.length"
     v-model="myValue"
     v-bind:name="name"
     v-on:change="onChange">
@@ -10,7 +10,7 @@
     </optgroup>
   </select>
 
-  <select v-else
+  <select v-if="options.length"
     v-model="myValue"
     v-bind:name="name"
     v-on:change="onChange">

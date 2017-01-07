@@ -3,7 +3,7 @@
     option.disabled ? (ns + 'disabled') : ''
   ]">
   <input type="checkbox"
-    v-model="currentValue"
+    v-model="myValue"
     v-bind:id="'checkbox-' + _uid"
     v-bind:name="name"
     v-bind:value="option.value"
@@ -23,7 +23,7 @@
       option.disabled ? (ns + 'disabled') : ''
     ]">
     <input type="checkbox"
-      v-model="currentValue"
+      v-model="myValue"
       v-bind:id="'checkbox-' + _uid + '-' + index"
       v-bind:name="name"
       v-bind:value="option.value"

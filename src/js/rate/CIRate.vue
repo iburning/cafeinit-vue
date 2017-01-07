@@ -42,13 +42,13 @@ export default {
 
   data() {
     return {
-      currentValue: this.value
+      myValue: this.value
     }
   },
 
   watch: {
     value(val) {
-      this.currentValue = val
+      this.myValue = val
     }
   },
 
@@ -56,7 +56,7 @@ export default {
     items() {
       let items = [];
       for (let i = 1; i <= this.max; i++) {
-        let decimal = 1 - (i - this.currentValue)
+        let decimal = 1 - (i - this.myValue)
         if (decimal >= 0.5 && decimal < 1) {
           // decimal *= 100
           decimal = 50
@@ -68,7 +68,7 @@ export default {
         items.push({
           value: i,
           decimal: decimal,
-          isOn: i <= this.currentValue
+          isOn: i <= this.myValue
         })
       }
       return items
@@ -79,13 +79,13 @@ export default {
     onClickItem(value) {
       if (!this.disabled) {
         // console.log('CIRate.onClickItem', score)
-        if (value == 1 && this.currentValue == 1) {
-          this.currentValue = 0
+        if (value == 1 && this.myValue == 1) {
+          this.myValue = 0
         }
         else {
-          this.currentValue = value
+          this.myValue = value
         }
-        this.$emit('input', this.currentValue)
+        this.$emit('input', this.myValue)
       }
     }
   }

@@ -23,16 +23,16 @@ export default {
 
   data() {
     return {
-      currentValue: this.value
+      myValue: this.value
     }
   },
 
   watch: {
     value(val) {
-      this.currentValue = val
+      this.myValue = val
     },
 
-    currentValue(val) {
+    myValue(val) {
       this.$emit('input', val)
     }
   }

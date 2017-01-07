@@ -892,6 +892,59 @@ textarea {
   clear: both;
 }
 /**
+ * @fileoverview ci-navigation
+ * @author: burning <www.cafeinit.com>
+ * @version: 2016-11-12
+ */
+.ci-navigation {
+  z-index: 3000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  list-style: none;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+}
+.ci-navigation-left-item,
+.ci-navigation-right-item,
+.ci-navigation-title {
+  overflow: hidden;
+  height: 44px;
+  margin: 0;
+  line-height: 44px;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ci-navigation-left-item,
+.ci-navigation-right-item {
+  -ms-flex: 1;
+      flex: 1;
+}
+.ci-navigation-left-item {
+  padding-left: 15px;
+  text-align: left;
+}
+.ci-navigation-right-item {
+  padding-right: 10px;
+  text-align: right;
+}
+.ci-navigation-title {
+  -ms-flex: 3;
+      flex: 3;
+  padding: 0 10px;
+  text-align: center;
+}
+/**
  * @fileoverview ci-rate
  * @author: burning <www.cafeinit.com>
  * @version: 2016-11-24

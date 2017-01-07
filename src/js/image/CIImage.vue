@@ -1,13 +1,5 @@
 <template>
-  <div class="ci-image" v-bind:style="{
-      position: 'release',
-      overflow: 'hidden',
-      width: width + 'px',
-      height: height + 'px',
-      'border-radius': radius + 'px'
-    }"
-    v-on:click="onClick">
-
+  <div class="ci-image" v-bind:style="viweStyle" v-on:click="onClick">
     <img v-if="status == STATUS.WILL_LOAD || status == STATUS.LOADING" class="ci-image-loading"
       src="data:image/png;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
     <img v-if="status == STATUS.DID_LOAD" v-bind:src="src" v-bind:style="imageStyle" />
@@ -63,7 +55,26 @@ export default {
     }
   },
 
+  watch: {
+    src(val, oldVal) {
+      if (val != oldVal && !this.isLazy) {
+        this.status = this.STATUS.WILL_LOAD
+        this.loadImage(val)
+      }
+    }
+  },
+
   computed: {
+    viweStyle() {
+      return {
+        position: 'release',
+        overflow: 'hidden',
+        width: this.width + 'px',
+        height: this.height + 'px',
+        'border-radius': this.radius + 'px'
+      }
+    },
+
     imageStyle() {
       return {
         'width': this.imageWidth + 'px',
@@ -101,18 +112,15 @@ export default {
         return
       }
 
-      const that = this
-      const image = new Image()
-
       this.status = this.STATUS.ON_LOAD
 
-      console.log('CIImage.loadImage', this.status, src)
+      const image = new Image()
 
-      image.onload = function (evt) {
+      image.onload = (evt) => {
         window.removeEventListener('scroll', this.windowScrollHandler)
-        that.imageRatio = image.width / image.height
-        that.resetImage()
-        that.status = that.STATUS.DID_LOAD
+        this.imageRatio = image.width / image.height
+        this.resetImage()
+        this.status = this.STATUS.DID_LOAD
       }
 
       image.src = src

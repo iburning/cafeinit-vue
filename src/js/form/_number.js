@@ -52,13 +52,13 @@ export default {
 
   data() {
     return {
-      currentValue: this.value
+      myValue: this.value
     }
   },
 
   watch: {
     value(val) {
-      this.currentValue = Number(val) || 0
+      this.myValue = Number(val) || 0
     }
   },
 
@@ -70,21 +70,21 @@ export default {
     },
 
     reduce() {
-      this.currentValue = this.checkValue(this.currentValue - this.step)
-      this.$emit('input', this.currentValue)
+      this.myValue = this.checkValue(this.myValue - this.step)
+      this.$emit('input', this.myValue)
     },
 
     increase() {
-      this.currentValue = this.checkValue(this.currentValue + this.step)
-      this.$emit('input', this.currentValue)
+      this.myValue = this.checkValue(this.myValue + this.step)
+      this.$emit('input', this.myValue)
     },
 
     onChange(evt) {
-      this.$emit('change', this.currentValue)
+      this.$emit('change', this.myValue)
     },
 
     onInput(evt) {
-      this.$emit('input', this.currentValue)
+      this.$emit('input', this.myValue)
     }
   }
 }
