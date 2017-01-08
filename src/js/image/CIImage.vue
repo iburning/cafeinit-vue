@@ -14,7 +14,7 @@ export default {
     src: String,
     mode: {
       type: String,
-      default: 'aspect-fill'
+      default: 'aspect-fill'    // aspect-fill, aspect-fit, auto-height, auto-width
     },
 
     width: {
@@ -47,6 +47,9 @@ export default {
       },
       status: 0,
 
+      myWidth: this.width,
+      myHeight: this.height,
+
       imageWidth: 0,
       imageHeight: 0,
       imageLeft: 0,
@@ -61,6 +64,18 @@ export default {
         this.status = this.STATUS.WILL_LOAD
         this.loadImage(val)
       }
+    },
+
+    width(val, oldVal) {
+      if (val != oldVal) {
+        this.myWidth = val
+      }
+    },
+
+    height(val, oldVal) {
+      if (val != oldVal) {
+        this.myHeight = val
+      }
     }
   },
 
@@ -69,8 +84,8 @@ export default {
       return {
         position: 'release',
         overflow: 'hidden',
-        width: this.width + 'px',
-        height: this.height + 'px',
+        width: this.myWidth + 'px',
+        height: this.myHeight + 'px',
         'border-radius': this.radius + 'px'
       }
     },
@@ -139,7 +154,7 @@ export default {
           this.imageLeft = -parseInt((this.imageWidth - this.width) / 2)
         }
       }
-      else if (this.mode == 'aspect-fit') {
+      else if (this.mode === 'aspect-fit') {
         if (this.width / this.height > this.imageRatio) {
           this.imageHeight = this.height
           this.imageWidth = parseInt(this.imageHeight * this.imageRatio)
@@ -150,6 +165,16 @@ export default {
           this.imageHeight = parseInt(this.imageWidth / this.imageRatio)
           this.imageTop = -parseInt((this.imageHeight - this.height) / 2)
         }
+      }
+      else if (this.mode === 'auto-height') {
+        this.imageWidth = this.width
+        this.imageHeight = parseInt(this.imageWidth / this.imageRatio)
+        this.myHeight = parseInt(this.width / this.imageRatio)
+      }
+      else if (this.mode === 'auto-width') {
+        this.imageHeight = this.height
+        this.imageWidth = parseInt(this.imageHeight * this.imageRatio)
+        this.myWidth = parseInt(this.height * this.imageRatio)
       }
     },
 
