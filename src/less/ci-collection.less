@@ -1,37 +1,75 @@
 /**
  * @fileoverview ci-collection
  * @author: burning <www.cafeinit.com>
- * @version: 2016-09-02
+ * @version: 2017-01-11
  */
 
 .ci-collection {
   list-style: none;
-  display: -webkit-flex;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
   padding: 0;
   margin: 0 0 1em 0;
 }
 
+.ci-collection-flex {
+  // display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.ci-collection-float {
+  &::after {
+    content: ' ';
+    display: block;
+    clear: both;
+    width: 100%;
+    height: 0;
+    line-height: 0;
+  }
+}
+
 .ci-collection-cell {
   list-style: none;
-  flex: 1;
   padding: 0;
   margin: 0;
   min-width: 50px;
   min-height: 50px;
-  flex-basis: 50%;
+}
 
-  @media @medium-up {
-    & {
-      flex-basis: 100% / 3;
+.ci-collection-flex {
+  .ci-collection-cell {
+    flex: 1;
+    flex-basis: 50%;
+
+    @media @medium-up {
+      & {
+        flex-basis: 100% / 3;
+      }
+    }
+
+    @media @large-up {
+      & {
+        flex-basis: 100% / 4;
+      }
     }
   }
+}
 
-  @media @large-up {
-    & {
-      flex-basis: 100% / 4;
+.ci-collection-float {
+  .ci-collection-cell {
+    float: left;
+    width: 50%;
+
+    @media @medium-up {
+      & {
+        width: 100% / 3;
+      }
+    }
+
+    @media @large-up {
+      & {
+        width: 100% / 4;
+      }
     }
   }
 }

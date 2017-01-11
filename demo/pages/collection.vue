@@ -1,5 +1,40 @@
 <template>
   <div class="page-collection">
+    <ci-collection class="items" v-bind:is-flex="true">
+      <ci-collection-cell>
+        <div class="item">1</div>
+      </ci-collection-cell>
+      <ci-collection-cell>
+        <div class="item">2</div>
+      </ci-collection-cell>
+      <ci-collection-cell>
+        <div class="item">3</div>
+      </ci-collection-cell>
+      <ci-collection-cell>
+        <div class="item">4</div>
+      </ci-collection-cell>
+      <ci-collection-cell>
+        <div class="item">5</div>
+      </ci-collection-cell>
+
+      <ci-collection-cell>
+        <div class="item">1</div>
+      </ci-collection-cell>
+      <ci-collection-cell>
+        <div class="item">2</div>
+      </ci-collection-cell>
+      <ci-collection-cell>
+        <div class="item">3</div>
+      </ci-collection-cell>
+      <ci-collection-cell>
+        <div class="item">4</div>
+      </ci-collection-cell>
+      <ci-collection-cell>
+        <div class="item">5</div>
+      </ci-collection-cell>
+    </ci-collection>
+
+
     <ci-collection class="items">
       <ci-collection-cell>
         <div class="item">1</div>
