@@ -49,32 +49,32 @@ export default {
   },
 
   computed: {
-    pages: function () {
-      var pages = [];
-      var x = parseInt(this.showCount / 2)
-      var start = this.currentPage - x
+    pages() {
+      let pages = []
+      let x = parseInt(this.showCount / 2)
+      let start = this.currentPage - x
       start = (start <= 0) ? 1 : start
-      var end = start + this.showCount - 1
+      let end = start + this.showCount - 1
       end = (end > this.totalPage) ? this.totalPage : end
-      start = end - this.showCount + 1;
+      start = end - this.showCount + 1
       start = (start <= 0) ? 1 : start
 
-      for (var i = start; i <= end; i++) {
+      for (let i = start; i <= end; i++) {
         pages.push(i)
       }
 
       return pages
     },
 
-    prevPage: function () {
-      var page = this.currentPage - 1
+    prevPage() {
+      let page = this.currentPage - 1
       page = (page <= 0) ? 1 : page
 
       return page
     },
 
-    nextPage: function () {
-      var page = this.currentPage + 1
+    nextPage() {
+      let page = this.currentPage + 1
       page = (page > this.totalPage) ? this.totalPage : page
 
       return page
@@ -82,7 +82,7 @@ export default {
   },
 
   methods: {
-    onClickItem: function (page) {
+    onClickItem(page) {
       this.currentPage = page
       this.$emit('click-item', page)
     }

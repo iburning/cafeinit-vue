@@ -1,12 +1,12 @@
 /**
- * @fileOverview CICompnentHelper
+ * @fileoverview CICompnentHelper
  * @author: burning <www.cafeinit.com>
- * @date: 2016-11-27
+ * @version: 2016-11-27
  */
 
 module.exports = {
   addClass(component, className) {
-    const $el = component.$el;
+    let $el = component.$el
     let classNames = $el.className.split(' ')
 
     if (classNames.indexOf(className) < 0) {
@@ -17,7 +17,7 @@ module.exports = {
   },
 
   removeClass(component, className) {
-    const $el = component.$el
+    let $el = component.$el
     let classNames = $el.className.split(' ')
 
     if (classNames.indexOf(className) >= 0) {

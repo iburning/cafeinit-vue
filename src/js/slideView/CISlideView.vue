@@ -70,7 +70,7 @@ export default {
 
     value: {
       type: Array,
-      default: function () {
+      default() {
         return []
       }
     },
@@ -168,7 +168,6 @@ export default {
 
   mounted() {
     console.log('CISlideView.mounted', this.items.length, this)
-    const that = this;
 
     if (this.isLoop) {
       if (this.items.length) {
@@ -183,16 +182,16 @@ export default {
     this.$content = this.$refs.content
 
 
-    this.$content.addEventListener('transitionend', function (evt) {
+    this.$content.addEventListener('transitionend', (evt) => {
       // console.log('transitionend', evt)
-      that.isMoving = false
+      this.isMoving = false
 
-      if (that.isLoop) {
-        if (that.currentIndex == 0) {
-          that.moveTo(that._itemCount - 2, 0)
+      if (this.isLoop) {
+        if (this.currentIndex == 0) {
+          this.moveTo(this._itemCount - 2, 0)
         }
-        else if (that.currentIndex == that._itemCount - 1) {
-          that.moveTo(1, 0)
+        else if (this.currentIndex == this._itemCount - 1) {
+          this.moveTo(1, 0)
         }
       }
     })
@@ -222,7 +221,7 @@ export default {
       if (index > (this._itemCount - 1)) {
         index = index - this._itemCount
       }
-      this.currentIndex = index;
+      this.currentIndex = index
 
       let x = 0
       let y = 0
@@ -259,12 +258,12 @@ export default {
     play() {
       const that = this
 
-      window.setTimeout(function () {
+      window.setTimeout(() => {
         if (that.isTouching) {
           that.play()
         }
         else {
-          that.move(1, that.duration, function () {
+          that.move(1, that.duration, () => {
             that.play()
           })
         }

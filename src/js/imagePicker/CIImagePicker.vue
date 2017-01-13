@@ -87,7 +87,7 @@ export default {
     },
 
     onChange(evt) {
-      var files = evt.target.files
+      let files = evt.target.files
 
       if (files.length) {
         this.files = files
@@ -98,7 +98,7 @@ export default {
           else {
             if (this.isPreview) {
               this.readImage(files[0], (data) => {
-                this.previewSrc = data;
+                this.previewSrc = data
               })
             }
 
@@ -109,7 +109,7 @@ export default {
     },
 
     checkFiles(done) {
-      var errors = [];
+      let errors = []
 
       if (this.files.length > this.maxCount) {
         errors.push({
@@ -118,10 +118,10 @@ export default {
         })
       }
 
-      for (var i = 0; i < this.files.length; i++) {
-        var file = this.files[i];
+      for (let i = 0; i < this.files.length; i++) {
+        let file = this.files[i]
         if (file.size > this.maxSizeBit) {
-          var tip = '图片超过了' + this.maxSize + 'MB'
+          let tip = '图片超过了' + this.maxSize + 'MB'
           if (i > 0) {
             tip = '第' + (i + 1) + '张' + tip
           }
@@ -142,15 +142,15 @@ export default {
     },
 
     readImage(file, done) {
-      var reader = new FileReader()
+      let reader = new FileReader()
 
       reader.onload = (evt) => {
         // console.log('onload', evt)
-        var data = evt.target.result
+        let data = evt.target.result
         if (data.indexOf('data:;') === 0) {
           data = data.replace('data:;', 'data:image/jpeg;')
         }
-        done(data);
+        done(data)
       }
 
       reader.readAsDataURL(file)

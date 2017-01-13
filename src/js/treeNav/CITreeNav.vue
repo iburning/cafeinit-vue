@@ -23,8 +23,8 @@ export default {
   props: {
     items: {
       type: Array,
-      default: function () {
-        return [];
+      default() {
+        return []
       }
     },
 

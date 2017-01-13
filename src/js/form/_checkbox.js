@@ -16,7 +16,7 @@ export default {
 
     options: {
       type: Array,
-      default: function () {
+      default() {
         return []
       }
     }
@@ -35,11 +35,11 @@ export default {
   },
 
   methods: {
-    onChange: function (evt) {
+    onChange() {
       this.$emit('input', this.myValue)
     },
 
-    onClick: function () {
+    onClick() {
       this.$emit('click', this.myValue)
     }
   }

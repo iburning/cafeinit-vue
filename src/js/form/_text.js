@@ -32,11 +32,11 @@ export default {
   },
 
   methods: {
-    onChange: function (evt) {
+    onChange(evt) {
       this.$emit('change', evt.target.value)
     },
 
-    onInput: function (evt) {
+    onInput(evt) {
       this.$emit('input', evt.target.value)
     }
   }

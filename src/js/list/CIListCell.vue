@@ -37,7 +37,7 @@ export default {
 
   computed: {
     accessoryIcon() {
-      var icon = ''
+      let icon = ''
 
       switch (this.accessory) {
         case 'link':

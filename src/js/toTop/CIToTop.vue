@@ -30,11 +30,9 @@ export default {
   },
 
   mounted() {
-    const that = this
-
     this.check()
-    window.addEventListener('scroll', function (evt) {
-      that.check()
+    window.addEventListener('scroll', (evt) => {
+      this.check()
     })
   },
 
@@ -53,17 +51,16 @@ export default {
     },
 
     scrollToTop() {
-      const that = this
       let top = window.scrollY
 
-      this.timer = setTimeout(function () {
+      this.timer = setTimeout(() => {
         window.scrollTo(0, top * 0.75)
         if (top > 0) {
-          that.scrollToTop()
+          this.scrollToTop()
         }
         else {
-          clearTimeout(that.timer)
-          that.isShow = false
+          clearTimeout(this.timer)
+          this.isShow = false
         }
       }, this.duration)
     }

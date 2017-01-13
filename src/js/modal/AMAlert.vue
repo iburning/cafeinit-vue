@@ -6,8 +6,7 @@
       ]">
       <div v-bind:class="ns + 'modal-dialog'">
         <div v-bind:class="ns + 'modal-hd'" v-if="title">{{title}}</div>
-        <div v-bind:class="ns + 'modal-bd'" v-if="content">{{content}}</div>
-        <div v-bind:class="ns + 'modal-bd'" v-else><slot>Hello CafeInit</slot></div>
+        <div v-bind:class="ns + 'modal-bd'"><slot>{{content}}</slot></div>
         <div v-bind:class="ns + 'modal-footer'">
           <span v-bind:class="ns + 'modal-btn'"
             v-on:click="buttonOnClick">{{okText}}</span>

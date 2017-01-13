@@ -22,15 +22,14 @@ export default {
   },
 
   mounted() {
-    const that = this
     const top = this.$el.offsetTop
 
-    window.addEventListener('scroll', function (evt) {
+    window.addEventListener('scroll', (evt) => {
       if (window.scrollY >= top) {
-        that.setSticky()
+        this.setSticky()
       }
       else {
-        that.unsetSticky()
+        this.unsetSticky()
       }
     })
   },

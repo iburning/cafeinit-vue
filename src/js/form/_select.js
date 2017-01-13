@@ -20,7 +20,7 @@ export default {
 
     groups: {
       type: Array,
-      default: function () {
+      default() {
         return []
       }
     },
@@ -44,7 +44,7 @@ export default {
   },
 
   methods: {
-    onChange: function (evt) {
+    onChange() {
       this.$emit('change', this.myValue)
       this.$emit('input', this.myValue)
     }

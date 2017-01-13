@@ -54,7 +54,7 @@ export default {
 
   computed: {
     items() {
-      let items = [];
+      let items = []
       for (let i = 1; i <= this.max; i++) {
         let decimal = 1 - (i - this.myValue)
         if (decimal >= 0.5 && decimal < 1) {

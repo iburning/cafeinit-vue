@@ -15,7 +15,7 @@ export default {
 
     options: {
       type: Array,
-      default: function () {
+      default() {
         return []
       }
     }

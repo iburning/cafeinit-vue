@@ -60,7 +60,7 @@ export default {
   },
 
   computed: {
-    className: function () {
+    className() {
       return [
         this.ns + 'btn',
         this.color ? (this.ns + 'btn-' + this.color) : '',
@@ -71,10 +71,6 @@ export default {
         (this.status === 'active') ? (this.ns + 'active') : ''
       ]
     }
-  },
-
-  mounted() {
-    // ...
   },
 
   methods: {

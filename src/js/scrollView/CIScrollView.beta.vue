@@ -72,8 +72,8 @@ export default {
 
   computed: {
     viewStyle() {
-      const width = (typeof this.size.width == 'number') ? (this.size.width + 'px') : this.size.width
-      const height = (typeof this.size.height == 'number') ? (this.size.height + 'px') : this.size.height
+      let width = (typeof this.size.width == 'number') ? (this.size.width + 'px') : this.size.width
+      let height = (typeof this.size.height == 'number') ? (this.size.height + 'px') : this.size.height
 
       return {
         left: this.offset.x + 'px',
@@ -98,14 +98,15 @@ export default {
     this.contentSize.width = this.$content.offsetWidth
     this.contentSize.height = this.$content.offsetHeight
 
-    console.log('mounted', this.size, this.contentSize, this.scrollRange)
+    // console.log('mounted', this.size, this.contentSize, this.scrollRange)
   },
 
   methods: {
     onTouchStart(evt) {
-      console.log('onTouchStart', evt)
+      // console.log('onTouchStart', evt)
+      let touch = evt.touches[0]
+
       this.eventName = 'touchstar'
-      const touch = evt.touches[0]
       this.touchInfo.timeStamp = evt.timeStamp
       this.touchInfo.startX = touch.pageX
       this.touchInfo.startY = touch.pageY
@@ -120,13 +121,13 @@ export default {
         clearTimeout(this.timer)
       }
 
-      const touch = evt.touches[0]
+      let touch = evt.touches[0]
       this.touchInfo.x = touch.pageX
       this.touchInfo.y = touch.pageY
 
-      const dX = this.touchInfo.x - this.touchInfo.startX
-      const dY = this.touchInfo.y - this.touchInfo.startY
-      // const x = this.contentPostion.startX + dX
+      let dX = this.touchInfo.x - this.touchInfo.startX
+      let dY = this.touchInfo.y - this.touchInfo.startY
+      // let x = this.contentPostion.startX + dX
       let y = this.contentPostion.startY + dY
       y = (y < this.scrollRange.height) ? this.scrollRange.height : y
       y = (y > 0) ? 0 : y
@@ -136,10 +137,10 @@ export default {
     },
 
     onTouchEnd(evt) {
-      console.log('onTouchEnd', evt)
+      // console.log('onTouchEnd', evt)
       this.eventName = 'touchend'
-      const dX = this.touchInfo.x - this.touchInfo.startX
-      const dY = this.touchInfo.y - this.touchInfo.startY
+      let dX = this.touchInfo.x - this.touchInfo.startX
+      let dY = this.touchInfo.y - this.touchInfo.startY
 
       let y = this.contentPostion.startY + dY
       y = (y < this.scrollRange.height) ? this.scrollRange.height : y
@@ -166,8 +167,6 @@ export default {
     },
 
     inertiaMove(speed) {
-      const that = this
-
       if (Math.abs(speed) < 1 && this.timer) {
         clearTimeout(this.timer)
       }
@@ -179,10 +178,10 @@ export default {
       y = (y > 0) ? 0 : y
       this.contentPostion.startY = y
 
-      this.timer = setTimeout(function () {
-        that.setContentTransform(x, y)
+      this.timer = setTimeout(() => {
+        this.setContentTransform(x, y)
         speed *= 0.9
-        that.inertiaMove(speed)
+        this.inertiaMove(speed)
       }, 30)
     }
   }

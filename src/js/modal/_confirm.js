@@ -15,7 +15,10 @@ export default {
 
     size: String,     // lg
     title: String,
-    content: String,
+    content: {
+      type: String,
+      default: 'Are you kidding?'
+    },
 
     okText: {
       type: String,

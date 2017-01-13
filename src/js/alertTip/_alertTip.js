@@ -31,7 +31,7 @@ export default {
     }
   },
 
-  data: function () {
+  data() {
     return {
       isShow: this.value,
       timer: null
@@ -66,11 +66,9 @@ export default {
     },
 
     autoClose() {
-      var that = this
-
-      this.timer = setTimeout(function () {
-        that.close()
-        clearTimeout(that.timer)
+      this.timer = setTimeout(() => {
+        this.close()
+        clearTimeout(this.timer)
       }, this.duration)
     }
   }

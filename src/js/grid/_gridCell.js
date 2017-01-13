@@ -21,7 +21,7 @@ export default {
   },
 
   computed: {
-    sizeClass: function () {
+    sizeClass() {
       let input = this.size.split(' ')
       let output = []
 

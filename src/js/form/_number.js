@@ -64,9 +64,9 @@ export default {
 
   methods: {
     checkValue(value) {
-      value = (value < this.min) ? this.min : value;
-      value = (value > this.max) ? this.max : value;
-      return value;
+      value = (value < this.min) ? this.min : value
+      value = (value > this.max) ? this.max : value
+      return value
     },
 
     reduce() {

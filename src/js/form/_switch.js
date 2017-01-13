@@ -14,7 +14,7 @@ export default {
     value: [Array, Boolean],
     option: {
       type: Object,
-      default: function () {
+      default() {
         return {}
       }
     }
@@ -33,7 +33,7 @@ export default {
   },
 
   methods: {
-    onChange: function (evt) {
+    onChange() {
       this.$emit('input', this.myValue)
     }
   }

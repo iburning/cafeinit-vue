@@ -8,6 +8,7 @@
             (type == 'waiting') ? 'fa-spin' : ''
           ]"></i>
         <p v-if="text">{{text}}</p>
+        <slot></slot>
       </div>
 
       <div v-bind:class="ns + 'dimmer'"></div>
@@ -54,7 +55,7 @@ export default {
         waiting: 'circle-o-notch'
       }
 
-      let name = names[this.type];
+      let name = names[this.type]
       return name ? ('fa fa-' + name) : ''
     }
   },
@@ -73,14 +74,12 @@ export default {
     },
 
     autoClose() {
-      const that = this
-
       if (this.duration > 0) {
-        this.timer = window.setTimeout(function () {
-          that.$emit('close')
+        this.timer = window.setTimeout(() => {
+          this.$emit('close')
 
-          if (that.timer) {
-            window.clearTimeout(that.timer)
+          if (this.timer) {
+            window.clearTimeout(this.timer)
           }
         }, this.duration)
       }

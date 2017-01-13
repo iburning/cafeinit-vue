@@ -129,7 +129,7 @@ export default {
 
       this.status = this.STATUS.ON_LOAD
 
-      const image = new Image()
+      let image = new Image()
 
       image.onload = (evt) => {
         window.removeEventListener('scroll', this.windowScrollHandler)
