@@ -31,6 +31,7 @@ import TabBar from './pages/tabBar'
 import Table from './pages/table'
 import Toasts from './pages/toasts'
 import ToTop from './pages/toTop'
+import Videos from './pages/videos'
 
 import FormCheckbox from './pages/form/checkbox'
 import FormNumber from './pages/form/number'
@@ -69,6 +70,7 @@ export default [
   { path: '/tab-bar', component: TabBar },
   { path: '/toasts', component: Toasts },
   { path: '/to-top', component: ToTop },
+  { path: '/videos', component: Videos },
 
   { path: '/form/checkbox', component: FormCheckbox },
   { path: '/form/number', component: FormNumber },

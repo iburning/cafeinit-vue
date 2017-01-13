@@ -178,6 +178,11 @@
         <strong class="title">Page Demo</strong>
         <span class="sub-title">页面实例</span>
       </ci-list-cell> -->
+
+      <ci-list-cell accessory="link" to="/videos">
+        <strong class="title">Video</strong>
+        <span class="sub-title">视频播放器</span>
+      </ci-list-cell>
     </ci-list>
   </div>
 </template>

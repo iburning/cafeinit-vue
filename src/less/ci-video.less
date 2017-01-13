@@ -1,0 +1,47 @@
+/**
+ * @fileoverview ci-video
+ * @author: burning <www.cafeinit.com>
+ * @version: 2017-01-13
+ */
+
+.ci-video {
+  position: relative;
+
+  video, .ci-video-poster {
+    background-color: #000;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.ci-video-play, .ci-video-loading {
+  @size: 90px;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: @size;
+  height: @size;
+  margin: -@size/2 0 0 -@size/2;
+  border-radius: 50%;
+  line-height: @size;
+  font-size: @size;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.ci-video-pause {
+  @size: 40px;
+
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  width: @size;
+  height: @size;
+  border-radius: 50%;
+  line-height: @size;
+  font-size: @size;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+}

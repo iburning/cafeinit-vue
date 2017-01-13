@@ -1284,3 +1284,44 @@ th {
 .ci-tree-nav-item > .ci-tree-nav .ci-tree-nav-item:last-child {
   border-bottom: none;
 }
+/**
+ * @fileoverview ci-video
+ * @author: burning <www.cafeinit.com>
+ * @version: 2017-01-13
+ */
+.ci-video {
+  position: relative;
+}
+.ci-video video,
+.ci-video .ci-video-poster {
+  background-color: #000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.ci-video-play,
+.ci-video-loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 90px;
+  height: 90px;
+  margin: -45px 0 0 -45px;
+  border-radius: 50%;
+  line-height: 90px;
+  font-size: 90px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+}
+.ci-video-pause {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  line-height: 40px;
+  font-size: 40px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+}

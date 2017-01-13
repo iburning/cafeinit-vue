@@ -73,6 +73,7 @@ import CILoading from './loading/CILoading'
 import CIRate from './rate/CIRate'
 import CISticky from './sticky/CISticky'
 import CIToTop from './toTop/CIToTop'
+import CIVideo from './video/CIVideo'
 
 
 /* Helper */
@@ -149,7 +150,8 @@ const CIComponents = {
   'ci-loading': CILoading,
   'ci-rate': CIRate,
   'ci-sticky': CISticky,
-  'ci-to-top': CIToTop
+  'ci-to-top': CIToTop,
+  'ci-video': CIVideo
 }
 
 // export default {
