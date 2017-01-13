@@ -9,14 +9,14 @@
 </template>
 
 <script>
-import CIVideo from '../components/CIVideo'
+// import CIVideo from '../components/CIVideo'
 
 export default {
   name: 'page-videos',
 
-  components: {
-    'ci-video': CIVideo
-  },
+  // components: {
+  //   'ci-video': CIVideo
+  // },
 
   data() {
     return {
