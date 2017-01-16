@@ -60,7 +60,6 @@ prototype._bindEvent = function () {
         if (typeof this.willScrollToEndHandler === 'function') {
           this.willScrollToEndHandler()
         }
-        this.isListenScrollToEnd = true
       }
     }
     else {
