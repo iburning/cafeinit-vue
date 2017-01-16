@@ -1,11 +1,13 @@
 <template>
-  <ci-list>
-    <ci-list-cell accessory="link" v-for="item in items">
-      {{item.title}}
-    </ci-list-cell>
-  </ci-list>
+  <div class="scroll-list">
+    <ci-list>
+      <ci-list-cell accessory="link" v-for="item in items">
+        {{item.title}}
+      </ci-list-cell>
+    </ci-list>
 
-  <ci-loading v-show="isLoading"></ci-loading>
+    <ci-loading v-show="isLoading"></ci-loading>
+  </div>
 </template>
 
 
@@ -14,6 +16,8 @@ import CafeinitVue from 'cafeinit-vue'
 var CIScrollHelper = CafeinitVue.utils.CIScrollHelper
 
 export default {
+  name: 'croll-list',
+
   data() {
     return {
       items: [],
@@ -22,19 +26,20 @@ export default {
     }
   },
 
-  ready() {
-    var that = this;
-
+  mounted() {
     this.getData(this.page, (items) => {
-      that.items = items;
+      this.items = items
     })
 
     var scroll = new CIScrollHelper({
       container: $(window),
       content: $('body'),
+      leadEnd: 100,
       willScrollToEndHandler: () => {
-        that.getData(++that.page, function (items) {
-          that.items = that.items.concat(items)
+        scroll.isListenScrollToEnd = false
+        this.getData(++this.page, (items) => {
+          scroll.isListenScrollToEnd = true
+          this.items = this.items.concat(items)
         })
       }
     })
@@ -42,7 +47,7 @@ export default {
 
   methods: {
     getData(page, callback) {
-      var that = this
+      console.log('getData', page)
       this.isLoading = true
 
       var delay = setTimeout(() => {
@@ -50,11 +55,11 @@ export default {
         page = (page < 0) ? 0 : page
         var pageSize = 20
         var items = []
-        for (var i = pageSize * page ; i < pageSize * (page + 1); i++) {
+        for (var i = pageSize * page; i < pageSize * (page + 1); i++) {
           items.push({ title: 'title ' + i })
         }
 
-        that.isLoading = false
+        this.isLoading = false
         callback(items)
         clearTimeout(delay)
       }, Math.random() * 1000)

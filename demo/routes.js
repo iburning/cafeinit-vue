@@ -42,6 +42,8 @@ import FormSwitch from './pages/form/switch'
 import FormText from './pages/form/text'
 import FormTextarea from './pages/form/textarea'
 
+import DemoScrollList from './pages/demo/scrollList'
+
 export default [
   { path: '/', component: Index },
   { path: '/alert-tip', component: AlertTip },
@@ -80,6 +82,8 @@ export default [
   { path: '/form/switch', component: FormSwitch },
   { path: '/form/text', component: FormText },
   { path: '/form/textarea', component: FormTextarea },
+
+  { path: '/demo/scroll-list', component: DemoScrollList },
 
   { name: 'index', path: '/index/:test', component: Index },
 ]

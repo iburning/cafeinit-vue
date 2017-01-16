@@ -1,7 +1,7 @@
 /**
  * @fileoverview CIScrollHelper
  * @author: burning <www.cafeinit.com>
- * @version: 2016-11-02
+ * @version: 2017-01-16
  */
 
 function CIScrollHelper(opt) {
@@ -54,10 +54,9 @@ prototype._bindEvent = function () {
 
     if (delta <= this.leadEnd) {
       if (this.isListenScrollToEnd) {
-        // console.log('willScrollToEnd')
         this.isListenScrollToEnd = false
-
         if (typeof this.willScrollToEndHandler === 'function') {
+          // 请在 willScrollToEndHandler 中控制 isListenScrollToEnd
           this.willScrollToEndHandler()
         }
       }
