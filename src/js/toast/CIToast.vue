@@ -2,13 +2,14 @@
   <transition name="ci" v-on:after-enter="onAfterEnter">
     <div v-bind:class="ns + 'toast'">
       <div v-bind:class="ns + 'toast-content'">
-        <i v-if="type" v-bind:class="[
-            ns + 'toast-icon',
-            faClassName,
-            (type == 'waiting') ? 'fa-spin' : ''
-          ]"></i>
-        <p v-if="text">{{text}}</p>
-        <slot></slot>
+        <slot>
+          <i v-if="type" v-bind:class="[
+              ns + 'toast-icon',
+              faClassName,
+              (type == 'waiting') ? 'fa-spin' : ''
+            ]"></i>
+          <p v-if="text">{{text}}</p>
+        </slot>
       </div>
 
       <div v-bind:class="ns + 'dimmer'"></div>

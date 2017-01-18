@@ -22,11 +22,11 @@
     <!-- <div class="ci-video-loading" v-if="status === STATUS.ON_LOADING" href="javascript:;" v-on:click="play">
       <i class="fa fa-circle-o-notch fa-spin"></i>
     </div> -->
-    <div class="ci-video-play" v-if="status !== STATUS.ON_PLAYING && status !== STATUS.ON_LOADING" href="javascript:;" v-on:click="play">
-      <i class="fa fa-play-circle-o"></i>
+    <div class="ci-video-play" v-if="status !== STATUS.ON_PLAYING && status !== STATUS.ON_LOADING" v-on:click="play">
+      <slot name="btn-play"><i class="fa fa-play-circle-o"></i></slot>
     </div>
     <div class="ci-video-pause" v-if="status === STATUS.ON_PLAYING" href="javascript:;" v-on:click="pause">
-      <i class="fa fa-pause-circle-o"></i>
+      <slot name="btn-pause"><i class="fa fa-pause-circle-o"></i></slot>
     </div>
   </div>
 </template>

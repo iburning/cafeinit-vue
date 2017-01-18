@@ -4,7 +4,15 @@
       v-bind:src="videoSrc"
       v-bind:poster="videoPoster"
       v-bind:width="videoWidth"
-      v-bind:height="videoHeight"></ci-video>
+      v-bind:height="videoHeight">
+    </ci-video>
+    <ci-video
+      v-bind:src="videoSrc"
+      v-bind:poster="videoPoster"
+      v-bind:width="videoWidth"
+      v-bind:height="videoHeight">
+      <span slot="btn-play">PLAY</span>
+    </ci-video>
   </div>
 </template>
 
