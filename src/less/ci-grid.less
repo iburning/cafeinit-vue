@@ -1,0 +1,86 @@
+/**
+ * @fileoverview ci-grid
+ * @author: burning <www.cafeinit.com>
+ * @version: 2017-01-21
+ */
+
+.col-basic() {
+  [class*="ci-col-"] {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding-left: @grid-gutter;
+    padding-right: @grid-gutter;
+
+    // Float the last col to right
+    & + &:last-child {
+      float: right;
+    }
+
+    // Not float the last col
+    & + &.@{ns}u-end {
+      float: left;
+    }
+
+    @media @medium-up {
+      & {
+        padding-left: @grid-gutter-md;
+        padding-right: @grid-gutter-md;
+      }
+    }
+  }
+
+  [class*="ci-col-pull-"] {
+    left: auto;
+  }
+
+  [class*="ci-col-push-"] {
+    right: auto;
+  }
+}
+
+
+// calc grid: width, push, pull, offset
+.calc-grid-col (@point: sm, @type, @n: @grid-columns, @i: 1) when
+  (@type = width) and (@i =< @n) {
+  .ci-col-@{point}-@{i} {
+    width: (@i * 100% / @n);
+  }
+}
+
+
+.loop-cols (@point: sm, @type, @n: @grid-columns, @i: 1) when (@i =< @n) {
+  .calc-grid-col(@point, @type, @n, @i);
+  .loop-cols(@point, @type, @grid-columns, (@i + 1));
+}
+
+
+.make-cols(@point) {
+  .loop-cols(@point, width);
+  // .loop-cols(@point, pull);
+  // .loop-cols(@point, push);
+  // .loop-cols(@point, offset);
+  // .reset-order(@point);
+  // .col-misc(@point);
+}
+
+
+.ci-row {
+  margin: 0 auto;
+  width: 100%;
+  .clearfix();
+}
+
+.col-basic();
+
+@media @screen {
+  .make-cols(sm);
+}
+
+@media @medium-up {
+  .make-cols(md);
+}
+
+@media @large-up {
+  .make-cols(lg);
+}
