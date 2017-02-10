@@ -23,6 +23,7 @@ import Navigation from './pages/navigation'
 import Offcanvas from './pages/offcanvas'
 import PageDemo from './pages/pageDemo'
 import Pagination from './pages/pagination'
+import Progress from './pages/progress'
 import Rate from './pages/rate'
 import ScrollView from './pages/scrollView'
 import SlideView from './pages/slideView'
@@ -63,6 +64,7 @@ export default [
   { path: '/navigation', component: Navigation },
   { path: '/page-demo', component: PageDemo },
   { path: '/pagination', component: Pagination },
+  { path: '/progress', component: Progress },
   { path: '/offcanvas', component: Offcanvas },
   { path: '/rate', component: Rate },
   { path: '/scroll-view', component: ScrollView },
