@@ -30,13 +30,13 @@
 </template>
 
 <script>
-import CIProgress from '../components/CIProgress'
+// import CIProgress from '../components/CIProgress'
 
 export default {
   name: 'page-progress',
 
   components: {
-    'ci-progress': CIProgress
+    // 'ci-progress': CIProgress
   },
 
   data() {

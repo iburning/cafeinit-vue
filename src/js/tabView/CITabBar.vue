@@ -7,6 +7,7 @@
         <router-link v-if="item.to" v-bind:to="item.to">{{item.text}}</router-link>
         <span v-else>{{item.text}}</span>
       </li>
+      <slot></slot>
     </ul>
   </div>
 </template>

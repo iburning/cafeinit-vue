@@ -3,7 +3,17 @@
     <ci-tab-bar ref="myTabBar"
       v-bind:items="tabBarItems"
       v-bind:index="1"
-      v-on:click-item="onClickItem"></ci-tab-bar>
+      v-on:click-item="onClickItem">
+    </ci-tab-bar>
+
+    <ci-tab-bar class="ci-fixed-bottom">
+      <li class="ci-tab-bar-item">
+        <a href="javascript:;">AAA</a>
+      </li>
+      <li class="ci-tab-bar-item">
+        <a href="javascript:;">BBB</a>
+      </li>
+    </ci-tab-bar>
   </div>
 </template>
 

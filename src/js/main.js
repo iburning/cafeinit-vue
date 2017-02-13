@@ -72,6 +72,7 @@ import CITreeNav from './treeNav/CITreeNav'
 import CIBadge from './badge/CIBadge'
 import CIImage from './image/CIImage'
 import CILoading from './loading/CILoading'
+import CIProgress from './progress/CIProgress'
 import CIRate from './rate/CIRate'
 import CISticky from './sticky/CISticky'
 import CIToTop from './toTop/CIToTop'
@@ -152,6 +153,7 @@ const CIComponents = {
   'ci-badge': CIBadge,
   'ci-image': CIImage,
   'ci-loading': CILoading,
+  'ci-progress': CIProgress,
   'ci-rate': CIRate,
   'ci-sticky': CISticky,
   'ci-to-top': CIToTop,

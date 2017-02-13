@@ -242,6 +242,22 @@ a:hover {
 .ci-icon-spin {
   animation: icon-spin 2s infinite linear;
 }
+.ci-fixed-top {
+  z-index: 500;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  margin: 0;
+}
+.ci-fixed-bottom {
+  z-index: 500;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+}
 /**
  * @fileoverview ci-block
  * @author: burning <www.cafeinit.com>
@@ -1455,7 +1471,8 @@ th {
   -ms-flex-pack: start;
       justify-content: flex-start;
   padding: 0;
-  margin: 0 0 1em 0;
+  margin: 0;
+  border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   background-color: #fff;
 }
@@ -1471,6 +1488,7 @@ th {
 }
 .ci-tab-bar-item a,
 .ci-tab-bar-item span {
+  text-decoration: none;
   color: #1abc9c;
 }
 .ci-tab-bar-item.ci-selected {
