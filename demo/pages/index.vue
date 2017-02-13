@@ -154,6 +154,11 @@
         <span class="sub-title">抽屉</span>
       </ci-list-cell>
 
+      <ci-list-cell accessory="link" to="/progress">
+        <strong class="title">Progress</strong>
+        <span class="sub-title">进度条</span>
+      </ci-list-cell>
+
       <ci-list-cell accessory="link" to="/rate">
         <strong class="title">Rate</strong>
         <span class="sub-title">评分</span>

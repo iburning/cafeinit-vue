@@ -184,7 +184,7 @@ th {
 /**
  * @fileoverview main
  * @author: burning <www.cafeinit.com>
- * @version: 2017-01-21
+ * @version: 2017-02-10
  */
 /**
  * @fileoverview varialbes
@@ -1250,6 +1250,48 @@ textarea {
 }
 .ci-loading:after {
   clear: both;
+}
+/**
+ * @fileoverview ci-progress
+ * @author: burning <www.cafeinit.com>
+ * @version: 2017-02-10
+ */
+.ci-progress {
+  background-color: #eeeeee;
+  position: relative;
+  overflow: hidden;
+  min-width: 200px;
+  height: 20px;
+  margin-bottom: 10px;
+  line-height: 20px;
+}
+.ci-progress-radius {
+  border-radius: 5px;
+}
+.ci-progress-round {
+  border-radius: 1000px;
+}
+.ci-progress-light {
+  width: 0;
+  height: 100%;
+  text-align: right;
+}
+.ci-progress-primary .ci-progress-light {
+  background-color: #1abc9c;
+}
+.ci-progress-info .ci-progress-light {
+  background-color: #3498db;
+}
+.ci-progress-success .ci-progress-light {
+  background-color: #2ecc71;
+}
+.ci-progress-warning .ci-progress-light {
+  background-color: #f1c40f;
+}
+.ci-progress-value {
+  display: inline-block;
+  padding: 0 5px;
+  font-size: 12px;
 }
 /**
  * @fileoverview ci-rate

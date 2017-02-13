@@ -6,7 +6,7 @@
 /**
  * @fileoverview main
  * @author: burning <www.cafeinit.com>
- * @version: 2017-01-21
+ * @version: 2017-02-10
  */
 /**
  * @fileoverview varialbes
@@ -1125,6 +1125,48 @@ textarea {
       flex: 3;
   padding: 0 10px;
   text-align: center;
+}
+/**
+ * @fileoverview ci-progress
+ * @author: burning <www.cafeinit.com>
+ * @version: 2017-02-10
+ */
+.progress {
+  background-color: #eeeeee;
+  position: relative;
+  overflow: hidden;
+  min-width: 200px;
+  height: 20px;
+  margin-bottom: 10px;
+  line-height: 20px;
+}
+.progress-radius {
+  border-radius: 5px;
+}
+.progress-round {
+  border-radius: 1000px;
+}
+.progress-light {
+  width: 0;
+  height: 100%;
+  text-align: right;
+}
+.progress-primary .progress-light {
+  background-color: #1abc9c;
+}
+.progress-info .progress-light {
+  background-color: #3498db;
+}
+.progress-success .progress-light {
+  background-color: #2ecc71;
+}
+.progress-warning .progress-light {
+  background-color: #f1c40f;
+}
+.progress-value {
+  display: inline-block;
+  padding: 0 5px;
+  font-size: 12px;
 }
 /**
  * @fileoverview ci-rate
