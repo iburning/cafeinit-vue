@@ -153,7 +153,7 @@ a:hover {
  * @author: burning <www.cafeinit.com>
  * @version: 2016-12-05
  */
-.ci-btn {
+.am-btn {
   display: inline-block;
   padding: 0.5em 1em;
   margin: 0;
@@ -176,285 +176,285 @@ a:hover {
           appearance: none;
   transition: background-color 300ms ease-out, border-color 300ms ease-out;
 }
-.ci-btn-default {
+.am-btn-default {
   color: #fff;
   background-color: #bdc3c7;
   border-color: #bdc3c7;
 }
-a.ci-btn-default:visited {
+a.am-btn-default:visited {
   color: #fff;
 }
-.ci-btn-default:hover,
-.ci-btn-default:focus,
-.ci-btn-default:active,
-.ci-btn-default.ci-active {
+.am-btn-default:hover,
+.am-btn-default:focus,
+.am-btn-default:active,
+.am-btn-default.am-active {
   color: #fff;
   border-color: #949da4;
 }
-.ci-btn-default:hover,
-.ci-btn-default:focus {
+.am-btn-default:hover,
+.am-btn-default:focus {
   background-color: #a1aab0;
 }
-.ci-btn-default:active,
-.ci-btn-default.ci-active {
+.am-btn-default:active,
+.am-btn-default.am-active {
   background-image: none;
   background-color: #949da4;
 }
-.ci-btn-default.ci-disabled,
-.ci-btn-default[disabled],
-fieldset[disabled] .ci-btn-default,
-.ci-btn-default.ci-disabled:hover,
-.ci-btn-default[disabled]:hover,
-fieldset[disabled] .ci-btn-default:hover,
-.ci-btn-default.ci-disabled:focus,
-.ci-btn-default[disabled]:focus,
-fieldset[disabled] .ci-btn-default:focus,
-.ci-btn-default.ci-disabled:active,
-.ci-btn-default[disabled]:active,
-fieldset[disabled] .ci-btn-default:active,
-.ci-btn-default.ci-disabled.ci-active,
-.ci-btn-default[disabled].ci-active,
-fieldset[disabled] .ci-btn-default.ci-active {
+.am-btn-default.am-disabled,
+.am-btn-default[disabled],
+fieldset[disabled] .am-btn-default,
+.am-btn-default.am-disabled:hover,
+.am-btn-default[disabled]:hover,
+fieldset[disabled] .am-btn-default:hover,
+.am-btn-default.am-disabled:focus,
+.am-btn-default[disabled]:focus,
+fieldset[disabled] .am-btn-default:focus,
+.am-btn-default.am-disabled:active,
+.am-btn-default[disabled]:active,
+fieldset[disabled] .am-btn-default:active,
+.am-btn-default.am-disabled.am-active,
+.am-btn-default[disabled].am-active,
+fieldset[disabled] .am-btn-default.am-active {
   background-color: #bdc3c7;
   border-color: #bdc3c7;
   opacity: 0.5;
 }
-.ci-btn-primary {
+.am-btn-primary {
   color: #fff;
   background-color: #1abc9c;
   border-color: #1abc9c;
 }
-a.ci-btn-primary:visited {
+a.am-btn-primary:visited {
   color: #fff;
 }
-.ci-btn-primary:hover,
-.ci-btn-primary:focus,
-.ci-btn-primary:active,
-.ci-btn-primary.ci-active {
+.am-btn-primary:hover,
+.am-btn-primary:focus,
+.am-btn-primary:active,
+.am-btn-primary.am-active {
   color: #fff;
   border-color: #117964;
 }
-.ci-btn-primary:hover,
-.ci-btn-primary:focus {
+.am-btn-primary:hover,
+.am-btn-primary:focus {
   background-color: #148f77;
 }
-.ci-btn-primary:active,
-.ci-btn-primary.ci-active {
+.am-btn-primary:active,
+.am-btn-primary.am-active {
   background-image: none;
   background-color: #117964;
 }
-.ci-btn-primary.ci-disabled,
-.ci-btn-primary[disabled],
-fieldset[disabled] .ci-btn-primary,
-.ci-btn-primary.ci-disabled:hover,
-.ci-btn-primary[disabled]:hover,
-fieldset[disabled] .ci-btn-primary:hover,
-.ci-btn-primary.ci-disabled:focus,
-.ci-btn-primary[disabled]:focus,
-fieldset[disabled] .ci-btn-primary:focus,
-.ci-btn-primary.ci-disabled:active,
-.ci-btn-primary[disabled]:active,
-fieldset[disabled] .ci-btn-primary:active,
-.ci-btn-primary.ci-disabled.ci-active,
-.ci-btn-primary[disabled].ci-active,
-fieldset[disabled] .ci-btn-primary.ci-active {
+.am-btn-primary.am-disabled,
+.am-btn-primary[disabled],
+fieldset[disabled] .am-btn-primary,
+.am-btn-primary.am-disabled:hover,
+.am-btn-primary[disabled]:hover,
+fieldset[disabled] .am-btn-primary:hover,
+.am-btn-primary.am-disabled:focus,
+.am-btn-primary[disabled]:focus,
+fieldset[disabled] .am-btn-primary:focus,
+.am-btn-primary.am-disabled:active,
+.am-btn-primary[disabled]:active,
+fieldset[disabled] .am-btn-primary:active,
+.am-btn-primary.am-disabled.am-active,
+.am-btn-primary[disabled].am-active,
+fieldset[disabled] .am-btn-primary.am-active {
   background-color: #1abc9c;
   border-color: #1abc9c;
   opacity: 0.5;
 }
-.ci-btn-info {
+.am-btn-info {
   color: #fff;
   background-color: #3498db;
   border-color: #3498db;
 }
-a.ci-btn-info:visited {
+a.am-btn-info:visited {
   color: #fff;
 }
-.ci-btn-info:hover,
-.ci-btn-info:focus,
-.ci-btn-info:active,
-.ci-btn-info.ci-active {
+.am-btn-info:hover,
+.am-btn-info:focus,
+.am-btn-info:active,
+.am-btn-info.am-active {
   color: #fff;
   border-color: #1d6fa5;
 }
-.ci-btn-info:hover,
-.ci-btn-info:focus {
+.am-btn-info:hover,
+.am-btn-info:focus {
   background-color: #217dbb;
 }
-.ci-btn-info:active,
-.ci-btn-info.ci-active {
+.am-btn-info:active,
+.am-btn-info.am-active {
   background-image: none;
   background-color: #1d6fa5;
 }
-.ci-btn-info.ci-disabled,
-.ci-btn-info[disabled],
-fieldset[disabled] .ci-btn-info,
-.ci-btn-info.ci-disabled:hover,
-.ci-btn-info[disabled]:hover,
-fieldset[disabled] .ci-btn-info:hover,
-.ci-btn-info.ci-disabled:focus,
-.ci-btn-info[disabled]:focus,
-fieldset[disabled] .ci-btn-info:focus,
-.ci-btn-info.ci-disabled:active,
-.ci-btn-info[disabled]:active,
-fieldset[disabled] .ci-btn-info:active,
-.ci-btn-info.ci-disabled.ci-active,
-.ci-btn-info[disabled].ci-active,
-fieldset[disabled] .ci-btn-info.ci-active {
+.am-btn-info.am-disabled,
+.am-btn-info[disabled],
+fieldset[disabled] .am-btn-info,
+.am-btn-info.am-disabled:hover,
+.am-btn-info[disabled]:hover,
+fieldset[disabled] .am-btn-info:hover,
+.am-btn-info.am-disabled:focus,
+.am-btn-info[disabled]:focus,
+fieldset[disabled] .am-btn-info:focus,
+.am-btn-info.am-disabled:active,
+.am-btn-info[disabled]:active,
+fieldset[disabled] .am-btn-info:active,
+.am-btn-info.am-disabled.am-active,
+.am-btn-info[disabled].am-active,
+fieldset[disabled] .am-btn-info.am-active {
   background-color: #3498db;
   border-color: #3498db;
   opacity: 0.5;
 }
-.ci-btn-success {
+.am-btn-success {
   color: #fff;
   background-color: #2ecc71;
   border-color: #2ecc71;
 }
-a.ci-btn-success:visited {
+a.am-btn-success:visited {
   color: #fff;
 }
-.ci-btn-success:hover,
-.ci-btn-success:focus,
-.ci-btn-success:active,
-.ci-btn-success.ci-active {
+.am-btn-success:hover,
+.am-btn-success:focus,
+.am-btn-success:active,
+.am-btn-success.am-active {
   color: #fff;
   border-color: #208e4e;
 }
-.ci-btn-success:hover,
-.ci-btn-success:focus {
+.am-btn-success:hover,
+.am-btn-success:focus {
   background-color: #25a25a;
 }
-.ci-btn-success:active,
-.ci-btn-success.ci-active {
+.am-btn-success:active,
+.am-btn-success.am-active {
   background-image: none;
   background-color: #208e4e;
 }
-.ci-btn-success.ci-disabled,
-.ci-btn-success[disabled],
-fieldset[disabled] .ci-btn-success,
-.ci-btn-success.ci-disabled:hover,
-.ci-btn-success[disabled]:hover,
-fieldset[disabled] .ci-btn-success:hover,
-.ci-btn-success.ci-disabled:focus,
-.ci-btn-success[disabled]:focus,
-fieldset[disabled] .ci-btn-success:focus,
-.ci-btn-success.ci-disabled:active,
-.ci-btn-success[disabled]:active,
-fieldset[disabled] .ci-btn-success:active,
-.ci-btn-success.ci-disabled.ci-active,
-.ci-btn-success[disabled].ci-active,
-fieldset[disabled] .ci-btn-success.ci-active {
+.am-btn-success.am-disabled,
+.am-btn-success[disabled],
+fieldset[disabled] .am-btn-success,
+.am-btn-success.am-disabled:hover,
+.am-btn-success[disabled]:hover,
+fieldset[disabled] .am-btn-success:hover,
+.am-btn-success.am-disabled:focus,
+.am-btn-success[disabled]:focus,
+fieldset[disabled] .am-btn-success:focus,
+.am-btn-success.am-disabled:active,
+.am-btn-success[disabled]:active,
+fieldset[disabled] .am-btn-success:active,
+.am-btn-success.am-disabled.am-active,
+.am-btn-success[disabled].am-active,
+fieldset[disabled] .am-btn-success.am-active {
   background-color: #2ecc71;
   border-color: #2ecc71;
   opacity: 0.5;
 }
-.ci-btn-warning {
+.am-btn-warning {
   color: #fff;
   background-color: #f1c40f;
   border-color: #f1c40f;
 }
-a.ci-btn-warning:visited {
+a.am-btn-warning:visited {
   color: #fff;
 }
-.ci-btn-warning:hover,
-.ci-btn-warning:focus,
-.ci-btn-warning:active,
-.ci-btn-warning.ci-active {
+.am-btn-warning:hover,
+.am-btn-warning:focus,
+.am-btn-warning:active,
+.am-btn-warning.am-active {
   color: #fff;
   border-color: #aa8a0a;
 }
-.ci-btn-warning:hover,
-.ci-btn-warning:focus {
+.am-btn-warning:hover,
+.am-btn-warning:focus {
   background-color: #c29d0b;
 }
-.ci-btn-warning:active,
-.ci-btn-warning.ci-active {
+.am-btn-warning:active,
+.am-btn-warning.am-active {
   background-image: none;
   background-color: #aa8a0a;
 }
-.ci-btn-warning.ci-disabled,
-.ci-btn-warning[disabled],
-fieldset[disabled] .ci-btn-warning,
-.ci-btn-warning.ci-disabled:hover,
-.ci-btn-warning[disabled]:hover,
-fieldset[disabled] .ci-btn-warning:hover,
-.ci-btn-warning.ci-disabled:focus,
-.ci-btn-warning[disabled]:focus,
-fieldset[disabled] .ci-btn-warning:focus,
-.ci-btn-warning.ci-disabled:active,
-.ci-btn-warning[disabled]:active,
-fieldset[disabled] .ci-btn-warning:active,
-.ci-btn-warning.ci-disabled.ci-active,
-.ci-btn-warning[disabled].ci-active,
-fieldset[disabled] .ci-btn-warning.ci-active {
+.am-btn-warning.am-disabled,
+.am-btn-warning[disabled],
+fieldset[disabled] .am-btn-warning,
+.am-btn-warning.am-disabled:hover,
+.am-btn-warning[disabled]:hover,
+fieldset[disabled] .am-btn-warning:hover,
+.am-btn-warning.am-disabled:focus,
+.am-btn-warning[disabled]:focus,
+fieldset[disabled] .am-btn-warning:focus,
+.am-btn-warning.am-disabled:active,
+.am-btn-warning[disabled]:active,
+fieldset[disabled] .am-btn-warning:active,
+.am-btn-warning.am-disabled.am-active,
+.am-btn-warning[disabled].am-active,
+fieldset[disabled] .am-btn-warning.am-active {
   background-color: #f1c40f;
   border-color: #f1c40f;
   opacity: 0.5;
 }
-.ci-btn-danger {
+.am-btn-danger {
   color: #fff;
   background-color: #e74c3c;
   border-color: #e74c3c;
 }
-a.ci-btn-danger:visited {
+a.am-btn-danger:visited {
   color: #fff;
 }
-.ci-btn-danger:hover,
-.ci-btn-danger:focus,
-.ci-btn-danger:active,
-.ci-btn-danger.ci-active {
+.am-btn-danger:hover,
+.am-btn-danger:focus,
+.am-btn-danger:active,
+.am-btn-danger.am-active {
   color: #fff;
   border-color: #bf2718;
 }
-.ci-btn-danger:hover,
-.ci-btn-danger:focus {
+.am-btn-danger:hover,
+.am-btn-danger:focus {
   background-color: #d62c1a;
 }
-.ci-btn-danger:active,
-.ci-btn-danger.ci-active {
+.am-btn-danger:active,
+.am-btn-danger.am-active {
   background-image: none;
   background-color: #bf2718;
 }
-.ci-btn-danger.ci-disabled,
-.ci-btn-danger[disabled],
-fieldset[disabled] .ci-btn-danger,
-.ci-btn-danger.ci-disabled:hover,
-.ci-btn-danger[disabled]:hover,
-fieldset[disabled] .ci-btn-danger:hover,
-.ci-btn-danger.ci-disabled:focus,
-.ci-btn-danger[disabled]:focus,
-fieldset[disabled] .ci-btn-danger:focus,
-.ci-btn-danger.ci-disabled:active,
-.ci-btn-danger[disabled]:active,
-fieldset[disabled] .ci-btn-danger:active,
-.ci-btn-danger.ci-disabled.ci-active,
-.ci-btn-danger[disabled].ci-active,
-fieldset[disabled] .ci-btn-danger.ci-active {
+.am-btn-danger.am-disabled,
+.am-btn-danger[disabled],
+fieldset[disabled] .am-btn-danger,
+.am-btn-danger.am-disabled:hover,
+.am-btn-danger[disabled]:hover,
+fieldset[disabled] .am-btn-danger:hover,
+.am-btn-danger.am-disabled:focus,
+.am-btn-danger[disabled]:focus,
+fieldset[disabled] .am-btn-danger:focus,
+.am-btn-danger.am-disabled:active,
+.am-btn-danger[disabled]:active,
+fieldset[disabled] .am-btn-danger:active,
+.am-btn-danger.am-disabled.am-active,
+.am-btn-danger[disabled].am-active,
+fieldset[disabled] .am-btn-danger.am-active {
   background-color: #e74c3c;
   border-color: #e74c3c;
   opacity: 0.5;
 }
 /* button size */
-.ci-btn-xs {
+.am-btn-xs {
   font-size: 12px;
 }
-.ci-btn-sm {
+.am-btn-sm {
   font-size: 14px;
 }
-.ci-btn-lg {
+.am-btn-lg {
   font-size: 18px;
 }
-.ci-btn-xl {
+.am-btn-xl {
   font-size: 20px;
 }
-.ci-btn-block {
+.am-btn-block {
   width: 100%;
   margin-bottom: 1em;
 }
-.ci-btn-radius {
+.am-btn-radius {
   border-radius: 5px;
 }
-.ci-btn-round {
+.am-btn-round {
   border-radius: 1000px;
 }
 /**
@@ -462,7 +462,7 @@ fieldset[disabled] .ci-btn-danger.ci-active {
  * @author: burning <www.cafeinit.com>
  * @version: 2016-12-06
  */
-.ci-form-group {
+.am-form-group {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -470,16 +470,16 @@ fieldset[disabled] .ci-btn-danger.ci-active {
   padding: 0;
   margin: 0 0 1em 0;
 }
-.ci-list .ci-form-group {
+.ci-list .am-form-group {
   margin-bottom: 0;
 }
-.ci-control-label {
+.am-control-label {
   min-width: 2em;
   padding: 0.25em 0;
   margin: 0 0.75em 0 0;
   font-weight: normal;
 }
-.ci-form-control {
+.am-form-control {
   -ms-flex: 1;
       flex: 1;
   width: 100%;
@@ -506,50 +506,50 @@ textarea {
  * @author: burning <www.cafeinit.com>
  * @version: 2016-11-21
  */
-.ci-checkbox,
-.ci-checkbox-inline {
+.am-checkbox,
+.am-checkbox-inline {
   position: relative;
   overflow: hidden;
 }
-.ci-checkbox input[type=checkbox],
-.ci-checkbox-inline input[type=checkbox] {
+.am-checkbox input[type=checkbox],
+.am-checkbox-inline input[type=checkbox] {
   position: absolute;
   left: -500px;
   border: none;
 }
-.ci-checkbox input[type=checkbox]:checked + label,
-.ci-checkbox-inline input[type=checkbox]:checked + label {
+.am-checkbox input[type=checkbox]:checked + label,
+.am-checkbox-inline input[type=checkbox]:checked + label {
   color: #1abc9c;
 }
-.ci-checkbox label,
-.ci-checkbox-inline label {
+.am-checkbox label,
+.am-checkbox-inline label {
   display: block;
 }
-.ci-checkbox i,
-.ci-checkbox-inline i {
+.am-checkbox i,
+.am-checkbox-inline i {
   float: left;
   margin: 0 0.25em;
   font-size: 1.5em;
 }
-.ci-checkboxs {
+.am-checkboxs {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-.ci-checkboxs .ci-checkbox {
+.am-checkboxs .am-checkbox {
   -ms-flex: 1;
       flex: 1;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }
-.ci-checkboxs .ci-checkbox-inline {
+.am-checkboxs .am-checkbox-inline {
   -ms-flex: 1;
       flex: 1;
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
 }
-.ci-list-checkbox .ci-checkbox i {
+.am-list-checkbox .am-checkbox i {
   float: right;
 }
 /**
@@ -557,30 +557,30 @@ textarea {
  * @author: burning <www.cafeinit.com>
  * @version: 2016-12-06
  */
-.ci-number {
+.am-number {
   position: relative;
   display: inline-block;
   width: 144px;
   height: 36px;
 }
-.ci-number input {
+.am-number input {
   height: 36px;
   padding-left: 46px;
   padding-right: 46px;
   text-align: center;
 }
-.ci-number .ci-btn {
+.am-number .am-btn {
   position: absolute;
   display: block;
   width: 36px;
   height: 36px;
   padding: 0;
 }
-.ci-number .ci-btn-minus {
+.am-number .am-btn-minus {
   left: 0;
   top: 0;
 }
-.ci-number .ci-btn-plus {
+.am-number .am-btn-plus {
   right: 0;
   top: 0;
 }
@@ -589,50 +589,50 @@ textarea {
  * @author: burning <www.cafeinit.com>
  * @version: 2016-11-21
  */
-.ci-radio,
-.ci-radio-inline {
+.am-radio,
+.am-radio-inline {
   position: relative;
   overflow: hidden;
 }
-.ci-radio input[type=radio],
-.ci-radio-inline input[type=radio] {
+.am-radio input[type=radio],
+.am-radio-inline input[type=radio] {
   position: absolute;
   left: -500px;
   border: none;
 }
-.ci-radio input[type=radio]:checked + label,
-.ci-radio-inline input[type=radio]:checked + label {
+.am-radio input[type=radio]:checked + label,
+.am-radio-inline input[type=radio]:checked + label {
   color: #1abc9c;
 }
-.ci-radio label,
-.ci-radio-inline label {
+.am-radio label,
+.am-radio-inline label {
   display: block;
 }
-.ci-radio i,
-.ci-radio-inline i {
+.am-radio i,
+.am-radio-inline i {
   float: left;
   margin: 0 0.25em;
   font-size: 1.5em;
 }
-.ci-radios {
+.am-radios {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-.ci-radios .ci-radio {
+.am-radios .am-radio {
   -ms-flex: 1;
       flex: 1;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }
-.ci-radios .ci-radio-inline {
+.am-radios .am-radio-inline {
   -ms-flex: 1;
       flex: 1;
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
 }
-.ci-list-radio .ci-radio i {
+.am-list-radio .am-radio i {
   float: right;
 }
 /**
@@ -640,10 +640,10 @@ textarea {
  * @author: burning <www.cafeinit.com>
  * @version: 2016-12-08
  */
-.ci-select {
+.am-select {
   position: relative;
 }
-.ci-select i {
+.am-select i {
   position: absolute;
   top: 5px;
   right: 10px;
@@ -653,11 +653,11 @@ textarea {
  * @author: burning <www.cafeinit.com>
  * @version: 2016-12-06
  */
-.ci-switch {
+.am-switch {
   display: block;
   height: 36px;
 }
-.ci-switch input {
+.am-switch input {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -671,7 +671,7 @@ textarea {
   background-color: #f7f7f7;
   transition: background-color 0.1s, border 0.1s;
 }
-.ci-switch input:before {
+.am-switch input:before {
   content: ' ';
   position: absolute;
   top: 1px;
@@ -682,7 +682,7 @@ textarea {
   background-color: #eeeeee;
   transition: transform 0.3s cubic-bezier(0.45, 1, 0.4, 1);
 }
-.ci-switch input:after {
+.am-switch input:after {
   content: ' ';
   position: absolute;
   top: 0;
@@ -694,15 +694,15 @@ textarea {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s cubic-bezier(0.4, 0.4, 0.25, 1.35);
 }
-.ci-switch input:checked {
+.am-switch input:checked {
   border-color: #1abc9c;
   background-color: #1abc9c;
   outline: 0;
 }
-.ci-switch input:checked:before {
+.am-switch input:checked:before {
   transform: scale(0);
 }
-.ci-switch input:checked:after {
+.am-switch input:checked:after {
   transform: translateX(30px);
 }
 /**
@@ -732,7 +732,7 @@ textarea {
 [class*="ci-col-"] + [class*="ci-col-"]:last-child {
   float: right;
 }
-[class*="ci-col-"] + [class*="ci-col-"].ci-u-end {
+[class*="ci-col-"] + [class*="ci-col-"].am-u-end {
   float: left;
 }
 @media only screen and (min-width:641px) {
@@ -1224,25 +1224,25 @@ textarea {
  * @author: burning <www.cafeinit.com>
  * @version: 2016-11-18
  */
-.ci-slider {
+.am-slider {
   display: inline-block;
 }
-.ci-slider .ci-slider-value {
+.am-slider .am-slider-value {
   float: left;
   width: 2em;
   height: 30px;
   line-height: 30px;
 }
-.ci-slider .ci-slider-value + .ci-slider-bar {
+.am-slider .am-slider-value + .am-slider-bar {
   margin-left: 2.5em;
 }
-.ci-slider .ci-slider-bar {
+.am-slider .am-slider-bar {
   position: relative;
   min-width: 200px;
   height: 30px;
 }
-.ci-slider .ci-slider-bar:before,
-.ci-slider .ci-slider-bar-light {
+.am-slider .am-slider-bar:before,
+.am-slider .am-slider-bar-light {
   z-index: 1;
   content: ' ';
   display: block;
@@ -1253,15 +1253,15 @@ textarea {
   margin-top: -2px;
   border-radius: 2px;
 }
-.ci-slider .ci-slider-bar:before {
+.am-slider .am-slider-bar:before {
   background: #ddd;
   width: 100%;
 }
-.ci-slider .ci-slider-bar-light {
+.am-slider .am-slider-bar-light {
   background: #1abc9c;
   width: 0;
 }
-.ci-slider .ci-slider-handle {
+.am-slider .am-slider-handle {
   z-index: 10;
   display: block;
   position: relative;
@@ -1300,36 +1300,36 @@ table code {
 th {
   text-align: left;
 }
-.ci-table {
+.am-table {
   width: 100%;
   margin-bottom: 1.5em;
   border-spacing: 0;
   border-collapse: separate;
 }
-.ci-table > thead > tr > th,
-.ci-table > tbody > tr > th,
-.ci-table > tfoot > tr > th,
-.ci-table > thead > tr > td,
-.ci-table > tbody > tr > td,
-.ci-table > tfoot > tr > td {
+.am-table > thead > tr > th,
+.am-table > tbody > tr > th,
+.am-table > tfoot > tr > th,
+.am-table > thead > tr > td,
+.am-table > tbody > tr > td,
+.am-table > tfoot > tr > td {
   padding: 0.5rem;
   border-top: 1px solid #ddd;
   line-height: 1.5em;
   vertical-align: top;
 }
-.ci-table > thead > tr > th {
+.am-table > thead > tr > th {
   vertical-align: bottom;
   border-bottom: 1px solid #ddd;
 }
-.ci-table > caption + thead > tr:first-child > th,
-.ci-table > colgroup + thead > tr:first-child > th,
-.ci-table > thead:first-child > tr:first-child > th,
-.ci-table > caption + thead > tr:first-child > td,
-.ci-table > colgroup + thead > tr:first-child > td,
-.ci-table > thead:first-child > tr:first-child > td {
+.am-table > caption + thead > tr:first-child > th,
+.am-table > colgroup + thead > tr:first-child > th,
+.am-table > thead:first-child > tr:first-child > th,
+.am-table > caption + thead > tr:first-child > td,
+.am-table > colgroup + thead > tr:first-child > td,
+.am-table > thead:first-child > tr:first-child > td {
   border-top: 0;
 }
-.ci-table > tbody + tbody tr:first-child td {
+.am-table > tbody + tbody tr:first-child td {
   border-top: 2px solid #ddd;
 }
 /**

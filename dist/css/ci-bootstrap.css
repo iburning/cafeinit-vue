@@ -153,7 +153,7 @@ a:hover {
  * @author: burning <www.cafeinit.com>
  * @version: 2016-12-05
  */
-.ci-btn {
+.btn {
   display: inline-block;
   padding: 0.5em 1em;
   margin: 0;
@@ -176,285 +176,285 @@ a:hover {
           appearance: none;
   transition: background-color 300ms ease-out, border-color 300ms ease-out;
 }
-.ci-btn-default {
+.btn-default {
   color: #fff;
   background-color: #bdc3c7;
   border-color: #bdc3c7;
 }
-a.ci-btn-default:visited {
+a.btn-default:visited {
   color: #fff;
 }
-.ci-btn-default:hover,
-.ci-btn-default:focus,
-.ci-btn-default:active,
-.ci-btn-default.ci-active {
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active {
   color: #fff;
   border-color: #949da4;
 }
-.ci-btn-default:hover,
-.ci-btn-default:focus {
+.btn-default:hover,
+.btn-default:focus {
   background-color: #a1aab0;
 }
-.ci-btn-default:active,
-.ci-btn-default.ci-active {
+.btn-default:active,
+.btn-default.active {
   background-image: none;
   background-color: #949da4;
 }
-.ci-btn-default.ci-disabled,
-.ci-btn-default[disabled],
-fieldset[disabled] .ci-btn-default,
-.ci-btn-default.ci-disabled:hover,
-.ci-btn-default[disabled]:hover,
-fieldset[disabled] .ci-btn-default:hover,
-.ci-btn-default.ci-disabled:focus,
-.ci-btn-default[disabled]:focus,
-fieldset[disabled] .ci-btn-default:focus,
-.ci-btn-default.ci-disabled:active,
-.ci-btn-default[disabled]:active,
-fieldset[disabled] .ci-btn-default:active,
-.ci-btn-default.ci-disabled.ci-active,
-.ci-btn-default[disabled].ci-active,
-fieldset[disabled] .ci-btn-default.ci-active {
+.btn-default.disabled,
+.btn-default[disabled],
+fieldset[disabled] .btn-default,
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled:active,
+.btn-default[disabled]:active,
+fieldset[disabled] .btn-default:active,
+.btn-default.disabled.active,
+.btn-default[disabled].active,
+fieldset[disabled] .btn-default.active {
   background-color: #bdc3c7;
   border-color: #bdc3c7;
   opacity: 0.5;
 }
-.ci-btn-primary {
+.btn-primary {
   color: #fff;
   background-color: #1abc9c;
   border-color: #1abc9c;
 }
-a.ci-btn-primary:visited {
+a.btn-primary:visited {
   color: #fff;
 }
-.ci-btn-primary:hover,
-.ci-btn-primary:focus,
-.ci-btn-primary:active,
-.ci-btn-primary.ci-active {
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
   color: #fff;
   border-color: #117964;
 }
-.ci-btn-primary:hover,
-.ci-btn-primary:focus {
+.btn-primary:hover,
+.btn-primary:focus {
   background-color: #148f77;
 }
-.ci-btn-primary:active,
-.ci-btn-primary.ci-active {
+.btn-primary:active,
+.btn-primary.active {
   background-image: none;
   background-color: #117964;
 }
-.ci-btn-primary.ci-disabled,
-.ci-btn-primary[disabled],
-fieldset[disabled] .ci-btn-primary,
-.ci-btn-primary.ci-disabled:hover,
-.ci-btn-primary[disabled]:hover,
-fieldset[disabled] .ci-btn-primary:hover,
-.ci-btn-primary.ci-disabled:focus,
-.ci-btn-primary[disabled]:focus,
-fieldset[disabled] .ci-btn-primary:focus,
-.ci-btn-primary.ci-disabled:active,
-.ci-btn-primary[disabled]:active,
-fieldset[disabled] .ci-btn-primary:active,
-.ci-btn-primary.ci-disabled.ci-active,
-.ci-btn-primary[disabled].ci-active,
-fieldset[disabled] .ci-btn-primary.ci-active {
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
   background-color: #1abc9c;
   border-color: #1abc9c;
   opacity: 0.5;
 }
-.ci-btn-info {
+.btn-info {
   color: #fff;
   background-color: #3498db;
   border-color: #3498db;
 }
-a.ci-btn-info:visited {
+a.btn-info:visited {
   color: #fff;
 }
-.ci-btn-info:hover,
-.ci-btn-info:focus,
-.ci-btn-info:active,
-.ci-btn-info.ci-active {
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active,
+.btn-info.active {
   color: #fff;
   border-color: #1d6fa5;
 }
-.ci-btn-info:hover,
-.ci-btn-info:focus {
+.btn-info:hover,
+.btn-info:focus {
   background-color: #217dbb;
 }
-.ci-btn-info:active,
-.ci-btn-info.ci-active {
+.btn-info:active,
+.btn-info.active {
   background-image: none;
   background-color: #1d6fa5;
 }
-.ci-btn-info.ci-disabled,
-.ci-btn-info[disabled],
-fieldset[disabled] .ci-btn-info,
-.ci-btn-info.ci-disabled:hover,
-.ci-btn-info[disabled]:hover,
-fieldset[disabled] .ci-btn-info:hover,
-.ci-btn-info.ci-disabled:focus,
-.ci-btn-info[disabled]:focus,
-fieldset[disabled] .ci-btn-info:focus,
-.ci-btn-info.ci-disabled:active,
-.ci-btn-info[disabled]:active,
-fieldset[disabled] .ci-btn-info:active,
-.ci-btn-info.ci-disabled.ci-active,
-.ci-btn-info[disabled].ci-active,
-fieldset[disabled] .ci-btn-info.ci-active {
+.btn-info.disabled,
+.btn-info[disabled],
+fieldset[disabled] .btn-info,
+.btn-info.disabled:hover,
+.btn-info[disabled]:hover,
+fieldset[disabled] .btn-info:hover,
+.btn-info.disabled:focus,
+.btn-info[disabled]:focus,
+fieldset[disabled] .btn-info:focus,
+.btn-info.disabled:active,
+.btn-info[disabled]:active,
+fieldset[disabled] .btn-info:active,
+.btn-info.disabled.active,
+.btn-info[disabled].active,
+fieldset[disabled] .btn-info.active {
   background-color: #3498db;
   border-color: #3498db;
   opacity: 0.5;
 }
-.ci-btn-success {
+.btn-success {
   color: #fff;
   background-color: #2ecc71;
   border-color: #2ecc71;
 }
-a.ci-btn-success:visited {
+a.btn-success:visited {
   color: #fff;
 }
-.ci-btn-success:hover,
-.ci-btn-success:focus,
-.ci-btn-success:active,
-.ci-btn-success.ci-active {
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active {
   color: #fff;
   border-color: #208e4e;
 }
-.ci-btn-success:hover,
-.ci-btn-success:focus {
+.btn-success:hover,
+.btn-success:focus {
   background-color: #25a25a;
 }
-.ci-btn-success:active,
-.ci-btn-success.ci-active {
+.btn-success:active,
+.btn-success.active {
   background-image: none;
   background-color: #208e4e;
 }
-.ci-btn-success.ci-disabled,
-.ci-btn-success[disabled],
-fieldset[disabled] .ci-btn-success,
-.ci-btn-success.ci-disabled:hover,
-.ci-btn-success[disabled]:hover,
-fieldset[disabled] .ci-btn-success:hover,
-.ci-btn-success.ci-disabled:focus,
-.ci-btn-success[disabled]:focus,
-fieldset[disabled] .ci-btn-success:focus,
-.ci-btn-success.ci-disabled:active,
-.ci-btn-success[disabled]:active,
-fieldset[disabled] .ci-btn-success:active,
-.ci-btn-success.ci-disabled.ci-active,
-.ci-btn-success[disabled].ci-active,
-fieldset[disabled] .ci-btn-success.ci-active {
+.btn-success.disabled,
+.btn-success[disabled],
+fieldset[disabled] .btn-success,
+.btn-success.disabled:hover,
+.btn-success[disabled]:hover,
+fieldset[disabled] .btn-success:hover,
+.btn-success.disabled:focus,
+.btn-success[disabled]:focus,
+fieldset[disabled] .btn-success:focus,
+.btn-success.disabled:active,
+.btn-success[disabled]:active,
+fieldset[disabled] .btn-success:active,
+.btn-success.disabled.active,
+.btn-success[disabled].active,
+fieldset[disabled] .btn-success.active {
   background-color: #2ecc71;
   border-color: #2ecc71;
   opacity: 0.5;
 }
-.ci-btn-warning {
+.btn-warning {
   color: #fff;
   background-color: #f1c40f;
   border-color: #f1c40f;
 }
-a.ci-btn-warning:visited {
+a.btn-warning:visited {
   color: #fff;
 }
-.ci-btn-warning:hover,
-.ci-btn-warning:focus,
-.ci-btn-warning:active,
-.ci-btn-warning.ci-active {
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active,
+.btn-warning.active {
   color: #fff;
   border-color: #aa8a0a;
 }
-.ci-btn-warning:hover,
-.ci-btn-warning:focus {
+.btn-warning:hover,
+.btn-warning:focus {
   background-color: #c29d0b;
 }
-.ci-btn-warning:active,
-.ci-btn-warning.ci-active {
+.btn-warning:active,
+.btn-warning.active {
   background-image: none;
   background-color: #aa8a0a;
 }
-.ci-btn-warning.ci-disabled,
-.ci-btn-warning[disabled],
-fieldset[disabled] .ci-btn-warning,
-.ci-btn-warning.ci-disabled:hover,
-.ci-btn-warning[disabled]:hover,
-fieldset[disabled] .ci-btn-warning:hover,
-.ci-btn-warning.ci-disabled:focus,
-.ci-btn-warning[disabled]:focus,
-fieldset[disabled] .ci-btn-warning:focus,
-.ci-btn-warning.ci-disabled:active,
-.ci-btn-warning[disabled]:active,
-fieldset[disabled] .ci-btn-warning:active,
-.ci-btn-warning.ci-disabled.ci-active,
-.ci-btn-warning[disabled].ci-active,
-fieldset[disabled] .ci-btn-warning.ci-active {
+.btn-warning.disabled,
+.btn-warning[disabled],
+fieldset[disabled] .btn-warning,
+.btn-warning.disabled:hover,
+.btn-warning[disabled]:hover,
+fieldset[disabled] .btn-warning:hover,
+.btn-warning.disabled:focus,
+.btn-warning[disabled]:focus,
+fieldset[disabled] .btn-warning:focus,
+.btn-warning.disabled:active,
+.btn-warning[disabled]:active,
+fieldset[disabled] .btn-warning:active,
+.btn-warning.disabled.active,
+.btn-warning[disabled].active,
+fieldset[disabled] .btn-warning.active {
   background-color: #f1c40f;
   border-color: #f1c40f;
   opacity: 0.5;
 }
-.ci-btn-danger {
+.btn-danger {
   color: #fff;
   background-color: #e74c3c;
   border-color: #e74c3c;
 }
-a.ci-btn-danger:visited {
+a.btn-danger:visited {
   color: #fff;
 }
-.ci-btn-danger:hover,
-.ci-btn-danger:focus,
-.ci-btn-danger:active,
-.ci-btn-danger.ci-active {
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active,
+.btn-danger.active {
   color: #fff;
   border-color: #bf2718;
 }
-.ci-btn-danger:hover,
-.ci-btn-danger:focus {
+.btn-danger:hover,
+.btn-danger:focus {
   background-color: #d62c1a;
 }
-.ci-btn-danger:active,
-.ci-btn-danger.ci-active {
+.btn-danger:active,
+.btn-danger.active {
   background-image: none;
   background-color: #bf2718;
 }
-.ci-btn-danger.ci-disabled,
-.ci-btn-danger[disabled],
-fieldset[disabled] .ci-btn-danger,
-.ci-btn-danger.ci-disabled:hover,
-.ci-btn-danger[disabled]:hover,
-fieldset[disabled] .ci-btn-danger:hover,
-.ci-btn-danger.ci-disabled:focus,
-.ci-btn-danger[disabled]:focus,
-fieldset[disabled] .ci-btn-danger:focus,
-.ci-btn-danger.ci-disabled:active,
-.ci-btn-danger[disabled]:active,
-fieldset[disabled] .ci-btn-danger:active,
-.ci-btn-danger.ci-disabled.ci-active,
-.ci-btn-danger[disabled].ci-active,
-fieldset[disabled] .ci-btn-danger.ci-active {
+.btn-danger.disabled,
+.btn-danger[disabled],
+fieldset[disabled] .btn-danger,
+.btn-danger.disabled:hover,
+.btn-danger[disabled]:hover,
+fieldset[disabled] .btn-danger:hover,
+.btn-danger.disabled:focus,
+.btn-danger[disabled]:focus,
+fieldset[disabled] .btn-danger:focus,
+.btn-danger.disabled:active,
+.btn-danger[disabled]:active,
+fieldset[disabled] .btn-danger:active,
+.btn-danger.disabled.active,
+.btn-danger[disabled].active,
+fieldset[disabled] .btn-danger.active {
   background-color: #e74c3c;
   border-color: #e74c3c;
   opacity: 0.5;
 }
 /* button size */
-.ci-btn-xs {
+.btn-xs {
   font-size: 12px;
 }
-.ci-btn-sm {
+.btn-sm {
   font-size: 14px;
 }
-.ci-btn-lg {
+.btn-lg {
   font-size: 18px;
 }
-.ci-btn-xl {
+.btn-xl {
   font-size: 20px;
 }
-.ci-btn-block {
+.btn-block {
   width: 100%;
   margin-bottom: 1em;
 }
-.ci-btn-radius {
+.btn-radius {
   border-radius: 5px;
 }
-.ci-btn-round {
+.btn-round {
   border-radius: 1000px;
 }
 /**
@@ -462,7 +462,7 @@ fieldset[disabled] .ci-btn-danger.ci-active {
  * @author: burning <www.cafeinit.com>
  * @version: 2016-12-06
  */
-.ci-form-group {
+.form-group {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -470,16 +470,16 @@ fieldset[disabled] .ci-btn-danger.ci-active {
   padding: 0;
   margin: 0 0 1em 0;
 }
-.ci-list .ci-form-group {
+.ci-list .form-group {
   margin-bottom: 0;
 }
-.ci-control-label {
+.control-label {
   min-width: 2em;
   padding: 0.25em 0;
   margin: 0 0.75em 0 0;
   font-weight: normal;
 }
-.ci-form-control {
+.form-control {
   -ms-flex: 1;
       flex: 1;
   width: 100%;
@@ -506,50 +506,50 @@ textarea {
  * @author: burning <www.cafeinit.com>
  * @version: 2016-11-21
  */
-.ci-checkbox,
-.ci-checkbox-inline {
+.checkbox,
+.checkbox-inline {
   position: relative;
   overflow: hidden;
 }
-.ci-checkbox input[type=checkbox],
-.ci-checkbox-inline input[type=checkbox] {
+.checkbox input[type=checkbox],
+.checkbox-inline input[type=checkbox] {
   position: absolute;
   left: -500px;
   border: none;
 }
-.ci-checkbox input[type=checkbox]:checked + label,
-.ci-checkbox-inline input[type=checkbox]:checked + label {
+.checkbox input[type=checkbox]:checked + label,
+.checkbox-inline input[type=checkbox]:checked + label {
   color: #1abc9c;
 }
-.ci-checkbox label,
-.ci-checkbox-inline label {
+.checkbox label,
+.checkbox-inline label {
   display: block;
 }
-.ci-checkbox i,
-.ci-checkbox-inline i {
+.checkbox i,
+.checkbox-inline i {
   float: left;
   margin: 0 0.25em;
   font-size: 1.5em;
 }
-.ci-checkboxs {
+.checkboxs {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-.ci-checkboxs .ci-checkbox {
+.checkboxs .checkbox {
   -ms-flex: 1;
       flex: 1;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }
-.ci-checkboxs .ci-checkbox-inline {
+.checkboxs .checkbox-inline {
   -ms-flex: 1;
       flex: 1;
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
 }
-.ci-list-checkbox .ci-checkbox i {
+.list-checkbox .checkbox i {
   float: right;
 }
 /**
@@ -557,30 +557,30 @@ textarea {
  * @author: burning <www.cafeinit.com>
  * @version: 2016-12-06
  */
-.ci-number {
+.number {
   position: relative;
   display: inline-block;
   width: 144px;
   height: 36px;
 }
-.ci-number input {
+.number input {
   height: 36px;
   padding-left: 46px;
   padding-right: 46px;
   text-align: center;
 }
-.ci-number .ci-btn {
+.number .btn {
   position: absolute;
   display: block;
   width: 36px;
   height: 36px;
   padding: 0;
 }
-.ci-number .ci-btn-minus {
+.number .btn-minus {
   left: 0;
   top: 0;
 }
-.ci-number .ci-btn-plus {
+.number .btn-plus {
   right: 0;
   top: 0;
 }
@@ -589,50 +589,50 @@ textarea {
  * @author: burning <www.cafeinit.com>
  * @version: 2016-11-21
  */
-.ci-radio,
-.ci-radio-inline {
+.radio,
+.radio-inline {
   position: relative;
   overflow: hidden;
 }
-.ci-radio input[type=radio],
-.ci-radio-inline input[type=radio] {
+.radio input[type=radio],
+.radio-inline input[type=radio] {
   position: absolute;
   left: -500px;
   border: none;
 }
-.ci-radio input[type=radio]:checked + label,
-.ci-radio-inline input[type=radio]:checked + label {
+.radio input[type=radio]:checked + label,
+.radio-inline input[type=radio]:checked + label {
   color: #1abc9c;
 }
-.ci-radio label,
-.ci-radio-inline label {
+.radio label,
+.radio-inline label {
   display: block;
 }
-.ci-radio i,
-.ci-radio-inline i {
+.radio i,
+.radio-inline i {
   float: left;
   margin: 0 0.25em;
   font-size: 1.5em;
 }
-.ci-radios {
+.radios {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-.ci-radios .ci-radio {
+.radios .radio {
   -ms-flex: 1;
       flex: 1;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }
-.ci-radios .ci-radio-inline {
+.radios .radio-inline {
   -ms-flex: 1;
       flex: 1;
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
 }
-.ci-list-radio .ci-radio i {
+.list-radio .radio i {
   float: right;
 }
 /**
@@ -640,10 +640,10 @@ textarea {
  * @author: burning <www.cafeinit.com>
  * @version: 2016-12-08
  */
-.ci-select {
+.select {
   position: relative;
 }
-.ci-select i {
+.select i {
   position: absolute;
   top: 5px;
   right: 10px;
@@ -653,11 +653,11 @@ textarea {
  * @author: burning <www.cafeinit.com>
  * @version: 2016-12-06
  */
-.ci-switch {
+.switch {
   display: block;
   height: 36px;
 }
-.ci-switch input {
+.switch input {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -671,7 +671,7 @@ textarea {
   background-color: #f7f7f7;
   transition: background-color 0.1s, border 0.1s;
 }
-.ci-switch input:before {
+.switch input:before {
   content: ' ';
   position: absolute;
   top: 1px;
@@ -682,7 +682,7 @@ textarea {
   background-color: #eeeeee;
   transition: transform 0.3s cubic-bezier(0.45, 1, 0.4, 1);
 }
-.ci-switch input:after {
+.switch input:after {
   content: ' ';
   position: absolute;
   top: 0;
@@ -694,15 +694,15 @@ textarea {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s cubic-bezier(0.4, 0.4, 0.25, 1.35);
 }
-.ci-switch input:checked {
+.switch input:checked {
   border-color: #1abc9c;
   background-color: #1abc9c;
   outline: 0;
 }
-.ci-switch input:checked:before {
+.switch input:checked:before {
   transform: scale(0);
 }
-.ci-switch input:checked:after {
+.switch input:checked:after {
   transform: translateX(30px);
 }
 /**
@@ -732,7 +732,7 @@ textarea {
 [class*="ci-col-"] + [class*="ci-col-"]:last-child {
   float: right;
 }
-[class*="ci-col-"] + [class*="ci-col-"].ci-u-end {
+[class*="ci-col-"] + [class*="ci-col-"].u-end {
   float: left;
 }
 @media only screen and (min-width:641px) {
@@ -1224,25 +1224,25 @@ textarea {
  * @author: burning <www.cafeinit.com>
  * @version: 2016-11-18
  */
-.ci-slider {
+.slider {
   display: inline-block;
 }
-.ci-slider .ci-slider-value {
+.slider .slider-value {
   float: left;
   width: 2em;
   height: 30px;
   line-height: 30px;
 }
-.ci-slider .ci-slider-value + .ci-slider-bar {
+.slider .slider-value + .slider-bar {
   margin-left: 2.5em;
 }
-.ci-slider .ci-slider-bar {
+.slider .slider-bar {
   position: relative;
   min-width: 200px;
   height: 30px;
 }
-.ci-slider .ci-slider-bar:before,
-.ci-slider .ci-slider-bar-light {
+.slider .slider-bar:before,
+.slider .slider-bar-light {
   z-index: 1;
   content: ' ';
   display: block;
@@ -1253,15 +1253,15 @@ textarea {
   margin-top: -2px;
   border-radius: 2px;
 }
-.ci-slider .ci-slider-bar:before {
+.slider .slider-bar:before {
   background: #ddd;
   width: 100%;
 }
-.ci-slider .ci-slider-bar-light {
+.slider .slider-bar-light {
   background: #1abc9c;
   width: 0;
 }
-.ci-slider .ci-slider-handle {
+.slider .slider-handle {
   z-index: 10;
   display: block;
   position: relative;
@@ -1300,36 +1300,36 @@ table code {
 th {
   text-align: left;
 }
-.ci-table {
+.table {
   width: 100%;
   margin-bottom: 1.5em;
   border-spacing: 0;
   border-collapse: separate;
 }
-.ci-table > thead > tr > th,
-.ci-table > tbody > tr > th,
-.ci-table > tfoot > tr > th,
-.ci-table > thead > tr > td,
-.ci-table > tbody > tr > td,
-.ci-table > tfoot > tr > td {
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
   padding: 0.5rem;
   border-top: 1px solid #ddd;
   line-height: 1.5em;
   vertical-align: top;
 }
-.ci-table > thead > tr > th {
+.table > thead > tr > th {
   vertical-align: bottom;
   border-bottom: 1px solid #ddd;
 }
-.ci-table > caption + thead > tr:first-child > th,
-.ci-table > colgroup + thead > tr:first-child > th,
-.ci-table > thead:first-child > tr:first-child > th,
-.ci-table > caption + thead > tr:first-child > td,
-.ci-table > colgroup + thead > tr:first-child > td,
-.ci-table > thead:first-child > tr:first-child > td {
+.table > caption + thead > tr:first-child > th,
+.table > colgroup + thead > tr:first-child > th,
+.table > thead:first-child > tr:first-child > th,
+.table > caption + thead > tr:first-child > td,
+.table > colgroup + thead > tr:first-child > td,
+.table > thead:first-child > tr:first-child > td {
   border-top: 0;
 }
-.ci-table > tbody + tbody tr:first-child td {
+.table > tbody + tbody tr:first-child td {
   border-top: 2px solid #ddd;
 }
 /**
