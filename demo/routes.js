@@ -26,6 +26,7 @@ import Pagination from './pages/pagination'
 import Progress from './pages/progress'
 import Rate from './pages/rate'
 import ScrollView from './pages/scrollView'
+import Step from './pages/step'
 import SlideView from './pages/slideView'
 import Sticky from './pages/sticky'
 import TabBar from './pages/tabBar'
@@ -69,6 +70,7 @@ export default [
   { path: '/rate', component: Rate },
   { path: '/scroll-view', component: ScrollView },
   { path: '/slide-view', component: SlideView },
+  { path: '/step', component: Step },
   { path: '/sticky', component: Sticky },
   { path: '/table', component: Table },
   { path: '/tab-bar', component: TabBar },

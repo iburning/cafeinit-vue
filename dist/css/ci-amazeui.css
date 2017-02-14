@@ -1273,6 +1273,69 @@ textarea {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 /**
+ * @fileoverview ci-step
+ * @author: burning <www.cafeinit.com>
+ * @version: 2017-02-14
+ */
+.ci-step {
+  list-style: none;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+}
+.ci-step-item {
+  position: relative;
+  list-style: none;
+  -ms-flex: 1;
+      flex: 1;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.ci-step-item::before,
+.ci-step-item::after {
+  z-index: 1;
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 17.5px;
+  height: 1px;
+  width: 50%;
+  background-color: #1abc9c;
+}
+.ci-step-item::before {
+  left: 0;
+}
+.ci-step-item::after {
+  right: 0;
+}
+.ci-step-item:first-child::before,
+.ci-step-item:last-child::after {
+  display: none;
+}
+.ci-step-item-index {
+  z-index: 10;
+  position: relative;
+  display: block;
+  width: 35px;
+  height: 35px;
+  margin: 0 auto;
+  border-radius: 50%;
+  line-height: 35px;
+  text-align: center;
+  font-style: normal;
+  background-color: #1abc9c;
+  color: #fff;
+}
+.ci-step-item-title {
+  font-weight: normal;
+}
+/**
  * @fileoverview ci-sticky
  * @author: burning <www.cafeinit.com>
  * @version: 2016-11-27

@@ -1,0 +1,69 @@
+/**
+ * @fileoverview ci-step
+ * @author: burning <www.cafeinit.com>
+ * @version: 2017-02-14
+ */
+
+.ci-step {
+  list-style: none;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+}
+
+.ci-step-item {
+  position: relative;
+  list-style: none;
+  flex: 1;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+
+  &::before, &::after {
+    z-index: 1;
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 17.5px;
+    height: 1px;
+    width: 50%;
+    background-color: @color-primary;
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+}
+
+.ci-step-item:first-child::before,
+.ci-step-item:last-child::after {
+  display: none;
+}
+
+.ci-step-item-index {
+  @height: 35px;
+
+  z-index: 10;
+  position: relative;
+  display: block;
+  width: @height;
+  height: @height;
+  margin: 0 auto;
+  border-radius: 50%;
+  line-height: @height;
+  text-align: center;
+  font-style: normal;
+  background-color: @color-primary;
+  color: @color-white;
+}
+
+.ci-step-item-title {
+  font-weight: normal;
+}
