@@ -2,9 +2,9 @@
   <div v-bind:class="[`${ns}step-item`, `${ns}step-item-${myStatus}`]">
     <slot>
       <em v-if="index" v-bind:class="`${ns}step-item-index`">{{index}}</em>
-      <strong v-if="title" v-bind:class="`${ns}step-item-title`">{{title}}</strong>
-      <span v-if="desc" v-bind:class="`${ns}step-item-desc`">{{desc}}</span>
     </slot>
+    <strong v-if="title" v-bind:class="`${ns}step-item-title`">{{title}}</strong>
+    <span v-if="desc" v-bind:class="`${ns}step-item-desc`">{{desc}}</span>
   </div>
 </template>
 

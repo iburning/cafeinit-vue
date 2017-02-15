@@ -11,7 +11,7 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   padding: 0;
-  margin: 0;
+  margin: 0 0 @global-margin 0;
 }
 
 .ci-step-item {
@@ -52,12 +52,14 @@
 
   z-index: 10;
   position: relative;
-  display: block;
-  width: @height;
+  display: inline-block;
+  min-width: @height;
+  max-width: @height * 2.5;
   height: @height;
+  padding: 0 10px;
   margin: 0 auto;
   border: 2px solid @color-primary;
-  border-radius: 50%;
+  border-radius: 1000px;
   line-height: @height - 2px * 2;
   text-align: center;
   font-style: normal;
@@ -65,6 +67,8 @@
 }
 
 .ci-step-item-title {
+  display: block;
+  margin: 0 auto;
   font-weight: normal;
 }
 

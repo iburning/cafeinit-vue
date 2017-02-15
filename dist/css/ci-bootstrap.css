@@ -11,7 +11,7 @@
 /**
  * @fileoverview varialbes
  * @author: burning <www.cafeinit.com>
- * @version: 2016-09-12
+ * @version: 2017-02-15
  */
 /**
  * @fileoverview common
@@ -1286,7 +1286,7 @@ textarea {
   -ms-flex-pack: start;
       justify-content: flex-start;
   padding: 0;
-  margin: 0;
+  margin: 0 0 15px 0;
 }
 .ci-step-item {
   position: relative;
@@ -1321,18 +1321,22 @@ textarea {
 .ci-step-item-index {
   z-index: 10;
   position: relative;
-  display: block;
-  width: 36px;
+  display: inline-block;
+  min-width: 36px;
+  max-width: 90px;
   height: 36px;
+  padding: 0 10px;
   margin: 0 auto;
   border: 2px solid #1abc9c;
-  border-radius: 50%;
+  border-radius: 1000px;
   line-height: 32px;
   text-align: center;
   font-style: normal;
   color: #fff;
 }
 .ci-step-item-title {
+  display: block;
+  margin: 0 auto;
   font-weight: normal;
 }
 .ci-step-item-wait .ci-step-item-index {

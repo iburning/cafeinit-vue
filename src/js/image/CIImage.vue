@@ -27,6 +27,11 @@ export default {
       default: 100
     },
 
+    border: {
+      type: [Number, String],
+      default: 0
+    },
+
     radius: {
       type: [Number, String],
       default: 0
@@ -86,6 +91,8 @@ export default {
         overflow: 'hidden',
         width: this.myWidth + 'px',
         height: this.myHeight + 'px',
+        'border-style': 'solid',
+        'border-width': this.border + 'px',
         'border-radius': this.radius + 'px'
       }
     },
@@ -94,8 +101,8 @@ export default {
       return {
         'width': this.imageWidth + 'px',
         'height': this.imageHeight + 'px',
-        'margin-left': this.imageLeft + 'px',
-        'margin-top': this.imageTop + 'px',
+        'margin-left': this.imageLeft - this.border + 'px',
+        'margin-top': this.imageTop - this.border + 'px',
         'border-radius': this.radius + 'px'
       }
     }
