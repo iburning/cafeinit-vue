@@ -27,8 +27,8 @@
     content: " ";
     display: block;
     position: absolute;
-    top: 17.5px;
-    height: 1px;
+    top: 18px;
+    height: 2px;
     width: 50%;
     background-color: @color-primary;
   }
@@ -48,7 +48,7 @@
 }
 
 .ci-step-item-index {
-  @height: 35px;
+  @height: 36px;
 
   z-index: 10;
   position: relative;
@@ -56,14 +56,38 @@
   width: @height;
   height: @height;
   margin: 0 auto;
+  border: 2px solid @color-primary;
   border-radius: 50%;
-  line-height: @height;
+  line-height: @height - 2px * 2;
   text-align: center;
   font-style: normal;
-  background-color: @color-primary;
   color: @color-white;
 }
 
 .ci-step-item-title {
   font-weight: normal;
+}
+
+.ci-step-item-wait {
+  .ci-step-item-index {
+    border-color: @color-gray-light;
+    background-color: @color-gray-light;
+  }
+
+  &::before {
+    background-color: @color-gray-light;
+  }
+}
+
+.ci-step-item-process {
+  .ci-step-item-index {
+    background-color: @color-primary;
+  }
+}
+
+.ci-step-item-finish {
+  .ci-step-item-index {
+    background-color: lighten(@color-primary, 5%);
+    // color: @color-black;
+  }
 }

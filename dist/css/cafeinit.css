@@ -1428,8 +1428,8 @@ textarea {
   content: " ";
   display: block;
   position: absolute;
-  top: 17.5px;
-  height: 1px;
+  top: 18px;
+  height: 2px;
   width: 50%;
   background-color: #1abc9c;
 }
@@ -1447,18 +1447,31 @@ textarea {
   z-index: 10;
   position: relative;
   display: block;
-  width: 35px;
-  height: 35px;
+  width: 36px;
+  height: 36px;
   margin: 0 auto;
+  border: 2px solid #1abc9c;
   border-radius: 50%;
-  line-height: 35px;
+  line-height: 32px;
   text-align: center;
   font-style: normal;
-  background-color: #1abc9c;
   color: #fff;
 }
 .ci-step-item-title {
   font-weight: normal;
+}
+.ci-step-item-wait .ci-step-item-index {
+  border-color: #999999;
+  background-color: #999999;
+}
+.ci-step-item-wait::before {
+  background-color: #999999;
+}
+.ci-step-item-process .ci-step-item-index {
+  background-color: #1abc9c;
+}
+.ci-step-item-finish .ci-step-item-index {
+  background-color: #1dd2af;
 }
 /**
  * @fileoverview ci-sticky
