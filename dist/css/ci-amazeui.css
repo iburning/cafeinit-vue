@@ -1318,7 +1318,7 @@ textarea {
 .ci-step-item:last-child::after {
   display: none;
 }
-.ci-step-item-index {
+.ci-step-item-title {
   z-index: 10;
   position: relative;
   display: inline-block;
@@ -1330,26 +1330,32 @@ textarea {
   border: 2px solid #1abc9c;
   border-radius: 1000px;
   line-height: 32px;
-  text-align: center;
-  font-style: normal;
-  color: #fff;
-}
-.ci-step-item-title {
-  display: block;
-  margin: 0 auto;
   font-weight: normal;
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
-.ci-step-item-wait .ci-step-item-index {
+.ci-step-item-tip {
+  display: block;
+  padding: 0 5px;
+  margin: 0 auto;
+  line-height: 1.25em;
+  font-size: 14px;
+  color: #555555;
+}
+.ci-step-item-wait .ci-step-item-title {
   border-color: #999999;
   background-color: #999999;
 }
-.ci-step-item-wait::before {
+.ci-step-item-wait::before,
+.ci-step-item-wait::after {
   background-color: #999999;
 }
-.ci-step-item-process .ci-step-item-index {
+.ci-step-item-active .ci-step-item-title {
   background-color: #1abc9c;
 }
-.ci-step-item-finish .ci-step-item-index {
+.ci-step-item-finish .ci-step-item-title {
   background-color: #1dd2af;
 }
 /**

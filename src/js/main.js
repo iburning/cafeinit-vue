@@ -64,6 +64,8 @@ import CITable from './table/CITable'
 import CIBreadcrumb from './breadcrumb/CIBreadcrumb'
 import CIPagination from './pagination/CIPagination.vue'
 import CINavigation from './navigation/CINavigation.vue'
+import CIStep from './step/CIStep'
+import CIStepItem from './step/CIStepItem'
 import CITabBar from './tabView/CITabBar'
 import CITreeNav from './treeNav/CITreeNav'
 
@@ -145,6 +147,8 @@ const CIComponents = {
   'ci-breadcrumb': CIBreadcrumb,
   'ci-pagination': CIPagination,
   'ci-navigation': CINavigation,
+  'ci-step': CIStep,
+  'ci-step-item': CIStepItem,
   'ci-tab-bar': CITabBar,
   'ci-tree-nav': CITreeNav,
 

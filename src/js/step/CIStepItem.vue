@@ -1,10 +1,12 @@
 <template>
-  <div v-bind:class="[`${ns}step-item`, `${ns}step-item-${myStatus}`]">
-    <slot>
-      <em v-if="index" v-bind:class="`${ns}step-item-index`">{{index}}</em>
+  <div v-bind:class="[`${ns}step-item`, `${ns}step-item-${myStatus}`]"
+    v-on:click="$emit('click', index)">
+    <slot name="title">
+      <strong v-bind:class="`${ns}step-item-title`">{{title}}</strong>
     </slot>
-    <strong v-if="title" v-bind:class="`${ns}step-item-title`">{{title}}</strong>
-    <span v-if="desc" v-bind:class="`${ns}step-item-desc`">{{desc}}</span>
+    <slot name="tip">
+      <span v-if="tip" v-bind:class="`${ns}step-item-tip`">{{tip}}</span>
+    </slot>
   </div>
 </template>
 
@@ -20,12 +22,7 @@ export default {
 
     status: {
       type: String,
-      default: 'wait'   // wait process finish
-    },
-
-    index: {
-      type: String,
-      default: ''
+      default: 'wait'   // wait active finish
     },
 
     title: {
@@ -33,7 +30,7 @@ export default {
       default: ''
     },
 
-    desc: {
+    tip: {
       type: String,
       default: ''
     }
@@ -41,6 +38,7 @@ export default {
 
   data() {
     return {
+      index: 0,
       myStatus: this.status
     }
   },

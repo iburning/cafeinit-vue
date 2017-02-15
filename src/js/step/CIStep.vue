@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:class="ns + 'step'">
+  <div v-bind:class="`${ns}step`">
     <slot></slot>
   </div>
 </template>
@@ -22,25 +22,23 @@ export default {
 
   watch: {
     current(val) {
-      console.log('CIStep.current', val)
       this.modifyChildren()
     }
   },
 
   mounted() {
-    console.log('CIStep.mounted', this.current, this.$children.length)
     this.modifyChildren()
   },
 
   methods: {
     modifyChildren() {
       this.$children.forEach((child, index) => {
-        console.log(index, child.myStatus, child)
+        child.index = index
         if (index < this.current) {
           child.myStatus = 'finish'
         }
         else if (index == this.current) {
-          child.myStatus = 'process'
+          child.myStatus = 'active'
         }
         else if (index > this.current) {
           child.myStatus = 'wait'
