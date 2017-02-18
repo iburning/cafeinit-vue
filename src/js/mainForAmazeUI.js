@@ -65,7 +65,8 @@ import CIPagination from './pagination/AMPagination.vue'
 import CINavigation from './navigation/CINavigation.vue'
 import CIStep from './steps/CIStep'
 import CISteps from './steps/CISteps'
-import CITabBar from './tabView/CITabBar'
+import CITab from './tabView/CITab'
+import CITabs from './tabView/CITabs'
 import CITreeNav from './treeNav/CITreeNav'
 
 
@@ -147,7 +148,8 @@ const CIComponents = {
   'ci-navigation': CINavigation,
   'ci-step': CIStep,
   'ci-steps': CISteps,
-  'ci-tab-bar': CITabBar,
+  'ci-tab': CITab,
+  'ci-tabs': CITabs,
   'ci-tree-nav': CITreeNav,
 
 
