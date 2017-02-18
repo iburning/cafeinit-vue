@@ -1,0 +1,54 @@
+<template>
+  <div v-bind:class="['ci-tabs', `ci-tabs-${mode}`]">
+    <slot></slot>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'ci-tabs',
+
+  props: {
+    index: {
+      type: Number,
+      default: 0
+    },
+
+    mode: {
+      type: String,
+      default: 'default'    // bar colume
+    }
+  },
+
+  data() {
+    return {
+      myIndex: this.index
+    }
+  },
+
+  watch: {
+    index(val) {
+      this.modifyChildren()
+    }
+  },
+
+  mounted() {
+    this.$children.forEach((child, index) => {
+      child.$on('click', () => {
+        this.myIndex = index
+        this.modifyChildren()
+        this.$emit('click-item', index)
+      })
+    })
+    this.modifyChildren()
+  },
+
+  methods: {
+    modifyChildren() {
+      this.$children.forEach((child, index) => {
+        child.isActive = (index === this.myIndex)
+      })
+    }
+  }
+}
+</script>

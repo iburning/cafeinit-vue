@@ -67,6 +67,8 @@ import CINavigation from './navigation/CINavigation.vue'
 import CIStep from './step/CIStep'
 import CIStepItem from './step/CIStepItem'
 import CITabBar from './tabView/CITabBar'
+import CITab from './tabView/CITab'
+import CITabs from './tabView/CITabs'
 import CITreeNav from './treeNav/CITreeNav'
 
 
@@ -150,6 +152,8 @@ const CIComponents = {
   'ci-step': CIStep,
   'ci-step-item': CIStepItem,
   'ci-tab-bar': CITabBar,
+  'ci-tab': CITab,
+  'ci-tabs': CITabs,
   'ci-tree-nav': CITreeNav,
 
 

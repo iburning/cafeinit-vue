@@ -1,0 +1,73 @@
+/**
+ * @fileoverview ci-tabs
+ * @author: burning <www.cafeinit.com>
+ * @version: 2017-02-16
+ */
+
+.ci-tabs {
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: @global-margin;
+  border-top: 1px solid @color-border;
+  border-bottom: 1px solid @color-border;
+  background-color: @color-background;
+}
+
+.ci-tab {
+  flex: 1;
+  min-height: @base-height;
+  line-height: @base-height - 5px * 2;
+  text-align: center;
+
+  a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: @color-gray-dark;
+  }
+
+  &.ci-tab-active {
+    a {
+      color: @color-primary;
+    }
+  }
+}
+
+.ci-tabs-underline {
+  .ci-tab-active {
+    border-bottom: 3px solid @color-primary;
+  }
+}
+
+.ci-tabs-colume {
+  .ci-tab {
+    border-left: 1px solid lighten(@color-border, 5%);
+  }
+
+  .ci-tab:first-child {
+    border-left-width: 0;
+  }
+}
+
+.ci-tabs-bar {
+  .ci-icon {
+    @size: 24px;
+    display: block;
+    width: @size;
+    height: @size;
+    margin: 0 auto;
+    font-size: @size;
+  }
+
+  // .ci-tab {
+  //   height: 50px;
+  // }
+
+  .ci-tab-title {
+    display: block;
+    font-size: @font-size-smaller;
+    line-height: 1.25em;
+  }
+}

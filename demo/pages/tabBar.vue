@@ -1,19 +1,29 @@
 <template>
   <div class="page-tab-bar">
-    <ci-tab-bar ref="myTabBar"
-      v-bind:items="tabBarItems"
-      v-bind:index="1"
-      v-on:click-item="onClickItem">
-    </ci-tab-bar>
+    <ci-tabs mode="colume" class="ci-fixed-top"
+      v-bind:index="0" v-on:click-item="onClickItem">
+      <ci-tab class="tab-menu" icon="fa fa-bars" v-on:click="myAction"></ci-tab>
+      <ci-tab v-for="item in tabs"
+        v-bind:title="item.title"
+        v-bind:url="item.url">
+      </ci-tab>
+    </ci-tabs>
 
-    <ci-tab-bar class="ci-fixed-bottom">
-      <li class="ci-tab-bar-item">
-        <a href="javascript:;">AAA</a>
-      </li>
-      <li class="ci-tab-bar-item">
-        <a href="javascript:;">BBB</a>
-      </li>
-    </ci-tab-bar>
+    <ci-tabs mode="underline" v-bind:index="0" v-on:click-item="onClickItem">
+      <ci-tab v-for="item in tabs"
+        v-bind:title="item.title">
+      </ci-tab>
+    </ci-tabs>
+
+    <ci-tabs mode="bar" class="ci-fixed-bottom"
+      v-bind:index="0" v-on:click-item="onClickItem">
+      <ci-tab title="Home" icon="fa fa-home" v-on:click="myAction"></ci-tab>
+      <ci-tab v-for="item in tabs"
+        v-bind:title="item.title"
+        v-bind:icon="item.icon"
+        v-bind:url="item.url">
+      </ci-tab>
+    </ci-tabs>
   </div>
 </template>
 
@@ -23,18 +33,28 @@ export default {
 
   data() {
     return {
-      tabBarItems: [
-        { className: 'btn-shares', text: 'Shares', to: '/shares' },
-        { className: 'btn-items', text: 'Items' },
-        { className: 'btn-friends', text: 'Friends' }
+      tabs: [
+        { title: 'Photo', icon: 'fa fa-camera' },
+        { title: 'Cafe', icon: 'fa fa-coffee' },
+        { title: 'My', icon: 'fa fa-user' }
       ]
     }
   },
 
   methods: {
-    onClickItem(index, item) {
-      console.log('onClickItem', index, item)
+    onClickItem(index) {
+      console.log('onClickItem', index, this.tabs[index])
+    },
+
+    myAction() {
+      console.log('myAction')
     }
   }
 }
 </script>
+
+<style scoped="scoped">
+.tab-menu {
+  flex: 0.5;
+}
+</style>
