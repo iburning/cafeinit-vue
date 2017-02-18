@@ -1,12 +1,11 @@
 <template>
   <div v-bind:class="{ 'ci-tab': true, 'ci-tab-active': isActive }"
     v-on:click="$emit('click')">
-    <slot>
-      <a v-bind:href="url || 'javascript:;'">
-        <i v-if="icon" v-bind:class="['ci-icon', icon]"></i>
-        <span class="ci-tab-title">{{title}}</span>
-      </a>
-    </slot>
+    <a v-bind:href="url || 'javascript:;'">
+      <i v-if="icon" v-bind:class="['ci-icon', icon]"></i>
+      <span v-if="title" class="ci-tab-title">{{title}}</span>
+      <slot></slot>
+    </a>
   </div>
 </template>
 
