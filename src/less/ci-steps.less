@@ -1,0 +1,103 @@
+/**
+ * @fileoverview ci-steps
+ * @author: burning <www.cafeinit.com>
+ * @version: 2017-02-14
+ */
+
+.ci-steps {
+  list-style: none;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0 0 @global-margin 0;
+}
+
+.ci-step {
+  position: relative;
+  list-style: none;
+  flex: 1;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+
+  &::before, &::after {
+    z-index: 1;
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 18px;
+    height: 2px;
+    width: 50%;
+    background-color: @color-primary;
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+}
+
+.ci-step:first-child::before,
+.ci-step:last-child::after {
+  display: none;
+}
+
+.ci-step-title {
+  @height: 36px;
+
+  z-index: 10;
+  position: relative;
+  display: inline-block;
+  min-width: @height;
+  max-width: @height * 2.5;
+  height: @height;
+  padding: 0 10px;
+  margin: 0 auto;
+  border: 2px solid @color-primary;
+  border-radius: 1000px;
+  line-height: @height - 2px * 2;
+  font-weight: normal;
+  color: @color-white;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ci-step-tip {
+  display: block;
+  padding: 0 5px;
+  margin: 0 auto;
+  line-height: 1.25em;
+  font-size: @font-size-small;
+  color: @color-gray;
+}
+
+.ci-step-wait {
+  .ci-step-title {
+    border-color: @color-gray-light;
+    background-color: @color-gray-light;
+  }
+
+  &::before, &::after {
+    background-color: @color-gray-light;
+  }
+}
+
+.ci-step-active {
+  .ci-step-title {
+    background-color: @color-primary;
+  }
+}
+
+.ci-step-finish {
+  .ci-step-title {
+    background-color: lighten(@color-primary, 5%);
+    // color: @color-black;
+  }
+}

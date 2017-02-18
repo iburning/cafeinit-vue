@@ -23,11 +23,13 @@ import Navigation from './pages/navigation'
 import Offcanvas from './pages/offcanvas'
 import PageDemo from './pages/pageDemo'
 import Pagination from './pages/pagination'
+import Progress from './pages/progress'
 import Rate from './pages/rate'
 import ScrollView from './pages/scrollView'
+import Steps from './pages/steps'
 import SlideView from './pages/slideView'
 import Sticky from './pages/sticky'
-import TabBar from './pages/tabBar'
+import Tabs from './pages/tabs'
 import Table from './pages/table'
 import Toasts from './pages/toasts'
 import ToTop from './pages/toTop'
@@ -63,13 +65,15 @@ export default [
   { path: '/navigation', component: Navigation },
   { path: '/page-demo', component: PageDemo },
   { path: '/pagination', component: Pagination },
+  { path: '/progress', component: Progress },
   { path: '/offcanvas', component: Offcanvas },
   { path: '/rate', component: Rate },
   { path: '/scroll-view', component: ScrollView },
   { path: '/slide-view', component: SlideView },
+  { path: '/steps', component: Steps },
   { path: '/sticky', component: Sticky },
   { path: '/table', component: Table },
-  { path: '/tab-bar', component: TabBar },
+  { path: '/tabs', component: Tabs },
   { path: '/toasts', component: Toasts },
   { path: '/to-top', component: ToTop },
   { path: '/videos', component: Videos },

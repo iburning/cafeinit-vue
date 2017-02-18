@@ -1,0 +1,59 @@
+/**
+ * @fileoverview ci-progress
+ * @author: burning <www.cafeinit.com>
+ * @version: 2017-02-10
+ */
+
+.ci-progress {
+  background-color: @color-gray-lighter;
+  position: relative;
+  overflow: hidden;
+  min-width: 200px;
+  height: 20px;
+  margin-bottom: 10px;
+  line-height: 20px;
+}
+
+.ci-progress-radius {
+  border-radius: 5px;
+}
+
+.ci-progress-round {
+  border-radius: 1000px;
+}
+
+.ci-progress-light {
+  width: 0;
+  height: 100%;
+  text-align: right;
+}
+
+.ci-progress-primary {
+  .ci-progress-light {
+    background-color: @color-primary;
+  }
+}
+
+.ci-progress-info {
+  .ci-progress-light {
+    background-color: @color-info;
+  }
+}
+
+.ci-progress-success {
+  .ci-progress-light {
+    background-color: @color-success;
+  }
+}
+
+.ci-progress-warning {
+  .ci-progress-light {
+    background-color: @color-warning;
+  }
+}
+
+.ci-progress-value {
+  display: inline-block;
+  padding: 0 5px;
+  font-size: @font-size-smaller;
+}

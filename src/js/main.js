@@ -64,7 +64,10 @@ import CITable from './table/CITable'
 import CIBreadcrumb from './breadcrumb/CIBreadcrumb'
 import CIPagination from './pagination/CIPagination.vue'
 import CINavigation from './navigation/CINavigation.vue'
-import CITabBar from './tabView/CITabBar'
+import CIStep from './steps/CIStep'
+import CISteps from './steps/CISteps'
+import CITab from './tabView/CITab'
+import CITabs from './tabView/CITabs'
 import CITreeNav from './treeNav/CITreeNav'
 
 
@@ -72,6 +75,7 @@ import CITreeNav from './treeNav/CITreeNav'
 import CIBadge from './badge/CIBadge'
 import CIImage from './image/CIImage'
 import CILoading from './loading/CILoading'
+import CIProgress from './progress/CIProgress'
 import CIRate from './rate/CIRate'
 import CISticky from './sticky/CISticky'
 import CIToTop from './toTop/CIToTop'
@@ -144,7 +148,10 @@ const CIComponents = {
   'ci-breadcrumb': CIBreadcrumb,
   'ci-pagination': CIPagination,
   'ci-navigation': CINavigation,
-  'ci-tab-bar': CITabBar,
+  'ci-step': CIStep,
+  'ci-steps': CISteps,
+  'ci-tab': CITab,
+  'ci-tabs': CITabs,
   'ci-tree-nav': CITreeNav,
 
 
@@ -152,6 +159,7 @@ const CIComponents = {
   'ci-badge': CIBadge,
   'ci-image': CIImage,
   'ci-loading': CILoading,
+  'ci-progress': CIProgress,
   'ci-rate': CIRate,
   'ci-sticky': CISticky,
   'ci-to-top': CIToTop,

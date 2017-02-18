@@ -184,12 +184,12 @@ th {
 /**
  * @fileoverview main
  * @author: burning <www.cafeinit.com>
- * @version: 2016-11-24
+ * @version: 2017-02-10
  */
 /**
  * @fileoverview varialbes
  * @author: burning <www.cafeinit.com>
- * @version: 2016-09-12
+ * @version: 2017-02-15
  */
 /**
  * @fileoverview common
@@ -239,8 +239,30 @@ a:hover {
   height: 200px;
   background-color: #eee;
 }
+.ci-icon {
+  display: inline-block;
+  min-width: 16px;
+  min-height: 16px;
+  vertical-align: text-top;
+}
 .ci-icon-spin {
   animation: icon-spin 2s infinite linear;
+}
+.ci-fixed-top {
+  z-index: 500;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  margin: 0!important;
+}
+.ci-fixed-bottom {
+  z-index: 500;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin: 0!important;
 }
 /**
  * @fileoverview ci-block
@@ -868,6 +890,162 @@ textarea {
   transform: translateX(30px);
 }
 /**
+ * @fileoverview ci-grid
+ * @author: burning <www.cafeinit.com>
+ * @version: 2017-01-21
+ */
+.ci-row {
+  margin: 0 auto;
+  width: 100%;
+}
+.ci-row:before,
+.ci-row:after {
+  content: " ";
+  display: table;
+}
+.ci-row:after {
+  clear: both;
+}
+[class*="ci-col-"] {
+  position: relative;
+  float: left;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+[class*="ci-col-"] + [class*="ci-col-"]:last-child {
+  float: right;
+}
+[class*="ci-col-"] + [class*="ci-col-"].ci-u-end {
+  float: left;
+}
+@media only screen and (min-width:641px) {
+  [class*="ci-col-"] {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+[class*="ci-col-pull-"] {
+  left: auto;
+}
+[class*="ci-col-push-"] {
+  right: auto;
+}
+@media only screen {
+  .ci-col-sm-1 {
+    width: 8.33333333%;
+  }
+  .ci-col-sm-2 {
+    width: 16.66666667%;
+  }
+  .ci-col-sm-3 {
+    width: 25%;
+  }
+  .ci-col-sm-4 {
+    width: 33.33333333%;
+  }
+  .ci-col-sm-5 {
+    width: 41.66666667%;
+  }
+  .ci-col-sm-6 {
+    width: 50%;
+  }
+  .ci-col-sm-7 {
+    width: 58.33333333%;
+  }
+  .ci-col-sm-8 {
+    width: 66.66666667%;
+  }
+  .ci-col-sm-9 {
+    width: 75%;
+  }
+  .ci-col-sm-10 {
+    width: 83.33333333%;
+  }
+  .ci-col-sm-11 {
+    width: 91.66666667%;
+  }
+  .ci-col-sm-12 {
+    width: 100%;
+  }
+}
+@media only screen and (min-width:641px) {
+  .ci-col-md-1 {
+    width: 8.33333333%;
+  }
+  .ci-col-md-2 {
+    width: 16.66666667%;
+  }
+  .ci-col-md-3 {
+    width: 25%;
+  }
+  .ci-col-md-4 {
+    width: 33.33333333%;
+  }
+  .ci-col-md-5 {
+    width: 41.66666667%;
+  }
+  .ci-col-md-6 {
+    width: 50%;
+  }
+  .ci-col-md-7 {
+    width: 58.33333333%;
+  }
+  .ci-col-md-8 {
+    width: 66.66666667%;
+  }
+  .ci-col-md-9 {
+    width: 75%;
+  }
+  .ci-col-md-10 {
+    width: 83.33333333%;
+  }
+  .ci-col-md-11 {
+    width: 91.66666667%;
+  }
+  .ci-col-md-12 {
+    width: 100%;
+  }
+}
+@media only screen and (min-width:1025px) {
+  .ci-col-lg-1 {
+    width: 8.33333333%;
+  }
+  .ci-col-lg-2 {
+    width: 16.66666667%;
+  }
+  .ci-col-lg-3 {
+    width: 25%;
+  }
+  .ci-col-lg-4 {
+    width: 33.33333333%;
+  }
+  .ci-col-lg-5 {
+    width: 41.66666667%;
+  }
+  .ci-col-lg-6 {
+    width: 50%;
+  }
+  .ci-col-lg-7 {
+    width: 58.33333333%;
+  }
+  .ci-col-lg-8 {
+    width: 66.66666667%;
+  }
+  .ci-col-lg-9 {
+    width: 75%;
+  }
+  .ci-col-lg-10 {
+    width: 83.33333333%;
+  }
+  .ci-col-lg-11 {
+    width: 91.66666667%;
+  }
+  .ci-col-lg-12 {
+    width: 100%;
+  }
+}
+/**
  * @fileoverview ci-collection
  * @author: burning <www.cafeinit.com>
  * @version: 2017-01-11
@@ -1096,6 +1274,48 @@ textarea {
   clear: both;
 }
 /**
+ * @fileoverview ci-progress
+ * @author: burning <www.cafeinit.com>
+ * @version: 2017-02-10
+ */
+.ci-progress {
+  background-color: #eeeeee;
+  position: relative;
+  overflow: hidden;
+  min-width: 200px;
+  height: 20px;
+  margin-bottom: 10px;
+  line-height: 20px;
+}
+.ci-progress-radius {
+  border-radius: 5px;
+}
+.ci-progress-round {
+  border-radius: 1000px;
+}
+.ci-progress-light {
+  width: 0;
+  height: 100%;
+  text-align: right;
+}
+.ci-progress-primary .ci-progress-light {
+  background-color: #1abc9c;
+}
+.ci-progress-info .ci-progress-light {
+  background-color: #3498db;
+}
+.ci-progress-success .ci-progress-light {
+  background-color: #2ecc71;
+}
+.ci-progress-warning .ci-progress-light {
+  background-color: #f1c40f;
+}
+.ci-progress-value {
+  display: inline-block;
+  padding: 0 5px;
+  font-size: 12px;
+}
+/**
  * @fileoverview ci-rate
  * @author: burning <www.cafeinit.com>
  * @version: 2016-11-24
@@ -1184,6 +1404,92 @@ textarea {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 /**
+ * @fileoverview ci-steps
+ * @author: burning <www.cafeinit.com>
+ * @version: 2017-02-14
+ */
+.ci-steps {
+  list-style: none;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+.ci-step {
+  position: relative;
+  list-style: none;
+  -ms-flex: 1;
+      flex: 1;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.ci-step::before,
+.ci-step::after {
+  z-index: 1;
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 18px;
+  height: 2px;
+  width: 50%;
+  background-color: #1abc9c;
+}
+.ci-step::before {
+  left: 0;
+}
+.ci-step::after {
+  right: 0;
+}
+.ci-step:first-child::before,
+.ci-step:last-child::after {
+  display: none;
+}
+.ci-step-title {
+  z-index: 10;
+  position: relative;
+  display: inline-block;
+  min-width: 36px;
+  max-width: 90px;
+  height: 36px;
+  padding: 0 10px;
+  margin: 0 auto;
+  border: 2px solid #1abc9c;
+  border-radius: 1000px;
+  line-height: 32px;
+  font-weight: normal;
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.ci-step-tip {
+  display: block;
+  padding: 0 5px;
+  margin: 0 auto;
+  line-height: 1.25em;
+  font-size: 14px;
+  color: #555555;
+}
+.ci-step-wait .ci-step-title {
+  border-color: #999999;
+  background-color: #999999;
+}
+.ci-step-wait::before,
+.ci-step-wait::after {
+  background-color: #999999;
+}
+.ci-step-active .ci-step-title {
+  background-color: #1abc9c;
+}
+.ci-step-finish .ci-step-title {
+  background-color: #1dd2af;
+}
+/**
  * @fileoverview ci-sticky
  * @author: burning <www.cafeinit.com>
  * @version: 2016-11-27
@@ -1244,39 +1550,58 @@ th {
   border-top: 2px solid #ddd;
 }
 /**
- * @fileoverview ci-tab-bar
+ * @fileoverview ci-tabs
  * @author: burning <www.cafeinit.com>
- * @version: 2016-08-19
+ * @version: 2017-02-16
  */
-.ci-tab-bar-items {
-  list-style: none;
+.ci-tabs {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -ms-flex-pack: start;
       justify-content: flex-start;
-  padding: 0;
-  margin: 0 0 1em 0;
+  margin-bottom: 15px;
+  border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   background-color: #fff;
 }
-.ci-tab-bar-item {
-  list-style: none;
+.ci-tab {
   -ms-flex: 1;
       flex: 1;
-  height: 44px;
-  padding: 0;
-  margin: 0;
-  line-height: 44px;
+  min-height: 44px;
+  line-height: 34px;
   text-align: center;
 }
-.ci-tab-bar-item a,
-.ci-tab-bar-item span {
+.ci-tab a {
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  color: #333333;
+}
+.ci-tab.ci-tab-active a {
   color: #1abc9c;
 }
-.ci-tab-bar-item.ci-selected {
+.ci-tabs-underline .ci-tab-active {
   border-bottom: 3px solid #1abc9c;
+}
+.ci-tabs-colume .ci-tab {
+  border-left: 1px solid #eaeaea;
+}
+.ci-tabs-colume .ci-tab:first-child {
+  border-left-width: 0;
+}
+.ci-tabs-bar .ci-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: 0 auto;
+  font-size: 24px;
+}
+.ci-tabs-bar .ci-tab-title {
+  display: block;
+  font-size: 12px;
+  line-height: 1.25em;
 }
 /**
  * @fileoverview ci-toast
