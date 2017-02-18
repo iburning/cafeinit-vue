@@ -1404,11 +1404,11 @@ textarea {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 /**
- * @fileoverview ci-step
+ * @fileoverview ci-steps
  * @author: burning <www.cafeinit.com>
  * @version: 2017-02-14
  */
-.ci-step {
+.ci-steps {
   list-style: none;
   display: -ms-flexbox;
   display: flex;
@@ -1419,7 +1419,7 @@ textarea {
   padding: 0;
   margin: 0 0 15px 0;
 }
-.ci-step-item {
+.ci-step {
   position: relative;
   list-style: none;
   -ms-flex: 1;
@@ -1428,8 +1428,8 @@ textarea {
   margin: 0;
   text-align: center;
 }
-.ci-step-item::before,
-.ci-step-item::after {
+.ci-step::before,
+.ci-step::after {
   z-index: 1;
   content: " ";
   display: block;
@@ -1439,17 +1439,17 @@ textarea {
   width: 50%;
   background-color: #1abc9c;
 }
-.ci-step-item::before {
+.ci-step::before {
   left: 0;
 }
-.ci-step-item::after {
+.ci-step::after {
   right: 0;
 }
-.ci-step-item:first-child::before,
-.ci-step-item:last-child::after {
+.ci-step:first-child::before,
+.ci-step:last-child::after {
   display: none;
 }
-.ci-step-item-title {
+.ci-step-title {
   z-index: 10;
   position: relative;
   display: inline-block;
@@ -1467,7 +1467,7 @@ textarea {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.ci-step-item-tip {
+.ci-step-tip {
   display: block;
   padding: 0 5px;
   margin: 0 auto;
@@ -1475,18 +1475,18 @@ textarea {
   font-size: 14px;
   color: #555555;
 }
-.ci-step-item-wait .ci-step-item-title {
+.ci-step-wait .ci-step-title {
   border-color: #999999;
   background-color: #999999;
 }
-.ci-step-item-wait::before,
-.ci-step-item-wait::after {
+.ci-step-wait::before,
+.ci-step-wait::after {
   background-color: #999999;
 }
-.ci-step-item-active .ci-step-item-title {
+.ci-step-active .ci-step-title {
   background-color: #1abc9c;
 }
-.ci-step-item-finish .ci-step-item-title {
+.ci-step-finish .ci-step-title {
   background-color: #1dd2af;
 }
 /**

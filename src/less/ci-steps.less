@@ -1,10 +1,10 @@
 /**
- * @fileoverview ci-step
+ * @fileoverview ci-steps
  * @author: burning <www.cafeinit.com>
  * @version: 2017-02-14
  */
 
-.ci-step {
+.ci-steps {
   list-style: none;
   display: -webkit-flex;
   display: flex;
@@ -14,7 +14,7 @@
   margin: 0 0 @global-margin 0;
 }
 
-.ci-step-item {
+.ci-step {
   position: relative;
   list-style: none;
   flex: 1;
@@ -42,12 +42,12 @@
   }
 }
 
-.ci-step-item:first-child::before,
-.ci-step-item:last-child::after {
+.ci-step:first-child::before,
+.ci-step:last-child::after {
   display: none;
 }
 
-.ci-step-item-title {
+.ci-step-title {
   @height: 36px;
 
   z-index: 10;
@@ -69,7 +69,7 @@
   text-overflow: ellipsis;
 }
 
-.ci-step-item-tip {
+.ci-step-tip {
   display: block;
   padding: 0 5px;
   margin: 0 auto;
@@ -78,8 +78,8 @@
   color: @color-gray;
 }
 
-.ci-step-item-wait {
-  .ci-step-item-title {
+.ci-step-wait {
+  .ci-step-title {
     border-color: @color-gray-light;
     background-color: @color-gray-light;
   }
@@ -89,14 +89,14 @@
   }
 }
 
-.ci-step-item-active {
-  .ci-step-item-title {
+.ci-step-active {
+  .ci-step-title {
     background-color: @color-primary;
   }
 }
 
-.ci-step-item-finish {
-  .ci-step-item-title {
+.ci-step-finish {
+  .ci-step-title {
     background-color: lighten(@color-primary, 5%);
     // color: @color-black;
   }

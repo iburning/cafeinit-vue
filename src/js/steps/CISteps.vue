@@ -1,12 +1,12 @@
 <template>
-  <div v-bind:class="[`${ns}tabs`, `${ns}tabs-${mode}`]">
+  <div v-bind:class="`${ns}steps`">
     <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ci-tabs',
+  name: 'ci-steps',
 
   props: {
     ns: {
@@ -19,9 +19,9 @@ export default {
       default: 0
     },
 
-    mode: {
-      type: String,
-      default: 'default'    // bar colume
+    canChangeByClick: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -40,8 +40,10 @@ export default {
   mounted() {
     this.$children.forEach((child, index) => {
       child.$on('click', () => {
-        this.myIndex = index
-        this.modifyChildren()
+        if (this.canChangeByClick) {
+          this.myIndex = index
+          this.modifyChildren()
+        }
         this.$emit('click-item', index)
       })
     })
@@ -52,7 +54,16 @@ export default {
   methods: {
     modifyChildren() {
       this.$children.forEach((child, index) => {
-        child.isActive = (index === this.myIndex)
+        child.index = index
+        if (index < this.myIndex) {
+          child.status = 'finish'
+        }
+        else if (index == this.myIndex) {
+          child.status = 'active'
+        }
+        else if (index > this.myIndex) {
+          child.status = 'wait'
+        }
       })
     }
   }

@@ -121,14 +121,14 @@
         <span class="sub-title">翻页导航</span>
       </ci-list-cell>
 
-      <ci-list-cell accessory="link" to="/step">
-        <strong class="title">Step</strong>
+      <ci-list-cell accessory="link" to="/steps">
+        <strong class="title">Steps</strong>
         <span class="sub-title">步骤</span>
       </ci-list-cell>
 
-      <ci-list-cell accessory="link" to="/tab-bar">
-        <strong class="title">TabBar</strong>
-        <span class="sub-title">标签导航</span>
+      <ci-list-cell accessory="link" to="/tabs">
+        <strong class="title">Tabs</strong>
+        <span class="sub-title">标签</span>
       </ci-list-cell>
 
       <!-- <ci-list-cell accessory="link" to="/tree-nav">
