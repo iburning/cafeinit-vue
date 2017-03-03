@@ -1569,6 +1569,7 @@ th {
 .ci-tab {
   -ms-flex: 1;
       flex: 1;
+  position: relative;
   min-height: 44px;
   line-height: 34px;
   text-align: center;
@@ -1582,13 +1583,18 @@ th {
 .ci-tab.ci-tab-active a {
   color: #1abc9c;
 }
+.ci-tab-title {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1.25em;
+}
 .ci-tabs-underline .ci-tab-active {
   border-bottom: 3px solid #1abc9c;
 }
-.ci-tabs-colume .ci-tab {
+.ci-tabs-column .ci-tab {
   border-left: 1px solid #eaeaea;
 }
-.ci-tabs-colume .ci-tab:first-child {
+.ci-tabs-column .ci-tab:first-child {
   border-left-width: 0;
 }
 .ci-tabs-bar .ci-icon {

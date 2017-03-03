@@ -17,6 +17,7 @@
 
 .ci-tab {
   flex: 1;
+  position: relative;
   min-height: @base-height;
   line-height: @base-height - 5px * 2;
   text-align: center;
@@ -35,13 +36,19 @@
   }
 }
 
+.ci-tab-title {
+  display: inline-block;
+  font-size: @font-size-small;
+  line-height: 1.25em;
+}
+
 .ci-tabs-underline {
   .ci-tab-active {
     border-bottom: 3px solid @color-primary;
   }
 }
 
-.ci-tabs-colume {
+.ci-tabs-column {
   .ci-tab {
     border-left: 1px solid lighten(@color-border, 5%);
   }
