@@ -346,14 +346,17 @@ a:hover {
 .ci-block-header-main .title,
 .ci-block-header-main .sub-title {
   display: block;
-  float: left;
-  width: 45%;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  line-height: 1.6em;
   font-size: 14px;
   font-weight: normal;
+}
+.ci-block-header-main .title {
+  float: left;
+  width: 45%;
 }
 .ci-block-header-main .sub-title {
   float: right;
