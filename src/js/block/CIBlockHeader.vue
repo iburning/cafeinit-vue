@@ -1,10 +1,14 @@
 <template>
-  <router-link v-if="to" v-bind:to="to" tag="div" class="ci-block-header">
-    <slot><h3>{{title}}</h3></slot>
-  </router-link>
-
   <div v-else class="ci-block-header">
-    <slot><h3>{{title}}</h3></slot>
+    <div class="ci-block-header-main">
+      <slot>
+        <h3 class="title">{{title}}</h3>
+        <span class="sub-title" v-if="subTitle">{{subTitle}}</span>
+      </slot>
+    </div>
+    <div class="ci-block-header-accessory" v-if="accessory">
+      <i v-bind:class="accessoryIcon"></i>
+    </div>
   </div>
 </template>
 
@@ -18,9 +22,32 @@ export default {
       default: 'Block Title'
     },
 
+    subTitle: {
+      type: String,
+      default: ''
+    },
+
     to: {
       type: String,
       default: ''
+    },
+
+    accessory: {
+      type: String,
+      default: ''
+    }
+  },
+
+  computed: {
+    accessoryIcon() {
+      const names = {
+        link: 'icon-right',
+        detail: 'icon-info',
+        check: 'icon-check'
+      }
+
+      let name = names[this.accessory]
+      return name ? ('iconfont ' + name) : ''
     }
   }
 }

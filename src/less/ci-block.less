@@ -17,37 +17,50 @@
 .ci-block-header, .ci-block-body, .ci-block-footer {
   .clearfix();
   position: relative;
-  min-height: @base-height;
-  padding: 10px 15px;
+  // min-height: @base-height;
+  padding: 8px 12px;
 }
 
 
 .ci-block-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   border-bottom: 1px solid @color-border;
+}
 
-  h1, h2, h3, h4 {
+.ci-block-header-main {
+  flex: 1;
+
+  .title, .sub-title {
+    display: block;
     float: left;
+    width: 45%;
     margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: @font-size-small;
     font-weight: normal;
   }
 
-  // h1 {
-  //   font-size: @font-size-large;
-  // }
-  //
-  // h2 {
-  //   font-size: @font-size-big;
-  // }
-  //
-  // h3, h4 {
-  //   font-size: @font-size-normal;
-  // }
-
-  >a {
+  .sub-title {
     float: right;
+    width: 50%;
+    text-align: right;
+    color: @color-gray-light;
   }
 }
 
+.ci-block-header-accessory {
+  margin-left: 5px;
+  text-align: center;
+  color: @color-gray-light;
+}
+
+.ci-block-body {
+  min-height: 50px;
+}
 
 .ci-block {
   .ci-list {

@@ -1,10 +1,7 @@
 <template>
   <div class="page-block">
     <ci-block>
-      <ci-block-header>
-        <h3>Block Header</h3>
-        <a href="#">more</a>
-      </ci-block-header>
+      <ci-block-header title="HEADER" sub-title="more" accessory="link"></ci-block-header>
       <ci-block-body>Block Body</ci-block-body>
       <ci-block-footer>Block Footer</ci-block-footer>
     </ci-block>

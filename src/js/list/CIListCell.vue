@@ -4,7 +4,7 @@
       <slot></slot>
     </div>
     <div class="ci-list-cell-accessory" v-if="accessory">
-      <i v-bind:class="['iconfont', accessoryIcon]"></i>
+      <i v-bind:class="accessoryIcon"></i>
     </div>
   </router-link>
 
@@ -13,7 +13,7 @@
       <slot></slot>
     </div>
     <div class="ci-list-cell-accessory" v-if="accessory">
-      <i v-bind:class="['iconfont', accessoryIcon]"></i>
+      <i v-bind:class="accessoryIcon"></i>
     </div>
   </li>
 </template>
@@ -37,29 +37,14 @@ export default {
 
   computed: {
     accessoryIcon() {
-      let icon = ''
-
-      switch (this.accessory) {
-        case 'link':
-          // icon = 'chevron-right'
-          icon = 'icon-right'
-          break
-
-        case 'detail':
-          // icon = 'info-circle'
-          icon = 'icon-info'
-          break
-
-        case 'check':
-          // icon = 'check'
-          icon = 'icon-check'
-          break
-
-        default:
-          icon = ''
+      const names = {
+        link: 'icon-right',
+        detail: 'icon-info',
+        check: 'icon-check'
       }
 
-      return icon
+      let name = names[this.accessory]
+      return name ? ('iconfont ' + name) : ''
     }
   }
 }
