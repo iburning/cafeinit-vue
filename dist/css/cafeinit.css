@@ -265,6 +265,31 @@ a:hover {
   margin: 0!important;
 }
 /**
+ * @fileoverview ci-badge
+ * @author: burning <www.cafeinit.com>
+ * @version: 2016-11-22
+ */
+.ci-badge-primary {
+  display: inline-block;
+  padding: 0.25em 0.625em;
+  border-radius: 1000px;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 1em;
+  background-color: #ff3366;
+  color: #fff;
+}
+.ci-badge-dot {
+  overflow: hidden;
+  width: 8px;
+  min-width: initial;
+  height: 8px;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  text-indent: 100px;
+}
+/**
  * @fileoverview ci-block
  * @author: burning <www.cafeinit.com>
  * @version: 2016-08-20
@@ -1780,31 +1805,6 @@ th {
   font-size: 40px;
   text-align: center;
   color: rgba(255, 255, 255, 0.75);
-}
-/**
- * @fileoverview ci-badge
- * @author: burning <www.cafeinit.com>
- * @version: 2016-11-22
- */
-.ci-badge-primary {
-  display: inline-block;
-  padding: 0.25em 0.625em;
-  border-radius: 1000px;
-  white-space: nowrap;
-  text-align: center;
-  line-height: 1em;
-  background-color: #ff3366;
-  color: #fff;
-}
-.ci-badge-dot {
-  overflow: hidden;
-  width: 8px;
-  min-width: initial;
-  height: 8px;
-  padding: 0;
-  margin: 0;
-  border-radius: 50%;
-  text-indent: 100px;
 }
 /**
  * @fileoverview ci-dimmer

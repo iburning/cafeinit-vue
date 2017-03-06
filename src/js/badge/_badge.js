@@ -15,7 +15,7 @@ export default {
 
     value: [Number, String],
 
-    style: {
+    color: {
       type: String,
       default: 'primary',     // primary secondary success warning danger success
     },
@@ -35,7 +35,7 @@ export default {
     className() {
       return [
         this.ns + 'badge',
-        this.ns + 'badge-' + this.style,
+        this.ns + 'badge-' + this.color,
         (this.shape == 'dot') ? this.ns + 'badge-dot' : (this.ns + this.shape)
       ]
     },
