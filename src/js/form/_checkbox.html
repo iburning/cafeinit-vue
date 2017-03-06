@@ -11,7 +11,7 @@
     v-on:change="onChange"
     v-on:click="onClick" />
   <label v-bind:for="'checkbox-' + _uid">
-    <i class="fa fa-check-square-o"></i>
+    <i class="iconfont icon-squarecheck"></i>
     <span>{{ option.title || option.value }}</span>
   </label>
 </div>
@@ -31,7 +31,7 @@
       v-on:change="onChange"
       v-on:click="onClick" />
     <label v-bind:for="'checkbox-' + _uid + '-' + index">
-      <i class="fa fa-check-square-o"></i>
+      <i class="iconfont icon-squarecheck"></i>
       <span>{{ option.title || option.value }}</span>
     </label>
   </div>

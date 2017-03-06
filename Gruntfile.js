@@ -32,6 +32,21 @@ module.exports = function (grunt) {
       }
     },
 
+    copy: {
+      main: {
+        expand: true,
+        flatten: true,
+        src: '<%= config.src %>/iconfont/*',
+        dest: '<%= config.dist %>/css/iconfont/'
+      },
+      demo: {
+        expand: true,
+        flatten: true,
+        src: '<%= config.src %>/iconfont/*',
+        dest: './demo/iconfont/'
+      }
+    },
+
     less: {
       prodcution: {
         options: {
@@ -68,6 +83,7 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
 

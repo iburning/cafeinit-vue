@@ -23,20 +23,20 @@ export default {
   computed: {
     iconName() {
       const NAMES = {
-        pulse: 'pulse',
-        spinner: 'spinner',
-        circle: 'circle-o-notch',
-        refresh: 'refresh',
-        gear: 'gear'
+        // pulse: 'pulse',
+        // spinner: 'spinner',
+        circle: 'icon-loading',
+        refresh: 'icon-refresh',
+        gear: 'icon-settings'
       }
 
-      let name = 'fa fa-' + (NAMES[this.type] || NAMES.circle)
+      let name = 'iconfont ' + (NAMES[this.type] || NAMES.circle)
 
-      if (this.size) {
-        name += ' ' + 'fa-' + this.size + 'x'
-      }
+      // if (this.size) {
+      //   name += ' ' + 'icon-' + this.size + 'x'
+      // }
 
-      return name + ' fa-spin'
+      return 'ci-spin ' + name
     }
   }
 }

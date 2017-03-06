@@ -11,7 +11,7 @@
     v-on:change="onChange"
     v-on:click="onClick" />
   <label v-bind:for="'radio-' + _uid">
-    <i class="fa fa-dot-circle-o"></i>
+    <i class="iconfont icon-radiobox"></i>
     <span>{{ option.title || option.value }}</span>
   </label>
 </div>
@@ -31,7 +31,7 @@
       v-on:change="onChange"
       v-on:click="onClick" />
     <label v-bind:for="'radio-' + _uid + '-' + index">
-      <i class="fa fa-dot-circle-o"></i>
+      <i class="iconfont icon-radiobox"></i>
       <span>{{ option.title || option.value }}</span>
     </label>
   </div>

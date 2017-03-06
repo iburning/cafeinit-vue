@@ -3,7 +3,7 @@
       width: width + 'px',
       height: height + 'px'
     }">
-    <slot><i class="fa fa-plus ci-icon-plus"></i></slot>
+    <slot><i class="iconfont icon-pic"></i></slot>
     <div class="ci-image-picker-preview" v-if="isPreview"
       v-bind:style="{
         'background-image': 'url(' + previewSrc + ')'

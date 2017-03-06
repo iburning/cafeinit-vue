@@ -3,7 +3,7 @@
   v-bind:disabled="status === 'disabled' || status === 'loading'"
   v-bind:to="to"
   v-on:click.native="click">
-  <span v-if="status === 'loading'" class="fa fa-circle-o-notch fa-spin"></span>
+  <span v-if="status === 'loading'" class="ci-spin iconfont icon-loading"></span>
   <slot>Link button</slot>
 </router-link>
 
@@ -11,6 +11,6 @@
   v-bind:class="className"
   v-bind:disabled="status === 'disabled' || status === 'loading'"
   v-on:click="click">
-  <span v-if="status === 'loading'" class="fa fa-circle-o-notch fa-spin"></span>
+  <span v-if="status === 'loading'" class="ci-spin iconfont icon-loading"></span>
   <slot>Button</slot>
 </button>

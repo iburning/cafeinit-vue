@@ -2,7 +2,7 @@
   <div v-if="isShow" v-bind:class="ns + 'to-top'"
     v-on:click="onClick">
     <slot>
-      <i class="fa fa-chevron-up"></i>
+      <i class="iconfont icon-top"></i>
     </slot>
   </div>
 </template>

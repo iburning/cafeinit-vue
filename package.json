@@ -8,7 +8,7 @@
     "build:lib": "webpack -p --config ./webpack.config.js",
     "build:amd": "webpack -p --config ./webpack.config.amd.js",
     "build:dev": "webpack --config ./webpack.config.amd.js && grunt less:develompent",
-    "demo": "webpack-dev-server --host $LOCALHOST --hot --open --inline --config demo/webpack.config.js --content-base demo/",
+    "demo": "webpack-dev-server --hot --open --inline --config demo/webpack.config.js --content-base demo/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -35,6 +35,7 @@
     "css-loader": "^0.25.0",
     "file-loader": "^0.9.0",
     "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-less": "^1.4.0",
     "grunt-contrib-watch": "^1.0.0",
     "less-loader": "^2.2.3",

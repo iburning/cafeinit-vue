@@ -5,8 +5,8 @@
         <slot>
           <i v-if="type" v-bind:class="[
               ns + 'toast-icon',
-              faClassName,
-              (type == 'waiting') ? 'fa-spin' : ''
+              (type == 'waiting') ? 'ci-spin' : '',
+              iconName,
             ]"></i>
           <p v-if="text">{{text}}</p>
         </slot>
@@ -48,22 +48,22 @@ export default {
   },
 
   computed: {
-    faClassName() {
+    iconName() {
       const names = {
-        success: 'check',
-        error: 'close',
-        warn: 'exclamation',
-        waiting: 'circle-o-notch'
+        success: 'icon-check',
+        error: 'icon-close',
+        warn: 'icon-warn',
+        waiting: 'icon-loading'
       }
 
       let name = names[this.type]
-      return name ? ('fa fa-' + name) : ''
+      return name ? ('iconfont ' + name) : ''
     }
   },
 
   watch: {
     duration(val, oldVal) {
-      console.log('CIToast.duration', val, oldVal)
+      // console.log('CIToast.duration', val, oldVal)
       this.autoClose()
     }
   },
