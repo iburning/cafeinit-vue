@@ -54,30 +54,27 @@ export default {
       skill: 'javascript',
 
       categoryOptions: [
-        { title: 'Javascript', value: { id: 1, name: 'Javascript' }},
-        { title: 'CSS', value: { id: 2, name: 'CSS' }},
-        { title: 'HTML', value: { id: 3, name: 'HTML' }},
+        { title: 'Javascript', value: 1 },
+        { title: 'CSS', value: 2 },
+        { title: 'HTML', value: 3 },
       ],
-      category: {
-        id: 3,
-        name: 'HTML'
-      },
+      category: 3,
 
       categoryGroups: [
         {
           title: 'Develop',
           options: [
-            { title: 'Javascript', value: { id: 1, name: 'Javascript' }},
-            { title: 'CSS', value: { id: 2, name: 'CSS' }},
-            { title: 'HTML', value: { id: 3, name: 'HTML' }}
+            { title: 'Javascript', value: 1 },
+            { title: 'CSS', value: 2 },
+            { title: 'HTML', value: 3 }
           ]
         },
 
         {
           title: 'Design',
           options: [
-            { title: 'Web', value: { id: 1, name: 'Web' }},
-            { title: 'App', value: { id: 2, name: 'App' }}
+            { title: 'Web', value: 1 },
+            { title: 'App', value: 2 }
           ]
         }
       ]

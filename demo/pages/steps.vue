@@ -1,12 +1,16 @@
 <template>
   <div class="page-steps">
-    <ci-steps v-bind:index="1" v-on:click-item="onClickItem">
+    <ci-steps v-bind:index="stepIndex" v-on:click-item="onClickItem">
       <ci-step title="1" tip="Buy"></ci-step>
       <ci-step title="2" tip="Pay"></ci-step>
       <ci-step title="3" tip="Send"></ci-step>
       <ci-step title="4" tip="Recive"></ci-step>
       <ci-step title="5" tip="Comment"></ci-step>
     </ci-steps>
+
+    {{stepIndex}}<ci-number v-model="stepIndex"></ci-number>
+
+    <p></p><p></p><p></p>
 
     <ci-steps v-bind:can-change-by-click="true">
       <ci-step title="Buy" tip="Select &amp; buy"></ci-step>
@@ -39,7 +43,9 @@ export default {
   components: {},
 
   data() {
-    return {}
+    return {
+      stepIndex: 2
+    }
   },
 
   methods: {

@@ -33,6 +33,7 @@ export default {
 
   watch: {
     index(val) {
+      this.myIndex = val
       this.modifyChildren()
     }
   },
