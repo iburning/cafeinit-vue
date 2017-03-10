@@ -54,7 +54,7 @@
       <div class="ci-btn-area">
         <ci-button style="primary" block="block" v-on:click="save">保存</ci-button>
       </div>
-    </div>
+    </ci-form>
   </div>
 </template>
 

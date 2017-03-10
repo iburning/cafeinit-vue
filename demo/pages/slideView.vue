@@ -12,7 +12,8 @@
       v-bind:isShowButtons="false"
       v-bind:isShowDots="true"
       v-on:did-change="mySlideViewDidChange">
-      <ci-slide-view-item class="box-item" v-for="(item, index) in items"
+      <ci-slide-view-item class="box-item"
+        v-for="(item, index) in items" v-bind:key="index"
         v-bind:index="index" v-bind:width="itemWidth" v-bind:height="itemHeight">
         <ci-image v-bind:src="item.banner" v-bind:width="itemWidth" v-bind:height="itemHeight"></ci-image>
       </ci-slide-view-item>

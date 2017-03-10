@@ -166,10 +166,10 @@ const CIComponents = {
   'ci-video': CIVideo
 }
 
-// export default {
-module.exports = {
+export default {
+// module.exports = {
   name: 'CafeinitVue',
-  ver: '1.0.0',
+  ver: '1.1.0',
 
   components: (Vue) => {
     for (let name in CIComponents) {

@@ -27,7 +27,8 @@
   },
   "homepage": "https://github.com/iburning/cafeinit-vue#readme",
   "dependencies": {
-    "vue": "^2.2.1"
+    "vue": "^2.2.1",
+    "vue-router": "^2.3.0"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
@@ -43,7 +44,7 @@
     "grunt-contrib-watch": "^1.0.0",
     "less-loader": "^2.2.3",
     "less-plugin-autoprefix": "^1.5.1",
-    "style-loader": "^0.13.1",
+    "style-loader": "^0.13.2",
     "vue-loader": "^11.1.4",
     "vue-template-compiler": "^2.2.1",
     "webpack": "^2.2.0",

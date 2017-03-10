@@ -3,7 +3,7 @@
     <ci-tabs mode="column" class="ci-fixed-top"
       v-bind:index="0" v-on:click-item="onClickItem">
       <ci-tab class="tab-menu" icon="fa fa-bars" v-on:click="myAction"></ci-tab>
-      <ci-tab v-for="item in tabs"
+      <ci-tab v-for="(item, index) in tabs" v-bind:key="index"
         v-bind:title="item.title"
         v-bind:url="item.url">
       </ci-tab>
@@ -13,7 +13,7 @@
     </ci-tabs>
 
     <ci-tabs mode="underline" v-bind:index="0" v-on:click-item="onClickItem">
-      <ci-tab v-for="item in tabs"
+      <ci-tab v-for="(item, index) in tabs" v-bind:key="index"
         v-bind:title="item.title">
       </ci-tab>
     </ci-tabs>
@@ -21,7 +21,7 @@
     <ci-tabs mode="bar" class="ci-fixed-bottom"
       v-bind:index="0" v-on:click-item="onClickItem">
       <ci-tab title="Home" icon="fa fa-home" v-on:click="myAction"></ci-tab>
-      <ci-tab v-for="item in tabs"
+      <ci-tab v-for="(item, index) in tabs" v-bind:key="index"
         v-bind:title="item.title"
         v-bind:icon="item.icon"
         v-bind:url="item.url">

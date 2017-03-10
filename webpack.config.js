@@ -6,7 +6,6 @@
 
 var path = require('path')
 var webpack = require('webpack')
-// var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: {
@@ -49,10 +48,7 @@ module.exports = {
   },
 
   resolve: {
-    // extensions: ['', '.js', '.vue'],
-    // fallback: [path.join(__dirname, '../node_modules')],
     alias: {
-      // 'vue$': 'vue/dist/vue'
       'vue$': 'vue/dist/vue.esm.js'
     }
   },

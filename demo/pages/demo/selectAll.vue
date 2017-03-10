@@ -8,7 +8,7 @@
       </ci-list-cell>
     </ci-list>
 
-    <ci-block v-for="(book, index) in books">
+    <ci-block v-for="(book, index) in books" v-bind:key="index">
       <ci-block-header>
         <ci-checkbox name="book" v-model="selectedBookIds"
           v-bind:item="{ title: book.name, value: book.id }"></ci-checkbox>

@@ -43,7 +43,7 @@
           <th>Username</th>
         </thead>
         <tbody>
-          <tr v-for="user in users">
+          <tr v-for="user in users" v-bind:key="user.id">
             <td>{{user[0]}}</td>
             <td><a v-link="{path: '/user/' + user[0]}">{{user[1]}}</td>
             <td>{{user[2]}}</td>

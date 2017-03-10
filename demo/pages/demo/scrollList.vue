@@ -1,7 +1,8 @@
 <template>
   <div class="scroll-list">
     <ci-list>
-      <ci-list-cell accessory="link" v-for="item in items">
+      <ci-list-cell v-for="(item, index) in items" v-bind:key="index"
+        accessory="link">
         {{item.title}}
       </ci-list-cell>
     </ci-list>

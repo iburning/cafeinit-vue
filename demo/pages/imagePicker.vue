@@ -20,13 +20,14 @@
       v-if="isShowToast"
       type="waiting"
       text="Upoading..."
-      v-on:close="isShowToast = false"></ci-toast>
+      v-on:close="isShowToast = false">
+    </ci-toast>
 
     <ci-modal class="popup-image"
       v-if="isShowPopupImage"
       v-on:close="isShowPopupImage = false">
       <ci-image width="300" height="300" v-bind:src="popupImageSrc" />
-    </ci-alert>
+    </ci-modal>
   </div>
 </template>
 
