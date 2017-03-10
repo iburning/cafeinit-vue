@@ -9,7 +9,7 @@
       <i class="fa fa-angle-left"></i>
     </a>
   </li>
-  <li v-for="page in pages"
+  <li v-for="page in pages" v-bind:key="page"
     v-bind:class="[(page === currentPage) ? (ns + 'active') : '']">
     <a href="javascript:;" v-on:click="onClickItem(page)">{{page}}</a>
   </li>

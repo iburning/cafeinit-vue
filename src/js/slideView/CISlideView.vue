@@ -12,7 +12,7 @@
       <slot></slot>
     </div>
     <ul v-if="isShowDots" class="ci-slide-view-dots">
-      <li v-for="index in dots"
+      <li v-for="index in dots" v-bind:key="index"
         v-bind:class="{
           'ci-slide-view-dot': true,
           'ci-actived': index == currentIndex

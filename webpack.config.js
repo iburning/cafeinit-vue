@@ -6,7 +6,7 @@
 
 var path = require('path')
 var webpack = require('webpack')
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: {
@@ -23,49 +23,69 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
-        // use vue-loader for *.vue files
         test: /\.vue$/,
-        loader: 'vue',
+        loader: 'vue-loader',
         options: {
-          // vue-loader options go here
+          loaders: {
+          }
+          // other vue-loader options go here
         }
       },
-
       {
-        // use babel-loader for *.js files
         test: /\.js$/,
-        loader: 'babel',
-        // important: exclude files in node_modules
-        // otherwise it's going to be really slow!
+        loader: 'babel-loader',
         exclude: /node_modules/
       },
-
       {
-        // use css-loader for *.css files
-        test: /\.css$/,
-        loader: 'style!css'
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]?[hash]'
+        }
       }
     ]
   },
 
   resolve: {
-    extensions: ['', '.js', '.vue'],
-    fallback: [path.join(__dirname, '../node_modules')],
+    // extensions: ['', '.js', '.vue'],
+    // fallback: [path.join(__dirname, '../node_modules')],
     alias: {
-      'vue$': 'vue/dist/vue'
+      // 'vue$': 'vue/dist/vue'
+      'vue$': 'vue/dist/vue.esm.js'
     }
   },
 
-  devtool: '#eval-source-map',
-
-  // if you are using babel-loader directly then
-  // the babel config block becomes required.
-  babel: {
-    presets: ['es2015'],
-    plugins: ['transform-runtime']
+  devServer: {
+    historyApiFallback: true,
+    noInfo: true
   },
 
-  // plugins: [new BundleAnalyzerPlugin()]
+  performance: {
+    hints: false
+  },
+
+  devtool: '#eval-source-map'
+}
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports.devtool = '#source-map'
+  // http://vue-loader.vuejs.org/en/workflow/production.html
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
+      compress: {
+        warnings: false
+      }
+    }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true
+    })
+  ])
 }

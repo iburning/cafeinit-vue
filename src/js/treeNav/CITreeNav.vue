@@ -1,6 +1,6 @@
 <template>
   <ul class="ci-tree-nav">
-    <li class="ci-tree-nav-item" v-for="(item, index) in items"
+    <li class="ci-tree-nav-item" v-for="(item, index) in items" v-bind:key="index"
       v-bind:class="[item.className, {'ci-active': activeIndex === index}]"
       v-on:click="clickItem(index, item)">
       <router-link to="item.to">

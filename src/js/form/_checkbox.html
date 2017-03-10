@@ -17,7 +17,7 @@
 </div>
 
 <div v-else v-bind:class="ns + 'checkboxs'">
-  <div v-for="(option, index) in options"
+  <div v-for="(option, index) in options" v-bind:key="index"
     v-bind:class="[
       ns + (inline ? 'checkbox-inline' : 'checkbox'),
       option.disabled ? (ns + 'disabled') : ''

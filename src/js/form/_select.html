@@ -3,7 +3,7 @@
     v-model="myValue"
     v-bind:name="name"
     v-on:change="onChange">
-    <optgroup v-for="group in groups" v-bind:label="group.title">
+    <optgroup v-for="group in groups" v-bind:key="index" v-bind:label="group.title">
       <option v-for="option in group.options"
         v-bind:value="option.value"
         v-bind:disabled="option.disabled">{{option.title}}</option>

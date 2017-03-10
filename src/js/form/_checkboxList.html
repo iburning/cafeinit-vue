@@ -1,7 +1,7 @@
 <div>
   <ci-list-header v-if="title">{{title}}</ci-list-header>
   <ci-list class="ci-list-checkbox">
-    <ci-list-cell v-for="(option, index) in options">
+    <ci-list-cell v-for="(option, index) in options" v-bind:key="index">
       <ci-checkbox v-model="myValue"
         v-bind:name="name"
         v-bind:option="option"></ci-checkbox>

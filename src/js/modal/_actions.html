@@ -3,7 +3,7 @@
     <div v-bind:class="ns + 'modal-actions'">
       <div v-bind:class="ns + 'modal-actions-group'">
         <ci-list>
-          <ci-list-cell v-for="(item, index) in items"
+          <ci-list-cell v-for="(item, index) in items" v-bind:key="index"
             v-bind:class="[
               item.className,
               (currentIndex == index) ? (ns + 'active') : ''

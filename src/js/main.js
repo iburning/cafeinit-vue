@@ -5,86 +5,86 @@
  */
 
 /* Alert & Modal & Toast */
-import CIAlertTip from './alertTip/CIAlertTip'
+import CIAlertTip from './alertTip/CIAlertTip.vue'
 
-import CIModal from './modal/CIModal'
-import CIActions from './modal/CIActions'
-import CIAlert from './modal/CIAlert'
-import CIConfirm from './modal/CIConfirm'
+import CIModal from './modal/CIModal.vue'
+import CIActions from './modal/CIActions.vue'
+import CIAlert from './modal/CIAlert.vue'
+import CIConfirm from './modal/CIConfirm.vue'
 
-import CIToast from './toast/CIToast'
+import CIToast from './toast/CIToast.vue'
 
 
 /* Buttons & Form */
-import CIButton from './button/CIButton'
+import CIButton from './button/CIButton.vue'
 
-import CIForm from './form/CIForm'
-import CIFormGroup from './form/CIFormGroup'
-import CICheckbox from './form/CICheckbox'
-import CICheckboxList from './form/CICheckboxList'
-import CINumber from './form/CINumber'
-import CIRadio from './form/CIRadio'
-import CIRadioList from './form/CIRadioList'
-import CISelect from './form/CISelect'
-import CISwitch from './form/CISwitch'
-import CISwitchList from './form/CISwitchList'
-import CIText from './form/CIText'
-import CITextarea from './form/CITextarea'
+import CIForm from './form/CIForm.vue'
+import CIFormGroup from './form/CIFormGroup.vue'
+import CICheckbox from './form/CICheckbox.vue'
+import CICheckboxList from './form/CICheckboxList.vue'
+import CINumber from './form/CINumber.vue'
+import CIRadio from './form/CIRadio.vue'
+import CIRadioList from './form/CIRadioList.vue'
+import CISelect from './form/CISelect.vue'
+import CISwitch from './form/CISwitch.vue'
+import CISwitchList from './form/CISwitchList.vue'
+import CIText from './form/CIText.vue'
+import CITextarea from './form/CITextarea.vue'
 
-import CIImagePicker from './imagePicker/CIImagePicker'
-import CISlider from './slider/CISlider'
+import CIImagePicker from './imagePicker/CIImagePicker.vue'
+import CISlider from './slider/CISlider.vue'
 
 
 /* Layout */
-import CIBlock from './block/CIBlock'
-import CIBlockBody from './block/CIBlockBody'
-import CIBlockFooter from './block/CIBlockFooter'
-import CIBlockHeader from './block/CIBlockHeader'
+import CIBlock from './block/CIBlock.vue'
+import CIBlockBody from './block/CIBlockBody.vue'
+import CIBlockFooter from './block/CIBlockFooter.vue'
+import CIBlockHeader from './block/CIBlockHeader.vue'
 
-import CICollection from './collection/CICollection'
-import CICollectionCell from './collection/CICollectionCell'
+import CICollection from './collection/CICollection.vue'
+import CICollectionCell from './collection/CICollectionCell.vue'
 
-import CIGrid from './grid/CIGrid'
-import CIGridCell from './grid/CIGridCell'
+import CIGrid from './grid/CIGrid.vue'
+import CIGridCell from './grid/CIGridCell.vue'
 
-import CIList from './list/CIList'
-import CIListCell from './list/CIListCell'
-import CIListHeader from './list/CIListHeader'
+import CIList from './list/CIList.vue'
+import CIListCell from './list/CIListCell.vue'
+import CIListHeader from './list/CIListHeader.vue'
 
 import CIOffcanvas from './offcanvas/CIOffcanvas.vue'
-import CIScrollView from './scrollView/CIScrollView'
+import CIScrollView from './scrollView/CIScrollView.vue'
 
-import CISlideView from './slideView/CISlideView'
-import CISlideViewItem from './slideView/CISlideViewItem'
+import CISlideView from './slideView/CISlideView.vue'
+import CISlideViewItem from './slideView/CISlideViewItem.vue'
 
-import CITable from './table/CITable'
+import CITable from './table/CITable.vue'
 
 
 /* Navigation */
-import CIBreadcrumb from './breadcrumb/CIBreadcrumb'
+import CIBreadcrumb from './breadcrumb/CIBreadcrumb.vue'
 import CIPagination from './pagination/CIPagination.vue'
 import CINavigation from './navigation/CINavigation.vue'
-import CIStep from './steps/CIStep'
-import CISteps from './steps/CISteps'
-import CITab from './tabView/CITab'
-import CITabs from './tabView/CITabs'
-import CITreeNav from './treeNav/CITreeNav'
+import CIStep from './steps/CIStep.vue'
+import CISteps from './steps/CISteps.vue'
+import CITab from './tabView/CITab.vue'
+import CITabs from './tabView/CITabs.vue'
+import CITreeNav from './treeNav/CITreeNav.vue'
 
 
 /* Others */
-import CIBadge from './badge/CIBadge'
-import CIImage from './image/CIImage'
-import CILoading from './loading/CILoading'
-import CIProgress from './progress/CIProgress'
-import CIRate from './rate/CIRate'
-import CISticky from './sticky/CISticky'
-import CIToTop from './toTop/CIToTop'
-import CIVideo from './video/CIVideo'
+import CIBadge from './badge/CIBadge.vue'
+import CIImage from './image/CIImage.vue'
+import CILoading from './loading/CILoading.vue'
+import CIProgress from './progress/CIProgress.vue'
+import CIRate from './rate/CIRate.vue'
+import CISticky from './sticky/CISticky.vue'
+import CIToTop from './toTop/CIToTop.vue'
+import CIVideo from './video/CIVideo.vue'
 
 
 /* Helper */
-import CICompnentHelper from './utils/CICompnentHelper'
-import CIScrollHelper from './utils/CIScrollHelper'
+import CICompnentHelper from './utils/CICompnentHelper.js'
+import CIScrollHelper from './utils/CIScrollHelper.js'
 
 
 const CIComponents = {

@@ -1,6 +1,6 @@
 <template>
   <div v-bind:class="ns + 'rate'">
-    <span v-for="item in items" v-bind:class="[
+    <span v-for="(item, index) in items" v-bind:key="index" v-bind:class="[
         ns + 'rate-item',
         item.decimal ? ns + 'rate-item-half' : '',
         item.isOn ? ns + 'rate-item-on' : ''

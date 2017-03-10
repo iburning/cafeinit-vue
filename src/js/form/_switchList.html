@@ -1,7 +1,7 @@
 <div>
   <ci-list-header v-if="title">{{title}}</ci-list-header>
   <ci-list class="ci-list-switch">
-    <ci-list-cell v-for="(option, index) in options">
+    <ci-list-cell v-for="(option, index) in options" v-bind:key="index">
       <ci-form-group v-bind:title="option.title" align="right">
         <ci-switch v-model="myValue"
           v-bind:name="name"
