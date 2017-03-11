@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run build:lib && npm run build:amd && grunt less",
-    "build:lib": "webpack -p --config ./webpack.config.js",
-    "build:amd": "webpack -p --config ./webpack.config.amd.js",
-    "build:dev": "webpack --config ./webpack.config.amd.js && grunt less:develompent",
+    "build:lib": "cross-env NODE_ENV=production webpack -p --config ./webpack.config.js",
+    "build:amd": "cross-env NODE_ENV=production webpack -p --config ./webpack.config.amd.js",
+    "build:dev": "cross-env NODE_ENV=production webpack --config ./webpack.config.amd.js && grunt less:develompent",
     "demo": "webpack-dev-server --hot --open --inline --config demo/webpack.config.js --content-base demo/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
