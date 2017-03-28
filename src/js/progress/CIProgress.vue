@@ -1,7 +1,7 @@
 <template>
   <div v-bind:class="className" v-bind:style="{ width: width + 'px' }">
     <div class="ci-progress-light" v-bind:style="{ width: lightWidth + 'px' }">
-      <span v-if="isShowValue && ratio > 0.25" class="ci-progress-value">{{value}}</span>
+      <span v-if="isShowValue" class="ci-progress-value">{{value}}</span>
     </div>
   </div>
 </template>
@@ -74,12 +74,13 @@ export default {
       ]
     },
 
-    ratio() {
-      return this.value / this.max
-    },
-
     lightWidth() {
-      return this.width * this.ratio
+      let ratio = 1
+      if (this.max > 0) {
+        ratio = this.value / this.max
+      }
+      ratio = (ratio >= 1) ? 1 : ratio
+      return this.width * ratio
     }
   }
 }
