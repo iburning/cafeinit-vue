@@ -25,7 +25,7 @@ export default {
       default: '确认'
     },
 
-    concelText: {
+    cancelText: {
       type: String,
       default: '取消'
     }

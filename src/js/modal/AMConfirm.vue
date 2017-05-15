@@ -9,7 +9,7 @@
         <div v-bind:class="ns + 'modal-bd'"><slot>{{content}}</slot></div>
         <div v-bind:class="ns + 'modal-footer'">
           <span v-bind:class="ns + 'modal-btn'"
-            v-on:click="cancel">{{concelText}}</span>
+            v-on:click="cancel">{{cancelText}}</span>
           <span v-bind:class="ns + 'modal-btn'"
             v-on:click="ok">{{okText}}</span>
         </div>
