@@ -23,10 +23,10 @@ export default {
       default: 'button'
     },
 
-    style: {
-      type: String,
-      default: 'default'
-    },
+    // style: {
+    //   type: String,
+    //   default: 'default'
+    // },
 
     color: {
       type: String,
