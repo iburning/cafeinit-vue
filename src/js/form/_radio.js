@@ -1,7 +1,7 @@
 /**
  * @fileoverview radio
- * @author: burning <www.cafeinit.com>
- * @version: 2016-11-08
+ * @author burning <www.cafeinit.com>
+ * @version 2017-08-22
  */
 
 export default {
@@ -25,6 +25,17 @@ export default {
   data() {
     return {
       myValue: this.value
+    }
+  },
+
+  computed: {
+    index() {
+      for (let i = 0; i < this.options.length; i ++) {
+        if (this.options[i].value == this.myValue) {
+          return i
+        }
+      }
+      return -1
     }
   },
 

@@ -1,7 +1,7 @@
 /**
  * @fileoverview radio list
- * @author: burning <www.cafeinit.com>
- * @version: 2016-12-08
+ * @author burning <www.cafeinit.com>
+ * @version 2017-08-22
  */
 
 export default {
@@ -34,6 +34,27 @@ export default {
 
     myValue(val) {
       this.$emit('input', val)
+    }
+  },
+
+  computed: {
+    index() {
+      for (let i = 0; i < this.options.length; i ++) {
+        if (this.options[i].value == this.myValue) {
+          return i
+        }
+      }
+      return -1
+    }
+  },
+
+  methods: {
+    onChange() {
+      // this.$emit('input', this.myValue)
+    },
+
+    onClick() {
+      // this.$emit('click', this.myValue)
     }
   }
 }

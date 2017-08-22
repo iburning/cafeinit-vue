@@ -1,10 +1,25 @@
 <div>
   <ci-list-header v-if="title">{{title}}</ci-list-header>
   <ci-list class="ci-list-radio">
-    <ci-list-cell v-for="(option, index) in options" v-bind:key="index">
-      <ci-radio v-model="myValue"
-        v-bind:name="name"
-        v-bind:option="option"></ci-radio>
+    <ci-list-cell v-for="(option, i) in options" v-bind:key="i">
+      <div v-if="option" v-bind:class="[
+          ns + (inline ? 'radio-inline' : 'radio'),
+          option.disabled ? (ns + 'disabled') : ''
+        ]">
+        <input type="radio"
+          v-model="myValue"
+          v-bind:id="'radio-' + _uid + '-' + i"
+          v-bind:name="name"
+          v-bind:value="option.value"
+          v-bind:disabled="option.disabled"
+          v-on:change="onChange"
+          v-on:click="onClick" />
+        <label v-bind:for="'radio-' + _uid + '-' + i">
+          <i v-if="i == index" class="iconfont icon-radiobox"></i>
+          <i v-else class="iconfont icon-round"></i>
+          <span>{{ option.title || option.value }}</span>
+        </label>
+      </div>
     </ci-list-cell>
   </ci-list>
 </div>

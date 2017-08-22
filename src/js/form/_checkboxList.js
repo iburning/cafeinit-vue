@@ -1,7 +1,7 @@
 /**
  * @fileoverview checkbox list
- * @author: burning <www.cafeinit.com>
- * @version: 2016-12-06
+ * @author burning <www.cafeinit.com>
+ * @version 2017-08-22
  */
 
 export default {

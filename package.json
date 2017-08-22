@@ -1,6 +1,6 @@
 {
   "name": "cafeinit-vue",
-  "version": "1.1.22",
+  "version": "1.1.23",
   "description": "CafeInit for Vue.js",
   "main": "index.js",
   "scripts": {

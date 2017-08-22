@@ -11,27 +11,29 @@
     v-on:change="onChange"
     v-on:click="onClick" />
   <label v-bind:for="'radio-' + _uid">
-    <i class="iconfont icon-radiobox"></i>
+    <i v-if="0 == index" class="iconfont icon-radiobox"></i>
+    <i v-else class="iconfont icon-round"></i>
     <span>{{ option.title || option.value }}</span>
   </label>
 </div>
 
 <div v-else v-bind:class="ns + 'radios'">
-  <div v-for="(option, index) in options" v-bind:key="index"
+  <div v-for="(option, i) in options" v-bind:key="i"
     v-bind:class="[
       ns + (inline ? 'radio-inline' : 'radio'),
       option.disabled ? (ns + 'disabled') : ''
     ]">
     <input type="radio"
       v-model="myValue"
-      v-bind:id="'radio-' + _uid + '-' + index"
+      v-bind:id="'radio-' + _uid + '-' + i"
       v-bind:name="name"
       v-bind:value="option.value"
       v-bind:disabled="option.disabled"
       v-on:change="onChange"
       v-on:click="onClick" />
-    <label v-bind:for="'radio-' + _uid + '-' + index">
-      <i class="iconfont icon-radiobox"></i>
+    <label v-bind:for="'radio-' + _uid + '-' + i">
+      <i v-if="i == index" class="iconfont icon-radiobox"></i>
+      <i v-else class="iconfont icon-round"></i>
       <span>{{ option.title || option.value }}</span>
     </label>
   </div>
