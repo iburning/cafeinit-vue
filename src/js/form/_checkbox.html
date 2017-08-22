@@ -11,7 +11,8 @@
     v-on:change="onChange"
     v-on:click="onClick" />
   <label v-bind:for="'checkbox-' + _uid">
-    <i class="iconfont icon-squarecheck"></i>
+    <i v-if="ids.indexOf(0) >= 0" class="iconfont icon-squarecheck"></i>
+    <i v-else class="iconfont icon-square"></i>
     <span>{{ option.title || option.value }}</span>
   </label>
 </div>
@@ -31,7 +32,8 @@
       v-on:change="onChange"
       v-on:click="onClick" />
     <label v-bind:for="'checkbox-' + _uid + '-' + index">
-      <i class="iconfont icon-squarecheck"></i>
+      <i v-if="ids.indexOf(index) >= 0" class="iconfont icon-squarecheck"></i>
+      <i v-else class="iconfont icon-square"></i>
       <span>{{ option.title || option.value }}</span>
     </label>
   </div>

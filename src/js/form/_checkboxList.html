@@ -1,10 +1,26 @@
 <div>
   <ci-list-header v-if="title">{{title}}</ci-list-header>
   <ci-list class="ci-list-checkbox">
-    <ci-list-cell v-for="(option, index) in options" v-bind:key="index">
-      <ci-checkbox v-model="myValue"
-        v-bind:name="name"
-        v-bind:option="option"></ci-checkbox>
+    <ci-list-cell v-for="(option, i) in options" v-bind:key="i">
+      <div v-if="option" v-bind:class="[
+          ns + 'checkbox',
+          option.disabled ? (ns + 'disabled') : ''
+        ]">
+        <input type="checkbox"
+          v-model="myValue"
+          v-bind:id="'checkbox-' + _uid + '-' + i"
+          v-bind:name="name"
+          v-bind:value="option.value"
+          v-bind:disabled="option.disabled"
+          v-on:change="onChange" />
+        <label v-bind:for="'checkbox-' + _uid + '-' + i">
+          <i v-if="ids.indexOf(i) >= 0" class="iconfont icon-squarecheck"></i>
+          <i v-else class="iconfont icon-square"></i>
+          <span>{{ option.title || option.value }}</span>
+        </label>
+      </div>
     </ci-list-cell>
+    <!-- <div>myValue {{myValue}}</div>
+    <div>ids {{ids}}</div> -->
   </ci-list>
 </div>

@@ -28,6 +28,29 @@ export default {
     }
   },
 
+  computed: {
+    ids() {
+      let ids = []
+
+      if (this.myValue instanceof Array) {
+        this.myValue.forEach((item) => {
+          this.options.forEach((option, i) => {
+            if (option.value == item) {
+              ids.push(i)
+            }
+          })
+        })
+      }
+      else {
+        if (this.myValue) {
+          ids.push(0)
+        }
+      }
+
+      return ids
+    }
+  },
+
   watch: {
     value(val) {
       this.myValue = val
