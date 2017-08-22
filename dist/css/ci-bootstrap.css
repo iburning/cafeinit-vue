@@ -695,13 +695,18 @@ textarea {
 }
 /**
  * @fileoverview ci-select
- * @author: burning <www.cafeinit.com>
- * @version: 2016-12-08
+ * @author burning <www.cafeinit.com>
+ * @version 2017.08.22
  */
 .select {
   position: relative;
 }
+.select select {
+  z-index: 10;
+  position: relative;
+}
 .select i {
+  z-index: 1;
   position: absolute;
   top: 5px;
   right: 10px;
