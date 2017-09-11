@@ -180,5 +180,82 @@ export default {
   utils: {
     CICompnentHelper: CICompnentHelper,
     CIScrollHelper: CIScrollHelper
-  }
+  },
+
+  /* Alert & Modal & Toast */
+  'ci-alert-tip': CIAlertTip,
+
+  'ci-modal': CIModal,
+  'ci-actions': CIActions,
+  'ci-alert': CIAlert,
+  'ci-confirm': CIConfirm,
+
+  'ci-toast': CIToast,
+
+
+  /* Buttons & Form */
+  'ci-button': CIButton,
+
+  'ci-form': CIForm,
+  'ci-form-group': CIFormGroup,
+  'ci-checkbox': CICheckbox,
+  'ci-checkbox-list': CICheckboxList,
+  'ci-number': CINumber,
+  'ci-radio': CIRadio,
+  'ci-radio-list': CIRadioList,
+  'ci-select': CISelect,
+  'ci-switch': CISwitch,
+  'ci-switch-list': CISwitchList,
+  'ci-text': CIText,
+  'ci-textarea': CITextarea,
+
+  'ci-image-picker': CIImagePicker,
+  'ci-slider': CISlider,
+
+
+  /* Layout */
+  'ci-block': CIBlock,
+  'ci-block-body': CIBlockBody,
+  'ci-block-footer': CIBlockFooter,
+  'ci-block-header': CIBlockHeader,
+
+  'ci-collection': CICollection,
+  'ci-collection-cell': CICollectionCell,
+
+  'ci-list': CIList,
+  'ci-list-cell': CIListCell,
+  'ci-list-header': CIListHeader,
+
+  'ci-grid': CIGrid,
+  'ci-grid-cell': CIGridCell,
+
+  'ci-offcanvas': CIOffcanvas,
+  'ci-scroll-view': CIScrollView,
+
+  'ci-slide-view': CISlideView,
+  'ci-slide-view-item': CISlideViewItem,
+
+  'ci-table': CITable,
+
+
+  /* Navigation */
+  'ci-breadcrumb': CIBreadcrumb,
+  'ci-pagination': CIPagination,
+  'ci-navigation': CINavigation,
+  'ci-step': CIStep,
+  'ci-steps': CISteps,
+  'ci-tab': CITab,
+  'ci-tabs': CITabs,
+  'ci-tree-nav': CITreeNav,
+
+
+  /* Others */
+  'ci-badge': CIBadge,
+  'ci-image': CIImage,
+  'ci-loading': CILoading,
+  'ci-progress': CIProgress,
+  'ci-rate': CIRate,
+  'ci-sticky': CISticky,
+  'ci-to-top': CIToTop,
+  'ci-video': CIVideo
 }
